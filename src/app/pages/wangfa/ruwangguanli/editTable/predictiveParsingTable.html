@@ -1,0 +1,49 @@
+
+<h3 class="ppt-title">营销预测</h3>
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>年份</td>
+  	<td>2017年销售目标</td>
+  	<td>2018年预测</td>
+  	<td>2019年预测</td>
+  </tr>
+  <tr ng-repeat="user in saloonCar" class="editable-row">
+  	<td class="cell-td">
+	       预估计销量
+	    </td>
+    <td>
+        <span editable-text="user.salesTarget" e-name="salesTarget" e-form="userform" e-required>
+          {{ user.salesTarget}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.forecastOne" e-name="forecastOne" e-form="userform" e-required>
+          {{ user.forecastOne}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.forecastTwo" e-name="forecastTwo" e-form="userform" e-required>
+          {{ user.forecastTwo}}
+        </span>
+    </td>
+  </tr>
+</table>
+
+<h3 class="ppt-title" style="background-color:">营销分析</h3>
+<div class="form-group">
+	<label style="color:red;font-size:14px;margin-bottom:10px;">包含但不限于地方相关政策法规/市场特点/竞争品牌/汽车消费能力/员工薪酬待遇等方面分析</label>
+<div class="bsst-item">
+		<textarea name="marketingAnalysis" cols="80" rows="20" ng-model="analyze.marketingAnalysis" disabled="true"></textarea>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

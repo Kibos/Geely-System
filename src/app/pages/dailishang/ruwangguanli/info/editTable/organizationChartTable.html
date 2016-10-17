@@ -1,0 +1,11 @@
+<form ng-submit="frameworkaRrange(organizeSchemaForm)" novalidate name="organizeSchemaForm" id="BSSdatum">
+        <div class="form-group">
+          	<label class="info-lab" style="text-align:right;padding-right:10px;">组织架构筹备</label>
+            <div class="bsst-item">
+          		<input type="file" name="organizationChart" ng-model="agent.organizationChart" ng-disabled="formstate()"/>
+          	</div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+        </div>
+</form>

@@ -1,0 +1,67 @@
+<div class="add-row-editable-table">
+  <button class="btn btn-primary" ng-click="addcarShareholder()" ng-disabled="formstate()">新增</button>
+</div>
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>公司名称</td>
+    <td>股权比例</td>
+    <td>授权时间</td>
+    <td>授权品牌</td>
+    <td>设施类型</td>
+    <td>所在城市</td>
+    <td>状态</td>
+    <td>操作</td>
+  </tr>
+  <tr ng-repeat="user in carShareholder" class="editable-row">
+    <td>
+        <span editable-text="user.firmName" e-name="firmName" e-form="userform" e-required>
+          {{ user.firmName}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required>
+          {{ user.shark}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.date" e-name="date" e-form="userform" e-required>
+          {{ user.date}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.brand" e-name="brand" e-form="userform" e-required>
+          {{ user.brand}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.genre" e-name="genre" e-form="userform" e-required>
+          {{ user.genre}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.address" e-name="address" e-form="userform" e-required>
+          {{ user.address}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.status" e-name="status" e-form="userform" e-required>
+          {{ user.status}}
+        </span>
+    </td>
+    <td>
+      <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
+            shown="inserted == user">
+        <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+          保存
+        </button>
+        <button type="button" ng-disabled="userform.$waiting" ng-click="userform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+          取消
+        </button>
+      </form>
+      <div class="buttons" ng-show="!userform.$visible">
+        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delShareholder($index)" ng-disabled="formstate()">删除</button>
+      </div>
+    </td>
+  </tr>
+</table>

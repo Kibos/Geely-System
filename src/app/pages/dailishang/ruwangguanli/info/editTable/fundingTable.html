@@ -1,0 +1,143 @@
+<form ng-submit="funding(fundingForm)" novalidate name="fundingForm">
+	<h3 class="funding-title">固定投资（含建店/装修/设备采购等）</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	    <td colspan="3">自有</td>
+	    <td colspan="3">贷款</td>
+	    <td colspan="3">其他</td>
+	  </tr>
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="fixationOwnSum" ng-model="agent.fixation.OwnSum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationOwnArriveTime" ng-model="agent.fixation.OwnArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationOwnRemark" ng-model="agent.fixation.OwnRemark" required ng-disabled="formstate()"> 
+	    </td>
+	    <!-- ********************************** -->
+	    <td>
+	       <input type="text" name="fixationLoanSum" ng-model="agent.fixation.loanSum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationLoanArriveTime" ng-model="agent.fixation.loanArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationLoanRemark" ng-model="agent.fixation.loanRemark" required ng-disabled="formstate()"> 
+	    </td>
+	    <!-- ********************************** -->
+	    <td>
+	       <input type="text" name="fixationRestSum" ng-model="agent.fixation.restSum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationRestArriveTime" ng-model="agent.fixation.restArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationRestRemark" ng-model="agent.fixation.restRemark" required ng-disabled="formstate()"> 
+	    </td>
+	  </tr>
+	</table>
+	<h3 class="funding-title">流动资金（含建店保证金/加盟保证金/运营资金等</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	    <td colspan="3">自有</td>
+	    <td colspan="3">贷款</td>
+	    <td colspan="3">其他</td>
+	  </tr>
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="streamOwnSum" ng-model="agent.stream.OwnSum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamOwnArriveTime" ng-model="agent.stream.OwnArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamOwnRemark" ng-model="agent.stream.OwnRemark" required ng-disabled="formstate()"> 
+	    </td>
+
+	    <td>
+	       <input type="text" name="streamloanSum" ng-model="agent.stream.loanSum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamloanArriveTime" ng-model="agent.stream.loanArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamloanRemark" ng-model="agent.stream.loanRemark" required ng-disabled="formstate()"> 
+	    </td>
+
+	    <td>
+	       <input type="text" name="streamrestSum" ng-model="agent.stream.restSum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamrestArriveTime" ng-model="agent.stream.restArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamrestRemark" ng-model="agent.stream.restRemark" required ng-disabled="formstate()"> 
+	    </td>
+	  </tr>
+	</table>
+	<h3 class="funding-title">建店保证金</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="cashDepositSum" ng-model="agent.cashDeposit.Sum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="cashDepositArriveTime" ng-model="agent.cashDeposit.ArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="cashDepositRemark" ng-model="agent.cashDeposit.Remark" required ng-disabled="formstate()"> 
+	    </td>
+	  </tr>
+	</table>
+	<h3 class="funding-title">首批提车款</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="mentionModelsSum" ng-model="agent.mentionModels.Sum" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="mentionModelsArriveTime" ng-model="agent.mentionModels.ArriveTime" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="mentionModelsRemark" ng-model="agent.mentionModels.Remark" required ng-disabled="formstate()"> 
+	    </td>
+	  </tr>
+	</table>
+	<div class="text-center">
+        <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+    </div>
+</form>

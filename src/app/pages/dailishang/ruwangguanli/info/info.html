@@ -1,0 +1,444 @@
+<div class="info-check">
+      <span ng-class="{ReviewShowed:show=='check1'}">待审核(填写信息时，请保证信息的真实性和完整性)</span>
+      <span ng-class="{ReviewShowed:show=='check2'}">恭喜你,审核已通过</span>
+      <span ng-class="{ReviewShowed:show=='check3'}">审核未通过(请保证信息的真实性和完整性)</span>
+      <button ng-click="allSubmit()" class="btn btn-primary" id="allsubmit"><i class="fa fa-user-md"></i>提交审核</button>
+</div>
+<uib-tabset active="$tabSetStatus.activeTab">
+<!-- ————————————————————代理商简述——————————————————————————————— -->
+  <uib-tab heading="代理商简述">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="title">
+          <button ng-click="btn='btn1'" class="btns" ng-class="{Selection:btn=='btn1'}">基本信息</button>
+          <button ng-click="btn='btn2'" class="btns" ng-class="{Selection:btn=='btn2'}">股份构成</button>
+          <button ng-click="btn='btn3'" class="btns" ng-class="{Selection:btn=='btn3'}">关键人员背景</button>
+          <button ng-click="btn='btn4'" class="btns" ng-class="{Selection:btn=='btn4'}">股份股东投资情况</button>
+          <button ng-click="btn='btn5'" class="btns" ng-class="{Selection:btn=='btn5'}">销售维修状况</button>
+          <button ng-click="btn='btn6'" class="btns" ng-class="{Selection:btn=='btn6'}">财务状况</button>
+          <button ng-click="btn='btn7'" class="btns" ng-class="{Selection:btn=='btn7'}">市场情况</button>
+        </div>
+        <div class="info-box" ng-switch="btn">
+
+            <!-- 基本信息开始 -->
+            <form ng-submit="basicInformation(BasicForm)" novalidate name="BasicForm" ng-switch-when="btn1">
+              <div class="form-group">
+                <label class="individual-label">申请公司全称:</label>
+                <input type="text" name="companyName" class="form-control individual-iput" ng-model="agent.companyName"
+                       required placeholder="公司全称" ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.companyName.$error.required && submitbasic">
+                  请输入公司全称
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">目前经营汽车品牌:</label>
+                <input type="text" name="carBrand" class="form-control individual-iput" ng-model="agent.carBrand"
+                       required placeholder="汽车品牌" ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.carBrand.$error.required && submitbasic">
+                  请输入目前经营汽车品牌
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">企业性质:</label>
+                <input type="text" name="nature" class="form-control individual-iput" ng-model="agent.nature"
+                       required placeholder="国有/合资/民营/股份/私有" ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.nature.$error.required && submitbasic">
+                  请选择企业性质
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">成立日期:</label>
+                <input type="text" name="establishDate" class="form-control individual-iput" ng-model="agent.establishDate" required ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.establishDate.$error.required && submitbasic">
+                  请输入公司成立日期
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">注册资本:</label>
+                <input type="text" name="registerCapital" class="form-control individual-iput" ng-model="agent.registerCapital"
+                       required placeholder="注册资本（万），不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.registerCapital.$error.required && submitbasic">
+                  请输入注册资本
+                </p>
+                <p class="help-block individual-p" ng-show="BasicForm.registerCapital.$error.pattern && submitbasic">
+                  注册资本大于0
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">法人代表:</label>
+                <input type="text" name="legalRepresentative" class="form-control individual-iput" ng-model="agent.legalRepresentative" required ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.legalRepresentative.$error.required && submitbasic">
+                  请输入法人代表
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">4s店数量(个):</label>
+                <input type="text" name="shopNumber" class="form-control individual-iput" ng-model="agent.shopNumber"
+                       required placeholder="4s店数量不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.shopNumber.$error.required && submitbasic">
+                  请输入4s店数量
+                </p>
+                <p class="help-block individual-p" ng-show="BasicForm.shopNumber.$error.pattern && submitbasic">
+                  请输入大于0的数字
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">汽车销售经验(年):</label>
+                <input type="text" name="sellSuffer" class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.sellSuffer.$error.pattern && submitbasic">
+                  请输入大于0的数字
+                </p>
+              </div>
+              <div class="form-group">
+                <label class="individual-label">汽车售后服务经验(年):</label>
+                <input type="text" name="afterSale" class="form-control individual-iput" ng-model="agent.afterSale"
+                       required placeholder="汽车售后服务经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <p class="help-block individual-p" ng-show="BasicForm.afterSale.$error.required && submitbasic">
+                  请输入汽车售后服务经验
+                </p>
+                <p class="help-block individual-p" ng-show="BasicForm.afterSale.$error.pattern && submitbasic">
+                  请输入大于0的数字
+                </p>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+              </div>
+            </form>
+            <!--股份构成  -->
+            <div class="row" ng-switch-when="btn2">
+                  <div class="col-md-12">
+                    <div style="color:red;margin-bottom:10px">股东之间有亲属关系（如父子、母女、兄弟、姐妹等）请注明，如有公司法人股东时，该法人股东的股份结构也需分解，直至全部为自然人股东</div>
+                    <div ba-panel ba-panel-title="浙江XX有限公司" ba-panel-class="with-scroll">
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/sharesConstitute.html"></div>
+                    </div>
+                  </div>
+            </div>
+            <!-- 关键人员背景 -->
+            <div class="row" ng-switch-when="btn3">
+                  <div class="col-md-12">
+                    <div ba-panel ba-panel-title="请填写实际控股投资人、董事长、总经理的背景信息" ba-panel-class="with-scroll">
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/keyPersonnelTable.html"></div>
+                    </div>
+                  </div>
+            </div>
+            <!-- 股份股东投资情况 -->
+            <div class="row" ng-switch-when="btn4">
+                  <div class="col-md-12">
+                    <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
+                      <uib-tabset>
+                        <uib-tab heading="汽车销售领域">
+                          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/carSalesTable.html"></div>
+                        </uib-tab>
+                        <uib-tab heading="非汽车销售领域">
+                          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/notcarSalesTable.html"></div>
+                        </uib-tab>
+                      </uib-tabset>
+                    </div>
+                  </div>
+            </div>
+            <!-- 销售维修状况 -->
+            <div class="row" ng-switch-when="btn5">
+                  <div class="col-md-12">
+                    <div ba-panel ba-panel-title="控股股东所有汽车4S店/授权展厅/授权维修站销售维修状况" ba-panel-class="with-scroll">
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/repairStatusTable.html"></div>
+                    </div>
+                  </div>
+            </div>
+            <!-- 财务状况 -->
+            <div class="row" ng-switch-when="btn6">
+                  <div class="col-md-12">
+                    <div ba-panel ba-panel-title="至少需要提供最近三年的年度财务报表复印件，并加盖公司财务章扫描件" ba-panel-class="with-scroll">
+                      <uib-tabset>
+                        <uib-tab heading="财务报表">
+                          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/financeStatusTable.html"></div>
+                        </uib-tab>
+                        <uib-tab heading="资信情况">
+                          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/creditStanding.html"></div>
+                        </uib-tab>
+                      </uib-tabset>
+                    </div>
+                  </div>
+            </div>
+            <!-- 市场情况 -->
+            <div class="row" ng-switch-when="btn7">
+                  <div class="col-md-12">
+                    <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
+                      <uib-tabset>
+                        <uib-tab heading="轿车">
+                          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/carCaseTable.html"></div>
+                        </uib-tab>
+                        <uib-tab heading="SUV">
+                          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/suvCaseTable.html"></div>
+                        </uib-tab>
+                        <uib-tab heading="区域代理商排名">
+                          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/qydlspmCaseTable.html"></div>
+                        </uib-tab>
+                      </uib-tabset>
+                    </div>
+                  </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+  </uib-tab>
+<!-- —————————————————————拟建店简述——————————————————————— -->
+  <uib-tab heading="拟建店简述">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="title">
+          <button ng-click="btn2='btn21'" class="btns" ng-class="{Selection:btn2=='btn21'}">建店场地情况</button>
+          <button ng-click="btn2='btn22'" class="btns" ng-class="{Selection:btn2=='btn22'}">建店城市商圈</button>
+          <button ng-click="btn2='btn23'" class="btns" ng-class="{Selection:btn2=='btn23'}">建店场地相关资料</button>
+        </div>
+        <div class="info-box" ng-switch="btn2">
+          <!-- 建店场地情况 -->
+          <form ng-submit="buildStoreSite(bssForm)" novalidate name="bssForm" ng-switch-when="btn21" id="basic">
+              <div class="form-group">
+                <label class="info-lab">拟申请商圈</label>
+                <input type="text" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">拟建店详细地址</label>
+                <input type="text" name="address" ng-model="agent.address" required ng-disabled="formstate()">
+              </div>
+              <div class="form-group">
+                <label class="info-lab">拟建店详细地址</label>
+                <select name="locations" ng-model="agent.locations" ng-options="item.id as item.text for item in locations" ng-disabled="formstate()">
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">拟建店所在商圈概况</label>
+                  <div class="inner-box">
+                    <div class="inner-box-child"><label>商圈名称</label><input type="text" name="businessName" ng-model="agent.businessName" required ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>形成时间</label><input type="text" name="formationTime" ng-model="agent.formationTime" required ng-disabled="formstate()"></div></br>
+                    <div class="inner-box-child"><label>规模排名</label><input type="text" name="scaleRanked" ng-model="agent.scaleRanked" required ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>品牌数量</label><input type="text" name="brandNum" ng-model="agent.brandNum" required ng-disabled="formstate()"></div></br>
+                    <div class="inner-box-child"><label>品牌明细</label><input type="text" name="brandDetail" ng-model="agent.brandDetail" required ng-disabled="formstate()"></div>
+                  </div>     
+              </div>
+              <div class="form-group">
+                <label class="info-lab">土地来源</label>
+                <select name="landSources" ng-model="agent.landSources" ng-options="item.id as item.text for item in landSources" ng-disabled="formstate()">
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">土地性质</label>
+                <div class="inner-box">
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="gyyd" ng-model="agent.landStatus" value="industrialLand" ng-disabled="formstate()"><label for="gyyd">工业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="syyd" ng-model="agent.landStatus" value="commercialLand" ng-disabled="formstate()"><label for="syyd">商业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="nyyd" ng-model="agent.landStatus" value="agriculturalLand" ng-disabled="formstate()"><label for="nyyd">农业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="qtyd" ng-model="agent.landStatus" value="otherLand" ng-disabled="formstate()"><label for="qtyd">其它</label></div></div>
+                </div> 
+              </div>
+              <div class="form-group">
+                <label class="info-lab">租赁期限</label>
+                <div class="inner-box">
+                  <input type="text" name="leaseStart" ng-model="agent.leaseStart" ng-disabled="formstate()"><span>至</span><input type="text" name="leaseEnd" ng-model="agent.leaseEnd" ng-disabled="formstate()">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">该城市首店</label>
+                <div class="inner-box">
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstShop.firstshop1" id="firstshop1" ng-disabled="formstate()"><label for="firstshop1">标准4S店</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstShop.firstshop2" id="firstshop2" ng-disabled="formstate()"><label for="firstshop2">SR/商超店+独立维修站(E级)</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstShop.firstshop3" id="firstshop3" ng-disabled="formstate()"><label for="firstshop3">SR/商超店+快修店+独立维修站(E级)</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstShop.firstshop4" id="firstshop4" ng-disabled="formstate()"><label for="firstshop4">SR/商超店+快修店(F级,已有吉利维修站升级等)</label></div>
+                </div> 
+              </div>
+              <div class="form-group">
+                <label class="info-lab">非该城市首店</label>
+                <div class="inner-box">
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="notfirstShop" ng-model="agent.notfirstShop.notfirstshop1" id="notfirstshop1" ng-disabled="formstate()"><label for="notfirstshop1">4S店</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="notfirstShop" ng-model="agent.notfirstShop.notfirstshop2" id="notfirstshop2" ng-disabled="formstate()"><label for="notfirstshop2">品牌体验中心</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="notfirstShop" ng-model="agent.notfirstShop.notfirstshop3" id="notfirstshop3" ng-disabled="formstate()"><label for="notfirstshop3">快修店</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="notfirstShop" ng-model="agent.notfirstShop.notfirstshop4" id="notfirstshop4" ng-disabled="formstate()"><label for="notfirstshop4">独立维修站</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="notfirstShop" ng-model="agent.notfirstShop.notfirstshop5" id="notfirstshop5" ng-disabled="formstate()"><label for="notfirstshop4">商超店</label></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">建设方式</label>
+                <div class="inner-box-child"><input type="radio" name="jsMode" id="jsfsxj" value="newConstruction" ng-model="agent.jsMode" ng-disabled="formstate()"><label for="jsfsxj">新建</label></div>
+                <div class="inner-box-child"><input type="radio" name="jsMode" id="jsfsgj" value="reconstruct" ng-model="agent.jsMode" ng-disabled="formstate()"><label for="jsfsgj">改建</label></div>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">申请级别</label>
+                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeA" value="sqGradeA" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeA">A级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeB" value="sqGradeB" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeB">B级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeC" value="sqGradeC" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeC">C级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeD" value="sqGradeD" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeD">D级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeE" value="sqGradeE" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeE">E级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeF" value="sqGradeF" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeF">F级</label>&nbsp;</div>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">建设时间</label>
+                <div class="inner-box">
+                  <div class="inner-box-child"><label>开工时间</label><input type="text" name="constructionStart" ng-model="agent.constructionStart" ng-disabled="formstate()"></div>
+                  <div class="inner-box-child"><label>完工时间</label><input type="text" name="constructionEnd" ng-model="agent.constructionEnd" ng-disabled="formstate()"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">规划店面</label>
+                  <div class="inner-box">
+                    <div class="inner-box-child"><label>土地面积(m²)</label><input type="text" name="soilArea" ng-model="agent.soilArea" ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>土地宽度(m)</label><input type="text" name="soilWidth" ng-model="agent.soilWidth" ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>土地纵深(m)</label><input type="text" name="soilDepth" ng-model="agent.soilDepth" ng-disabled="formstate()"></br></div>
+                    <div class="inner-box-child"><label>建筑面积(m²)</label><input type="text" name="buildArea" ng-model="agent.buildArea" ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>建筑宽度(m)</label><input type="text" name="buildWidth" ng-model="agent.buildWidth" ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>建筑纵深(m)</label><input type="text" name="buildDepth" ng-model="agent.buildDepth" ng-disabled="formstate()"></br></div>
+                    <div class="inner-box-child"><label>整体高度(m)</label><input type="text" name="overallHeight" ng-model="agent.overallHeight" ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>展示区高度(m)</label><input type="text" name="showcaseHeight" ng-model="agent.showcaseHeight" ng-disabled="formstate()"></div>
+                    <div class="inner-box-child"><label>售后建筑面积(不含停车场,m²)</label><input type="text" name="afterSaleBuildArea" ng-model="agent.afterSaleBuildArea" ng-disabled="formstate()"></br></div>
+                  </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+              </div>
+          </form>
+            <!-- 建店城市商圈 -->
+          <div class="row" ng-switch-when="btn22">
+              <div class="col-md-12">
+                  <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
+                    <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/businessAreaTable.html"></div>
+                    <div class="inner-box-njdjs">
+                      
+                    </div>
+                    <div class="inner-box-njdjs">
+                      
+                    </div>
+                  </div>
+              </div>    
+          </div>
+            <!-- 建店场地相关资料 -->
+          <div class="row" ng-switch-when="btn23">
+              <div class="col-md-12">
+                  <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
+                    <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/BuiltShopSiteTable.html"></div>
+                  </div>
+              </div>    
+          </div>
+        </div>
+      </div>
+    </div>
+  </uib-tab>
+<!-- —————————————————————拟建店筹备——————————————————————————————— -->
+  <uib-tab heading="拟建店筹备">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="title">
+          <button ng-click="btn3='btn31'" class="btns" ng-class="{Selection:btn3=='btn31'}">新公司筹备</button>
+          <button ng-click="btn3='btn32'" class="btns" ng-class="{Selection:btn3=='btn32'}">新公司股权结构</button>
+          <button ng-click="btn3='btn33'" class="btns" ng-class="{Selection:btn3=='btn33'}">资金筹备</button>
+          <button ng-click="btn3='btn34'" class="btns" ng-class="{Selection:btn3=='btn34'}">店面建设计划</button>
+          <button ng-click="btn3='btn35'" class="btns" ng-class="{Selection:btn3=='btn35'}">关键岗位组建筹备</button>
+          <button ng-click="btn3='btn36'" class="btns" ng-class="{Selection:btn3=='btn36'}">组织架构筹备</button>
+        </div>
+        <div class="info-box" ng-switch="btn3">
+          <!-- 新公司筹备 -->
+          <form ng-submit="newCompanyPrepare(newCPForm)" novalidate name="newCPForm" ng-switch-when="btn31" id="StoreSite">
+              <div style="color:red;margin-bottom:20px;">注: 1. 如果不注册新公司，使用已有公司，则请在表格中填写拟使用的公司信息；</div>
+              <div class="form-group">
+                <label class="info-lab-a">是否重新注册具有独立法人资格的新公司</label>
+                <div class="inner-box">
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="LPstatus" id="YesLPstatus" ng-model="agent.LPstatus" value="YesLPstatus" ng-disabled="formstate()"><label for="YesLPstatus">是</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="LPstatus" id="NotLPstatus" ng-model="agent.LPstatus" value="NotLPstatus" ng-disabled="formstate()"><label for="NotLPstatus">否</label></div></div>
+                </div> 
+              </div>
+              <div class="form-group">
+                <label class="info-lab">公司名称</label>
+                <input type="text" name="companyName" ng-model="agent.companyName" required ng-disabled="formstate()">
+              </div>
+              <div class="form-group">
+                <label class="info-lab">注册地址</label>
+                <input type="text" name="registeredAddress" ng-model="agent.registeredAddress" required ng-disabled="formstate()">
+              </div>
+              <div class="form-group">
+                <label class="info-lab">企业性质</label>
+                <select name="corporateProperty" ng-model="agent.corporateProperty" ng-options="item.id as item.text for item in EN" ng-disabled="formstate()">
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">维修资质</label>
+                <select name="MaintenanceQualification" ng-model="agent.MaintenanceQualification" ng-options="item.id as item.text for item in MQ" ng-disabled="formstate()">
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="info-lab">公司注册时间</label>
+                <input type="text" name="registrationTime" ng-model="agent.registrationTime" required ng-disabled="formstate()">
+              </div>
+              <div class="form-group">
+                <label class="info-lab">公司注册地址</label>
+                <input type="text" name="rirmRegisteredAddress" ng-model="agent.rirmRegisteredAddress" required ng-disabled="formstate()">
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+              </div>
+          </form>
+          <!-- 新公司股权结构 -->
+          <div class="row" ng-switch-when="btn32">
+              <div class="col-md-12">
+                  <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/newEquityStructureTable.html"></div>
+                  </div>
+              </div>
+          </div>
+          <!-- 资金筹备 -->
+          <div class="row" ng-switch-when="btn33">
+              <div class="col-md-12">
+                  <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/fundingTable.html"></div>
+                  </div>
+              </div>
+          </div>
+          <!-- 店面建设计划 -->
+          <div class="row" ng-switch-when="btn34">
+              <div class="col-md-12">
+                  <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/DMconstructionPlanTable.html"></div>
+                  </div>
+              </div>
+          </div>
+          <!-- 关键岗位组建筹备 -->
+          <div class="row" ng-switch-when="btn35">
+              <div class="col-md-12">
+                  <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+                      <div style="color:red;margin-bottom:10px;">请务必填写董事长、总经理、销售经理、售后经理、市场部经理岗位人员信息</div>
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/keyJobTable.html"></div>
+                  </div>
+              </div>
+          </div>
+          <!-- 组织架构筹备 -->
+          <div class="row" ng-switch-when="btn36">
+              <div class="col-md-12">
+                  <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+                      <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/organizationChartTable.html"></div>
+                  </div>
+              </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </uib-tab>
+<!-- —————————————————————营销预测分析——————————————————————————————— -->
+  <uib-tab heading="营销预测分析">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="info-box">
+          <div include-with-scope="app/pages/dailishang/ruwangguanli/info/editTable/predictiveParsingTable.html"></div>
+        </div>
+      </div>
+    </div>
+  </uib-tab>
+<!-- ——————————————————————相关附件—————————————————————————————— -->
+  <uib-tab heading="相关附件">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="info-box">相关附件</div>
+      </div>
+    </div>
+  </uib-tab>
+
+</uib-tabset>

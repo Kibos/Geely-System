@@ -1,0 +1,24 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>排名</td>
+    <td>经销商集团名称</td>
+    <td>授权4s店/展厅/独立维修站合计数量</td>
+  </tr>
+  <tr ng-repeat="user in RegionalAgents" class="editable-row">
+    <td>
+        <span editable-text="user.ranking" e-name="ranking" e-form="userform" e-required>
+          {{ user.ranking}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.dealerGroupName" e-name="dealerGroupName" e-form="userform" e-required>
+          {{ user.dealerGroupName}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.pitNum" e-name="pitNum" e-form="userform" e-required>
+          {{ user.pitNum}}
+        </span>
+    </td>
+  </tr>
+</table>

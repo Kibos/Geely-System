@@ -1,0 +1,23 @@
+<div class="modal-content">
+  <div class="modal-header bg-danger">
+    <i class="ion-flame modal-icon"></i><span> 注销</span>
+  </div>
+  <div class="modal-body text-center">
+  	<div>
+		<label for="">注销原因：</label>
+		<select>
+		<option value="" ng-model="money">逾期未缴建店保证金</option>
+		</select>
+  	</div>
+  	<div class="row">
+      <label class="col-md-3"></label>
+	  	<label class="col-md-3" style="margin-left: 0px;">注销意见：</label>
+	  	<textarea class="col-md-5" name="" id="" cols="30" rows="10" style="display:block;" ng-model="opinion"></textarea>
+      <label class="col-md-2"></label>
+	  	</div>
+  	</div>
+  <div class="modal-footer" style="margin: auto;">
+  	<button type="button" class="btn btn-danger" ng-click="logout()">确定注销</button>
+    <button type="button" class="btn btn-default" ng-click="$dismiss()">返回</button>
+  </div>
+</div>

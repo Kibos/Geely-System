@@ -1,0 +1,36 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>城市</td>
+    <td>网点</td>
+    <td>预计土地方案提交时间</td>
+    <td>预计动工时间</td>
+    <td>预计完工时间</td>
+  </tr>
+  <tr ng-repeat="user in StoreConstructionPlan" class="editable-row">
+    <td>
+        <span editable-text="user.city" e-name="city" e-form="userform" e-required>
+          {{ user.city}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.branch" e-name="branch" e-form="userform" e-required>
+          {{ user.branch}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.submitTime" e-name="submitTime" e-form="userform" e-required>
+          {{ user.submitTime}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.startingTime" e-name="startingTime" e-form="userform" e-required>
+          {{ user.startingTime}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.completeTime" e-name="completeTime" e-form="userform" e-required>
+          {{ user.completeTime}}
+        </span>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,35 @@
+<form ng-submit="MarkeMarketDog(marketAnalyzeForm)" novalidate name="marketAnalyzeForm">
+	<h3 class="ppt-title">营销预测</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	  	<td>年份</td>
+	  	<td>2017年销售目标</td>
+	  	<td>2018年预测</td>
+	  	<td>2019年预测</td>
+	  </tr>
+	  <tr>
+	    <td class="cell-td">
+	       预估计销量
+	    </td>
+	    <td>
+	       <input type="text" name="salesTarget" ng-model="agent.salesTarget" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="forecastOne" ng-model="agent.forecastOne" required ng-disabled="formstate()"> 
+	    </td>
+	    <td>
+	       <input type="text" name="forecastTwo" ng-model="agent.forecastTwo" required ng-disabled="formstate()"> 
+	    </td>
+	  </tr>
+	</table>
+	<h3 class="ppt-title" style="background-color:">营销分析</h3>
+	<div class="form-group">
+          		<label style="color:red;font-size:14px;margin-bottom:10px;">包含但不限于地方相关政策法规/市场特点/竞争品牌/汽车消费能力/员工薪酬待遇等方面分析</label>
+                <div class="bsst-item">
+          			<textarea name="marketingAnalysis" cols="80" rows="20" ng-model="agent.marketingAnalysis" ng-disabled="formstate()"></textarea>
+          		</div>
+          	</div>
+	<div class="text-center">
+        <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+    </div>
+</form>

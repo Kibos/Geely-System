@@ -1,0 +1,54 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>竞争品牌</td>
+    <td>4s店数</td>
+    <td>去年总销量</td>
+    <td>去年平均单店销量</td>
+    <td>去年品牌市占率</td>
+    <td>竞争车型</td>
+    <td>去年竞争车型销量</td>
+    <td>去年竞争车型占率</td>
+  </tr>
+  <tr ng-repeat="user in saloonCar" class="editable-row">
+    <td>
+        <span editable-text="user.competitiveBrand" e-name="competitiveBrand" e-form="userform" e-required>
+          {{ user.competitiveBrand}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.storesNumber" e-name="storesNumber" e-form="userform" e-required>
+          {{ user.storesNumber}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.lastYearTotalSales" e-name="lastYearTotalSales" e-form="userform" e-required>
+          {{ user.lastYearTotalSales}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.lastYearMeanSalesVolume" e-name="lastYearMeanSalesVolume" e-form="userform" e-required>
+          {{ user.lastYearMeanSalesVolume}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.lastYearBrandShare" e-name="lastYearBrandShare" e-form="userform" e-required>
+          {{ user.lastYearBrandShare}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.CompetingModels" e-name="CompetingModels" e-form="userform" e-required>
+          {{ user.CompetingModels}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.CompetingModelsSales" e-name="CompetingModelsSales" e-form="userform" e-required>
+          {{ user.CompetingModelsSales}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.CompetingModelsShare" e-name="CompetingModelsShare" e-form="userform" e-required>
+          {{ user.CompetingModelsShare}}
+        </span>
+    </td>
+  </tr>
+</table>

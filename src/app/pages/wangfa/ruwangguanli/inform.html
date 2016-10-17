@@ -1,0 +1,47 @@
+
+<div class="widgets">
+  <div class="row">
+  	<div class="col-md-6">
+      <div ba-panel ba-panel-title="合作商概览" ba-panel-class="with-scroll">
+        <ul class="list-group" ng-repeat="item in partners ">
+			<label>合作商代码</label> 
+			<li class="list-group-item">{{item.id}}</li>
+			<label>申请公司</label>
+			<li class="list-group-item">{{item.compony}}</li>
+			<label>拟建店名称</label>
+			<li class="list-group-item">{{item.name}}</li>
+			<label>建店地点</label>
+			<li class="list-group-item">{{item.place}}</li>
+			<label>建店类型</label>
+			<li class="list-group-item">{{item.type}}</li>
+			<label>联系人</label>
+			<li class="list-group-item">{{item.person}}</li>
+			<label>联系电话</label>
+			<li class="list-group-item">{{item.phone}}</li>
+		</ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div ba-panel ba-panel-title="保证金设置" ba-panel-class="with-scroll">
+        <form>
+          	<div class="form-group">
+			    <label>保证金</label>
+			    <div>
+			      	<input type="email" class="form-control" ng-model="form.money" placeholder="请输入保证金金额" required>
+			    </div>
+			    <label>打款期限</label>
+			    <div>
+			      	<input type="email" class="form-control" ng-model="form.date" placeholder="请输入打款期限" required>
+			    </div>
+			</div>
+          <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid" ng-click="submit()">确认通知</button>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+  <div>
+		<p>邀请函</p>
+  </div>
+
+</div>

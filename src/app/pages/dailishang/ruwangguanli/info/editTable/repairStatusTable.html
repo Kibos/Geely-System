@@ -1,0 +1,96 @@
+<div class="add-row-editable-table">
+  <button class="btn btn-primary" ng-click="addmaintenance()" ng-disabled="formstate()">新增</button>
+</div>
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td rowspan="2">公司简称</td>
+    <td rowspan="2">品牌</td>
+    <td colspan="3">2014</td>
+    <td colspan="3">2015</td>
+    <td colspan="3">2016</td>
+    <td rowspan="2">操作</td>
+  </tr>
+  <tr class="info-tr">
+    <td>销量</td>
+    <td>市场占有率</td>
+    <td>进厂台次</td>
+    <td>销量</td>
+    <td>市场占有率</td>
+    <td>进厂台次</td>
+    <td>销量</td>
+    <td>市场占有率</td>
+    <td>进厂台次</td>
+  </tr>
+  <tr ng-repeat="user in maintenance" class="editable-row">
+    <td>
+        <span editable-text="user.COHR" e-name="COHR" e-form="userform" e-required>
+          {{ user.COHR}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.brand" e-name="brand" e-form="userform" e-required>
+          {{ user.brand}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fourteen.salesVolume" e-name="fourteenSalesVolume" e-form="userform" e-required>
+          {{ user.fourteen.salesVolume}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required>
+          {{ user.fourteen.marketShare}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fourteen.several" e-name="fourteenSeveral" e-form="userform" e-required>
+          {{ user.fourteen.several}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fifteen.salesVolume" e-name="fifteenSalesVolume" e-form="userform" e-required>
+          {{ user.fifteen.salesVolume}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required>
+          {{ user.fifteen.marketShare}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fifteen.several" e-name="fifteenSeveral" e-form="userform" e-required>
+          {{ user.fifteen.several}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.sixteen.salesVolume" e-name="sixteenSalesVolume" e-form="userform" e-required>
+          {{ user.sixteen.salesVolume}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required>
+          {{ user.sixteen.marketShare}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.sixteen.several" e-name="sixteenSeveral" e-form="userform" e-required>
+          {{ user.sixteen.several}}
+        </span>
+    </td>
+    <td>
+      <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
+            shown="inserted == user">
+        <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+          保存
+        </button>
+        <button type="button" ng-disabled="userform.$waiting" ng-click="userform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+          取消
+        </button>
+      </form>
+      <div class="buttons" ng-show="!userform.$visible">
+        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delmaintenance($index)" ng-disabled="formstate()">删除</button>
+      </div>
+    </td>
+  </tr>
+</table>

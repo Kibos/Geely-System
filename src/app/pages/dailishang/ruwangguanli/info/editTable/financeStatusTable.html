@@ -1,0 +1,55 @@
+<div class="add-row-editable-table">
+  <button class="btn btn-primary" ng-click="addfinanceStatusTable()" ng-disabled="formstate()">新增</button>
+</div>
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>年度</td>
+    <td>总资产(万)</td>
+    <td>总负债(万)</td>
+    <td>净利润率</td>
+    <td>净利润(万)</td>
+    <td>操作</td>
+  </tr>
+  <tr ng-repeat="user in financeStatusTable" class="editable-row">
+    <td>
+        <span editable-text="user.year" e-name="year" e-form="userform" e-required>
+          {{ user.year}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.ASSET" e-name="ASSET" e-form="userform" e-required>
+          {{ user.ASSET}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.debt" e-name="debt" e-form="userform" e-required>
+          {{ user.debt}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.netMargin" e-name="netMargin" e-form="userform" e-required>
+          {{ user.netMargin}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.netProfit" e-name="netProfit" e-form="userform" e-required>
+          {{ user.netProfit}}
+        </span>
+    </td>
+    <td>
+      <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
+            shown="inserted == user">
+        <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+          保存
+        </button>
+        <button type="button" ng-disabled="userform.$waiting" ng-click="userform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+          取消
+        </button>
+      </form>
+      <div class="buttons" ng-show="!userform.$visible">
+        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delfinanceStatusTable($index)" ng-disabled="formstate()">删除</button>
+      </div>
+    </td>
+  </tr>
+</table>

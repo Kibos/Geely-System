@@ -1,0 +1,93 @@
+
+	<div class="row">
+      	<div ba-panel ba-panel-title="合作商概览">
+	        <ul class="list-group" ng-repeat="item in partners ">
+	        	<div class="col-md-6">
+					<label>合作商代码</label>
+					<li class="list-group-item">{{item.id}}</li>
+					<label>申请公司</label>
+					<li class="list-group-item">{{item.compony}}</li>
+					<label>拟建店名称</label>
+					<li class="list-group-item">{{item.name}}</li>
+					<label>建店地点</label>
+					<li class="list-group-item">{{item.place}}</li>
+				</div>
+				<div class="col-md-6">
+					<label>建店类型</label>
+					<li class="list-group-item">{{item.type}}</li>
+					<label>联系人</label>
+					<li class="list-group-item">{{item.person}}</li>
+					<label>联系电话</label>
+					<li class="list-group-item">{{item.phone}}</li>
+					<label>E-mail</label>
+					<li class="list-group-item">{{item.email}}</li>
+				</div>
+			</ul>
+      	</div>
+
+		<form class="form-horizontal" role="form">
+			<div class="col-md-4"></div>
+			<div class="form-group row col-md-4">
+				<div>
+					<label class="col-sm-4 control-label">需缴建店保证金：</label>
+					<div class="col-sm-5">
+						<p class="form-control-static">1000000&nbsp;&nbsp;<span>元</span></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">已打款：</label>
+					<div class="col-sm-5">
+						<p class="form-control-static">1000000&nbsp;&nbsp;<span>元</span></p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">打款日期：</label>
+					<div class="col-sm-5">
+						<p class="form-control-static">2016-7-15 20:00&nbsp;&nbsp;</p>
+					</div>
+				</div>
+		    </div>
+		    <div class="col-md-4"></div>
+		</form>
+
+	</div>
+	<div>
+		<div class="col-md-5"></div>
+		<div class="col-md-2">
+			<button type="submit" class="btn btn-danger" data-toggle="modal"  ng-click="open('app/pages/admin/audit/logoutModal.html')">注销合作商</button>
+			<button type="submit" class="btn btn-default" ng-click="return()" style="margin-left:10px;">返回</button>
+		</div>
+		<div class="col-md-5"></div>
+	</div>
+
+
+<!-- <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+							&times;
+						</button>
+						<h4 class="m odal-title" id="myModalLabel">
+							注销
+						</h4>
+					</div>
+					<div class="modal-body">
+						<label for="">注销原因</label>
+						<select>
+							<option value="">逾期未缴建店保证金</option>
+						</select>
+						<label>注销意见</label>
+						<textarea name="" id="" cols="30" rows="10" placeholder="注销意见"></textarea>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary">
+							确定注销
+						</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div> -->

@@ -1,0 +1,54 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>竞争品牌</td>
+    <td>4s店数</td>
+    <td>去年总销量</td>
+    <td>去年平均单店销量</td>
+    <td>去年品牌市占率</td>
+    <td>竞争车型</td>
+    <td>去年竞争车型销量</td>
+    <td>去年竞争车型占率</td>
+  </tr>
+  <tr ng-repeat="user in saloonCar" class="editable-row">
+    <td>
+        <span>
+          {{ user.competitiveBrand}}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ user.storesNumber}}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ user.lastYearTotalSales}}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ user.lastYearMeanSalesVolume}}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ user.lastYearBrandShare}}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ user.CompetingModels}}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ user.CompetingModelsSales}}
+        </span>
+    </td>
+    <td>
+        <span>
+          {{ user.CompetingModelsShare}}
+        </span>
+    </td>
+  </tr>
+</table>

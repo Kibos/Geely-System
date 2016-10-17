@@ -1,0 +1,30 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>股东</td>
+    <td>出资额(万)</td>
+    <td>出资比例(%)</td>
+    <td>股东性质</td>
+  </tr>
+  <tr ng-repeat="user in SharesConstitute" class="editable-row">
+    <td>
+        <span editable-text="user.stockholder" e-name="stockholder" e-form="userform" e-required>
+          {{ user.stockholder}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fundingSum" e-name="fundingSum" e-form="userform" e-required>
+          {{ user.fundingSum}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.fundingRatio" e-name="fundingRatio" e-form="userform" e-required>
+          {{ user.fundingRatio}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.stockholderQuale" e-name="stockholderQuale" e-form="userform" e-required>
+          {{ user.stockholderQuale}}
+        </span>
+    </td>
+  </tr>
+</table>

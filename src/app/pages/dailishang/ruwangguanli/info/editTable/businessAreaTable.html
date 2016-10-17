@@ -1,0 +1,55 @@
+<div class="add-row-editable-table">
+  <button class="btn btn-primary" ng-click="addBSbusinessArea()" ng-disabled="formstate()">新增</button>
+</div>
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>是否拟建店商圈</td>
+    <td>汽车市场</td>
+    <td>距离市政府距离</td>
+    <td>豪华车品牌</td>
+    <td>其他汽车品牌</td>
+    <td>操作</td>
+  </tr>
+  <tr ng-repeat="user in BSbusinessArea" class="editable-row">
+    <td>
+        <span>
+          <input type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="BSbusinessArea[$index].proposed" editable-text="user.proposed" e-name="proposed" e-form="userform" e-required ng-disabled="formstate()">
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.market" e-name="market" e-form="userform" e-required>
+          {{ user.market}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.distance" e-name="distance" e-form="userform" e-required>
+          {{ user.distance}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.limousineBrand" e-name="limousineBrand" e-form="userform" e-required>
+          {{ user.limousineBrand}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.otherBrand" e-name="otherBrand" e-form="userform" e-required>
+          {{ user.otherBrand}}
+        </span>
+    </td>
+    <td>
+      <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
+            shown="inserted == user">
+        <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+          保存
+        </button>
+        <button type="button" ng-disabled="userform.$waiting" ng-click="userform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+          取消
+        </button>
+      </form>
+      <div class="buttons" ng-show="!userform.$visible">
+        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delBSbusinessArea($index)" ng-disabled="formstate()">删除</button>
+      </div>
+    </td>
+  </tr>
+</table>

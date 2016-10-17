@@ -1,0 +1,36 @@
+<table class="table table-bordered table-hover table-condensed">
+  <tr class="info-tr">
+    <td>职位</td>
+    <td>姓名</td>
+    <td>年龄</td>
+    <td>教育程度</td>
+    <td>汽车行业从业经验</td>
+  </tr>
+  <tr ng-repeat="user in keyJob" class="editable-row">
+    <td>
+        <span editable-text="user.post" e-name="post" e-form="userform" e-required>
+          {{ user.post}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.name" e-name="name" e-form="userform" e-required>
+          {{ user.name}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.age" e-name="age" e-form="userform" e-required>
+          {{ user.age}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.educationalStatus" e-name="educationalStatus" e-form="userform" e-required>
+          {{ user.educationalStatus}}
+        </span>
+    </td>
+    <td>
+        <span editable-text="user.Experience" e-name="Experience" e-form="userform" e-required>
+          {{ user.Experience}}
+        </span>
+    </td>
+  </tr>
+</table>

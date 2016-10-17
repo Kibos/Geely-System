@@ -1,0 +1,140 @@
+<form novalidate name="fundingForm">
+	<h3 class="funding-title">固定投资（含建店/装修/设备采购等）</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	    <td colspan="3">自有</td>
+	    <td colspan="3">贷款</td>
+	    <td colspan="3">其他</td>
+	  </tr>
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="fixationOwnSum" ng-model="fixation.OwnSum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationOwnArriveTime" ng-model="fixation.OwnArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationOwnRemark" ng-model="fixation.OwnRemark" disabled="true"> 
+	    </td>
+	    <!-- ********************************** -->
+	    <td>
+	       <input type="text" name="fixationLoanSum" ng-model="fixation.loanSum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationLoanArriveTime" ng-model="fixation.loanArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationLoanRemark" ng-model="fixation.loanRemark" disabled="true"> 
+	    </td>
+	    <!-- ********************************** -->
+	    <td>
+	       <input type="text" name="fixationRestSum" ng-model="fixation.restSum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationRestArriveTime" ng-model="fixation.restArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="fixationRestRemark" ng-model="fixation.restRemark" disabled="true"> 
+	    </td>
+	  </tr>
+	</table>
+	<h3 class="funding-title">流动资金（含建店保证金/加盟保证金/运营资金等</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	    <td colspan="3">自有</td>
+	    <td colspan="3">贷款</td>
+	    <td colspan="3">其他</td>
+	  </tr>
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="streamOwnSum" ng-model="stream.OwnSum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamOwnArriveTime" ng-model="stream.OwnArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamOwnRemark" ng-model="stream.OwnRemark" disabled="true"> 
+	    </td>
+
+	    <td>
+	       <input type="text" name="streamloanSum" ng-model="stream.loanSum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamloanArriveTime" ng-model="stream.loanArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamloanRemark" ng-model="stream.loanRemark" disabled="true"> 
+	    </td>
+
+	    <td>
+	       <input type="text" name="streamrestSum" ng-model="stream.restSum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamrestArriveTime" ng-model="stream.restArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="streamrestRemark" ng-model="stream.restRemark" disabled="true"> 
+	    </td>
+	  </tr>
+	</table>
+	<h3 class="funding-title">建店保证金</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="cashDepositSum" ng-model="cashDeposit.Sum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="cashDepositArriveTime" ng-model="cashDeposit.ArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="cashDepositRemark" ng-model="cashDeposit.Remark" disabled="true"> 
+	    </td>
+	  </tr>
+	</table>
+	<h3 class="funding-title">首批提车款</h3>
+	<table class="fund-table table-bordered">
+	  <tr class="info-tr">
+	  	<td>金额</td>
+	  	<td>到位时间</td>
+	  	<td>备注</td>
+	  </tr>
+	  <tr>
+	    <td>
+	       <input type="text" name="mentionModelsSum" ng-model="mentionModels.Sum" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="mentionModelsArriveTime" ng-model="mentionModels.ArriveTime" disabled="true"> 
+	    </td>
+	    <td>
+	       <input type="text" name="mentionModelsRemark" ng-model="mentionModels.Remark" disabled="true"> 
+	    </td>
+	  </tr>
+	</table>
+</form>

@@ -1,0 +1,47 @@
+
+              
+              
+
+			<div class="form-group">
+				<div class="form-group">
+                <label class="info-lab-a">信用等级</label>
+                <input type="text" name="grade" ng-model="credit.grade" disabled="true" >
+              </div>
+              <div class="form-group">
+                <label class="info-lab">信用等级评级银行</label>
+                <input type="text" name="XYDJPJbank" ng-model="credit.XYDJPJbank" disabled="true" >
+              </div>
+              <div class="form-group">
+                <label class="info-lab">目前银行存款</label>
+                <input type="text" name="nowmoney" ng-model="credit.nowmoney" disabled="true">
+              </div>
+                
+                <div>
+                	<table class="table table-bordered table-hover table-condensed">
+                		<tr class="info-tr">
+						    <td>银行</td>
+						    <td>金额(万)</td>
+						    <td>附件</td>
+						   
+						</tr>
+						<tr ng-repeat="user in nowBankDeposit" class="editable-row">
+							<td>
+						        <span editable-text="user.bank" e-name="bank" e-form="userform" e-required>
+						          {{ user.bank}}
+						        </span>
+						    </td>
+						    <td>
+						        <span editable-text="user.sum" e-name="sum" e-form="userform" e-required>
+						          {{ user.sum}}
+						        </span>
+						    </td>
+						    <td>
+						        <span editable-text="user.adjunct" e-name="adjunct" e-form="userform" e-required>
+						          {{ user.adjunct}}
+						        </span>
+						    </td>
+						    
+						</tr>
+                	</table>
+                </div>
+</div>

@@ -1,0 +1,221 @@
+<uib-tabset >
+  	<uib-tab heading="待审核">
+  		<form class="row form-inline">
+  		<div class="form-group">
+			<label for="name">省</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;
+			<label for="name">市县</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="name">当前状态</label>
+			<select  class="form-control" title="全部" ng-model="stepstate">
+				<option>全部</option>
+        <option>实地考察审核</option>
+        <option>开发大区经理审核</option>
+				<option>实地考察审核</option>
+				<option>内部评审会</option>
+				<option>陈述会考核</option>
+				<option>合作商入网审批</option>
+			</select>
+
+
+			</div>
+		  	<button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
+		</form>
+	  	<div class="horizontal-scroll">
+
+		  	<table class="table table-hover" st-table="shoplists" st-safe-src="shoplists_data" >
+			    <thead>
+				    <tr class="sortable">
+				      <th class="table-id" st-sort="shopId" st-sort-default="true">编号</th>
+				      <!-- <th st-sort="area">区域</th> -->
+				      <th st-sort="company">申请公司</th>
+				      <th st-sort="person">联系人</th>
+				      <th st-sort="phone">手机号码</th>
+				      <th st-sort="state">当前状态</th>
+				      <th st-sort="date">最近提交时间</th>
+				      <th st-sort="zaozuo">操作</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+				    <tr ng-repeat="item in shoplists" class="editable-tr-wrap">
+				      <td class="table-id">{{item.shopId}}</td>
+				      <!-- <td>{{item.area}}</td> -->
+				      <td>{{item.companyName}}</td>
+				      <td>{{item.shopApplyUserId.name}}</td>
+				      <td>{{item.shopApplyUserId.cellphone}}</td>
+              <td>{{test(item.applyId.verify)}}</td>
+				      <td>{{spliceTime(item.meta.createAt)}}</td>
+				      <!-- <td>{{item.date}}</td> -->
+				      <td><a ui-sref="admin.check({obj:item})">审核</a></td>
+
+				    </tr>
+			    </tbody>
+			    <tfoot>
+				    <tr>
+				      <td colspan="8" class="text-center">
+				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+				      </td>
+				    </tr>
+			    </tfoot>
+		  	</table>
+		</div>
+ 	  </uib-tab>
+  	<uib-tab heading="审核未通过">
+  		<form class="row form-inline">
+  		<div class="form-group">
+			<label for="name">省</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;
+			<label for="name">市县</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="name">当前状态</label>
+			<select class="form-control">
+				<option>全部</option>
+				<option>申请资料审核</option>
+				<option>实地考察审核</option>
+				<option>陈述会考核</option>
+				<option>入网审核</option>
+			</select>
+
+		</div>
+		<button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
+		</form>
+	  	<div class="horizontal-scroll">
+		  	<table class="table table-hover" st-table="notVerifyedshoplists" st-safe-src="notVerifyedshoplists_data">
+			    <thead>
+				    <tr class="sortable">
+				      <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
+				      <!-- <th st-sort="area">区域</th> -->
+				      <th st-sort="company">申请公司</th>
+				      <th st-sort="person">联系人</th>
+				      <th st-sort="phone">手机号码</th>
+				      <th st-sort="state">当前状态</th>
+				      <th st-sort="date">最近提交时间</th>
+				      <th st-sort="zaozuo">操作</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+            <tr ng-repeat="item in notVerifyedshoplists" class="editable-tr-wrap">
+				      <td class="table-id">{{item.shopId}}</td>
+				      <!-- <td>{{item.area}}</td> -->
+				      <td>{{item.companyName}}</td>
+				      <td>{{item.shopApplyUserId.name}}</td>
+				      <td>{{item.shopApplyUserId.cellphone}}</td>
+              <td>{{test(item.applyId.verify)}}</td>
+				      <td>{{spliceTime(item.meta.createAt)}}</td>
+				      <!-- <td>{{item.date}}</td> -->
+				      <td><a ui-sref="admin.check({obj:item})">审核</a></td>
+
+				    </tr>
+			    </tbody>
+			    <tfoot>
+				    <tr>
+				      <td colspan="8" class="text-center">
+				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+				      </td>
+				    </tr>
+			    </tfoot>
+		  	</table>
+		</div>
+  	</uib-tab>
+
+  	<uib-tab heading="入网通知">
+
+
+
+
+
+
+
+  		<form class="row form-inline">
+  		<div class="form-group">
+			<label for="name">省</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;
+			<label for="name">市县</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="name">当前状态</label>
+			<select ng-model="vrsetstate" class="form-control">
+				<option>全部</option>
+				<option>申请资料审核</option>
+				<option>实地考察审核</option>
+				<option>陈述会考核</option>
+				<option>入网审核</option>
+			</select>
+
+			</div>
+		  <button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
+		</form>
+	  	<div class="horizontal-scroll">
+		  	<table class="table table-hover" st-table="tongzhishoplists" st-safe-src="tongzhishoplists_data">
+			    <thead>
+				    <tr class="sortable">
+				      <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
+				      <!-- <th st-sort="area">区域</th> -->
+				      <th st-sort="company">申请公司</th>
+				      <th st-sort="person">联系人</th>
+				      <th st-sort="phone">手机号码</th>
+				      <th st-sort="state">当前状态</th>
+				      <th st-sort="date">最近提交时间</th>
+				      <th st-sort="operate">操作</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+				    <tr ng-repeat="item in tongzhishoplists" class="editable-tr-wrap">
+              <td class="table-id">{{item.shopId}}</td>
+				      <!-- <td>{{item.area}}</td> -->
+				      <td>{{item.companyName}}</td>
+				      <td>{{item.shopApplyUserId.name}}</td>
+				      <td>{{item.shopApplyUserId.cellphone}}</td>
+              <td>{{test(item.applyId.verify)}}</td>
+				      <td>{{spliceTime(item.meta.createAt)}}</td>
+				      <td><a href="" ng-click="stateGo(item.operate)">{{item.operate}}</a></td>
+				    </tr>
+			    </tbody>
+			    <tfoot>
+				    <tr>
+				      <td colspan="8" class="text-center">
+				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+				      </td>
+				    </tr>
+			    </tfoot>
+		  	</table>
+		</div>
+  	</uib-tab>
+
+
+  </uib-tabset>

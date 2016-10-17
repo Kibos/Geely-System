@@ -1,0 +1,169 @@
+<div id="title">
+          <button ng-click="btn23='btn231'" class="btns" ng-class="{Selection:btn23=='btn231'}">建筑尺寸及红线图</button>
+          <button ng-click="btn23='btn232'" class="btns" ng-class="{Selection:btn23=='btn232'}">土地证</button>
+          <button ng-click="btn23='btn233'" class="btns" ng-class="{Selection:btn23=='btn233'}">改建店图</button>
+          <button ng-click="btn23='btn234'" class="btns" ng-class="{Selection:btn23=='btn234'}">场地外部、内部图</button>
+          <button ng-click="btn23='btn235'" class="btns" ng-class="{Selection:btn23=='btn235'}">展厅及售后内部照片</button>
+          <button ng-click="btn23='btn236'" class="btns" ng-class="{Selection:btn23=='btn236'}">拟建店附近竞品网点照片</button>
+          <button ng-click="btn23='btn237'" class="btns" ng-class="{Selection:btn23=='btn237'}">售后外协</button>
+</div>
+<div class="info-box" ng-switch="btn23">
+    <form ng-submit="BuiltShopSiteTable(BSSdatumForm)" novalidate name="BSSdatumForm" id="BSSdatum">
+        <div ng-switch-when="btn231">
+          	<div class="form-group">
+          		<label class="info-lab">拟建店建筑尺寸图(新建可不上传)</label>
+          		<div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">新建场地红线图的一</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+			<div class="form-group">
+          		<label class="info-lab">新建场地红线图的二</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+        </div> 
+        <div ng-switch-when="btn232">
+          	<div class="form-group">
+          		<label class="info-lab">土地证</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">土地租赁协议</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">土地意向租赁协议</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+        </div>
+        <div ng-switch-when="btn233">
+          	<div class="form-group">
+          		<label class="info-lab">改建店平面图</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">改建店立面图</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">改建店剖面图</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">其他</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+        </div> 
+        <div ng-switch-when="btn234">
+          	<div class="form-group">
+          		<label class="info-lab">正面全貌</label>
+               	<div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">后面全貌</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">店面左侧全貌</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">店面右侧全貌</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">左侧45度全貌</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">右侧45度全貌</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">店面道路左侧品牌照片</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">店面道路右侧品牌照片</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+        </div>
+        <div ng-switch-when="btn235">
+          	<div class="form-group">
+          		<label class="info-lab">展厅内</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">车间内</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+        </div>
+        <div ng-switch-when="btn236">
+          	<div class="form-group">
+          		<label class="info-lab">拟建店附近竞品网点照片</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+        </div>
+        <div ng-switch-when="btn237">
+          	<div class="form-group">
+          		<label class="info-lab">售后外协单位照片</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+          	<div class="form-group">
+          		<label class="info-lab">外协单位维修资质证明</label>
+                <div class="bsst-item">
+          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          		</div>
+          	</div>
+        </div>    
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+        </div>
+    </form>
+
+</div>
