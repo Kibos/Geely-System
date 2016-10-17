@@ -5,8 +5,8 @@
 (function () {
   'use strict';
 
-  // angular.module('BlurAdmin.pages.admin.audit', [])
-  //   .config(routeConfig);
+  angular.module('BlurAdmin.pages.admin.audit', [])
+    .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {

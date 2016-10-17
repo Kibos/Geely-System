@@ -29,7 +29,7 @@
       .state('ba.jiandianguanli.shejigaoshenhe', {
         url: '/jiandianguanli.shejigaoshenhe',
         controller: 'CheckCtrl',
-        templateUrl: 'app/pages/wangfa/ruwangguanlis/check.html',
+        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
           title: '设计稿管理',
           sidebarMeta: {
             icon: 'ion-ios-pulse',

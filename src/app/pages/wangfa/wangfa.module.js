@@ -6,7 +6,9 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.wangfa', [
-      'BlurAdmin.pages.wangfa.ruwangguanlisk'
+      'BlurAdmin.pages.wangfa.ruwangguanlisk',
+
+      'BlurAdmin.pages.wangfa.designCheck'
   ])
       .config(routeConfig);
 

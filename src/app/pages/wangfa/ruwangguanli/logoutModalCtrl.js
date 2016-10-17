@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.admin.audit')
+  angular.module('BlurAdmin.pages.wangfa.ruwangguanlisk')
       .controller('LogoutModalCtrl', LogoutModalCtrl);
 
   /** @ngInject */

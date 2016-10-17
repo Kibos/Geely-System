@@ -11,8 +11,8 @@ angular.module('BlurAdmin')
     };
   }])
   //用户管理卖家  /api/users $resource('http://127.0.0.1:8080/api/users/:userId/privileges',
-                    //  {userId: '@id'},
-                    //  {'query':  {method:'GET', isArray:false}});
+  //  {userId: '@id'},
+  //  {'query':  {method:'GET', isArray:false}});
   .factory('Shop',['$resource',function($resource){
 
     var obj={};
@@ -28,10 +28,15 @@ angular.module('BlurAdmin')
 
   }])
 
+
+
   .factory('Designs',['$resource',function($resource){
 
     var obj={};
     obj=$resource('http://127.0.0.1:8080/api/designs');
+    obj.verify=$resource('http://127.0.0.1:8080/api/designs/verify');
+    obj.getShopsInit=$resource('http://127.0.0.1:8080/api/designs/getShopsInit');
+    obj.stepVerify=$resource('http://127.0.0.1:8080/api/designs/stepVerify');
     return obj;
 
   }])
@@ -41,6 +46,7 @@ angular.module('BlurAdmin')
     var obj={};
     obj=$resource('http://127.0.0.1:8080/api/audits');
     obj.verifyDataSubmitting = $resource('http://127.0.0.1:8080/api/audits/verifyDataSubmitting');//params : shopId
+    obj.getApplyById = $resource('http://127.0.0.1:8080/api/audits/getApplyById');//params : shopId
     obj.stepVerify = $resource('http://127.0.0.1:8080/api/audits/stepVerify');//params : shopId
 
     return obj;
