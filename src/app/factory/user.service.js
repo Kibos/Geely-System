@@ -2,7 +2,7 @@
 
 angular.module('BlurAdmin')
   .factory('User', function ($resource) {
-    return $resource('http://127.0.0.1:8080/api/users/:id/:controller', {
+    return $resource('/api/users/:id/:controller', {
       id: '@_id'
     },
     {

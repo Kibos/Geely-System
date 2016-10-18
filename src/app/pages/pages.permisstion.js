@@ -16,19 +16,19 @@
         // console.log('~~~~~~~~~~~~permissionRun~~~~~~~~~~~~~~');
         PermPermissionStore
               .definePermission('wangfa', function () {
-                return $cookieStore.get('role')==="ADMIN";
+                return $cookieStore.get('role')==="admin";
               });
         PermPermissionStore
               .definePermission('dailishang', function () {
-                return $cookieStore.get('role')==="USER";
+                return $cookieStore.get('role')==="user";
               });
         PermPermissionStore
               .definePermission('gongyingshang', function () {
-                return $cookieStore.get('role')==="GONGUSER";
+                return $cookieStore.get('role')==="gonguser";
               });
         PermPermissionStore
               .definePermission('shejichangshang', function () {
-                return $cookieStore.get('role')==="DEUSER";
+                return $cookieStore.get('role')==="deuser";
               });
         PermPermissionStore
               .definePermission('canlist',function(){
@@ -48,14 +48,14 @@
             return $cookieStore.get('role')==='ADMIN';
         });
 
-//  PermRoleStore    
+//  PermRoleStore
 //   // Or use your own function/service to validate role
-//   .defineRole('USER', function () {        
+//   .defineRole('USER', function () {
 //     return $cookieStore.get('role');
 //   });
 
 
-// PermRoleStore    
+// PermRoleStore
 // // Or use your own function/service to validate role
 // .defineManyRoles({
 // 'USER': ['canReadInvoices'],
@@ -92,8 +92,8 @@
             deniedHandle();
         });
     }
-        
-        
 
-     
+
+
+
 })();

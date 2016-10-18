@@ -16,13 +16,13 @@ angular.module('BlurAdmin')
   .factory('Shop',['$resource',function($resource){
 
     var obj={};
-    obj=$resource('http://127.0.0.1:8080/api/shops');
-    obj.baseinfo=$resource('http://127.0.0.1:8080/api/shops/baseinfo');
-    obj.getNotVerifyShops=$resource('http://127.0.0.1:8080/api/shops/getNotVerifyShops',{},{isArray:true});
-    obj.getShopByQuery=$resource('http://127.0.0.1:8080/api/shops/getShopByQuery',{},{ isArray:true});
-    obj.keyUsers=$resource('http://127.0.0.1:8080/api/shops/keyUsers');
-    obj.getShopsById=$resource('http://127.0.0.1:8080/api/shops/getShopsById');
-    obj.getShopsByuserId=$resource('http://127.0.0.1:8080/api/shops/getShopsByuserId');
+    obj=$resource('/api/shops');
+    obj.baseinfo=$resource('/api/shops/baseinfo');
+    obj.getNotVerifyShops=$resource('/api/shops/getNotVerifyShops',{},{isArray:true});
+    obj.getShopByQuery=$resource('/api/shops/getShopByQuery',{},{ isArray:true});
+    obj.keyUsers=$resource('/api/shops/keyUsers');
+    obj.getShopsById=$resource('/api/shops/getShopsById');
+    obj.getShopsByuserId=$resource('/api/shops/getShopsByuserId');
 
     return obj;
 
@@ -33,10 +33,10 @@ angular.module('BlurAdmin')
   .factory('Designs',['$resource',function($resource){
 
     var obj={};
-    obj=$resource('http://127.0.0.1:8080/api/designs');
-    obj.verify=$resource('http://127.0.0.1:8080/api/designs/verify');
-    obj.getShopsInit=$resource('http://127.0.0.1:8080/api/designs/getShopsInit');
-    obj.stepVerify=$resource('http://127.0.0.1:8080/api/designs/stepVerify');
+    obj=$resource('/api/designs');
+    obj.verify=$resource('/api/designs/verify');
+    obj.getShopsInit=$resource('/api/designs/getShopsInit');
+    obj.stepVerify=$resource('/api/designs/stepVerify');
     return obj;
 
   }])
@@ -44,17 +44,17 @@ angular.module('BlurAdmin')
   .factory('Audit',['$resource',function($resource){
 
     var obj={};
-    obj=$resource('http://127.0.0.1:8080/api/audits');
-    obj.verifyDataSubmitting = $resource('http://127.0.0.1:8080/api/audits/verifyDataSubmitting');//params : shopId
-    obj.getApplyById = $resource('http://127.0.0.1:8080/api/audits/getApplyById');//params : shopId
-    obj.stepVerify = $resource('http://127.0.0.1:8080/api/audits/stepVerify');//params : shopId
+    obj=$resource('/api/audits');
+    obj.verifyDataSubmitting = $resource('/api/audits/verifyDataSubmitting');//params : shopId
+    obj.getApplyById = $resource('/api/audits/getApplyById');//params : shopId
+    obj.stepVerify = $resource('/api/audits/stepVerify');//params : shopId
 
     return obj;
 
   }])
   .factory('Product', ['$resource', function($resource) {
     var obj = {};
-    obj = $resource('http://127.0.0.1:8080/api/products/:id', null, {'update': { method:'PUT' } });
+    obj = $resource('/api/products/:id', null, {'update': { method:'PUT' } });
     obj.count = $resource('/api/products/count', null, {'update': { method:'PUT' }});
     obj.userProduct = $resource('/api/products/user');
     return obj;

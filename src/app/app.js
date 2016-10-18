@@ -16,14 +16,21 @@ angular.module('BlurAdmin', [
   'angular-progress-button-styles',
   'permission',
   'permission.ui',
-  
+  'LocalStorageModule',
+
   'BlurAdmin.theme',
   'BlurAdmin.pages'
 ])
-.config(function ($httpProvider) {
+.config(function ($httpProvider, $locationProvider, localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('myApp')
+    .setStorageType('sessionStorage')
+    .setNotify(true, true)
 
-
-  // $locationProvider.html5Mode(true);?token=
+  // $locationProvider.html5Mode({
+  //   enabled: true,
+  //   requireBase: false
+  // });
   $httpProvider.interceptors.push('authInterceptor');
 })
 
@@ -56,5 +63,3 @@ angular.module('BlurAdmin', [
 })
 
 ;
-
-

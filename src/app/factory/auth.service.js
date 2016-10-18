@@ -27,7 +27,7 @@ angular.module('BlurAdmin')
         var cb = callback || angular.noop;
         var deferred = $q.defer();
 
-        $http.post('http://127.0.0.1:8080/auth/local', {
+        $http.post('/auth/local', {
           email: user.email,
           password: user.password
         }).
@@ -183,7 +183,7 @@ angular.module('BlurAdmin')
                         hasPermission = true;
                     }
                 }
-      
+
 
             // if we have permission resolve otherwise reject the promise
             if(hasPermission) {
