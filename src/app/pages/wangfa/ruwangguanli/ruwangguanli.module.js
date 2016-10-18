@@ -26,16 +26,16 @@
            }}
       })
       //建店管理
-      .state('ba.jiandianguanli.shejigaoshenhe', {
-        url: '/jiandianguanli.shejigaoshenhe',
-        controller: 'CheckCtrl',
-        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
-          title: '设计稿管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 10,
-          },
-      })
+      // .state('ba.jiandianguanli.shejigaoshenhe', {
+      //   url: '/jiandianguanli.shejigaoshenhe',
+      //   controller: 'CheckCtrl',
+      //   templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
+      //     title: '设计稿管理',
+      //     sidebarMeta: {
+      //       icon: 'ion-ios-pulse',
+      //       order: 10,
+      //     },
+      // })
       .state('ba.jiandianguanli.shigongguanli', {
         url: '/jiandianguanli.shigongguanli',
         template: '<div></div>',

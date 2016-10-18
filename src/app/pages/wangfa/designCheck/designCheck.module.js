@@ -18,7 +18,7 @@
           title: '建店设计审核',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
-            order: 100,
+            order: 1,
           },  
           data:{
              permissions: {
