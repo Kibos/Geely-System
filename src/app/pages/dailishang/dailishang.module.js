@@ -146,14 +146,14 @@
         })
         .state('ba.hetonggh', {
           url: '/hetonggh',
-          template : '<ui-view></ui-view>',
-        
+          controller: 'contractsupplyCtrl',
+          templateUrl: 'app/pages/dailishang/hetonggh/contractsupply.html',
           title: '合同供货管理',
           sidebarMeta: {
             icon: 'ion-gear-a',
             order: 19,
           },
-           data:{
+          data:{
              permissions: {
               only:'dailishang'
            }}

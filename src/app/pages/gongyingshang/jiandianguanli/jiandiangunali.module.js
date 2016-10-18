@@ -13,12 +13,20 @@
     $stateProvider
       .state('ba.shcreatemgr.shgaoguanli', {
         url: '/shgaoguanli',
-        template: '<div></div>',
-          title: '合同管理',
-          sidebarMeta: {
+        controller: 'contractglCtrl',
+        templateUrl: 'app/pages/gongyingshang/jiandianguanli/contractgl.html',
+        title: '合同管理',
+        sidebarMeta: {
             icon: 'ion-ios-pulse',
             order: 100,
           },
+      })
+      .state('ba.contractglview', {
+        url: '/contractglview',
+        controller: 'contractglviewCtrl',
+        templateUrl: 'app/pages/gongyingshang/jiandianguanli/contractglview.html',
+        params:{'obj':{}},
+
       })
       .state('ba.shcreatemgr.shigongtuguanli', {
         url: '/shigongtuguanli',
