@@ -18,7 +18,7 @@
     'BlurAdmin.pages.gongyingshang',
     'BlurAdmin.pages.shejichangshang',
     'BlurAdmin.pages.wangfa'
- 
+
 
   ])
       .config(routeConfig);
@@ -29,7 +29,7 @@
             abstract: true,
             views: {
               'fullWindow': {
-                templateUrl: 'panel-layout.html'
+                templateUrl: 'app/panel-layout.html'
               }
               /*controller: 'DefaultLayoutController',
               controllerAs: 'layoutController'*/
