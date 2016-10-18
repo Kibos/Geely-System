@@ -2,7 +2,7 @@
 
 angular.module('BlurAdmin')
 .value('redirectToUrlAfterLogin', { url: '/' })
-.value('serverUrl',{url:''})   //上线 ''   编程：'http://127.0.0.1:8080'
+.value('serverUrl',{url:'http://127.0.0.1:8080'})   //上线环境 ''   编程环境：'http://127.0.0.1:8080'
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q, redirectToUrlAfterLogin,PermRoleStore,PermPermissionStore,serverUrl) {
     var currentUser = {};
     if($cookieStore.get('token')) {
@@ -28,11 +28,8 @@ angular.module('BlurAdmin')
         var cb = callback || angular.noop;
         var deferred = $q.defer();
 
-<<<<<<< HEAD
+
         $http.post(serverUrl.url+'/auth/local', {
-=======
-        $http.post('/auth/local', {
->>>>>>> d737c708e9e7e8587c4e55cef4d5ff5bde8dbb6f
           email: user.email,
           password: user.password
         }).
@@ -40,7 +37,7 @@ angular.module('BlurAdmin')
           console.log(data)
 
           $cookieStore.put('token', data.token);
-           $cookieStore.put('role', data.role.toUpperCase());
+           $cookieStore.put('role', data.role);
           currentUser = User.get();
           deferred.resolve(data);
           return cb();
