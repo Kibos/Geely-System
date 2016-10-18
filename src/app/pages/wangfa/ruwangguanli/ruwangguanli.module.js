@@ -36,15 +36,16 @@
             order: 10,
           },
       })
-      .state('ba.jiandianguanli.shigongguanli', {
-        url: '/jiandianguanli.shigongguanli',
-        template: '<div></div>',
-          title: '施工管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 20,
-          },
-      })
+      // .state('ba.jiandianguanli.shigongguanli', {
+      //   url: '/jiandianguanli.shigongguanli',
+      //   controller: 'ConstructionAuditCtrl',
+      //   templateUrl: 'app/pages/wangfa/constructionAudit/constructionAudit.html',
+      //     title: '施工管理',
+      //     sidebarMeta: {
+      //      icon: 'ion-ios-pulse',
+      //       order: 20,
+      //     },
+      // })
       .state('ba.jiandianguanli.yanshouguanli', {
         url: '/jiandianguanli.yanshouguanli',
         template: '<div></div>',
