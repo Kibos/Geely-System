@@ -26,6 +26,28 @@
            }}
       })
       //建店管理
+<<<<<<< HEAD
+      .state('ba.jiandianguanli.shejigaoshenhe', {
+        url: '/jiandianguanli.shejigaoshenhe',
+        controller: 'CheckCtrl',
+        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
+          title: '设计稿管理',
+          sidebarMeta: {
+            icon: 'ion-ios-pulse',
+            order: 10,
+          },
+      })
+      // .state('ba.jiandianguanli.shigongguanli', {
+      //   url: '/jiandianguanli.shigongguanli',
+      //   controller: 'ConstructionAuditCtrl',
+      //   templateUrl: 'app/pages/wangfa/constructionAudit/constructionAudit.html',
+      //     title: '施工管理',
+      //     sidebarMeta: {
+      //      icon: 'ion-ios-pulse',
+      //       order: 20,
+      //     },
+      // })
+=======
       // .state('ba.jiandianguanli.shejigaoshenhe', {
       //   url: '/jiandianguanli.shejigaoshenhe',
       //   controller: 'CheckCtrl',
@@ -45,6 +67,7 @@
             order: 20,
           },
       })
+>>>>>>> bc4138bc2827a032b718ffe87eb6a15bf3a09965
       .state('ba.jiandianguanli.yanshouguanli', {
         url: '/jiandianguanli.yanshouguanli',
         template: '<div></div>',

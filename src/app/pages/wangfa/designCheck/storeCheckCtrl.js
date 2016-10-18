@@ -9,19 +9,11 @@
       .controller('StoreCheckCtrl', StoreCheckCtrl);
 
   /** @ngInject */
-  function StoreCheckCtrl($scope,$state,$rootScope, $stateParams,Designs,Auth) {
-    var vm = this;
-
-    var shop = $stateParams.obj.shop;
-    vm.selectItems = $stateParams.obj.selectItems;
-    $scope.user = Auth.getCurrentUser()
-
-
+  function StoreCheckCtrl($scope,$state,$rootScope) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
     $scope.showflag=false;
-    $scope.changehide=function(){
-        console.log('change');
+    $scope.change=function(){
         $scope.showflag=!$scope.showflag;
     }
 
@@ -30,70 +22,62 @@
     //     $scope.jiandianList = data;
 
     // })
-
-
-
+   
+     
     // 设计厂商选择
-    // vm.selectItems=[
-    //     { label: '杭州风景', value: 1},
-    //     { label: '北京xx', value: 2},
-    //   ];
+    var vm = this;
+    vm.selectItems=[
+        { label: '杭州风景', value: 1},
+        { label: '北京xx', value: 2},
+      ];
 
 // 代理商信息
      $scope.partners=
      	{
      		id:1,
-     		compony:shop.basic.companyName,
+     		compony:'北京xx',
      		name:'汽车',
      		place:'北京',
      		type:'旗舰店',
-     		person:shop.shopApplyUserId.name,
-     		phone:shop.shopApplyUserId.cellphone,
-     		email:shop.shopApplyUserId.email
+     		person:'黎明',
+     		phone:'13235556556',
+     		email:'1213444@qq.com'
      	}
      //审核日志
-     $scope.checkLog = shop.applyId.verify.slice(1)
-     $scope.isornotinfo = function (bl) {
-       if(bl){
-         return '通过'
-       } else {
-         return '不通过'
-       }
-     }
-     $scope.information={}
-     $scope.submit=function(){
-        // $state.go('components.designCheck');
-        var newinformation={
-          content:$scope.information.opinion,
-          designId:$scope.information.companyName._id,
-          shopId: shop._id,
-          name:$scope.user.name,
-          userId:$scope.user._id,
-          time:Date.now(),
-          shopApplyUserId:shop.shopApplyUserId._id
+     $scope.checkLog=[
+        {
+          date:'20161008',
+          person:'黎明',
+          x:'业务部门审核通过',
+          result:'市场部 张经理审核通过'
+        },
+        {
+          date:'20161008',
+          person:'黎明',
+          x:'业务部门审核通过',
+          result:'市场部 张经理审核通过'
+        },
+        {
+          date:'20161008',
+          person:'黎明',
+          x:'业务部门审核通过',
+          result:'市场部 张经理审核通过'
         }
 
-
-
-      //   var verInfo = {
-      //    name:$scope.user.name,
-      //    userId:$scope.user._id,
-      //    time:Date.now(),
-      //    info:state[shop.applyId.verify.length-1],
-      //    bool:flag,
-      //    step:shop.applyId.verify.length,
-      //    opinion: $scope.info.description
-      //  }
-
-      Designs.verify.save(newinformation, function (data) {
-        console.log(data)
-      })
-
-
-       console.log(newinformation);
+     ]
+     $scope.information={}
+     $scope.submit=function(){
+        $state.go('ba.jiandianguanli.designCheck');
+        var newinformation={
+          opinion:$scope.information.opinion,
+          file:$scope.information.file,
+          companyName:$scope.information.companyName,
+          prospect:$scope.information.prospect
+        }
+        console.log(newinformation);
      }
      $scope.cancel=function(){
-        $state.go('components.designCheck');
+        $state.go('ba.jiandianguanli.designCheck');
      }
   }
 })();

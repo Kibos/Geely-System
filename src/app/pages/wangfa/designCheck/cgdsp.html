@@ -1,5 +1,4 @@
-
-<div ba-panel class="panel panel-primary" ba-panel-title="代理商概览">
+<div ba-panel ba-panel-title="代理商概览">
 	<div class="col-md-6">
 		<div class="form-group">
 	        <label class="individual-label">代理商代码:</label>
@@ -47,13 +46,31 @@
 
 <div ba-panel ba-panel-title="设计厂商概览">
     <div class="form-group">
-   		<form>
-			<label class="individual-label" style="width: 30%;">设计厂商：</label>
-			<div style="display: inline-block;width: 50%">
-				<select class="form-control individual-iput" selectpicker title="请选择设计厂商" ng-model="information.companyName" ng-options="item as item.label for item in vm.selectItems">
-				</select>
-			</div>
-		</form>	
+   	   <div class="col-md-6">
+		
+	      	<div class="form-group">
+	        	<label class="individual-label">设计厂商:</label>
+	        	<input type="text" name="companyName" class="form-control individual-iput" ng-model="design.companyName" disabled="true"/>
+	      	</div>
+	      	<div class="form-group">
+	        	<label class="individual-label">联系人:</label>
+	        	<input type="text" name="person" class="form-control individual-iput" ng-model="design.person" disabled="true"/>
+	        
+	      	</div>
+    	</div>
+
+    	<div class="col-md-6">
+			<div class="form-group">
+	        	<label class="individual-label">成功案例数:</label>
+	        	<input type="text" name="successNum" class="form-control individual-iput" ng-model="design.successNum" disabled="true" />
+	        
+	      	</div>
+	      	<div class="form-group">
+	        	<label class="individual-label">联系电话:</label>
+	        	<input type="text" name="phone" class="form-control individual-iput" ng-model="design.phone" disabled="true"/>
+	        
+	      	</div>
+    	</div>
 	</div>
 </div>
 
@@ -93,24 +110,37 @@
 	</div>
 </div>
 	
-<div ba-panel ba-panel-title="勘察内容确认">
+<div ba-panel ba-panel-title="设计初稿审批">
 	
 	<form name="prospectForm">
 		<div class="form-group">
-	        <p>勘察内容确认</p>
-	        <textarea class="form-control" placeholder="请填写勘察内容" ng-model="information.prospect" required=""></textarea>
+			<label>设计初稿：
+				<span class="individual-iput" id="partners">{{firstDraft}}</span> 
+			</label>
+		</div>
+		<div class="form-group">
+	        <label id="result">审核结果：
+			</label>
+			<label class="radio-inline custom-radio nowrap ">
+				<input type="radio" name="result" class="form-control" id="disagree" value="disagree" ng-model="design.result" ng-click="nopass()" required="">
+				<span>不同意</span>
+			</label>
+			<label class="radio-inline custom-radio nowrap" id="agreeradio">
+				<input type="radio" name="result" class="form-control " id="agree" value="agree" ng-model="design.result" ng-click="pass()" required="">
+				<span>同意</span>
+			</label>
 	    </div>
       	<div class="form-group">
-	        <p>备注</p>
-	        <textarea class="form-control" placeholder="审核意见" ng-model="information.opinion" required=""></textarea>
+	        <p>审核意见</p>
+	        <textarea class="form-control" placeholder="审核意见" ng-model="design.opinion" required=""></textarea>
 	    </div>
 	    <div class="form-group form-inline" role="form">
 	        <p>附件</p>
 	        <label class="sr-only" for="inputfile">相关文件上传</label>
-	        <input type="file" id="inputfile" ng-model="information.file">
+	        <input type="file" id="inputfile" ng-model="design.file">
 	    </div>
-	    <div class="text-center">
-		    <button type="submit" class="btn btn-danger" ng-click="submit()" ng-disabled="prospectForm.$invalid">开始勘察</button>
+		<div>
+		    <button type="submit" class="btn btn-danger" ng-click="submit()" style="margin-left: 300px;" ng-disabled="prospectForm.$invalid">提交</button>
 		    <button type="submit" class="btn btn-default" ng-click="cancel()" style="margin-left:30px;">取消</button>
 	    </div>
     </form>

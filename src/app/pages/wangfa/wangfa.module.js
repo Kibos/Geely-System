@@ -8,7 +8,8 @@
   angular.module('BlurAdmin.pages.wangfa', [
       'BlurAdmin.pages.wangfa.ruwangguanlisk',
 
-      'BlurAdmin.pages.wangfa.designCheck'
+      'BlurAdmin.pages.wangfa.designCheck',
+     'BlurAdmin.pages.wangfa.constructionAudit'
   ])
       .config(routeConfig);
 
