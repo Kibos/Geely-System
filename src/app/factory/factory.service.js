@@ -13,16 +13,16 @@ angular.module('BlurAdmin')
   //用户管理卖家  /api/users $resource('http://127.0.0.1:8080/api/users/:userId/privileges',
   //  {userId: '@id'},
   //  {'query':  {method:'GET', isArray:false}});
-  .factory('Shop',['$resource',function($resource){
+  .factory('Shop',['$resource','serverUrl',function($resource,serverUrl){
 
     var obj={};
-    obj=$resource('http://127.0.0.1:8080/api/shops');
-    obj.baseinfo=$resource('http://127.0.0.1:8080/api/shops/baseinfo');
-    obj.getNotVerifyShops=$resource('http://127.0.0.1:8080/api/shops/getNotVerifyShops',{},{isArray:true});
-    obj.getShopByQuery=$resource('http://127.0.0.1:8080/api/shops/getShopByQuery',{},{ isArray:true});
-    obj.keyUsers=$resource('http://127.0.0.1:8080/api/shops/keyUsers');
-    obj.getShopsById=$resource('http://127.0.0.1:8080/api/shops/getShopsById');
-    obj.getShopsByuserId=$resource('http://127.0.0.1:8080/api/shops/getShopsByuserId');
+    obj=$resource(serverUrl.url+'/api/shops');
+    obj.baseinfo=$resource(serverUrl.url+'/api/shops/baseinfo');
+    obj.getNotVerifyShops=$resource(serverUrl.url+'/api/shops/getNotVerifyShops',{},{isArray:true});
+    obj.getShopByQuery=$resource(serverUrl.url+'/api/shops/getShopByQuery',{},{ isArray:true});
+    obj.keyUsers=$resource(serverUrl.url+'/api/shops/keyUsers');
+    obj.getShopsById=$resource(serverUrl.url+'/api/shops/getShopsById');
+    obj.getShopsByuserId=$resource(serverUrl.url+'/api/shops/getShopsByuserId');
 
     return obj;
 
@@ -30,31 +30,31 @@ angular.module('BlurAdmin')
 
 
 
-  .factory('Designs',['$resource',function($resource){
+  .factory('Designs',['$resource','serverUrl',function($resource,serverUrl){
 
     var obj={};
-    obj=$resource('http://127.0.0.1:8080/api/designs');
-    obj.verify=$resource('http://127.0.0.1:8080/api/designs/verify');
-    obj.getShopsInit=$resource('http://127.0.0.1:8080/api/designs/getShopsInit');
-    obj.stepVerify=$resource('http://127.0.0.1:8080/api/designs/stepVerify');
+    obj=$resource(serverUrl.url+'/api/designs');
+    obj.verify=$resource(serverUrl.url+'/api/designs/verify');
+    obj.getShopsInit=$resource(serverUrl.url+'/api/designs/getShopsInit');
+    obj.stepVerify=$resource(serverUrl.url+'/api/designs/stepVerify');
     return obj;
 
   }])
   //用户管理卖家  /api/users
-  .factory('Audit',['$resource',function($resource){
+  .factory('Audit',['$resource','serverUrl',function($resource,serverUrl){
 
     var obj={};
-    obj=$resource('http://127.0.0.1:8080/api/audits');
-    obj.verifyDataSubmitting = $resource('http://127.0.0.1:8080/api/audits/verifyDataSubmitting');//params : shopId
-    obj.getApplyById = $resource('http://127.0.0.1:8080/api/audits/getApplyById');//params : shopId
-    obj.stepVerify = $resource('http://127.0.0.1:8080/api/audits/stepVerify');//params : shopId
+    obj=$resource(serverUrl.url+'/api/audits');
+    obj.verifyDataSubmitting = $resource(serverUrl.url+'/api/audits/verifyDataSubmitting');//params : shopId
+    obj.getApplyById = $resource(serverUrl.url+'/api/audits/getApplyById');//params : shopId
+    obj.stepVerify = $resource(serverUrl.url+'/api/audits/stepVerify');//params : shopId
 
     return obj;
 
   }])
-  .factory('Product', ['$resource', function($resource) {
+  .factory('Product', ['$resource','serverUrl',function($resource,serverUrl){
     var obj = {};
-    obj = $resource('http://127.0.0.1:8080/api/products/:id', null, {'update': { method:'PUT' } });
+    obj = $resource(serverUrl.url+'/api/products/:id', null, {'update': { method:'PUT' } });
     obj.count = $resource('/api/products/count', null, {'update': { method:'PUT' }});
     obj.userProduct = $resource('/api/products/user');
     return obj;

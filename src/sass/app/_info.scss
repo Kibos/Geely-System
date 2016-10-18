@@ -1,0 +1,186 @@
+.info-check{
+	width:100%;
+	margin-bottom:20px;
+	position:relative;
+	min-height:50px;
+}
+.info-check span{
+	color:red;
+	display:none;
+}
+.info-check  .ReviewShowed{
+	display:block;
+}
+#allsubmit{
+	display:inline-block;
+	position:absolute;
+	right:0;
+	top:0;
+}
+button.Selection{
+	background-color:red;
+  	color:#fff;
+  	border:1px solid transparent;
+  	outline:none;
+}
+#title .btns{
+	display:inline-block;
+	padding:6px 12px;
+	margin-bottom:10px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor:pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	border: 1px solid transparent;
+	border-radius:4px;
+}
+#title .btns:active{
+	border:1px solid transparent;
+	outline:none;
+}
+.info-box{
+	width:100%;
+	border:1px solid #ddd;
+	min-height:400px;
+	border-radius:4px;
+	padding:15px;
+}
+label.individual-label{
+	vertical-align:top;
+	display:inline-block;
+	width:30%;
+	box-sizing:border-box;
+	padding-right:10px;
+	text-align:right;
+	margin-top:8px;
+	margin-left:16px;
+	margin-right:10px;
+	color: #333;
+	font-size:16px;
+	font-weight:600;
+	color:#4d4d4d;
+	text-align:right;
+
+}
+p.individual-p{
+	margin-left:35%;
+	margin-top:8px;
+	color:#FA2700!important;
+}
+input.individual-iput,textarea.individual-iput{
+	display:inline-block;
+	width:50%!important;
+}
+.info-tr{
+	background-color:#484848;
+	text-align:center;
+	margin-bottom:4px;
+	color:#fff;
+}
+.info-tr:hover td{
+	background-color:#484848;
+}
+.editable-empty {
+    color: #666666!important;
+}
+#basic .info-lab,#StoreSite .info-lab{
+	color:#333;
+	display:inline-block;
+	width:120px;
+	text-align:right;
+	margin-right:30px;
+	font-weight:600;
+	vertical-align:top;
+}
+#basic .inner-box,#StoreSite .inner-box{
+	display:inline-block;
+	width:75%;
+}
+#basic .inner-box label,#StoreSite .inner-box label{
+	margin-right:15px;
+	margin-left:4px;
+	font-weight:400;
+	text-align:right;
+}
+#basic span,#basic span{
+	display:inline-block;
+	padding:4px;
+}
+#basic .inner-box-child,#StoreSite .inner-box-child{
+	display:inline-block;
+	margin-bottom:8px;
+}
+#StoreSite .info-lab-a{
+	color:#333;
+	display:inline-block;
+	text-align:right;
+	margin-right:30px;
+	font-weight:600;
+	vertical-align:top;
+}
+#BSSdatum .info-lab{
+	color:#333;
+	display:inline-block;
+	width:280px;
+	text-align:left;
+	margin-right:30px;
+	font-weight:600;
+	vertical-align:top;
+	font-size:14px;
+	margin-right:30px;
+	box-sizing:border-box;
+}
+#BSSdatum .bsst-item{
+	display:inline-block;
+	vertical-align:top;
+
+}
+.fund-table{
+	margin-bottom:40px;
+
+}
+.fund-table tr{
+	height:30px;
+	line-height:30px;
+}
+.fund-table td input{
+	border:1px solid transparent;
+	outline:none;
+	box-sizing:border-box;
+	padding:0 5px;
+	text-align:center;
+	height:28px;
+	line-height:28px;
+}
+.funding-title{
+	font-size:14px;
+	font-weight:600;
+	color:#333;
+	margin-bottom:12px;
+}
+textarea{
+	resize:none;
+	padding:20px;
+}
+.ppt-title{
+	color:#333;
+	font-weight:600;
+}
+.cell-td{
+	background-color:#484848;
+	color:#fff;
+	padding:0px 8px;
+}
+
+
+
+
+

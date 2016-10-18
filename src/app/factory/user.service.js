@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('BlurAdmin')
-  .factory('User', function ($resource) {
-    return $resource('http://127.0.0.1:8080/api/users/:id/:controller', {
+  .factory('User', function ($resource,serverUrl) {
+    return $resource(serverUrl.url+'/api/users/:id/:controller', {
       id: '@_id'
     },
     {
