@@ -19,6 +19,8 @@ angular.module('BlurAdmin')
 
     obj=$resource(serverUrl.url+'/api/shops');
     obj.baseinfo=$resource(serverUrl.url+'/api/shops/baseinfo');
+    obj.updateBaseinfo=$resource(serverUrl.url+'/api/shops/updateBaseinfo');
+
     obj.getNotVerifyShops=$resource(serverUrl.url+'/api/shops/getNotVerifyShops',{},{isArray:true});
     obj.getShopByQuery=$resource(serverUrl.url+'/api/shops/getShopByQuery',{},{ isArray:true});
     obj.keyUsers=$resource(serverUrl.url+'/api/shops/keyUsers');
