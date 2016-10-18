@@ -20,6 +20,11 @@
             icon: 'ion-ios-pulse',
             order: 100,
           },
+          data:{
+             permissions: {
+              only:'wangfa'
+            }
+          }
       })
       .state('ba.jiandianguanli.storeCheck', {
         url: '/storeCheck',

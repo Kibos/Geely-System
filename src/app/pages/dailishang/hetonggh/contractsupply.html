@@ -4,6 +4,65 @@
     </p>
 </div>
 <uib-tabset active="$tabSetStatus.activeTab">
+
+  <uib-tab heading="设计协议">
+    <div class="col-md-6">
+      <div class="sj" style="margin-bottom:20px;">
+        <label>设计厂商：</label>
+        <div class="" style="width:210px;">
+          <select class="selectpicker" title="设计厂商一" selectpicker>
+            <option>设计厂商一</option>
+            <option>设计厂商二</option>
+            <option>设计厂商三</option>
+          </select>
+        </div>
+      </div>
+      <div class="sj" style="margin-bottom:20px;">
+        <label>签订时间：</label>
+        <input type="date"
+           ng-model="date"
+           min="2015-12-12"
+           max="2016-12-22"
+           rquired
+           ng-required
+           ng-change="change()"/>
+      </div>
+      <div class="sj" style="margin-bottom:20px;">
+        <label>电子版合同：</label>
+        <input type="file" id="inputfile" ng-model="file">
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <div ba-panel ba-panel-title="设计厂商概要">
+
+      		  <div class="form-group">
+              <label class="individual-label">设计厂商代码：</label>
+              <input type="text" name="id" class="form-control individual-iput" ng-model="firm.id" disabled="true"/>
+            </div>
+            <div class="form-group">
+              <label class="individual-label">公司名：</label>
+              <input type="text" name="name" class="form-control individual-iput" ng-model="firm.name" disabled="true"/>
+            </div>
+            <div class="form-group">
+              <label class="individual-label">联系人:</label>
+              <input type="text" name="person" class="form-control individual-iput" ng-model="firm.person" disabled="true"/>
+            </div>
+      			<div class="form-group">
+              <label class="individual-label">联系电话:</label>
+              <input type="text" name="phone" class="form-control individual-iput" ng-model="firm.phone" disabled="true"/>
+            </div>
+            <div class="form-group">
+              <label>简介：</label>
+              <textarea class="form-control" placeholder="简介" ng-model="firm.message" disabled="true">{{ firm.message || 'empty' }}</textarea>
+            </div>
+
+      </div>
+    </div>
+
+    <div class="button-wrapper"><button type="button" class="btn btn-primary btn-lg" ng-click="save()">保存</button></div>
+
+  </uib-tab>
   <uib-tab heading="供应商合同">
     <div class="col-md-6">
       <div class="" style='margin-bottom:20px;'>
@@ -76,10 +135,10 @@
           <div class="" style="margin-top:100px;">
             <div class="" style="line-height:100px;">
               <label class="col-md-2"></label>
-              <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
-              <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</label>
-              <label class="col-md-2">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</label>
-              <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</label>
+              <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
+              <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;态</label>
+              <label class="col-md-2">附&nbsp;&nbsp;&nbsp;&nbsp;件</label>
+              <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;作</label>
             </div>
             <div class="">
               <label class="col-md-1" style="float:none;margin-left:120px;">

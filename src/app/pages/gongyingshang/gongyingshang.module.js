@@ -14,20 +14,20 @@
   function routeConfig($stateProvider) {
     $stateProvider
 
-        .state('ba.shinfomgr', {
-          url: '/shinfomgr',
-          template : '<ui-view></ui-view>',
-          title: '信息维护',
-          sidebarMeta: {
-            icon: 'ion-gear-a',
-            order: 100,
-          },
-          data:{
-             permissions: {
-              only:'gongyingshang'
-            }
-          }
-        })
+        // .state('ba.shinfomgr', {
+        //   url: '/shinfomgr',
+        //   template : '<ui-view></ui-view>',
+        //   title: '信息维护',
+        //   sidebarMeta: {
+        //     icon: 'ion-gear-a',
+        //     order: 100,
+        //   },
+        //   data:{
+        //      permissions: {
+        //       only:'gongyingshang'
+        //     }
+        //   }
+        // })
         .state('ba.shcreatemgr', {
           url: '/shcreatemgr',
           template : '<ui-view></ui-view>',
