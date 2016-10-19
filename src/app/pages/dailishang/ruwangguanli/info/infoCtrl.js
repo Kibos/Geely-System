@@ -538,7 +538,6 @@
             notfirstShopthree:$scope.agent.notfirstShopthree,
             notfirstShopfour:$scope.agent.notfirstShopfour,
             notfirstShopfive:$scope.agent.notfirstShopfive,
-           
             jsMode: $scope.agent.jsMode,
             sqGrade: $scope.agent.sqGrade,
             constructionStart: $scope.agent.constructionStart,
@@ -739,7 +738,6 @@
             keyJob:$scope.keyJob,
             SchemaArrange:$scope.SchemaArrange,
             MFAform:$scope.MFAform,
-            BSSdatum:$scope.BSSdatum,
             shopApplyUserId:$scope.currentUser._id
 
         };
