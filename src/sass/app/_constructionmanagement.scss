@@ -1,0 +1,81 @@
+.sgzb{
+	margin: -15px;
+	width: 800px;
+	height: 600px;
+	background-color:	#E0EEEE;
+}
+.prompt{
+	width:480px;
+	height:60px;
+	background-color:#87CEFF;
+	display: table;
+}
+.prompt p{
+  font-family: inherit;
+	font-size: 16px;
+	text-align: center;
+	display: table-cell;
+  vertical-align: middle;
+}
+.judge{
+	display: inline-block;
+	margin-left: 60px;
+
+}
+.judge label{
+   display: inline-block;
+	 margin-left: 60px;
+}
+.upload{
+	display: inline-block;
+	margin-left: 120px;
+	margin-top: 100px;
+}
+.upload  span{
+
+}
+.sgzb .button-wrapper{
+   margin-top: 120px;
+}
+.sgzq{
+	text-align: center;
+	font-size: 20px;
+	font-weight: bolder;
+}
+.sgzb1 hr{
+	width: 100%;
+	background-color: #708090;
+	display:inline-block;
+	transform:translateY(10px);
+	height:2px;
+}
+.bt{
+	width: 100%;
+	height: 50px;
+	background-color:#D3D3D3;
+}
+.bt .col-md-2,.bt .col-md-3,.bt .col-md-5{
+	margin-top: 20px;
+	font-size: 16px;
+}
+.nr{
+	font-size: 16px;
+	line-height: 50px;
+	margin-top: 20px;
+}
+.mt{
+	margin-top: 10px;
+	margin-bottom:30px;
+}
+.mt .form-control{
+	color: $default-text;
+  @include placeholderStyle($default-text, 0.7);
+  border: 1px solid $input-border;
+  border-radius: 5px;
+  background-color: $input-background;
+  box-shadow: none;
+  &:focus {
+    box-shadow: none;
+    border-color: $primary-bg;
+    background: $input-background;
+}
