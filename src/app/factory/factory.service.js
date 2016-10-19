@@ -24,7 +24,6 @@ angular.module('BlurAdmin')
     obj.keyUsers=$resource(serverUrl.url+'/api/shops/keyUsers');
     obj.getShopsById=$resource(serverUrl.url+'/api/shops/getShopsById');
     obj.getShopsByuserId=$resource(serverUrl.url+'/api/shops/getShopsByuserId');
-    obj.updateBaseinfo=$resource(serverUrl.url+'/api/shops/updateBaseinfo');
 
 
     return obj;
