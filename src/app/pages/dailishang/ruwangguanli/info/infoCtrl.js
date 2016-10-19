@@ -526,7 +526,6 @@
             landStatus: $scope.agent.landStatus,
             leaseStart: $scope.agent.leaseStart,
             leaseEnd: $scope.agent.leaseEnd,
-            leaseEnd: $scope.agent.leaseEnd,
             firstShop:{
                firstshop1: $scope.agent.firstShop.firstshop1,
                firstshop2: $scope.agent.firstShop.firstshop2,
@@ -761,7 +760,6 @@
             keyJob:$scope.keyJob,
             SchemaArrange:$scope.SchemaArrange,
             MFAform:$scope.MFAform,
-            BSSdatum:$scope.BSSdatum,
             shopApplyUserId:$scope.currentUser._id
 
         };
