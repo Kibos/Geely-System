@@ -9,17 +9,23 @@
     .controller('loginCtrl', loginCtrl);
 
   /** @ngInject */
-  function loginCtrl($state, Auth) {
+  function loginCtrl($state, Auth,toastr) {
     var vm = this;
 
     vm.user = {
       email: '',
       password: ''
     };
+
     vm.loginFail = false;
     vm.loginClick = loginClick;
     vm.registerClick=registerClick;
-    
+
+    vm.showSuccessMsg= showSuccessMsg;
+    vm.showInfoMsg=showInfoMsg;
+    vm.showErrorMsg=showErrorMsg;
+    vm.showWarningMsg=showWarningMsg;
+
     ////////////////
 
     function loginClick() {
@@ -27,28 +33,41 @@
       .then( function(res) {
           // Logged in, redirect to the page with requested a login
         console.log('log ok', res);
+        showSuccessMsg();
         $state.go('ba.dashboard');
         })
         .catch( function(err) {
            console.log('log failed', err);
+          if(vm.user.email===undefined||vm.user.password===undefined){
+            showWarningMsg();
+          }else{
+            showErrorMsg(err.message);
+            console.log("--"+vm.user.password);
+          }
+          
            vm.loginFail = true;
         });
-      
-      //  function (res) {
-      //   console.log('log ok', res);
-      //   $state.go('ba.dashboard');
-      // }, function (res) {
-      //   console.log('log failed', res);
-      //   vm.loginFail = true;
-      // });
-
     }
-
 
     function registerClick() {
         $state.go('register');
-
     }
+
+    function showSuccessMsg() {
+      toastr.success('欢迎使用本系统!');
+    };
+
+    function showInfoMsg() {
+      toastr.info("You've got a new email!", 'Information');
+    };
+
+    function showErrorMsg(mgs) {
+      toastr.error("登录失败", '错误');
+    };
+    
+    function showWarningMsg() {
+      toastr.warning('请填写完整!', '提示');
+    };
 
 
 

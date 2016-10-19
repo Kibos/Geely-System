@@ -18,7 +18,7 @@
           title: '施工管理',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
-            order: 100,
+            order: 2,
           },
       })
       .state('ba.jiandianguanli.constructionStage', {
