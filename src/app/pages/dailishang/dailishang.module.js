@@ -14,7 +14,7 @@
       'BlurAdmin.pages.dailishang.gongyingshangguanli'
 
   ])
-      .config(routeConfig);
+  .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
@@ -92,7 +92,7 @@
           url: '/baozhengjinguanli',
           template : '<ui-view></ui-view>',
          
-          title: '保证金管理',
+          title: '缴纳保证金',
           sidebarMeta: {
             icon: 'ion-gear-a',
             order: 100,
@@ -160,8 +160,6 @@
         }
         );
         ;
-
-
   }
 
 })();

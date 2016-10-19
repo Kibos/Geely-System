@@ -11,14 +11,36 @@
   /** @ngInject */
   function routeConfig($stateProvider){
     $stateProvider
-      .state('ba.jdgli.shejigao', {
-        url: '/jdgli.shejigao',
-        template: '<div></div>',
+      .state('ba.jdgli.design', {
+        url: '/jdgli.design',
+        controller: 'designCtrl',
+        templateUrl: 'app/pages/shejichangshang/jiandianguanli/design.html',
           title: '设计稿管理',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
             order: 10,
           },
+      })
+      .state('ba.designfirst', {
+        url: '/designfirst',
+        controller: 'designfirstCtrl',
+        templateUrl: 'app/pages/shejichangshang/jiandianguanli/designfirst.html',
+        params:{'obj':{}},
+
+      })
+      .state('ba.designfinal', {
+        url: '/designfinal',
+        controller: 'designfinalCtrl',
+        templateUrl: 'app/pages/shejichangshang/jiandianguanli/designfinal.html',
+        params:{'obj':{}},
+
+      })
+      .state('ba.designfinished', {
+        url: '/designfinished',
+        controller: 'designfinishedCtrl',
+        templateUrl: 'app/pages/shejichangshang/jiandianguanli/designfinished.html',
+        params:{'obj':{}},
+
       })
       .state('ba.jdgli.shigongtu', {
         url: '/jdgli.shigongtu',

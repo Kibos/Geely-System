@@ -1,0 +1,71 @@
+  
+    
+  <div><p>代理商施工管理-->施工阶段</p></div>
+    <div>
+      <div ba-panel ba-panel-title="施工基础信息">
+          <div class="form-group">
+            <label class="individual-label">代理商:</label>
+            <input type="text" name="agent" class="form-control individual-iput" ng-model="construction.agent" disabled="true"/>
+          </div>
+          <div class="form-group">
+            <label class="individual-label">设计厂商:</label>
+            <input type="text" name="designer" class="form-control individual-iput" ng-model="construction.designer" disabled="true"/>
+          </div>
+          <div class="form-group">
+            <label class="individual-label">供应商:</label>
+            <input type="text" name="supplier" class="form-control individual-iput" ng-model="construction.supplier" disabled="true"/>
+          </div>
+      </div>
+  </div>
+
+
+
+
+  <div>
+    
+      <div ba-panel ba-panel-title="施工阶段信息">
+      <uib-tabset active="$tabSetStatus.activeTab">
+        <uib-tab heading="阶段定制">
+          <div class="horizontal-scroll">
+            <button type="submit" class="btn btn-default" ng-click="addNew()" style="margin-right: 5px;"><i class="ion-plus"></i>新增施工阶段</button>
+            <table class="table table-hover" st-table="constructions">
+              <thead>
+                <tr class="sortable">
+                  <th class="table-id" st-sort="id" st-sort-default="true">序号</th>
+                  <th st-sort="name">施工阶段名称</th>
+                  <th st-sort="description">施工阶段描述</th>
+                  <th st-sort="time">工期</th>
+                  <th st-sort="status">状态</th>
+                  <th st-sort="zaozuo">操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in constructions" class="editable-tr-wrap">
+                  <td class="table-id">{{$index+1}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.description}}</td>
+                  <td>{{item.time}}</td>
+                  <td>{{item.status}}</td>
+                  <td><a ui-sref="ba.jiandianguanli.jddzbj({obj:item})">编辑</a></td>
+
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="8" class="text-center">
+                    <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+
+          </div>
+        </uib-tab>
+       
+        <uib-tab heading="周报">
+        </uib-tab>
+      </uib-tabset>
+      </div>
+   
+  </div>
+

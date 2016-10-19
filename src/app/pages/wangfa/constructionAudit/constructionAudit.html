@@ -1,10 +1,6 @@
-<!-- <style media="screen">
-  .widthFix {
-    width:100px;
-  }
-</style>
+<!-- 
 <uib-tabset active="$tabSetStatus.activeTab">
-  	<uib-tab heading="待审核">
+  	<uib-tab heading="施工节点待添加">
   		<form class="row form-inline">
   		<div class="form-group">
 			<label for="name">省</label>
@@ -23,17 +19,10 @@
 				<option>湖南省</option>
 				<option>湖北省</option>
 			</select>&nbsp;&nbsp;&nbsp;&nbsp;
-			<label for="name">当前状态</label>
-			<select class="form-control">
-				<option>全部</option>
-				<option>申请资料审核</option>
-				<option>实地考察审核</option>
-				<option>陈述会考核</option>
-				<option>入网审核</option>
-			</select>
+			
 			
 			</div>
-		  	<button type="submit" class="btn btn-primary">搜索</button>
+		  	<button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
 		</form>
 	  	<div class="horizontal-scroll">
 		  	<table class="table table-hover" st-table="applicants">
@@ -44,8 +33,8 @@
 				      <th st-sort="company">申请公司</th>
 				      <th st-sort="person">联系人</th>
 				      <th st-sort="phone">手机号码</th>
-				      <th st-sort="state" class="widthFix">当前状态</th>
-				      <th st-sort="date">最近提交时间</th>
+				      <th st-sort="state">当前状态</th>
+				      <th st-sort="date" style="width:200px;">最近提交时间</th>
 				      <th st-sort="zaozuo">操作</th>
 				    </tr>
 			    </thead>
@@ -56,15 +45,15 @@
 				      <td>{{item.company}}</td>
 				      <td>{{item.person}}</td>
 				      <td>{{item.phone}}</td>
-				      <td>{{item.status}}</td>
+				      <td>{{item.state}}</td>
 				      <td>{{item.date}}</td>
-				      <td><a href="" ng-click="goState(item.status)">审核</a></td>
+				      <td><a ui-sref="components.constructionStage({obj:item.id})">查看</a></td>
 
 				    </tr>
 			    </tbody>
 			    <tfoot>
 				    <tr>
-				      <td colspan="10" class="text-center">
+				      <td colspan="8" class="text-center">
 				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
 				      </td>
 				    </tr>
@@ -72,7 +61,7 @@
 		  	</table>
 		</div>
  	</uib-tab>
-  	<uib-tab heading="已审核">
+  	<uib-tab heading="施工进行中">
   		<form class="row form-inline">
   		<div class="form-group">
 			<label for="name">省</label>
@@ -91,17 +80,10 @@
 				<option>湖南省</option>
 				<option>湖北省</option>
 			</select>&nbsp;&nbsp;&nbsp;&nbsp;
-			<label for="name">当前状态</label>
-			<select class="form-control">
-				<option>全部</option>
-				<option>申请资料审核</option>
-				<option>实地考察审核</option>
-				<option>陈述会考核</option>
-				<option>入网审核</option>
-			</select>
+			
 			
 		</div>
-		<button type="submit" class="btn btn-primary">搜索</button>
+		<button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
 		</form>
 	  	<div class="horizontal-scroll">
 		  	<table class="table table-hover" st-table="applicants2">
@@ -126,7 +108,7 @@
 				      <td>{{item.phone}}</td>
 				      <td>{{item.state}}</td>
 				      <td>{{item.date}}</td>
-				      <td><a  ui-sref="ba.jiandianguanli.lookCheck({obj:item.id})">查看</a></td>
+				      <td><a  ui-sref="components.constructionStage({obj:item.id})">查看</a></td>
 				    </tr>
 			    </tbody>
 			    <tfoot>
@@ -139,7 +121,74 @@
 		  	</table>
 		</div>
   	</uib-tab>
-  </uib-tabset> -->
+
+  	<uib-tab heading="施工完成">
+  		<form class="row form-inline">
+  		<div class="form-group">
+			<label for="name">省</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;
+			<label for="name">市县</label>
+			<select class="form-control">
+				<option>北京</option>
+				<option>河北省</option>
+				<option>河南省</option>
+				<option>湖南省</option>
+				<option>湖北省</option>
+			</select>&nbsp;&nbsp;&nbsp;&nbsp;
+			
+			
+			</div>
+		  <button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
+		</form>
+	  	<div class="horizontal-scroll">
+		  	<table class="table table-hover" st-table="applicants3">
+			    <thead>
+				    <tr class="sortable">
+				      <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
+				      <th st-sort="area">区域</th>
+				      <th st-sort="company">申请公司</th>
+				      <th st-sort="person">联系人</th>
+				      <th st-sort="phone">手机号码</th>
+				      <th st-sort="state">当前状态</th>
+				      <th st-sort="date">最近提交时间</th>
+				      <th st-sort="operate">操作</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+				    <tr ng-repeat="item in applicants3" class="editable-tr-wrap">
+				      <td class="table-id">{{item.id}}</td>
+				      <td>{{item.area}}</td>
+				      <td>{{item.company}}</td>
+				      <td>{{item.person}}</td>
+				      <td>{{item.phone}}</td>
+				      <td>{{item.state}}</td>
+				      <td>{{item.date}}</td>
+				      <td><a ui-sref="components.constructionStage({obj:item.id})">查看</a></td>
+				    </tr>
+			    </tbody>
+			    <tfoot>
+				    <tr>
+				      <td colspan="8" class="text-center">
+				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+				      </td>
+				    </tr>
+			    </tfoot>
+		  	</table>
+		</div>
+  	</uib-tab>
+
+
+  </uib-tabset>
+
+
+ -->
+
 
 
 
@@ -150,10 +199,10 @@
   }
 </style>
 <uib-tabset active="$tabSetStatus.activeTab">
-  <uib-tab heading="待审核">
+  <uib-tab heading="施工阶段待添加">
     <div class="row">
       <div class="col-md-12">
-        <div ba-panel ba-panel-title="待审核列表" ba-panel-class="with-scroll">
+        <div ba-panel ba-panel-title="施工阶段待添加" ba-panel-class="with-scroll">
           <div class="horizontal-scroll">
             <div class="form-group select-page-size-wrap widthFix">
               <label>每页显示条数
@@ -198,9 +247,9 @@
                 <td>{{item.company}}</td>
                 <td>{{item.person}}</td>
                 <td>{{item.phone}}</a></td>
-                <td>{{item.status}}</td>
+                <td>{{item.state}}</td>
                 <td>{{item.date}}</td>
-                <td><a href="" ng-click="goState(item.status)">审核</a></td>
+                <td><a ui-sref="ba.jiandianguanli.constructionStage({obj:item.id})">查看</a></td>
               </tr>
               </tbody>
               <tfoot>
@@ -218,10 +267,10 @@
 
 
   </uib-tab>
-  <uib-tab heading="已审核">
+  <uib-tab heading="施工进行中">
     <div class="row">
       <div class="col-md-12">
-        <div ba-panel ba-panel-title="已审核列表" ba-panel-class="with-scroll">
+        <div ba-panel ba-panel-title="施工进行中" ba-panel-class="with-scroll">
           <div class="horizontal-scroll">
             <div class="form-group select-page-size-wrap widthFix">
               <label>每页显示条数
@@ -279,7 +328,7 @@
                 <td>{{item.phone}}</a></td>
                 <td>{{item.state}}</td>
                 <td>{{item.date}}</td>
-                <td><a  ui-sref="ba.jiandianguanli.lookCheck({obj:item.id})">查看</a></td>
+                <td><a ui-sref="components.designfirst({obj:item.id})">查看</a></td>
               </tr>
               </tbody>
               <tfoot>
@@ -295,5 +344,79 @@
         </div>
       </div>
     </div>
+
+
   </uib-tab>
+  <uib-tab heading="施工已完成">
+    <div class="row">
+      <div class="col-md-12">
+        <div ba-panel ba-panel-title="施工已完成" ba-panel-class="with-scroll">
+          <div class="horizontal-scroll">
+            <div class="form-group select-page-size-wrap widthFix">
+              <label>每页显示条数
+                <select class="widthFix form-control selectpicker show-tick" title="Rows on page" selectpicker
+                        ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+                </select>
+              </label>
+            </div>
+            <table class="table" st-table="applicants3">
+              <thead>
+              <tr class="sortable ">
+                <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
+                <th st-sort="area">区域</th>
+                <th st-sort="company">申请公司</th>
+                <th st-sort="person">联系人</th>
+                <th st-sort="phone">手机号码</th>
+                <th st-sort="state">当前状态</th>
+                <th st-sort="date">最近提交时间</th>
+                <th st-sort="state">操作</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th><input st-search="area" placeholder="Search area" class="input-sm form-control search-input widthFix"
+                           type="search"/></th>
+                <th><input st-search="company" placeholder="Search company" class="input-sm form-control search-input widthFix"
+                           type="search"/></th>
+                <th><input st-search="person" placeholder="Search person" class="input-sm form-control search-input widthFix"
+                           type="search"/></th>
+                <th><input st-search="phone" placeholder="Search phone" class="input-sm form-control search-input widthFix" type="search"/>
+                </th>
+                <th><input st-search="state" placeholder="Search state" class="input-sm form-control search-input widthFix" type="search"/>
+                </th>
+                <th><input st-search="date" placeholder="Search date" class="input-sm form-control search-input widthFix" type="search"/>
+                </th>
+                <th></th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr ng-repeat="item in applicants3">
+                <td class="table-id">{{item.id}}</td>
+                <td>{{item.area}}</td>
+                <td>{{item.company}}</td>
+                <td>{{item.person}}</td>
+                <td>{{item.phone}}</a></td>
+                <td>{{item.state}}</td>
+                <td>{{item.date}}</td>
+                <td><a ui-sref="components.designfinal({obj:item.id})">查看</a></td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="8" class="text-center">
+                  <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </uib-tab>
+ 
+
+
 </uib-tabset>

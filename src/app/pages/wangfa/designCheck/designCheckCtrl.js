@@ -9,52 +9,22 @@
       .controller('DesignCheckCtrl', DesignCheckCtrl);
 
   /** @ngInject */
-  function DesignCheckCtrl($scope,$rootScope,Shop,Designs) {
+  function DesignCheckCtrl($scope,$state,$rootScope) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-    console.log('info');
-
-
-    Designs.query(function(res){
-      console.log(res);
-      $scope.selectItems = res;
-    })
-
-
-    $scope.tongzhishoplists = [];
-    $scope.tongzhishoplists_data = [];
-    function gettongzhishoplists() {
-      Shop.getShopByQuery.query({isVerify:true},function(data){
-        console.log(data);
-        $scope.tongzhishoplists_data = data;
-        // $scope.shoplists = data;
-
-      })
-    }
-    gettongzhishoplists()
-    $scope.test = function (item) {
-      // var state = [
-      //   '开发经理审核',
-      //   '开发大区经理审核',
-      //   '实地考察审核（上传评估报告)',
-      //   '内部评审会',
-      //   '陈述会结果审核',
-      //   '合作商入网审批'
-      // ]
-      // return state[item.length-1];
-      if(!item.hasOwnProperty('designsShopRelation') && item.isTiJiaoChuGao!==true){
-        // console.log('has');
-        return '待确认勘察内容';
-      }else{
-        return '初稿待审批';
-      }
-
-    }
-
-    $scope.spliceTime = function (time) {
-      return time.slice(0,10)
-    }
-
+   $scope.goState = function(status){
+        if(status === '待勘察内容确认'){
+            $state.go('ba.jiandianguanli.storeCheck');
+        }else if(status === '设计初稿待审批'){
+            $state.go('ba.jiandianguanli.cgdsp');
+        }else if(status === '设计初稿待领导审批'){
+            $state.go('ba.jiandianguanli.cgdldsp');
+        }else if(status === '设计终稿待审批'){
+            $state.go('ba.jiandianguanli.zgdsp');
+        }else if(status === '设计终稿待领导审批'){
+            $state.go('ba.jiandianguanli.zgdldsp');
+        }
+   }
      $scope.applicants=[
     	{
     		id:1,
@@ -62,7 +32,7 @@
     		company:'维擎科技',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		status:'待勘察内容确认',
     		date:'20161006',
     	},
     	{
@@ -71,7 +41,7 @@
     		company:'维擎科技',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		status:'设计初稿待审批',
     		date:'20161006',
     	},
     	{
@@ -80,7 +50,7 @@
     		company:'维擎科技',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		status:'设计初稿待领导审批',
     		date:'20161006',
     	},
     	{
@@ -89,7 +59,7 @@
     		company:'维擎科技',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		status:'设计终稿待审批',
     		date:'20161006',
     	},
     	{
@@ -98,7 +68,7 @@
     		company:'维擎科技',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		status:'设计终稿待领导审批',
     		date:'20161006',
     	},
     	{
@@ -107,7 +77,7 @@
     		company:'维擎科技',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		status:'未通过',
     		date:'20161006',
     	},
     	{
@@ -116,7 +86,7 @@
     		company:'维擎科技',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		status:'未通过',
     		date:'20161006',
     	}
 
