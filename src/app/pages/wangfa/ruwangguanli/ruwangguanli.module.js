@@ -11,61 +11,70 @@
   /** @ngInject */
   function routeConfig($stateProvider){
     $stateProvider
-      .state('ba.rulisa.ruwangshenhe', {
-        url: '/rulisa.ruwangshenhe',
-        controller: 'AuditCtrl',
-        templateUrl: 'app/pages/wangfa/ruwangguanli/audit.html',
-          title: '入网审核',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-          data:{
-             permissions: {
-              only:'wangfa'
-           }}
-      })
-      .state('ba.rulisa.check', {
-        url: '/check',
-        controller: 'CheckCtrl',
-        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
-        params:{
-          obj:null
-        }
+    .state('ba.rulisa.ruwangshenhe', {
+      url: '/rulisa',
+      controller: 'AuditCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/audit.html',
+        title: '入网审核',
+        sidebarMeta: {
+          icon: 'ion-ios-pulse',
+          order: 100,
+        },
+        data:{
+           permissions: {
+            only:'wangfa'
+         }}
+    })
+    .state('ba.rulisa.check', {
+      url: '/check',
+      controller: 'CheckCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
+      params:{
+        obj:null
+      },
+      data:{
+         permissions: {
+          only:'wangfa'
+       }}
 
-      })
-      .state('ba.rulisa.inform', {
-        url: '/inform',
-        controller: 'InformCtrl',
-        templateUrl: 'app/pages/admin/audit/inform.html',
-        params:{
-          obj:null
-        }
+    })
+    .state('ba.rulisa.inform', {
+      url: '/inform',
+      controller: 'InformCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/inform.html',
+      params:{
+        obj:null
+      },
+      data:{
+         permissions: {
+          only:'wangfa'
+       }}
 
-      })
-      .state('ba.rulisa.viewDetails', {
-        url: '/viewDetails',
-        controller: 'ViewDetailsCtrl',
-        templateUrl: 'app/pages/admin/audit/viewDetails.html',
+    })
+    .state('ba.rulisa.ViewDetails', {
+      url: '/ViewDetails',
+      controller: 'ViewDetailsCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/ViewDetails.html',
+      params:{
+        obj:null
+      },
+      data:{
+         permissions: {
+          only:'wangfa'
+       }}
 
-      })
+    })
+    
       .state('admin.logoutModal', {
         url: '/logoutModal',
         controller: 'LogoutModalCtrl',
         templateUrl: 'app/pages/admin/audit/logoutModal.html',
+        params:{
+          obj:null
+        }
 
       })
-      //建店管理
-      .state('ba.jiandianguanli.shejigaoshenhe', {
-        url: '/jiandianguanli.shejigaoshenhe',
-        controller: 'CheckCtrl',
-        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
-          title: '设计稿管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 10,
-          },
-      })
+ 
       // .state('ba.jiandianguanli.shigongguanli', {
       //   url: '/jiandianguanli.shigongguanli',
       //   controller: 'ConstructionAuditCtrl',
@@ -76,16 +85,26 @@
       //       order: 20,
       //     },
       // })
+      // .state('ba.jiandianguanli.shejigaoshenhe', {
+      //   url: '/jiandianguanli.shejigaoshenhe',
+      //   controller: 'CheckCtrl',
+      //   templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
+      //     title: '设计稿管理',
+      //     sidebarMeta: {
+      //       icon: 'ion-ios-pulse',
+      //       order: 10,
+      //     },
+      // })
 
-      .state('ba.jiandianguanli.yanshouguanli', {
-        url: '/jiandianguanli.yanshouguanli',
-        template: '<div></div>',
-          title: '验收管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 30,
-          },
-      })
+      // .state('ba.jiandianguanli.yanshouguanli', {
+      //   url: '/jiandianguanli.yanshouguanli',
+      //   template: '<div></div>',
+      //     title: '验收管理',
+      //     sidebarMeta: {
+      //       icon: 'ion-ios-pulse',
+      //       order: 30,
+      //     },
+      // })
       .state('ba.jiandianguanli.baozhengjinguanli', {
         url: '/jiandianguanli.baozhengjinguanli',
         template: '<div></div>',

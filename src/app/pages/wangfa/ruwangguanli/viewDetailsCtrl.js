@@ -38,7 +38,7 @@
      	}
      ]
      $scope.return=function(){
-      $state.go('components.audit');
+      $state.go('ba.rulisa.ruwangshenhe.audit');
      }
   }
 })();

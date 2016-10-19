@@ -18,7 +18,7 @@
     console.log(id)
      $scope.submit=function(){
       console.log('确认通知');
-      $state.go('components.audit');
+      $state.go('ba.rulisa.ruwangshenhe.audit');
      }
      $scope.partners=[
      	{

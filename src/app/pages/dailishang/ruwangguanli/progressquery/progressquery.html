@@ -1,0 +1,113 @@
+<uib-tabset active="$tabSetStatus.activeTab">
+  <!--入网进度-->
+  <uib-tab heading="入网进度">
+  <div class="rwlc">
+    <h1>入网流程</h1>
+    <div class="rwlc1">
+      <div class="rwlc-box">
+        <div  ng-class="{true:'green',false:'red'}[rwnums[0].bool]">
+             <span>1</span>
+        </div>
+        <div class="rwjd">完善资料提交申请<br>
+             <span>1.填写公司基本信息。<br>2.提交申请给网络发展部。</span>
+        </div>
+      </div>
+      <hr/>
+      <div class="rwlc-box">
+        <div  ng-class="{true:'green',false:'red'}[rwnums[1].bool]">
+             <span>2</span>
+        </div>
+        <div class="rwjd">资料审核<br><span>网络发展部专员审核<br>&nbsp;</span></div>
+      </div>
+      <hr/>
+      <div class="rwlc-box">
+        <div  ng-class="{true:'green',false:'red'}[rwnums[2].bool]">
+             <span>3</span>
+        </div>
+        <div class="rwjd">实地考察审核<br><span>网络发展部会根据您填写的资料实地考察</span></div>
+      </div>
+      <hr/>
+      <div class="rwlc-box">
+        <div  ng-class="{true:'green',false:'red'}[rwnums[3].bool]">
+             <span>4</span>
+        </div>
+        <div class="rwjd">陈诉会审核<br><span>通过陈述会审核<br>&nbsp;</span></div>
+      </div>
+      <hr/>
+      <div class="rwlc-box">
+        <div  ng-class="{true:'green',false:'red'}[rwnums[4].bool]">
+             <span>5</span>
+        </div>
+        <div class="rwjd">入网审批<br><span>完成最终入网审批<br>&nbsp;</span></div>
+      </div>
+      <hr/>
+      <div class="rwlc-box">
+        <div  ng-class="{true:'green',false:'red'}[rwnums[5].bool]">
+             <span>6</span>
+        </div>
+        <div class="rwjd">缴纳建店保证金<br><span>缴纳建店保证金<br>&nbsp;</span></div>
+      </div>
+    </div>
+  </div>
+  </uib-tab>
+  <!--建店进度-->
+  <uib-tab heading="建店进度">
+  <div class="jdlc">
+    <h1>建店流程</h1>
+    <div class="jdlc1">
+      <div class="jdlc-box">
+        <div ng-class="{true:'green',false:'red'}[jdnums[0].bool]">
+             <span>1</span>
+        </div>
+        <div class="jdjd">合同上传<br>
+             <span>请上传设计厂商合同、供应商合同</span>
+        </div>
+      </div>
+      <hr/>
+      <div class="jdlc-box">
+        <div ng-class="{true:'green',false:'red'}[jdnums[1].bool]">
+             <span>2</span>
+        </div>
+        <div class="jdjd">勘查确认<br>
+             <span>1、填写公司基本信息。<br>2、提交申请给网络发展部</span></div>
+      </div>
+      <hr/>
+      <div class="jdlc-box">
+        <div ng-class="{true:'green',false:'red'}[jdnums[2].bool]">
+             <span>3</span>
+        </div>
+        <div class="jdjd">设计稿审批<br><span>网络发展部专员审核<br>&nbsp;</span></div>
+      </div>
+      <hr/>
+      <div class="jdlc-box">
+        <div ng-class="{true:'green',false:'red'}[jdnums[3].bool]">
+             <span>4</span>
+        </div>
+        <div class="jdjd">施工准备<br><span>合作商晚上土建招标、装饰招标、环评</span></div>
+      </div>
+      <hr/>
+      <div class="jdlc-box">
+        <div ng-class="{true:'green',false:'red'}[jdnums[4].bool]">
+             <span>5</span>
+        </div>
+        <div class="jdjd">施工管理<br><span>添加施工周报管理施工进度<br>&nbsp;</span></div>
+      </div>
+      <hr/>
+      <div class="jdlc-box">
+        <div ng-class="{true:'green',false:'red'}[jdnums[5].bool]">
+             <span>6</span>
+        </div>
+        <div class="jdjd">加盟保证金<br><span>完成最终入网审批<br>&nbsp;</span></div>
+      </div>
+      <hr/>
+      <div class="jdlc-box">
+        <div ng-class="{true:'green',false:'red'}[jdnums[6].bool]">
+             <span>7</span>
+        </div>
+        <div class="jdjd">建店验收<br><span>缴纳建店保证金<br>&nbsp;</span></div>
+      </div>
+    </div>
+  </div>
+  </uib-tab>
+
+</uib-tabset>

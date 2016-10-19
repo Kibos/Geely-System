@@ -2,7 +2,7 @@
   	<uib-tab heading="待审核">
   		<form class="row form-inline">
   		<div class="form-group">
-			<label for="name">省</label>
+			<!-- <label for="name">省</label>
 			<select class="form-control">
 				<option>北京</option>
 				<option>河北省</option>
@@ -10,6 +10,7 @@
 				<option>湖南省</option>
 				<option>湖北省</option>
 			</select>&nbsp;&nbsp;
+
 			<label for="name">市县</label>
 			<select class="form-control">
 				<option>北京</option>
@@ -17,21 +18,23 @@
 				<option>河南省</option>
 				<option>湖南省</option>
 				<option>湖北省</option>
-			</select>&nbsp;&nbsp;&nbsp;&nbsp;
+			</select>&nbsp;&nbsp;&nbsp;&nbsp; -->
+
 			<label for="name">当前状态</label>
-			<select  class="form-control" title="全部" ng-model="stepstate">
-				<option>全部</option>
-        <option>实地考察审核</option>
+			<select ng-model="selectStateQuery" class="form-control">
+        <option>全部</option>
+
+        <option>开发经理审核</option>
         <option>开发大区经理审核</option>
-				<option>实地考察审核</option>
+				<option>实地考察审核（上传评估报告)</option>
 				<option>内部评审会</option>
-				<option>陈述会考核</option>
+				<option>陈述会结果审核</option>
 				<option>合作商入网审批</option>
 			</select>
-
+      {{selectStateQuery}}
 
 			</div>
-		  	<button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
+		  	<button type="submit" class="btn btn-primary" style="" ng-click="selectState(selectStateQuery)">搜索</button>
 		</form>
 	  	<div class="horizontal-scroll">
 
@@ -49,16 +52,16 @@
 				    </tr>
 			    </thead>
 			    <tbody>
-				    <tr ng-repeat="item in applicants" class="editable-tr-wrap">
-				      <td class="table-id">{{item.id}}</td>
+				    <tr ng-repeat="item in shoplists" class="editable-tr-wrap">
+				      <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
-				      <td>{{item.companyName}}</td>
+				      <td>{{item.basic.companyName}}</td>
 				      <td>{{item.shopApplyUserId.name}}</td>
 				      <td>{{item.shopApplyUserId.cellphone}}</td>
               <td>{{test(item.applyId.verify)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
-				      <td><a ui-sref="ba.rulisa.check({obj:item})">审核</a></td>
+				      <td><a href="" ng-click="stateGo(item)">审核</a></td>
 
 				    </tr>
 			    </tbody>
@@ -127,7 +130,7 @@
               <td>{{test(item.applyId.verify)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
-				      <td><a ui-sref="admin.check({obj:item})">审核</a></td>
+				      <td><a ng-click="stateGo(item.operate)">审核</a></td>
 
 				    </tr>
 			    </tbody>
