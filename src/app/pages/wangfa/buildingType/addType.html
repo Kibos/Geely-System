@@ -1,0 +1,54 @@
+<div ba-panel ba-panel-class="with-scroll">
+<div class="row">
+	<div>
+		<p>添加建店类型 &nbsp;<button class="btn btn-default" ng-click="return()"><i class="ion-chevron-left"></i>&nbsp;返回建店类型列表</button></p>
+	</div>
+	<hr style="width: 1640px; background-color: 1d1b1d; margin-bottom: 5px;">
+	<div style="margin-top:5px;">
+	<form novalidate name="typeForm">
+		<div class="form-group">
+			<label class="individual-label">建店类型名称：</label>
+			<input type="text" name="typeName" class="form-control individual-iput" ng-model="add.typeName" placeholder="建店类型名称" required>
+			<p class="help-block individual-p" ng-show="typeForm.typeName.$error.required && typeForm.typeName.$touched">请输入建店类型名称</p> 
+		</div>
+		<div class="form-group">
+			<label class="individual-label">面宽：</label>
+			<input type="text" name="typeWidth" class="form-control individual-iput" ng-model="add.typeWidth" placeholder="面宽" required>
+			<p class="help-block individual-p" ng-show="typeForm.typeWidth.$error.required && typeForm.typeWidth.$touched">请输入面宽</p> 
+
+		</div>
+		<div class="form-group">
+			<label class="individual-label">层高：</label>
+			<input type="text" name="typeHeight" class="form-control individual-iput" ng-model="add.typeHeight" placeholder="层高" required>
+			<p class="help-block individual-p" ng-show="typeForm.typeHeight.$error.required && typeForm.typeHeight.$touched">请输入层高</p> 
+		</div>
+		<div class="form-group">
+			<label class="individual-label">最小面积：</label>
+			<input type="number" name="acreage" class="form-control individual-iput" ng-model="add.acreage" placeholder="最小面积" required>
+			<p class="help-block individual-p" ng-show="typeForm.acreage.$error.required && typeForm.acreage.$touched">请输入最小面积</p> 
+		</div>
+		<div class="form-group">
+			<label class="individual-label">最小展车数：</label>
+			<input type="number" name="minCarNum" class="form-control individual-iput" ng-model="add.minCarNum" placeholder="最小展车数" required>
+			<p class="help-block individual-p" ng-show="typeForm.minCarNum.$error.required && typeForm.minCarNum.$touched">请输入最小展车数</p> 
+
+		</div>
+			<div class="form-group">
+			<label class="individual-label">最小工位数：</label>
+			<input type="number" name="minWorkstation" class="form-control individual-iput" ng-model="add.minWorkstation" placeholder="最小工位数" required>
+			<p class="help-block individual-p" ng-show="typeForm.minWorkstation.$error.required && typeForm.minWorkstation.$touched">请输入最小工位数</p> 
+
+		</div>
+		<div class="form-group form-inline">
+			<label class="individual-label inline-block">状态：</label>
+			
+			<input type="checkbox" ng-model="add.state" value="using">
+		</div>
+
+		<div class="text-center">
+			<button type="submit" class="btn btn-primary" ng-disabled="typeForm.$invalid" ng-click="subdata()">提交</button>
+		</div>
+	</form>
+	</div>
+</div>
+</div>

@@ -19,14 +19,26 @@
       console.log("fsd");
     	$state.go('ba.jiandianguanli.addConstructionPhase');
     }
+
+    $scope.stateGo = function(item){
+      console.log(item);
+      console.log(item.status);
+      if(item.status === '进行中' || item.status === '已完成'){
+
+          $state.go('ba.jiandianguanli.particulars',{obj:item});
+
+      }else{
+          $state.go('ba.jiandianguanli.jddzbj',{obj:item});
+      }
+    }
     $scope.construction = {
       agent:'杭州风景',
-      designer:'北京对对对',
-      supplier:'北京啊啊'
+      designer:'北京',
+      supplier:'北京'
     }
     $scope.constructions=[
       {
-        name:'维擎科技',
+        name:'吉利',
         description:'xxxxxxxxx',
         time:'2016-09-01  至  2016-10-10',
         status:'已完成'

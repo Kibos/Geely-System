@@ -11,7 +11,7 @@
   /** @ngInject */
   function AuditCtrl($scope, $state, Shop, $timeout, $rootScope) {
 
-
+    console.log("入网审核");
 
     $scope.$watch('stepstate', calculateDiscount);
     function calculateDiscount(newValue, oldValue, scope) {
@@ -57,72 +57,18 @@
 
 
 
-    // $scope.applicants=[
-    // 	{
-    // 		id:1,
-    // 		area:'北京',
-    // 		company:'维擎科技',
-    // 		person:'黎明',
-    // 		phone:'123456789',
-    // 		state:'未通过',
-    // 		date:'20161006',
-    // 	},
-    // 	{
-    // 		id:2,
-    // 		area:'北京',
-    // 		company:'维擎科技',
-    // 		person:'黎明',
-    // 		phone:'123456789',
-    // 		state:'未通过',
-    // 		date:'20161006',
-    // 	},
-    // 	{
-    // 		id:1,
-    // 		area:'北京',
-    // 		company:'维擎科技',
-    // 		person:'黎明',
-    // 		phone:'123456789',
-    // 		state:'未通过',
-    // 		date:'20161006',
-    // 	},
-    // 	{
-    // 		id:3,
-    // 		area:'北京',
-    // 		company:'维擎科技',
-    // 		person:'黎明',
-    // 		phone:'123456789',
-    // 		state:'未通过',
-    // 		date:'20161006',
-    // 	},
-    // 	{
-    // 		id:1,
-    // 		area:'北京',
-    // 		company:'维擎科技',
-    // 		person:'黎明',
-    // 		phone:'123456789',
-    // 		state:'未通过',
-    // 		date:'20161006',
-    // 	},
-    // 	{
-    // 		id:4,
-    // 		area:'北京',
-    // 		company:'维擎科技',
-    // 		person:'黎明',
-    // 		phone:'123456789',
-    // 		state:'未通过',
-    // 		date:'20161006',
-    // 	},
-    // 	{
-    // 		id:5,
-    // 		area:'北京',
-    // 		company:'维擎科技',
-    // 		person:'黎明',
-    // 		phone:'123456789',
-    // 		state:'未通过',
-    // 		date:'20161006',
-    // 	}
-    //
-    // ]
+     $scope.applicants=[
+     	{
+     		id:1,
+     		area:'北京',
+ 		company:'维擎科技',
+    		person:'黎明',
+		phone:'123456789',
+     		state:'未通过',
+     		date:'20161006',
+     	}
+
+     ]
 
 
     // $scope.notVerifyedshoplists = [];

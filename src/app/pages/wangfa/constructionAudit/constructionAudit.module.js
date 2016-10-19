@@ -60,5 +60,18 @@
             }
           }
       })
+      .state('ba.jiandianguanli.particulars', {
+        url: '/particulars',
+        controller: 'particularsCtrl',
+        templateUrl: 'app/pages/wangfa/constructionAudit/particulars.html',
+        params:{
+          obj:null
+        },  
+        data:{
+             permissions: {
+              only:'wangfa'
+            }
+          }
+      })
   }
 })();

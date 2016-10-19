@@ -25,8 +25,37 @@
               only:'wangfa'
            }}
       })
+      .state('ba.rulisa.check', {
+        url: '/check',
+        controller: 'CheckCtrl',
+        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
+        params:{
+          obj:null
+        }
+
+      })
+      .state('ba.rulisa.inform', {
+        url: '/inform',
+        controller: 'InformCtrl',
+        templateUrl: 'app/pages/admin/audit/inform.html',
+        params:{
+          obj:null
+        }
+
+      })
+      .state('ba.rulisa.viewDetails', {
+        url: '/viewDetails',
+        controller: 'ViewDetailsCtrl',
+        templateUrl: 'app/pages/admin/audit/viewDetails.html',
+
+      })
+      .state('admin.logoutModal', {
+        url: '/logoutModal',
+        controller: 'LogoutModalCtrl',
+        templateUrl: 'app/pages/admin/audit/logoutModal.html',
+
+      })
       //建店管理
-<<<<<<< HEAD
       .state('ba.jiandianguanli.shejigaoshenhe', {
         url: '/jiandianguanli.shejigaoshenhe',
         controller: 'CheckCtrl',
@@ -47,27 +76,7 @@
       //       order: 20,
       //     },
       // })
-=======
-      // .state('ba.jiandianguanli.shejigaoshenhe', {
-      //   url: '/jiandianguanli.shejigaoshenhe',
-      //   controller: 'CheckCtrl',
-      //   templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
-      //     title: '设计稿管理',
-      //     sidebarMeta: {
-      //       icon: 'ion-ios-pulse',
-      //       order: 10,
-      //     },
-      // })
-      .state('ba.jiandianguanli.shigongguanli', {
-        url: '/jiandianguanli.shigongguanli',
-        template: '<div></div>',
-          title: '施工管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 20,
-          },
-      })
->>>>>>> bc4138bc2827a032b718ffe87eb6a15bf3a09965
+
       .state('ba.jiandianguanli.yanshouguanli', {
         url: '/jiandianguanli.yanshouguanli',
         template: '<div></div>',
@@ -207,24 +216,7 @@
       //     },
       // })
       //合作伙伴管理
-      .state('ba.hezuohuoban.shejichang', {
-        url: '/hezuohuoban.shejichang',
-        template: '<div></div>',
-          title: '设计厂商管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-      })
-      .state('ba.hezuohuoban.gongyingshang', {
-        url: '/hezuohuoban.gongyingshang',
-        template: '<div></div>',
-          title: '供应商管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-      })
+     
       //通知模板设置
       .state('ba.tongzhimoban.duanxin', {
         url: '/tongzhimoban.duanxin',

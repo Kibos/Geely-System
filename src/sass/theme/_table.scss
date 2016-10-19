@@ -140,7 +140,9 @@ tr.editable-row {
     }
   }
 }
-
+.sortable th{
+  width: 200px;
+}
 a.email-link {
   color: $default-text;
   &:hover {

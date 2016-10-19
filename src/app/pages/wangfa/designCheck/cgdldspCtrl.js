@@ -73,7 +73,7 @@
      //设计商信息
       $scope.design = {
         companyName:'杭州',
-        person:'liming',
+        person:'李明',
         successNum:'2',
         phone:'12345666',
        

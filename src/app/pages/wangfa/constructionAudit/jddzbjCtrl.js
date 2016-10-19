@@ -12,34 +12,31 @@
   function jddzbjCtrl($scope,$state,$stateParams,$rootScope) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-    var id = $stateParams.obj;
+    var information = $stateParams.obj;
    
-    console.log(id)
+    console.log(information.name)
     // $scope.addNew = function(){
     //   console.log("fsd");
     // 	$state.go('components.addConstructionPhase');
     // }
-   
-    $scope.constructions=[
-      {
-        name:'维擎科技',
-        description:'xxxxxxxxx',
-        time:'2016-09-01  至  2016-10-10',
-        status:'已完成'
-      },
-      {
-        name:'hhh',
-        description:'xxxxxxxxx',
-        time:'2016-09-01  至  2016-10-10',
-        status:'延期'
-      },
-      {
-        name:'hhh',
-        description:'xxxxxxxxx',
-        time:'2016-09-01  至  2016-10-10',
-        status:'进行中'
-      }
-    ]
+   $scope.construction = {
+        name:information.name,
+        description:information.description,
+        time:information.time
+   }
+
+   $scope.saveInfo = function(){
+    var newConstruction = {
+      newname:$scope.construction.name,
+      newdescription:$scope.construction.description,
+      newtime:$scope.construction.time
+    }
+    console.log(newConstruction);
+    $state.go('ba.jiandianguanli.constructionStage');
+   }
+   $scope.returnBack = function(){
+      $state.go('ba.jiandianguanli.constructionStage');
+   }
 
   }
 })();

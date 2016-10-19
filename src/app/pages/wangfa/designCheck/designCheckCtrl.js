@@ -28,8 +28,8 @@
      $scope.applicants=[
     	{
     		id:1,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		status:'待勘察内容确认',
@@ -37,8 +37,8 @@
     	},
     	{
     		id:2,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		status:'设计初稿待审批',
@@ -46,8 +46,8 @@
     	},
     	{
     		id:1,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		status:'设计初稿待领导审批',
@@ -55,8 +55,8 @@
     	},
     	{
     		id:3,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		status:'设计终稿待审批',
@@ -64,8 +64,8 @@
     	},
     	{
     		id:1,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		status:'设计终稿待领导审批',
@@ -73,8 +73,8 @@
     	},
     	{
     		id:4,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		status:'未通过',
@@ -82,8 +82,8 @@
     	},
     	{
     		id:5,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		status:'未通过',
@@ -95,8 +95,8 @@
     $scope.applicants2=[
     	{
     		id:1,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		state:'未通过',
@@ -104,8 +104,8 @@
     	},
     	{
     		id:2,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		state:'未通过',
@@ -113,8 +113,8 @@
     	},
     	{
     		id:1,
-    		area:'北京',
-    		company:'维擎科技',
+    		area:'杭州',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		state:'未通过',
@@ -123,7 +123,7 @@
     	{
     		id:3,
     		area:'北京',
-    		company:'维擎科技',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		state:'未通过',
@@ -132,7 +132,7 @@
     	{
     		id:1,
     		area:'北京',
-    		company:'维擎科技',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		state:'未通过',
@@ -141,7 +141,7 @@
     	{
     		id:4,
     		area:'北京',
-    		company:'维擎科技',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		state:'未通过',
@@ -150,7 +150,7 @@
     	{
     		id:5,
     		area:'北京',
-    		company:'维擎科技',
+    		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
     		state:'未通过',

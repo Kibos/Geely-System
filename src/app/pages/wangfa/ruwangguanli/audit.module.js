@@ -5,14 +5,14 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.admin.audit', [])
+  angular.module('BlurAdmin.pages.wangfa.ruwangguanlisk', [])
     .config(routeConfig);
 
   /** @ngInject */
   function routeConfig($stateProvider) {
     console.log('audit');
     $stateProvider
-      .state('admin.audit', {
+      .state('ba.rulisa.audit', {
         url: '/audit',
         controller: 'AuditCtrl',
         templateUrl: 'app/pages/wangfa/audit/audit.html',
@@ -22,10 +22,10 @@
             order: 100,
           },
       })
-      .state('admin.check', {
+      .state('ba.rulisa.ruwangshenhe.check', {
         url: '/check',
         controller: 'CheckCtrl',
-        templateUrl: 'app/pages/admin/audit/check.html',
+        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
         params:{
           obj:null
         }

@@ -25,8 +25,8 @@
     $scope.applicants=[
       {
         id:1,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工阶段待添加',
@@ -34,8 +34,8 @@
       },
       {
         id:2,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工阶段待添加',
@@ -43,8 +43,8 @@
       },
       {
         id:1,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工阶段待添加',
@@ -52,8 +52,8 @@
       },
       {
         id:3,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工阶段待添加',
@@ -61,8 +61,8 @@
       },
       {
         id:1,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工阶段待添加',
@@ -70,8 +70,8 @@
       },
       {
         id:4,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工阶段待添加',
@@ -79,8 +79,8 @@
       },
       {
         id:5,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工阶段待添加',
@@ -92,8 +92,8 @@
     $scope.applicants2=[
       {
         id:1,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工进行中',
@@ -101,8 +101,8 @@
       },
       {
         id:2,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工进行中',
@@ -110,8 +110,8 @@
       },
       {
         id:1,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工进行中',
@@ -119,8 +119,8 @@
       },
       {
         id:3,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工进行中',
@@ -128,8 +128,8 @@
       },
       {
         id:1,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工进行中',
@@ -137,8 +137,8 @@
       },
       {
         id:4,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工进行中',
@@ -146,8 +146,8 @@
       },
       {
         id:5,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工进行中',
@@ -159,8 +159,8 @@
     $scope.applicants3=[
       {
         id:5,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工已完成',
@@ -169,8 +169,8 @@
       },
       {
         id:1,
-        area:'北京',
-        company:'维擎科技',
+        area:'杭州',
+        company:'吉利',
         person:'黎明',
         phone:'123456789',
         state:'施工已完成',
