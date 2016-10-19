@@ -16,7 +16,8 @@
     vm.user = {
       email: '',
       password: '',
-      name:''
+      name:'',
+      cellphone:''
     };
     vm.registerFail = false;
     vm.registerClick = registerClick;
@@ -24,13 +25,6 @@
     ////////////////
 
     function registerClick() {
-      // Auth.register(vm.user, function (res) {
-      //   console.log('log ok', res);
-      //   $state.go('ba.dashboard');
-      // }, function (res) {
-      //   console.log('log failed', res);
-      //   vm.registerFail = true;
-      // });
 
         Auth.createUser(vm.user)
         .then( function() {
