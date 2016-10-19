@@ -12,7 +12,6 @@
 
   /** @ngInject */
   function routeConfig($stateProvider) {
-    console.log('res====state')
     $stateProvider
         .state('register', {
           url: '/register',
