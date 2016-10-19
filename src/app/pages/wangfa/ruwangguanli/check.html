@@ -4,29 +4,34 @@
 
 
     <div ba-panel ba-panel-title="{{paneltitle}}">
-        <form name="checkForm">
-          <div class="controls radio-controls">
-            <label class="radio custom-radio">
-              <input type="radio" name="result" id="disagree" value="true" ng-model="options.pass" required=""><span>审核通过</span>
-            </label>
-            <label class="radio custom-radio">
-              <input type="radio" name="result" id="agree" value="false" ng-model="options.pass" required=""><span>审核不通过</span>
-            </label>
-
+      <form name="checkForm">
+          <div class="input-demo radio-demo row">
+              <p>审核结果</p>
+              <div class="col-md-4">
+                <label class="radio-inline custom-radio nowrap">
+                  <input type="radio" name="result" id="disagree" value="false" ng-model="options.pass" required="">
+                  <span>审核不通过</span>
+                </label>
+              </div>
+              <div class="col-md-4">
+                <label class="radio-inline custom-radio nowrap">
+                  <input type="radio" name="result" id="agree" value="true" ng-model="options.pass" required="">
+                  <span>审核通过</span>
+                </label>
+              </div>
           </div>
-
           <div class="form-group">
             <p>审核意见</p>
-            <textarea class="form-control" placeholder="审核意见" ng-model="info.description"></textarea>
+            <textarea class="form-control" placeholder="审核意见" ng-model="info.description" required=""></textarea>
           </div>
           <div class="form-group form-inline" role="form">
             <p>附件</p>
             <label class="sr-only" for="inputfile">相关文件上传</label>
             <input type="file" id="inputfile" ng-model="file">
           </div>
-            <button type="submit" class="btn btn-danger" ng-click="submit()" ng-disabled="checkForm.$invalid">提交</button>
-            <button type="submit" class="btn btn-default" ng-click="cancel()" style="margin-left:30px;">取消</button>
-        </form>
+          <button type="submit" class="btn btn-danger" ng-click="submit()" ng-disabled="checkForm.$invalid">提交<tton>
+          <button type="submit" class="btn btn-default" ng-click="cancel()" style="margin-left:30px;">取消<tton>
+      </form>
     </div>
 
     <div class="panel panel-default">
@@ -131,14 +136,14 @@
             <div class="row" ng-switch-when="btn2">
                   <div class="col-md-12">
                     <div style="color:red;margin-bottom:10px">股东之间有亲属关系（如父子、母女、兄弟、姐妹等）请注明，如有公司法人股东时，该法人股东的股份结构也需分解，直至全部为自然人股东</div>
-                      <div include-with-scope="app/pages/components/audit/editTable/sharesConstitute.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/sharesConstitute.html"></div>
 
                   </div>
             </div>
             <!-- 关键人员背景 -->
             <div class="row" ng-switch-when="btn3">
                   <div class="col-md-12">
-                      <div include-with-scope="app/pages/components/audit/editTable/keyPersonnelTable.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/keyPersonnelTable.html"></div>
                   </div>
             </div>
             <!-- 股份股东投资情况 -->
@@ -146,10 +151,10 @@
                   <div class="col-md-12">
                       <uib-tabset>
                         <uib-tab heading="汽车销售领域">
-                          <div include-with-scope="app/pages/components/audit/editTable/carSalesTable.html"></div>
+                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/carSalesTable.html"></div>
                         </uib-tab>
                         <uib-tab heading="非汽车销售领域">
-                          <div include-with-scope="app/pages/components/audit/editTable/notcarSalesTable.html"></div>
+                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/notcarSalesTable.html"></div>
                         </uib-tab>
                       </uib-tabset>
 
@@ -159,7 +164,7 @@
             <div class="row" ng-switch-when="btn5">
                   <div class="col-md-12">
                     <div ba-panel ba-panel-title="控股股东所有汽车4S店/授权展厅/授权维修站销售维修状况" ba-panel-class="with-scroll">
-                      <div include-with-scope="app/pages/components/audit/editTable/repairStatusTable.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/repairStatusTable.html"></div>
                     </div>
                   </div>
             </div>
@@ -169,10 +174,10 @@
                     <div ba-panel ba-panel-title="近三年的年度财务报表复印件，并加盖公司财务章扫描件" ba-panel-class="with-scroll">
                       <uib-tabset>
                         <uib-tab heading="财务报表">
-                          <div include-with-scope="app/pages/components/audit/editTable/financeStatusTable.html"></div>
+                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/financeStatusTable.html"></div>
                         </uib-tab>
                         <uib-tab heading="资信情况">
-                          <div include-with-scope="app/pages/components/audit/editTable/creditStanding.html"></div>
+                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/creditStanding.html"></div>
                         </uib-tab>
                       </uib-tabset>
                     </div>
@@ -184,13 +189,13 @@
                     <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
                       <uib-tabset>
                         <uib-tab heading="轿车">
-                          <div include-with-scope="app/pages/components/audit/editTable/carCaseTable.html"></div>
+                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/carCaseTable.html"></div>
                         </uib-tab>
                         <uib-tab heading="SUV">
-                          <div include-with-scope="app/pages/components/audit/editTable/suvCaseTable.html"></div>
+                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/suvCaseTable.html"></div>
                         </uib-tab>
                         <uib-tab heading="区域代理商排名">
-                          <div include-with-scope="app/pages/components/audit/editTable/qydlspmCaseTable.html"></div>
+                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/qydlspmCaseTable.html"></div>
                         </uib-tab>
                       </uib-tabset>
                     </div>
@@ -333,7 +338,7 @@
           <div class="row" ng-switch-when="btn22">
               <div class="col-md-12">
                   <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
-                    <div include-with-scope="app/pages/components/audit/editTable/businessAreaTable.html"></div>
+                    <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/businessAreaTable.html"></div>
                     <div class="inner-box-njdjs">
 
                     </div>
@@ -347,7 +352,7 @@
           <div class="row" ng-switch-when="btn23">
               <div class="col-md-12">
                   <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
-                    <div include-with-scope="app/pages/components/audit/editTable/BuiltShopSiteTable.html"></div>
+                    <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/BuiltShopSiteTable.html"></div>
                   </div>
               </div>
           </div>
@@ -406,7 +411,7 @@
           <div class="row" ng-switch-when="btn32">
               <div class="col-md-12">
                   <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
-                      <div include-with-scope="app/pages/components/audit/editTable/newEquityStructureTable.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/newEquityStructureTable.html"></div>
                   </div>
               </div>
           </div>
@@ -414,7 +419,7 @@
           <div class="row" ng-switch-when="btn33">
               <div class="col-md-12">
                   <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
-                      <div include-with-scope="app/pages/components/audit/editTable/fundingTable.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/fundingTable.html"></div>
                   </div>
               </div>
           </div>
@@ -422,7 +427,7 @@
           <div class="row" ng-switch-when="btn34">
               <div class="col-md-12">
                   <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
-                      <div include-with-scope="app/pages/components/audit/editTable/DMconstructionPlanTable.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/DMconstructionPlanTable.html"></div>
                   </div>
               </div>
           </div>
@@ -430,7 +435,7 @@
           <div class="row" ng-switch-when="btn35">
               <div class="col-md-12">
                   <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
-                      <div include-with-scope="app/pages/components/audit/editTable/keyJobTable.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/keyJobTable.html"></div>
                   </div>
               </div>
           </div>
@@ -438,7 +443,7 @@
           <div class="row" ng-switch-when="btn36">
               <div class="col-md-12">
                   <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
-                      <div include-with-scope="app/pages/components/audit/editTable/organizationChartTable.html"></div>
+                      <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/organizationChartTable.html"></div>
                   </div>
               </div>
           </div>
@@ -453,7 +458,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="info-box">
-          <div include-with-scope="app/pages/components/audit/editTable/predictiveParsingTable.html"></div>
+          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/predictiveParsingTable.html"></div>
         </div>
       </div>
     </div>

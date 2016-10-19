@@ -83,7 +83,9 @@
             $scope.agent.XYDJPJbank=data.CSmessage.XYDJPJbank?data.CSmessage.XYDJPJbank:'';
             $scope.agent.nowBank=data.CSmessage.nowBank?data.CSmessage.nowBank:[];
             $scope.nowBankDeposit=$scope.agent.nowBank;
-        };
+        }else{
+            $scope.nowBankDeposit=[];
+        }
 
 
         // 建店场地情况
@@ -765,17 +767,17 @@
         };
         // $scope.state=true;
         console.log('hello word');
-        console.log(allmessage);
+        console.log($scope._dbid);
         //如果为真，则表示数据库存在，做update操作
         if($scope._dbid){
             Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
-            console.log('newallmessage')
+            console.log('updateBaseinfo')
             console.log(err);
             console.log(res);
         })
         }else{
         Shop.baseinfo.save(allmessage,function(err, res) {
-            console.log('allmessage')
+            console.log('first-allmessage')
             console.log(err);
             console.log(res);
         })

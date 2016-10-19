@@ -52,13 +52,13 @@
 				    <tr ng-repeat="item in shoplists" class="editable-tr-wrap">
 				      <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
-				      <td>{{item.companyName}}</td>
+				      <td>{{item.basic.companyName}}</td>
 				      <td>{{item.shopApplyUserId.name}}</td>
 				      <td>{{item.shopApplyUserId.cellphone}}</td>
               <td>{{test(item.applyId.verify)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
-				      <td><a ui-sref="admin.check({obj:item})">审核</a></td>
+				      <td><a href="" ng-click="stateGo(item)">审核</a></td>
 
 				    </tr>
 			    </tbody>
@@ -127,7 +127,7 @@
               <td>{{test(item.applyId.verify)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
-				      <td><a ui-sref="admin.check({obj:item})">审核</a></td>
+				      <td><a ng-click="stateGo(item.operate)">审核</a></td>
 
 				    </tr>
 			    </tbody>

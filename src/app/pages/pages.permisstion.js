@@ -16,8 +16,8 @@
         // console.log('~~~~~~~~~~~~permissionRun~~~~~~~~~~~~~~');
         PermPermissionStore
               .definePermission('wangfa', function () {
-                // return $cookieStore.get('role')==="admin";
-                return true;
+                return $cookieStore.get('role')==="admin";
+                // return true
               });
         PermPermissionStore
               .definePermission('dailishang', function () {

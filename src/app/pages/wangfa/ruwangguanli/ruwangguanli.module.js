@@ -11,20 +11,59 @@
   /** @ngInject */
   function routeConfig($stateProvider){
     $stateProvider
-      .state('ba.rulisa.ruwangshenhe', {
-        url: '/rulisa.ruwangshenhe',
-        controller: 'AuditCtrl',
-        templateUrl: 'app/pages/wangfa/ruwangguanli/audit.html',
-          title: '入网审核',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-          data:{
-             permissions: {
-              only:'wangfa'
-           }}
-      })
+    .state('ba.rulisa.ruwangshenhe', {
+      url: '/rulisa',
+      controller: 'AuditCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/audit.html',
+        title: '入网审核',
+        sidebarMeta: {
+          icon: 'ion-ios-pulse',
+          order: 100,
+        },
+        data:{
+           permissions: {
+            only:'wangfa'
+         }}
+    })
+    .state('ba.rulisa.check', {
+      url: '/check',
+      controller: 'CheckCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
+      params:{
+        obj:null
+      },
+      data:{
+         permissions: {
+          only:'wangfa'
+       }}
+
+    })
+    .state('ba.rulisa.inform', {
+      url: '/inform',
+      controller: 'InformCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/inform.html',
+      params:{
+        obj:null
+      },
+      data:{
+         permissions: {
+          only:'wangfa'
+       }}
+
+    })
+    .state('ba.rulisa.ViewDetails', {
+      url: '/ViewDetails',
+      controller: 'ViewDetailsCtrl',
+      templateUrl: 'app/pages/wangfa/ruwangguanli/ViewDetails.html',
+      params:{
+        obj:null
+      },
+      data:{
+         permissions: {
+          only:'wangfa'
+       }}
+
+    })
       //建店管理
 
       // .state('ba.jiandianguanli.shigongguanli', {
