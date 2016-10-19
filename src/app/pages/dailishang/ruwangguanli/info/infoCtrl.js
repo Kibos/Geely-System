@@ -528,7 +528,6 @@
             landStatus: $scope.agent.landStatus,
             leaseStart: $scope.agent.leaseStart,
             leaseEnd: $scope.agent.leaseEnd,
-            leaseEnd: $scope.agent.leaseEnd,
             firstshopone: $scope.agent.firstshopone,
             firstshoptwo: $scope.agent.firstshoptwo,
             firstshopthree: $scope.agent.firstshopthree,
