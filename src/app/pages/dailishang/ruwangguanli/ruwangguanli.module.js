@@ -5,7 +5,9 @@
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.dailishang.ruwangguanlia', [])
+  angular.module('BlurAdmin.pages.dailishang.ruwangguanlia', [
+    'BlurAdmin.pages.dailishang.ruwangguanli.progressquery'
+  ])
     .config(routeConfig);
 
   /** @ngInject */
@@ -27,7 +29,8 @@
       })
       .state('ba.ruwangguan.chaxun', {
         url: '/ruwangguan.chaxun',
-        template: '<div></div>',
+        controller: 'progressqueryCtrl',
+        templateUrl: 'app/pages/dailishang/ruwangguanli/progressquery/progressquery.html',
           title: '进度查询',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
@@ -38,7 +41,7 @@
               only:'dailishang'
            }}
       });
-      
+
 
 
   }

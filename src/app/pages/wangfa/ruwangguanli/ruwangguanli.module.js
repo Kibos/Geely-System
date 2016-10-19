@@ -100,15 +100,15 @@
       //     },
       // })
 
-      .state('ba.jiandianguanli.yanshouguanli', {
-        url: '/jiandianguanli.yanshouguanli',
-        template: '<div></div>',
-          title: '验收管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 30,
-          },
-      })
+      // .state('ba.jiandianguanli.yanshouguanli', {
+      //   url: '/jiandianguanli.yanshouguanli',
+      //   template: '<div></div>',
+      //     title: '验收管理',
+      //     sidebarMeta: {
+      //       icon: 'ion-ios-pulse',
+      //       order: 30,
+      //     },
+      // })
       .state('ba.jiandianguanli.baozhengjinguanli', {
         url: '/jiandianguanli.baozhengjinguanli',
         template: '<div></div>',

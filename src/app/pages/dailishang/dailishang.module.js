@@ -9,9 +9,9 @@
       'BlurAdmin.pages.dailishang.ruwangguanlia',
       'BlurAdmin.pages.dailishang,mianshi',
       'BlurAdmin.pages.dailishang.yunying',
-      'BlurAdmin.pages.dailishang.shigongguanli',
+      'BlurAdmin.pages.dailishang.constructionmanagement',
       'BlurAdmin.pages.dailishang.shejishangguanli',
-      'BlurAdmin.pages.dailishang.gongyingshangguanli'
+      'BlurAdmin.pages.dailishang.gongyingshangguanli',
 
   ])
   .config(routeConfig);
@@ -46,10 +46,11 @@
         //       only:'dailishang'
         //    }}
         // })
-        .state('ba.shigongguanli', {
-          url: '/shigongguanli',
-          template : '<ui-view></ui-view>',
-    
+        .state('ba.constructionmanagement', {
+          url: '/constructionmanagement',
+          controller: 'constructionmanagementCtrl',
+          templateUrl: 'app/pages/dailishang/constructionmanagement/constructionmanagement.html',
+
           title: '施工管理',
           sidebarMeta: {
             icon: 'ion-gear-a',
@@ -91,7 +92,7 @@
         .state('ba.baozhengjinguanli', {
           url: '/baozhengjinguanli',
           template : '<ui-view></ui-view>',
-         
+
           title: '缴纳保证金',
           sidebarMeta: {
             icon: 'ion-gear-a',
@@ -104,8 +105,8 @@
         })
         .state('ba.yanshoushenqing', {
           url: '/yanshoushenqing',
-          template : '<ui-view></ui-view>',
-         
+          controller: 'acceptancesqCtrl',
+          templateUrl: 'app/pages/dailishang/acceptancesq/acceptancesq.html',
           title: '验收申请',
           sidebarMeta: {
             icon: 'ion-gear-a',

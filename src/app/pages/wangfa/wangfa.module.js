@@ -9,7 +9,8 @@
     'BlurAdmin.pages.wangfa.ruwangguanlisk',
 
     'BlurAdmin.pages.wangfa.designCheck',
-    'BlurAdmin.pages.wangfa.constructionAudit'
+    'BlurAdmin.pages.wangfa.constructionAudit',
+    'BlurAdmin.pages.wangfa.acceptancegl'
   ])
       .config(routeConfig);
 
@@ -125,7 +126,7 @@
         .state('ba.jiandianleixingweihu', {
           url: '/jiandianleixingweihu',
           template : '<ui-view></ui-view>',
-          
+
           title: '建店类型维护',
           sidebarMeta: {
             icon: 'ion-gear-a',
@@ -140,7 +141,7 @@
         // .state('ba.zuzhijigou', {
         //   url: '/zuzhijigou',
         //   template : '<ui-view></ui-view>',
-         
+
         //   title: '组织机构模板维护 ',
         //   sidebarMeta: {
         //     icon: 'ion-gear-a',

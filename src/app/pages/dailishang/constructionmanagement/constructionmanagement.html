@@ -1,0 +1,192 @@
+<uib-tabset active="$tabSetStatus.activeTab">
+  <uib-tab heading="施工准备">
+    <div class="sgzb">
+      <div class="prompt">
+        <p>请按下面的要求依次完成，方可进入施工管理阶段</p>
+      </div>
+
+      <div class="judge">
+        <label class="">是否报规</label>
+        <label class="radio">
+          <input type="radio" ng-model="options.type1" value="yes"/><span>是</span>
+        </label>
+        <label class="radio">
+          <input type="radio" ng-model="options.type1" value="no"/><span>否</span>
+        </label>
+      </div>
+      <div class="judge">
+        <label class="">是否完成环评</label>
+        <label class="radio">
+          <input type="radio" ng-model="options.type2" value="yes"/><span>是</span>
+        </label>
+        <label class="radio">
+          <input type="radio" ng-model="options.type2" value="no"/><span>否</span>
+        </label>
+      </div>
+      <div class="upload" style="float:left;margin-bottom:20px">
+        <label>土建招标</label>
+        <input type="file" id="inputfile" ng-model="tjfile">
+      </div>
+      <div class="upload" style="margin-bottom:20px">
+        <label>装饰招标</label>
+        <input type="file" id="inputfile" ng-model="zsfile">
+      </div>
+      <div class="upload" style="float:left;margin-bottom:20px">
+        <label>报&nbsp;&nbsp;&nbsp;建</label>
+        <input type="file" id="inputfile" ng-model="bjfile">
+      </div>
+      <div class="upload" style="margin-bottom:20px">
+        <label>消&nbsp;&nbsp;&nbsp;防</label>
+        <input type="file" id="inputfile" ng-model="xffile">
+      </div>
+      <div class="button-wrapper"><button type="button" class="btn btn-primary btn-lg" ng-click="saveClick()">保存</button></div>
+    </div>
+
+  </uib-tab>
+  <uib-tab heading="施工图">
+    <div class="sgt">
+      <div class="add-row-editable-table">
+        <button class="btn btn-primary" ng-click="addUser()">新增施工图</button>
+      </div>
+      <table class="table table-bordered table-hover table-condensed">
+        <tr>
+          <td>序号</td>
+          <td>合作商</td>
+          <td>新建店</td>
+          <td>设计厂商</td>
+          <td>提交人</td>
+          <td>提交时间</td>
+          <td>状态</td>
+          <td>技术交底图</td>
+          <td>操作</td>
+        </tr>
+        <tr ng-repeat="user in users" class="editable-row">
+          <td>
+              {{$index}}
+          </td>
+          <td>
+              <span editable-text="user.partner" e-name="partner" e-form="rowform" e-required>
+                {{ user.partner || 'empty' }}
+              </span>
+          </td>
+          <td>
+              <span editable-text="user.newstore" e-name="newstore" e-form="rowform" e-required>
+                {{ user.newstore || 'empty' }}
+              </span>
+          </td>
+          <td>
+              <span editable-text="user.design" e-name="design" e-form="rowform" e-required>
+                {{ user.design || 'empty' }}
+              </span>
+          </td>
+          <td>
+              <span editable-text="user.submitter" e-name="submitter" e-form="rowform" e-required>
+                {{ user.submitter || 'empty' }}
+              </span>
+          </td>
+          <td>
+              <span editable-text="user.time" e-name="time" e-form="rowform" e-required>
+                {{ user.time || 'empty' }}
+              </span>
+          </td>
+          <td class="select-td">
+              <span editable-select="user.status" e-name="status" e-form="rowform" e-selectpicker
+                    e-ng-options="s.value as s.text for s in statuses">
+                {{ showStatus(user) }}
+              </span>
+          </td>
+          <td>
+              <span editable-text="user.map" e-name="map" e-form="rowform" e-required>
+                {{ user.map || 'empty' }}
+              </span>
+          </td>
+          <td>
+            <form editable-form name="rowform" ng-show="rowform.$visible" class="form-buttons form-inline"
+                  shown="inserted == user">
+              <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+                保存
+              </button>
+              <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+                取消
+              </button>
+            </form>
+            <div class="buttons" ng-show="!rowform.$visible">
+              <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">编辑</button>
+              <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">删除</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+  </uib-tab>
+  <uib-tab heading="施工周报">
+    <div class="sgzb1">
+      <div class="sgzq" style="font-size:16px;font-weight:bolder">
+        施工周期：2016.1.1至2016.8.1
+      </div>
+      <hr style="width:100%;display:inline-block;transform:translateY(5px)"/>
+      <div class="bt">
+        <label class="col-md-2">阶&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;段</label>
+        <label class="col-md-2">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间</label>
+        <label class="col-md-3">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</label>
+        <label class="col-md-5">周&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报</label>
+      </div>
+      <div class="nr" ng-repeat="week in weeks">
+        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" ng-model="week.stage">
+          {{ week.stage || 'empty' }}
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" ng-model="week.time">
+          {{ week.time || 'empty' }}
+        </div>
+        <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3" ng-model="week.work">
+          {{ week.work || 'empty' }}
+        </div>
+        <div class="col-xs-7 col-sm-6 col-md-5 col-lg-5" ng-model="week.weekly">
+          <table class="table table-bordered table-hover table-condensed" style="margin-top:20px">
+            <tr>
+              <td>第一周(1.1~1.7)</td>
+              <td>第二周(1.1~1.7)</td>
+              <td>第三周(1.1~1.7)</td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
+              </td>
+              <td>
+                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
+              </td>
+              <td>
+                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
+              </td>
+            </tr>
+          </table>
+          <table class="table table-bordered table-hover table-condensed">
+            <tr>
+              <td>第四周(1.1~1.7)</td>
+              <td>第五周(1.1~1.7)</td>
+              <td>第六周(1.1~1.7)</td>
+            </tr>
+            <tr>
+              <td>
+                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
+              </td>
+              <td>
+                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')">点击填写</button>
+              </td>
+              <td>
+                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')">点击填写</button>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </uib-tab>
+
+</uib-tabset>
