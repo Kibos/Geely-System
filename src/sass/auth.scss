@@ -14,13 +14,13 @@ body{
   height: 100%;
 }
 
-$text-color: #666;
+$text-color: #dedada;
 
 .form-control, .form-control:focus {
   @include placeholderStyle($text-color, 0.9);
   background-color:#ffffff;
   border-radius: 5px;
-  color: $text-color;
+  color:#666;
 }
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
   @include placeholderStyle($text-color, 0.6);
@@ -37,7 +37,7 @@ $text-color: #666;
   width: 540px;
   margin: 0 auto;
   border-radius: 5px;
-  @include bg-translucent-dark(0.55);
+  @include bg-translucent-dark(1);
   color: #fff;
   padding: 32px;
   h1 {
@@ -52,7 +52,7 @@ $text-color: #666;
     text-decoration: none;
     outline: none;
     transition: all 0.2s ease;
-    color: $primary;
+    color:#fff;
     &:hover {
       color: $primary-dark;
     }
