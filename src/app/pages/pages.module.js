@@ -10,7 +10,7 @@
 
     'BlurAdmin.pages.dashboard',
     'BlurAdmin.pages.profile',
-    'BlurAdmin.pages.permission',
+   
     'BlurAdmin.pages.login',
     'BlurAdmin.pages.register',
 

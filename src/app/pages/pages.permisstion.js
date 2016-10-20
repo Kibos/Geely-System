@@ -1,9 +1,9 @@
 (function() {
     'use strict';
 
-    angular
-        .module('BlurAdmin.pages.permission', ['permission','permission.ui','ui.router'])
-    .run(permissionRun);
+    // angular
+    //     .module('BlurAdmin.pages.permission', ['permission','permission.ui','ui.router'])
+    // .run(permissionRun);
 
 
     function permissionRun($rootScope,  $cookieStore, $state, PermRoleStore, PermPermissionStore, Auth) {

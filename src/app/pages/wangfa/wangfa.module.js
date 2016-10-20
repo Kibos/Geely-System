@@ -14,6 +14,7 @@
     'BlurAdmin.pages.wangfa.acceptancegl',
     'BlurAdmin.pages.wangfa.bzjgl'
 
+
   ])
       .config(routeConfig);
 
