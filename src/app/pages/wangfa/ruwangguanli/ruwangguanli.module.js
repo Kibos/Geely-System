@@ -113,15 +113,7 @@
       //       order: 30,
       //     },
       // })
-      .state('ba.jiandianguanli.baozhengjinguanli', {
-        url: '/jiandianguanli.baozhengjinguanli',
-        template: '<div></div>',
-          title: '保证金管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-      })
+      
       // .state('ba.jiandianguanli.jiandianbutie', {
       //   url: '/jiandianguanli.jiandianbutie',
       //   template: '<div></div>',

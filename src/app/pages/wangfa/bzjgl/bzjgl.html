@@ -1,0 +1,51 @@
+
+<div ba-panel ba-panel-title="网络发展/建店管理/加盟保证金列表" ba-panel-class="with-scroll">
+	<div class="row">
+		<div class="col-md-6">
+			
+			<div class="form-group" style="margin-left: 5px;">
+				<label class="individual-label">代理商状态：</label>
+				<input type="text" name="typeName" class="form-control individual-iput ion-search" ng-model="$scope.filter.$" placeholder="请输入要搜索的代理商状态">
+				 
+			</div>
+		</div>
+		<div class="col-md-6"></div>
+		
+	</div>
+	<div class="row">
+		<div class="horizontal-scroll">
+
+		  	<table class="table table-hover" st-table="informations">
+			    <thead>
+				    <tr class="sortable">
+				      <th class="table-id" st-sort="agent" st-sort-default="true"style="width: 100px;">代理商</th>
+				      <th st-sort="time">时间期限</th>
+				      <th st-sort="status">状态</th>
+				      <th st-sort="zaozuo">操作</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+				    <tr ng-repeat="item in informations | filter: $scope.filter" class="editable-tr-wrap">
+				      <td class="table-id">{{item.agent}}</td>
+				      <td>{{item.time}}</td>
+				      <td>{{item.status}}</td>
+				      <td>
+				      	<button type="submit" class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/wangfa/bzjgl/txModal.html', 'md')">提醒</button>
+				      	<button type="submit" class="btn btn-primary" data-toggle="modal" ng-click="open('app/pages/wangfa/bzjgl/szModal.html', 'md')">设置</button>
+				      </td>
+
+				    </tr>
+			    </tbody>
+			    <tfoot>
+				    <tr>
+				      <td colspan="9" class="text-center">
+				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+				      </td>
+				    </tr>
+			    </tfoot>
+		  	</table>
+		</div>
+			
+	</div>
+	
+</div>
