@@ -95,7 +95,7 @@
         //    }
         //   }
         // })
-      
+
         // .state('ba.tongzhimoban', {
         //   url: '/tongzhimoban',
         //   template : '<ui-view></ui-view>',
