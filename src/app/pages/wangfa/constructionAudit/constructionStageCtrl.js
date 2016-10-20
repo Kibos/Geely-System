@@ -38,19 +38,19 @@
     }
     $scope.constructions=[
       {
-        name:'吉利',
+        name:'杭州吉利',
         description:'xxxxxxxxx',
         time:'2016-09-01  至  2016-10-10',
         status:'已完成'
       },
       {
-        name:'hhh',
+        name:'北京吉利4S店',
         description:'xxxxxxxxx',
         time:'2016-09-01  至  2016-10-10',
         status:'延期'
       },
       {
-        name:'hhh',
+        name:'杭州吉利4S店',
         description:'xxxxxxxxx',
         time:'2016-09-01  至  2016-10-10',
         status:'进行中'

@@ -70,36 +70,19 @@
     		phone:'123456789',
     		status:'设计终稿待领导审批',
     		date:'20161006',
-    	},
-    	{
-    		id:4,
-    		area:'杭州',
-    		company:'吉利',
-    		person:'黎明',
-    		phone:'123456789',
-    		status:'未通过',
-    		date:'20161006',
-    	},
-    	{
-    		id:5,
-    		area:'杭州',
-    		company:'吉利',
-    		person:'黎明',
-    		phone:'123456789',
-    		status:'未通过',
-    		date:'20161006',
     	}
+    	
 
     ]
 
-    $scope.applicants2=[
+    $scope.applicants1=[
     	{
     		id:1,
     		area:'杭州',
     		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		state:'设计初稿审核通过',
     		date:'20161006',
     	},
     	{
@@ -108,7 +91,7 @@
     		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		state:'设计初稿审核通过',
     		date:'20161006',
     	},
     	{
@@ -117,7 +100,7 @@
     		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		state:'设计初稿审核通过',
     		date:'20161006',
     	},
     	{
@@ -126,7 +109,7 @@
     		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		state:'设计初稿审核通过',
     		date:'20161006',
     	},
     	{
@@ -135,7 +118,7 @@
     		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		state:'设计初稿审核通过',
     		date:'20161006',
     	},
     	{
@@ -144,7 +127,7 @@
     		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		state:'设计初稿审核通过',
     		date:'20161006',
     	},
     	{
@@ -153,7 +136,7 @@
     		company:'吉利',
     		person:'黎明',
     		phone:'123456789',
-    		state:'未通过',
+    		state:'设计初稿审核通过',
     		date:'20161006',
     	}
 

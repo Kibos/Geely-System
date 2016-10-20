@@ -91,8 +91,10 @@
         //    }}
         // })
         .state('ba.baozhengjinguanli', {
+
           url: '/baozhengjinguanli',
-          template : '<ui-view></ui-view>',
+          controller:'jiaonabzjCtrl',
+          templateUrl : 'app/pages/dailishang/jiaonabzj/jiaonabzj.html',
 
           title: '缴纳保证金',
           sidebarMeta: {
