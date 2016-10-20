@@ -34,10 +34,14 @@ angular.module('BlurAdmin')
           password: user.password
         }).
         success(function(data) {
-          console.log(data)
+          console.log(data);
+          
+        // $cookieStore.remove('token');
+        // $cookieStore.remove('role');
+        // PermPermissionStore.clearStore();
 
           $cookieStore.put('token', data.token);
-           $cookieStore.put('role', data.role);
+          $cookieStore.put('role', data.role);
           currentUser = User.get();
           deferred.resolve(data);
           return cb();

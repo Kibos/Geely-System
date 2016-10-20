@@ -37,12 +37,11 @@
         $state.go('ba.dashboard');
         })
         .catch( function(err) {
-           console.log('log failed', err);
-          if(vm.user.email===undefined||vm.user.password===undefined){
+            console.log('log failed', err);
+          if(isUndefinedOrNull(vm.user.email)||isUndefinedOrNull(vm.user.password)){
             showWarningMsg();
           }else{
             showErrorMsg(err.message);
-            console.log("--"+vm.user.password);
           }
           
            vm.loginFail = true;
@@ -69,8 +68,8 @@
       toastr.warning('请填写完整!', '提示');
     };
 
-
-
-  }
+    function isUndefinedOrNull(value){
+       return angular.isUndefined(value) || value === null};
+    }
 
 })();
