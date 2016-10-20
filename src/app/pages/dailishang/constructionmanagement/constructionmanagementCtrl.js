@@ -19,7 +19,7 @@
       {
         "id": 1,
         "partner": "A集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"杭州吉利4S店",
         "design":"A设计厂商",
         "submitter":"小李",
         "time":"2016-10-08 07：00",
@@ -29,7 +29,7 @@
       {
         "id": 2,
         "partner": "B集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"杭州吉利4S店",
         "design":"A设计厂商",
         "submitter":"小李",
         "time":"2016-10-08 07：00",
@@ -39,7 +39,7 @@
       {
         "id": 3,
         "partner": "C集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"北京吉利4S店",
         "design":"A设计厂商",
         "submitter":"小张",
         "time":"2016-10-08 07：00",
@@ -49,7 +49,7 @@
       {
         "id": 4,
         "partner": "D集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"杭州吉利4S店",
         "design":"A设计厂商",
         "submitter":"小李",
         "time":"2016-10-08 07：00",
@@ -59,7 +59,7 @@
       {
         "id": 5,
         "partner": "E集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"杭州吉利4S店",
         "design":"A设计厂商",
         "submitter":"小和",
         "time":"2016-10-08 07：00",
@@ -69,7 +69,7 @@
       {
         "id": 6,
         "partner": "F集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"杭州吉利4S店",
         "design":"A设计厂商",
         "submitter":"小李",
         "time":"2016-10-08 07：00",
@@ -79,7 +79,7 @@
       {
         "id": 7,
         "partner": "G集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"北京吉利4S店",
         "design":"A设计厂商",
         "submitter":"小耿",
         "time":"2016-10-08 07：00",
@@ -99,7 +99,7 @@
       {
         "id": 9,
         "partner": "I集团",
-        "newstore":"L品牌旗舰店",
+        "newstore":"北京吉利4S店",
         "design":"A设计厂商",
         "submitter":"小赵",
         "time":"2016-10-08 07：00",
