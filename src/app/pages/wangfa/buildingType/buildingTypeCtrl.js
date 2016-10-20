@@ -21,6 +21,24 @@
           minCarNum:'4~6',
           minWorkstation:'27',
           date:'启用'
+        },
+        {
+          type:'二类展厅',
+          width:'28~32',
+          height:'5~10',
+          acreage:'2200',
+          minCarNum:'4~6',
+          minWorkstation:'27',
+          date:'启用'
+        },
+        {
+          type:'品牌体验中心',
+          width:'28~32',
+          height:'5~10',
+          acreage:'2200',
+          minCarNum:'4~6',
+          minWorkstation:'27',
+          date:'启用'
         }
     ]
     $scope.add=function () {

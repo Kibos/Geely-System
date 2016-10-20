@@ -11,7 +11,9 @@
     'BlurAdmin.pages.wangfa.constructionAudit',
     'BlurAdmin.pages.wangfa.buildingType',
     'BlurAdmin.pages.wangfa.manufacturerManage',
-    'BlurAdmin.pages.wangfa.acceptancegl'
+    'BlurAdmin.pages.wangfa.acceptancegl',
+    'BlurAdmin.pages.wangfa.bzjgl'
+
 
   ])
       .config(routeConfig);
@@ -35,7 +37,7 @@
             }
           }
         })
-         .state('ba.jiandianguanli', {
+        .state('ba.jiandianguanli', {
           url: '/jiandianguanli',
           template : '<ui-view></ui-view>',
           abstract: true,
@@ -50,6 +52,8 @@
            }
           }
         })
+      
+      ;
         // .state('ba.mianshiguanli', {
         //   url: '/mianshiguanli',
         //   template : '<ui-view></ui-view>',
@@ -131,7 +135,7 @@
         //    }
         //   }
         // })
-        ;
+        
 
 
   }
