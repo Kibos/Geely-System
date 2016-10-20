@@ -34,33 +34,42 @@
     $scope.states=['合同已上传备案','首付款凭证已上传','供应商已发货','供应商已完成到货确认','供应商已完成安装确认'];
 
 
-   $scope.suppmodel="富士康集团";
+  //  $scope.suppmodel="富士康集团";
 
-   $scope.$watch('suppmodel',  function(newValue, oldValue) {
+  //  $scope.$watch('suppmodel',  function(newValue, oldValue) {
 
-      console.log(" id 11 ++" +newValue);
-      if (newValue === oldValue) { return; } // AKA first run
-        for(var x in $scope.suppliers){
-        if(x.name===$scope.suppmodel){
-          $scope.sid =  $scope.suppliers[x].id;
-          console.log(" id "+$scope.sid+" "+ x );
-        }
-      }
-   });
+  //     console.log(" id 11 ++" +newValue);
+  //     if (newValue === oldValue) { return; } // AKA first run
+  //       for(var x in $scope.suppliers){
+  //       if(x.name===$scope.suppmodel){
+  //         $scope.sid =  $scope.suppliers[x].id;
+  //         console.log(" id "+$scope.sid+" "+ x );
+  //       }
+  //     }
+  //  });
 
   
 
-    // $scope.getSuppID=function(){
-    //    console.log(" id 1122" +$scope.suppmodel );
-    //   // $scope.supp=suppliers
+    $scope.getSuppID=function(){
+       console.log(" id 1122" +this.suppmodel );
+      // $scope.supp=suppliers
 
-    //   for(var x in $scope.suppliers){
-    //     if($scope.suppliers[x].name===$scope.suppmodel){
-    //       $scope.sid =  x;
-    //       console.log(" id "+x.id +x+"  "+$scope.suppmodel);
-    //     }
-    //   }
-    // }
+      // for(var x in this.suppliers){
+      //   if($scope.suppliers[x].name===$scope.suppmodel){
+      //     $scope.sid =  x;
+      //     console.log(" id "+x.id +x+"  "+$scope.suppmodel);
+      //   }
+      // }
+      var i=0;
+      while(i++<this.suppliers.length){
+       if(this.suppliers[i-1].name===this.suppmodel){
+          $scope.sid =  i;
+          console.log(" id " +i+"  "+this.suppmodel+JSON.stringify(this.suppliers[i-1]));
+        }
+        // i++;
+      }
+
+    }
     
   }
 })();
