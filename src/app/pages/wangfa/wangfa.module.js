@@ -10,7 +10,7 @@
     'BlurAdmin.pages.wangfa.designCheck',
     'BlurAdmin.pages.wangfa.constructionAudit',
     'BlurAdmin.pages.wangfa.buildingType',
-    'BlurAdmin.pages.wangfa.manufacturerManage'，
+    'BlurAdmin.pages.wangfa.manufacturerManage',
     'BlurAdmin.pages.wangfa.acceptancegl'
 
   ])

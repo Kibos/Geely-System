@@ -55,6 +55,10 @@
         $scope.StoreConstructionPlan=data.StoreConstructionPlan?data.StoreConstructionPlan:[];
         // 关键岗位组建筹备
         $scope.keyJob=data.keyJob?data.keyJob:[];
+        // 新公司股权结构
+        $scope.newEquityStructure=data.newEquityStructure?data.newEquityStructure:[];
+        // 资信情况
+        $scope.nowBankDeposit=data.nowBankDeposit?data.nowBankDeposit:[];
 
 
 
@@ -81,10 +85,9 @@
         if (data.CSmessage){
             $scope.agent.qualityRating=data.CSmessage.qualityRating?data.CSmessage.qualityRating:'';
             $scope.agent.XYDJPJbank=data.CSmessage.XYDJPJbank?data.CSmessage.XYDJPJbank:'';
-            $scope.agent.nowBank=data.CSmessage.nowBank?data.CSmessage.nowBank:[];
-            $scope.nowBankDeposit=$scope.agent.nowBank;
-        }else{
-            $scope.nowBankDeposit=[];
+            // console.log("资信情况数据获取")
+            // $scope.agent.nowBank=data.CSmessage.nowBank?data.CSmessage.nowBank:[];
+            // $scope.nowBankDeposit=$scope.agent.nowBank;
         }
 
 
@@ -139,7 +142,6 @@
         };
 
         // 资金筹备
-        console.log("hello word1");
         if (data.fundings){
 
                 console.log(data.fundings);
@@ -176,8 +178,6 @@
             
         };
 
-        console.log("hello word2");
-
 
 
         // 组建架构筹备
@@ -198,11 +198,6 @@
         console.log('verifyDataSubmitting');
         Audit.verifyDataSubmitting.save({shopId:$scope._dbid})
         $scope.verifyDataSubmitting = true;
-        // $scope.btnFlag = $scope.verifyDataSubmitting;
-        // Shop.getShopsById.get({id:$scope.shopId},function(res){
-        //   console.log(res);
-        //   $scope.onwerShop = res;
-        // })
 
     }
 
@@ -307,30 +302,6 @@
       $scope.notcarShareholder.push($scope.inserted);
     }
     // 销售维修状况
-    /*$scope.maintenance=function(ServiceForm){
-
-    }*/
-    // $scope.maintenance=[
-    //     {
-    //         "COHR":'公司A',
-    //         "brand":'凯迪拉克',
-    //         "fourteen":{
-    //             "salesVolume":'800',
-    //             "marketShare":'20%',
-    //             "several":1000
-    //         },
-    //         "fifteen":{
-    //             "salesVolume":'1000',
-    //             "marketShare":'30%',
-    //             "several":1100
-    //         },
-    //         "sixteen":{
-    //             "salesVolume":'900',
-    //             "marketShare":'20%',
-    //             "several":1200
-    //         }
-    //     },
-    // ];
     $scope.delmaintenance = function(index) {
       $scope.maintenance.splice(index, 1);
     };
@@ -362,8 +333,7 @@
         $scope.submitcreditStatus = true;
         $scope.CSmessage={
            qualityRating: $scope.agent.qualityRating,
-           XYDJPJbank: $scope.agent.XYDJPJbank,
-           nowBank:$scope.nowBankDeposit
+           XYDJPJbank: $scope.agent.XYDJPJbank
         }
         console.log($scope.CSmessage);
     }
@@ -381,19 +351,6 @@
     }
 
     // 财务报表
-    /*$scope.financing=function(financeForm){
-
-    }*/
-    // $scope.financeStatusTable=[
-    //     {
-    //         "year":'2016',
-    //         "ASSET":'100',
-    //         "debt":'30',
-    //         "netMargin":'15%',
-    //         "netProfit":'60'
-    //     }
-    // ];
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     $scope.delfinanceStatusTable = function(index) {
       $scope.financeStatusTable.splice(index, 1);
     };
@@ -553,13 +510,13 @@
         }
         console.log($scope.bss);
     }
-
+    // 建店城市商圈
     $scope.delBSbusinessArea = function(index) {
       $scope.BSbusinessArea.splice(index, 1);
     };
     $scope.addBSbusinessArea= function() {
       $scope.inserted= {
-        proposed:false,
+        proposed:'false',
         market:'',
         distance:'',
         limousineBrand:"",
@@ -603,6 +560,19 @@
         console.log($scope.newCP);
     }
     // 新公司股权结构
+    $scope.delnewEquityStructure = function(index) {
+      $scope.newEquityStructure.splice(index, 1);
+    };
+    $scope.addnewEquityStructure = function() {
+      $scope.inserted= {
+        shareholder:"",
+        affiliation:"",
+        FundingSum:'',
+        Fundingscale:'',
+        nature:""
+      };
+      $scope.newEquityStructure.push($scope.inserted);
+    }
 
     // 资金筹备
     $scope.funding=function(fundingForm){
@@ -643,15 +613,6 @@
 
     }
     // 店面建设计划
-    // $scope.StoreConstructionPlan=[
-    //     {
-    //         "city":"杭州",
-    //         "branch":'滨江网点',
-    //         "submitTime":'2016.06.09',
-    //         "startingTime":"2016.03.04",
-    //         "completeTime":"2016.06.08"
-    //     }
-    // ];
     $scope.delStoreConstructionPlan = function(index) {
       $scope.StoreConstructionPlan.splice(index, 1);
     };
@@ -666,21 +627,6 @@
       $scope.StoreConstructionPlan.push($scope.inserted);
     }
     // 关键岗位组建筹备
-    // $scope.keyJob=[
-    //     {
-    //         "post":"董事长",
-    //         "name":'曼妮',
-    //         "age":'32',
-    //         "educationalStatus":"本科",
-    //         "Experience":"8"
-    //     },{
-    //         "post":"董事长助理",
-    //         "name":'李四',
-    //         "age":'26',
-    //         "educationalStatus":"本科",
-    //         "Experience":"3"
-    //     }
-    // ];
     $scope.delkeyJob = function(index) {
       $scope.keyJob.splice(index, 1);
     };
@@ -737,12 +683,12 @@
             keyJob:$scope.keyJob,
             SchemaArrange:$scope.SchemaArrange,
             MFAform:$scope.MFAform,
-            shopApplyUserId:$scope.currentUser._id
+            shopApplyUserId:$scope.currentUser._id,
+            newEquityStructure:$scope.newEquityStructure,
+            nowBankDeposit:$scope.nowBankDeposit
 
         };
         // $scope.state=true;
-        console.log('hello word');
-        console.log($scope._dbid);
         //如果为真，则表示数据库存在，做update操作
         if($scope._dbid){
             Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
