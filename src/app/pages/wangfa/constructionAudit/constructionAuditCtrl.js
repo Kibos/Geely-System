@@ -36,7 +36,7 @@
         id:2,
         area:'杭州',
         company:'吉利',
-        person:'黎明',
+        person:'张三',
         phone:'123456789',
         state:'施工阶段待添加',
         date:'20161006',
@@ -45,7 +45,7 @@
         id:1,
         area:'杭州',
         company:'吉利',
-        person:'黎明',
+        person:'李四',
         phone:'123456789',
         state:'施工阶段待添加',
         date:'20161006',
@@ -54,7 +54,7 @@
         id:3,
         area:'杭州',
         company:'吉利',
-        person:'黎明',
+        person:'李明',
         phone:'123456789',
         state:'施工阶段待添加',
         date:'20161006',
@@ -89,7 +89,7 @@
 
     ]
 
-    $scope.applicants2=[
+    $scope.applicants1=[
       {
         id:1,
         area:'杭州',
