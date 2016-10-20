@@ -12,6 +12,7 @@
       'BlurAdmin.pages.dailishang.constructionmanagement',
       'BlurAdmin.pages.dailishang.shejishangguanli',
       'BlurAdmin.pages.dailishang.gongyingshangguanli',
+      'BlurAdmin.pages.dailishang.rectificationsq'
 
   ])
   .config(routeConfig);
@@ -117,6 +118,20 @@
               only:'dailishang'
            }}
         })
+        // .state('ba.zhenggaishenqing', {
+        //   url: '/zhenggaishenqing',
+        //   controller: 'rectificationsqCtrl',
+        //   templateUrl: 'app/pages/dailishang/rectificationsq/rectificationsq.html',
+        //   title: '整改申请',
+        //   sidebarMeta: {
+        //     icon: 'ion-gear-a',
+        //     order: 30,
+        //   },
+        //   data:{
+        //      permissions: {
+        //       only:'dailishang'
+        //    }}
+        // })
         // .state('ba.mianshi', {
         //   url: '/mianshi',
         //   template : '<ui-view></ui-view>',

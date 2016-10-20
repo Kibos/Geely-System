@@ -1,0 +1,30 @@
+
+<div ba-panel ba-panel-title="网络发展/合作商运营/验收整改" ba-panel-class="with-scroll">
+
+	<div class="col-md-6">
+		<form ng-submit="add(CompanyForm)" novalidate name="CompanyForm">
+
+			<div class="form-group">
+				<label class="individual-label" id="partners1" style="font-size:14px;font-weight:bolder">申请代理商：
+					<span class="individual-iput" id="partners">{{partners}}</span>
+				</label>
+
+			</div>
+			<div class="form-group">
+				<label class="individual-label" id="check1" style="font-size:14px;font-weight:bolder">上一次验收资料：
+					<span class="individual-iput" id="check">{{information}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+
+				<label class="individual-label" style="font-size:14px;font-weight:bolder">验收资料：</label>
+				<input type="file" id="inputfile" class="form-control individual-iput" ng-model="file">
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary" ng-click="submit()">提交</button>
+			</div>
+		</form>
+
+	</div>
+
+</div>
