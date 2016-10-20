@@ -10,10 +10,13 @@
       <div class="sj" style="margin-bottom:20px;">
         <label>供应厂商：</label>
         <div class="" style="width:210px;">
-          <select class="selectpicker" title="供应厂商一" selectpicker>
+          <!--<select class="selectpicker" title="供应厂商一" selectpicker>
             <option>供应厂商一</option>
             <option>供应厂商二</option>
             <option>供应厂商三</option>
+          </select>-->
+          <select  ng-model="suppmodel"  ng-change="getSuppID()" > 
+            <option ng-repeat=" x in suppliers">{{x.name}}</option>                   
           </select>
         </div>
       </div>
@@ -36,26 +39,26 @@
     <div class="col-md-6">
       <div ba-panel ba-panel-title="供应厂商概要">
 
-      		  <div class="form-group">
-              <label class="individual-label">供应厂商代码：</label>
-              <input type="text" name="id" class="form-control individual-iput" ng-model="firm.id" disabled="true"/>
+  	      <div class="form-group">
+              <label class="individual-label">供应商代码:</label>
+              <input type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid-1].id" ng-value="{{suppliers[sid].id}}" disabled="true"/>
             </div>
             <div class="form-group">
-              <label class="individual-label">公司名：</label>
-              <input type="text" name="name" class="form-control individual-iput" ng-model="firm.name" disabled="true"/>
+              <label class="individual-label">公司名称:</label>
+              <input type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid-1].name" disabled="true"/>
             </div>
             <div class="form-group">
               <label class="individual-label">联系人:</label>
-              <input type="text" name="person" class="form-control individual-iput" ng-model="firm.person" disabled="true"/>
+              <input type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid-1].person" disabled="true"/>
             </div>
       			<div class="form-group">
               <label class="individual-label">联系电话:</label>
-              <input type="text" name="phone" class="form-control individual-iput" ng-model="firm.phone" disabled="true"/>
+              <input type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid-1].phone" disabled="true"/>
             </div>
             <div class="form-group">
               <label>简介：</label>
-              <textarea class="form-control" placeholder="简介" ng-model="firm.message" disabled="true">{{ firm.message || 'empty' }}</textarea>
-            </div>
+              <textarea class="form-control" placeholder="简介" ng-model="suppliers[sid].message" disabled="true">{{ supplier.message || 'empty' }}</textarea>
+          </div>
 
       </div>
     </div>
@@ -77,10 +80,8 @@
       <div class="sj" style="margin-bottom:20px;">
         <label>L品牌合作供应商：</label>
         <div class="" style="width:210px;">
-          <select class="selectpicker" title="供应厂商一" selectpicker>
-            <option>供应厂商一</option>
-            <option>供应厂商二</option>
-            <option>供应厂商三</option>
+          <select  ng-model="suppmodel"  ng-change="getSuppID()" > 
+            <option ng-repeat=" x in suppliers">{{x.name}}</option>                   
           </select>
         </div>
       </div>
@@ -105,23 +106,23 @@
 
       		  <div class="form-group">
               <label class="individual-label">供应商代码:</label>
-              <input type="text" name="id" class="form-control individual-iput" ng-model="supplier.id" disabled="true"/>
+              <input type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid-1].id" ng-value="{{suppliers[sid].id}}" disabled="true"/>
             </div>
             <div class="form-group">
               <label class="individual-label">公司名称:</label>
-              <input type="text" name="name" class="form-control individual-iput" ng-model="supplier.name" disabled="true"/>
+              <input type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid-1].name" disabled="true"/>
             </div>
             <div class="form-group">
               <label class="individual-label">联系人:</label>
-              <input type="text" name="person" class="form-control individual-iput" ng-model="supplier.person" disabled="true"/>
+              <input type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid-1].person" disabled="true"/>
             </div>
       			<div class="form-group">
               <label class="individual-label">联系电话:</label>
-              <input type="text" name="phone" class="form-control individual-iput" ng-model="supplier.phone" disabled="true"/>
+              <input type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid-1].phone" disabled="true"/>
             </div>
             <div class="form-group">
               <label>简介：</label>
-              <textarea class="form-control" placeholder="简介" ng-model="supplier.message" disabled="true">{{ supplier.message || 'empty' }}</textarea>
+              <textarea class="form-control" placeholder="简介" ng-model="suppliers[sid].message" disabled="true">{{ supplier.message || 'empty' }}</textarea>
             </div>
 
 

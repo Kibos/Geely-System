@@ -21,8 +21,10 @@
     $scope.saveInfo = function(){
      var newconstruction = {
         name:$scope.construction.name,
-        information:$scope.construction.information,
-        time1:$scope.construction.time1
+        description:$scope.construction.description,
+        time1:$scope.construction.time1,
+        time2:$scope.construction.time2
+
       }
       console.log(newconstruction)
     }

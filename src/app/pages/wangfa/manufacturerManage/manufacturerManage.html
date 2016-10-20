@@ -1,0 +1,41 @@
+<uib-tabset active="$tabSetStatus.activeTab">
+  	<uib-tab heading="设计厂商">
+	  	<div class="horizontal-scroll">
+	  		<button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
+		  	<table class="table table-hover" st-table="designManufacturers">
+			    <thead>
+				    <tr class="sortable">
+				      <th class="table-id" st-sort="id" st-sort-default="true">设计厂商名</th>
+				      <th st-sort="address">公司地址</th>
+				      <th st-sort="person">联系人</th>
+				      <th st-sort="phone">联系电话</th>
+				      <th st-sort="time">加入时间</th>
+				      <th st-sort="number">案例数</th>
+				      <th st-sort="zaozuo">操作</th>
+				    </tr>
+			    </thead>
+			    <tbody>
+				    <tr ng-repeat="item in designManufacturers" class="editable-tr-wrap">
+				      <td class="table-id">{{item.name}}</td>
+				      <td>{{item.address}}</td>
+				      <td>{{item.person}}</td>
+				     
+				      <td>{{item.phone}}</td>
+				      <td>{{item.time}}</td>
+				      <td>{{item.number}}</td>
+				      
+				      <td><a href="">查看</a></td>
+
+				    </tr>
+			    </tbody>
+			    <tfoot>
+				    <tr>
+				      <td colspan="8" class="text-center">
+				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+				      </td>
+				    </tr>
+			    </tfoot>
+		  	</table>
+		</div>
+ 	</uib-tab>
+  </uib-tabset>

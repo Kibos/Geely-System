@@ -1,195 +1,3 @@
-<!-- 
-<uib-tabset active="$tabSetStatus.activeTab">
-  	<uib-tab heading="施工节点待添加">
-  		<form class="row form-inline">
-  		<div class="form-group">
-			<label for="name">省</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;
-			<label for="name">市县</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			
-			</div>
-		  	<button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
-		</form>
-	  	<div class="horizontal-scroll">
-		  	<table class="table table-hover" st-table="applicants">
-			    <thead>
-				    <tr class="sortable">
-				      <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
-				      <th st-sort="area">区域</th>
-				      <th st-sort="company">申请公司</th>
-				      <th st-sort="person">联系人</th>
-				      <th st-sort="phone">手机号码</th>
-				      <th st-sort="state">当前状态</th>
-				      <th st-sort="date" style="width:200px;">最近提交时间</th>
-				      <th st-sort="zaozuo">操作</th>
-				    </tr>
-			    </thead>
-			    <tbody>
-				    <tr ng-repeat="item in applicants" class="editable-tr-wrap">
-				      <td class="table-id">{{item.id}}</td>
-				      <td>{{item.area}}</td>
-				      <td>{{item.company}}</td>
-				      <td>{{item.person}}</td>
-				      <td>{{item.phone}}</td>
-				      <td>{{item.state}}</td>
-				      <td>{{item.date}}</td>
-				      <td><a ui-sref="components.constructionStage({obj:item.id})">查看</a></td>
-
-				    </tr>
-			    </tbody>
-			    <tfoot>
-				    <tr>
-				      <td colspan="8" class="text-center">
-				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
-				      </td>
-				    </tr>
-			    </tfoot>
-		  	</table>
-		</div>
- 	</uib-tab>
-  	<uib-tab heading="施工进行中">
-  		<form class="row form-inline">
-  		<div class="form-group">
-			<label for="name">省</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;
-			<label for="name">市县</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			
-		</div>
-		<button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
-		</form>
-	  	<div class="horizontal-scroll">
-		  	<table class="table table-hover" st-table="applicants2">
-			    <thead>
-				    <tr class="sortable">
-				      <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
-				      <th st-sort="area">区域</th>
-				      <th st-sort="company">申请公司</th>
-				      <th st-sort="person">联系人</th>
-				      <th st-sort="phone">手机号码</th>
-				      <th st-sort="state">当前状态</th>
-				      <th st-sort="date">最近提交时间</th>
-				      <th st-sort="zaozuo">操作</th>
-				    </tr>
-			    </thead>
-			    <tbody>
-				    <tr ng-repeat="item in applicants2" class="editable-tr-wrap">
-				      <td class="table-id">{{item.id}}</td>
-				      <td>{{item.area}}</td>
-				      <td>{{item.company}}</td>
-				      <td>{{item.person}}</td>
-				      <td>{{item.phone}}</td>
-				      <td>{{item.state}}</td>
-				      <td>{{item.date}}</td>
-				      <td><a  ui-sref="components.constructionStage({obj:item.id})">查看</a></td>
-				    </tr>
-			    </tbody>
-			    <tfoot>
-				    <tr>
-				      <td colspan="8" class="text-center">
-				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
-				      </td>
-				    </tr>
-			    </tfoot>
-		  	</table>
-		</div>
-  	</uib-tab>
-
-  	<uib-tab heading="施工完成">
-  		<form class="row form-inline">
-  		<div class="form-group">
-			<label for="name">省</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;
-			<label for="name">市县</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;&nbsp;&nbsp;
-			
-			
-			</div>
-		  <button type="submit" class="btn btn-primary" style="margin-top:15px;">搜索</button>
-		</form>
-	  	<div class="horizontal-scroll">
-		  	<table class="table table-hover" st-table="applicants3">
-			    <thead>
-				    <tr class="sortable">
-				      <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
-				      <th st-sort="area">区域</th>
-				      <th st-sort="company">申请公司</th>
-				      <th st-sort="person">联系人</th>
-				      <th st-sort="phone">手机号码</th>
-				      <th st-sort="state">当前状态</th>
-				      <th st-sort="date">最近提交时间</th>
-				      <th st-sort="operate">操作</th>
-				    </tr>
-			    </thead>
-			    <tbody>
-				    <tr ng-repeat="item in applicants3" class="editable-tr-wrap">
-				      <td class="table-id">{{item.id}}</td>
-				      <td>{{item.area}}</td>
-				      <td>{{item.company}}</td>
-				      <td>{{item.person}}</td>
-				      <td>{{item.phone}}</td>
-				      <td>{{item.state}}</td>
-				      <td>{{item.date}}</td>
-				      <td><a ui-sref="components.constructionStage({obj:item.id})">查看</a></td>
-				    </tr>
-			    </tbody>
-			    <tfoot>
-				    <tr>
-				      <td colspan="8" class="text-center">
-				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
-				      </td>
-				    </tr>
-			    </tfoot>
-		  	</table>
-		</div>
-  	</uib-tab>
-
-
-  </uib-tabset>
-
-
- -->
-
-
 
 
 
@@ -321,6 +129,8 @@
               </thead>
               <tbody>
               <tr ng-repeat="item in applicants1">
+                
+
                 <td class="table-id">{{item.id}}</td>
                 <td>{{item.area}}</td>
                 <td>{{item.company}}</td>
@@ -328,7 +138,7 @@
                 <td>{{item.phone}}</a></td>
                 <td>{{item.state}}</td>
                 <td>{{item.date}}</td>
-                <td><a ui-sref="components.designfirst({obj:item.id})">查看</a></td>
+                <td><a ui-sref="ba.jiandianguanli.constructionStage({obj:item.id})">查看</a></td>
               </tr>
               </tbody>
               <tfoot>
@@ -397,7 +207,7 @@
                 <td>{{item.phone}}</a></td>
                 <td>{{item.state}}</td>
                 <td>{{item.date}}</td>
-                <td><a ui-sref="components.designfinal({obj:item.id})">查看</a></td>
+                <td><a ui-sref="ba.jiandianguanli.constructionStage({obj:item.id})">查看</a></td>
               </tr>
               </tbody>
               <tfoot>

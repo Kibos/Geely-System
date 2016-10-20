@@ -1,0 +1,23 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">保证金到期设置</h4>
+  </div>
+  <div class="modal-body">
+      <label class="individual-label"> 保证金到期时间:</label>
+            
+            <input type="date"
+                 class="form-control individual-iput" ng-model="check.receptionTime"
+                 min="2015-12-12"
+                 max="2016-12-22"
+                 rquired
+                 ng-required
+                 "/>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="$dismiss()">确定</button>
+    <button type="button" class="btn btn-default" ng-click="$dismiss()">取消</button>
+  </div>
+</div>

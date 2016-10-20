@@ -1,32 +1,46 @@
 <div ba-panel ba-panel-class="with-scroll" >
 <div class="row">
 	<div>
-		<p>代理商施工管理->新增施工阶段 &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default" ng-click="returnConstruction()"><i class="ion-chevron-left"></i>&nbsp;&nbsp;返回施工阶段信息列表</button></p>
+		<p>代理商施工管理->新增施工阶段&nbsp;<button class="btn btn-default" ng-click="returnConstruction()"><i class="ion-chevron-left"></i>&nbsp;返回施工阶段信息列表</button></p>
 	</div>
 	<hr style="width: 1640px; background-color: 1d1b1d; margin-bottom: 5px;">
 	<form name="ConstructionForm">
 		<div class="form-group">
 			<label class="individual-label">施工阶段名称：</label>
-			<input type="text" name="companyName" class="form-control individual-iput" ng-model="construction.name" placeholder="施工阶段名称" required>
-			<p class="help-block individual-p" ng-show="ConstructionForm.name.$error.required && ConstructionForm.name.$touched">施工阶段名称</p> 
+			<input type="text" name="name" class="form-control individual-iput" ng-model="construction.name" placeholder="施工阶段名称" required>
+			<p class="help-block individual-p" ng-show="ConstructionForm.name.$error.required && ConstructionForm.name.$touched">请填写施工阶段名称</p> 
 		</div>
 		<div class="form-group">
 			<label class="individual-label">施工阶段描述：</label>
-			<input type="text" name="information" class="form-control individual-iput" ng-model="construction.information" placeholder="施工阶段描述" required>
-			<p class="help-block individual-p" ng-show="ConstructionForm.information.$error.required && ConstructionForm.information.$touched">施工阶段描述</p> 
+			<input type="text" name="description" class="form-control individual-iput" ng-model="construction.description" placeholder="施工阶段描述" required>
+			<p class="help-block individual-p" ng-show="ConstructionForm.description.$error.required && ConstructionForm.description.$touched">请填写施工阶段描述</p> 
 
 		</div>
 		<div class="form-group">
 			<label class="individual-label">工期：</label>
-			<input type="date"
+			
+				<input type="date" name="time1"
 			           class="form-control individual-iput" ng-model="construction.time1"
 			           min="2015-12-12"
 			           max="2016-12-22"
-			           rquired
-			           ng-required
-			           "/>
-			<!-- <input type="text" name="time" class="form-control individual-iput" ng-model="construction.time" placeholder="联系人" required>
-			<p class="help-block individual-p" ng-show="ConstructionForm.time.$error.required && ConstructionForm.time.$touched">请输入联系人</p>  -->
+			           required>
+			
+				<p class="help-block individual-p" ng-show="ConstructionForm.time1.$error.required && ConstructionForm.time1.$touched">请选择工期开始时间</p> 
+				
+				
+			
+			
+		</div>
+		<div class="form-group">
+			<label class="individual-label">至：</label>
+			<input type="date" name="time2"
+			           class="form-control individual-iput" ng-model="construction.time2"
+			           min="2015-12-12"
+			           max="2016-12-22"
+			           required style="display:inline-block;">
+			
+				<p class="help-block individual-p" ng-show="ConstructionForm.time2.$error.required && ConstructionForm.time2.$touched"> 请选择工期结束时间</p>
+
 		</div>
 		<div class="text-center">
 			<button type="submit" class="btn btn-primary" ng-disabled="ConstructionForm.$invalid" ng-click="saveInfo()">保存</button>

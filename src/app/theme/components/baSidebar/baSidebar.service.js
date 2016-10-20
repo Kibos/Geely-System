@@ -20,12 +20,13 @@
         var isMenuCollapsed = shouldMenuBeCollapsed();
 
         this.getMenuItems = function() {
-          var states = defineMenuItemStates();
-          var menuItems = states.filter(function(item) {
+          var states = defineMenuItemStates();     //all menu item       26+
+          var menuItems = states.filter(function(item) {    //all father menu item    12+
             return item.level == 0;
           });
-          // console.log("--->>"+JSON.stringify(states));
-          // console.log("---<<"+JSON.stringify(menuItems));
+          // if(menuItems.length===1){
+          //    $state.go('ba.dashboard',{}, { reload: true });
+          // }
           
           menuItems.forEach(function(item) {
             var children = states.filter(function(child) {

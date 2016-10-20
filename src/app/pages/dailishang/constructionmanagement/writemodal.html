@@ -1,0 +1,35 @@
+<div class="modal-content">
+  <div class="modal-header bg-info">
+    <i class="ion-information-circled modal-icon"></i><span>周报管理-->周报提交</span>
+  </div>
+  <div class="modal-body">
+    <div class="mt" ng-model="week.stage">
+      <label>所属阶段：</label><span>{{ week.stage || 'empty' }}</span>
+    </div>
+    <div class="mt" ng-model="week.time">
+      <label>周期：</label><span>{{ week.time || 'empty' }}</span>
+    </div>
+    <div class="mt">
+      <label>本周概述：
+        <!-- <div class="" ng-model="week.work">
+          <input type="text" name="name" value="" ng-model="week.work">
+          <span>aaaaaaaaaaaaaaaaaaaa{{ week.work || 'empty' }}</span>
+        </div> -->
+        <!-- <div class="wbk">
+          <textarea placeholder="Default Input" class="form-control"></textarea>
+        </div> -->
+      </label>
+      <textarea placeholder="Default Input" class="form-control"></textarea>
+    </div>
+    <div class="mt">
+      <label>施工现场：
+        <!-- <button type="button" class="btn btn-info btn-md">选择文件</button> -->
+        <input type="file" id="inputfile" ng-model="file">
+      </label>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-info" ng-click="$dismiss()">提交审核</button>
+  </div>
+</div>

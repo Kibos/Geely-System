@@ -7,9 +7,14 @@
 
   angular.module('BlurAdmin.pages.wangfa', [
     'BlurAdmin.pages.wangfa.ruwangguanlisk',
-
     'BlurAdmin.pages.wangfa.designCheck',
-    'BlurAdmin.pages.wangfa.constructionAudit'
+    'BlurAdmin.pages.wangfa.constructionAudit',
+    'BlurAdmin.pages.wangfa.buildingType',
+    'BlurAdmin.pages.wangfa.manufacturerManage',
+    'BlurAdmin.pages.wangfa.acceptancegl',
+    'BlurAdmin.pages.wangfa.bzjgl'
+
+
   ])
       .config(routeConfig);
 
@@ -32,7 +37,7 @@
             }
           }
         })
-         .state('ba.jiandianguanli', {
+        .state('ba.jiandianguanli', {
           url: '/jiandianguanli',
           template : '<ui-view></ui-view>',
           abstract: true,
@@ -47,6 +52,8 @@
            }
           }
         })
+      
+      ;
         // .state('ba.mianshiguanli', {
         //   url: '/mianshiguanli',
         //   template : '<ui-view></ui-view>',
@@ -92,21 +99,7 @@
         //    }
         //   }
         // })
-        .state('ba.hezuohuoban', {
-          url: '/hezuohuoban',
-          template : '<ui-view></ui-view>',
-          abstract: true,
-          title: '合作伙伴管理',
-          sidebarMeta: {
-            icon: 'ion-gear-a',
-            order: 100,
-          },
-           data:{
-             permissions: {
-              only:'wangfa'
-           }
-          }
-        })
+
         // .state('ba.tongzhimoban', {
         //   url: '/tongzhimoban',
         //   template : '<ui-view></ui-view>',
@@ -122,25 +115,15 @@
         //    }
         //   }
         // })
-        .state('ba.jiandianleixingweihu', {
-          url: '/jiandianleixingweihu',
-          template : '<ui-view></ui-view>',
-          
-          title: '建店类型维护',
-          sidebarMeta: {
-            icon: 'ion-gear-a',
-            order: 100,
-          },
-          data:{
-             permissions: {
-              only:'wangfa'
-           }
-          }
-        })
+        // .state('ba.jiandianleixingweihu', {
+        //   url: '/jiandianleixingweihu',
+        //    controller: 'BuildingTypeCtrl',
+        //    templateUrl: 'app/pages/wangfa/buildingType/buildingType.html',
+        //   //template : '<ui-view></ui-view>',
         // .state('ba.zuzhijigou', {
         //   url: '/zuzhijigou',
         //   template : '<ui-view></ui-view>',
-         
+
         //   title: '组织机构模板维护 ',
         //   sidebarMeta: {
         //     icon: 'ion-gear-a',
@@ -152,7 +135,7 @@
         //    }
         //   }
         // })
-        ;
+        
 
 
   }

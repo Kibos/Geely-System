@@ -64,19 +64,25 @@
        }}
 
     })
-      //建店管理
-
-      .state('ba.jiandianguanli.shejigaoshenhe', {
-        url: '/jiandianguanli.shejigaoshenhe',
-        controller: 'CheckCtrl',
-        templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
-          title: '设计稿管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 1,
-          },
+    
+      .state('admin.logoutModal', {
+        url: '/logoutModal',
+        controller: 'LogoutModalCtrl',
+        templateUrl: 'app/pages/admin/audit/logoutModal.html',
+        params:{
+          obj:null
+        }
       })
-
+      // .state('ba.jiandianguanli.shejigaoshenhe', {
+      //   url: '/jiandianguanli.shejigaoshenhe',
+      //   controller: 'CheckCtrl',
+      //   templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
+      //     title: '设计稿管理',
+      //     sidebarMeta: {
+      //       icon: 'ion-ios-pulse',
+      //       order: 1,
+      //     },
+      // })
       // .state('ba.jiandianguanli.shigongguanli', {
       //   url: '/jiandianguanli.shigongguanli',
       //   controller: 'ConstructionAuditCtrl',
@@ -87,8 +93,6 @@
       //       order: 20,
       //     },
       // })
-
-
       // .state('ba.jiandianguanli.shejigaoshenhe', {
       //   url: '/jiandianguanli.shejigaoshenhe',
       //   controller: 'CheckCtrl',
@@ -100,24 +104,16 @@
       //     },
       // })
 
-      .state('ba.jiandianguanli.yanshouguanli', {
-        url: '/jiandianguanli.yanshouguanli',
-        template: '<div></div>',
-          title: '验收管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 30,
-          },
-      })
-      .state('ba.jiandianguanli.baozhengjinguanli', {
-        url: '/jiandianguanli.baozhengjinguanli',
-        template: '<div></div>',
-          title: '保证金管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-      })
+      // .state('ba.jiandianguanli.yanshouguanli', {
+      //   url: '/jiandianguanli.yanshouguanli',
+      //   template: '<div></div>',
+      //     title: '验收管理',
+      //     sidebarMeta: {
+      //       icon: 'ion-ios-pulse',
+      //       order: 30,
+      //     },
+      // })
+      
       // .state('ba.jiandianguanli.jiandianbutie', {
       //   url: '/jiandianguanli.jiandianbutie',
       //   template: '<div></div>',
@@ -239,24 +235,7 @@
       //     },
       // })
       //合作伙伴管理
-      .state('ba.hezuohuoban.shejichang', {
-        url: '/hezuohuoban.shejichang',
-        template: '<div></div>',
-          title: '设计厂商管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-      })
-      .state('ba.hezuohuoban.gongyingshang', {
-        url: '/hezuohuoban.gongyingshang',
-        template: '<div></div>',
-          title: '供应商管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-      })
+     
       //通知模板设置
       .state('ba.tongzhimoban.duanxin', {
         url: '/tongzhimoban.duanxin',

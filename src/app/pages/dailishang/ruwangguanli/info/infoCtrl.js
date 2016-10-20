@@ -55,6 +55,10 @@
         $scope.StoreConstructionPlan=data.StoreConstructionPlan?data.StoreConstructionPlan:[];
         // 关键岗位组建筹备
         $scope.keyJob=data.keyJob?data.keyJob:[];
+        // 新公司股权结构
+        $scope.newEquityStructure=data.newEquityStructure?data.newEquityStructure:[];
+        // 资信情况
+        $scope.nowBankDeposit=data.nowBankDeposit?data.nowBankDeposit:[];
 
 
 
@@ -81,10 +85,9 @@
         if (data.CSmessage){
             $scope.agent.qualityRating=data.CSmessage.qualityRating?data.CSmessage.qualityRating:'';
             $scope.agent.XYDJPJbank=data.CSmessage.XYDJPJbank?data.CSmessage.XYDJPJbank:'';
-            $scope.agent.nowBank=data.CSmessage.nowBank?data.CSmessage.nowBank:[];
-            $scope.nowBankDeposit=$scope.agent.nowBank;
-        }else{
-            $scope.nowBankDeposit=[];
+            // console.log("资信情况数据获取")
+            // $scope.agent.nowBank=data.CSmessage.nowBank?data.CSmessage.nowBank:[];
+            // $scope.nowBankDeposit=$scope.agent.nowBank;
         }
 
 
@@ -102,15 +105,15 @@
             $scope.agent.landStatus=data.bss.landStatus?data.bss.landStatus:'';
             $scope.agent.leaseStart=data.bss.leaseStart?data.bss.leaseStart:'';
             $scope.agent.leaseEnd=data.bss.leaseEnd?data.bss.leaseEnd:'';
-            $scope.agent.firstShop.firstshop1=data.bss.firstShop.firstshop1?data.bss.firstShop.firstshop1:false;
-            $scope.agent.firstShop.firstshop2=data.bss.firstShop.firstshop2?data.bss.firstShop.firstshop2:false;
-            $scope.agent.firstShop.firstshop3=data.bss.firstShop.firstshop3?data.bss.firstShop.firstshop3:false;
-            $scope.agent.firstShop.firstshop4=data.bss.firstShop.firstshop4?data.bss.firstShop.firstshop4:false;
-            $scope.agent.notfirstShop.notfirstShop1=data.bss.notfirstShop.notfirstShop1?data.bss.notfirstShop.notfirstShop1:false;
-            $scope.agent.notfirstShop.notfirstShop2=data.bss.notfirstShop.notfirstShop2?data.bss.notfirstShop.notfirstShop2:false;
-            $scope.agent.notfirstShop.notfirstShop3=data.bss.notfirstShop.notfirstShop3?data.bss.notfirstShop.notfirstShop3:false;
-            $scope.agent.notfirstShop.notfirstShop4=data.bss.notfirstShop.notfirstShop4?data.bss.notfirstShop.notfirstShop4:false;
-            $scope.agent.notfirstShop.notfirstShop5=data.bss.notfirstShop.notfirstShop5?data.bss.notfirstShop.notfirstShop5:false;
+            $scope.agent.firstshopone=data.bss.firstshopone?data.bss.firstshopone:false;
+            $scope.agent.firstshoptwo=data.bss.firstshoptwo?data.bss.firstshoptwo:false;
+            $scope.agent.firstshopthree=data.bss.firstshopthree?data.bss.firstshopthree:false;
+            $scope.agent.firstshopfour=data.bss.firstshopfour?data.bss.firstshopfour:false;
+            $scope.agent.notfirstShopone=data.bss.notfirstShopone?data.bss.notfirstShopone:false;
+            $scope.agent.notfirstShoptwo=data.bss.notfirstShoptwo?data.bss.notfirstShoptwo:false;
+            $scope.agent.notfirstShopthree=data.bss.notfirstShopthree?data.bss.notfirstShopthree:false;
+            $scope.agent.notfirstShopfour=data.bss.notfirstShopfour?data.bss.notfirstShopfour:false;
+            $scope.agent.notfirstShopfive=data.bss.notfirstShopfive?data.bss.notfirstShopfive:false;
             $scope.agent.jsMode=data.bss.jsMode?data.bss.jsMode:'';
             $scope.agent.sqGrade=data.bss.sqGrade?data.bss.sqGrade:'';
             $scope.agent.constructionStart=data.bss.constructionStart?data.bss.constructionStart:'';
@@ -139,42 +142,41 @@
         };
 
         // 资金筹备
-        if (data.funding){
-            if (data.funding.fixation){
-                $scope.agent.fixation.OwnSum=data.funding.fixation.fixationOwnSum?data.funding.fixation.fixationOwnSum:'';
-                $scope.agent.fixation.OwnArriveTime=data.funding.fixation.fixationOwnArriveTime?data.funding.fixation.fixationOwnArriveTime:'';
-                $scope.agent.fixation.OwnRemark=data.funding.fixation.fixationOwnRemark?data.funding.fixation.fixationOwnRemark:'';
-                $scope.agent.fixation.loanSum=data.funding.fixation.fixationloanSum?data.funding.fixation.fixationloanSum:'';
-                $scope.agent.fixation.loanArriveTime=data.funding.fixation.fixationloanArriveTime?data.funding.fixation.fixationloanArriveTime:'';
-                $scope.agent.fixation.loanRemark=data.funding.fixation.fixationloanRemark?data.funding.fixation.fixationloanRemark:'';
-                $scope.agent.fixation.restSum=data.funding.fixation.fixationrestSum?data.funding.fixation.fixationrestSum:'';
-                $scope.agent.fixation.restArriveTime=data.funding.fixation.restArriveTime?data.funding.fixation.restArriveTime:'';
-                $scope.agent.fixation.restRemark=data.funding.fixation.restRemark?data.funding.fixation.restRemark:'';
-            };
-            if (data.funding.stream){
-                $scope.agent.stream.OwnSum=data.funding.stream.streamownSum?data.funding.stream.streamownSum:'';
-                $scope.agent.stream.OwnArriveTime=data.funding.stream.streamownArriveTime?data.funding.stream.streamownArriveTime:'';
-                $scope.agent.stream.OwnRemark=data.funding.stream.streamownRemark?data.funding.stream.streamownRemark:'';
-                $scope.agent.stream.loanSum=data.funding.stream.streamloanSum?data.funding.stream.streamloanSum:'';
-                $scope.agent.stream.loanArriveTime=data.funding.stream.streamloanArriveTime?data.funding.stream.streamloanArriveTime:'';
-                $scope.agent.stream.loanRemark=data.funding.stream.streamloanRemark?data.funding.stream.streamloanRemark:'';
-                $scope.agent.stream.restSum=data.funding.stream.streamrestSum?data.funding.stream.streamrestSum:'';
-                $scope.agent.stream.restArriveTime=data.funding.stream.streamrestArriveTime?data.funding.stream.streamrestArriveTime:'';
-                $scope.agent.stream.restRemark=data.funding.stream.streamrestRemark?data.funding.stream.streamrestRemark:'';
-            };
-            if (data.funding.cashDeposit){
-                $scope.agent.cashDeposit.Sum=data.funding.cashDeposit.cashDepositSum?data.funding.cashDeposit.cashDepositSum:'';
-                $scope.agent.cashDeposit.ArriveTime=data.funding.cashDeposit.cashDepositArriveTime?data.funding.cashDeposit.cashDepositArriveTime:'';
-                $scope.agent.cashDeposit.Remark=data.funding.cashDeposit.cashDepositRemark?data.funding.cashDeposit.cashDepositRemark:'';
-            };
-            if (data.funding.mentionModels){
-                $scope.agent.mentionModels.Sum=data.funding.mentionModels.mentionModelsSum?data.funding.mentionModels.mentionModelsSum:'';
-                $scope.agent.mentionModels.ArriveTime=data.funding.mentionModels.mentionModelsArriveTime?data.funding.mentionModels.mentionModelsArriveTime:'';
-                $scope.agent.mentionModels.Remark=data.funding.mentionModels.mentionModelsRemark?data.funding.mentionModels.mentionModelsRemark:'';
-            };
+        if (data.fundings){
+
+                console.log(data.fundings);
+                $scope.agent.fixationOwnSum=data.fundings.fixationOwnSum?data.fundings.fixationOwnSum:'';
+                $scope.agent.fixationOwnArriveTime=data.fundings.fixationOwnArriveTime?data.fundings.fixationOwnArriveTime:'';
+                $scope.agent.fixationOwnRemark=data.fundings.fixationOwnRemark?data.fundings.fixationOwnRemark:'';
+                $scope.agent.fixationloanSum=data.fundings.fixationloanSum?data.fundings.fixationloanSum:'';
+                $scope.agent.fixationloanArriveTime=data.fundings.fixationloanArriveTime?data.fundings.fixationloanArriveTime:'';
+                $scope.agent.fixationloanRemark=data.fundings.fixationloanRemark?data.fundings.fixationloanRemark:'';
+                $scope.agent.fixationrestSum=data.fundings.fixationrestSum?data.fundings.fixationrestSum:'';
+                $scope.agent.fixationrestArriveTime=data.fundings.fixationrestArriveTime?data.fundings.fixationrestArriveTime:'';
+                $scope.agent.fixationrestRemark=data.fundings.fixationrestRemark?data.fundings.fixationrestRemark:'';
+           
+           
+                $scope.agent.streamownSum=data.fundings.streamownSum?data.fundings.streamownSum:'';
+                $scope.agent.streamownArriveTime=data.fundings.streamownArriveTime?data.fundings.streamownArriveTime:'';
+                $scope.agent.streamownRemark=data.fundings.streamownRemark?data.fundings.streamownRemark:'';
+                $scope.agent.streamloanSum=data.fundings.streamloanSum?data.fundings.streamloanSum:'';
+                $scope.agent.streamloanArriveTime=data.fundings.streamloanArriveTime?data.fundings.streamloanArriveTime:'';
+                $scope.agent.streamloanRemark=data.fundings.streamloanRemark?data.fundings.streamloanRemark:'';
+                $scope.agent.streamrestSum=data.fundings.streamrestSum?data.fundings.streamrestSum:'';
+                $scope.agent.streamrestArriveTime=data.fundings.streamrestArriveTime?data.fundings.streamrestArriveTime:'';
+                $scope.agent.streamrestRemark=data.fundings.streamrestRemark?data.fundings.streamrestRemark:'';
+            
+           
+                $scope.agent.cashDepositSum=data.fundings.cashDepositSum?data.fundings.cashDepositSum:'';
+                $scope.agent.cashDepositArriveTime=data.fundings.cashDepositArriveTime?data.fundings.cashDepositArriveTime:'';
+                $scope.agent.cashDepositRemark=data.fundings.cashDepositRemark?data.fundings.cashDepositRemark:'';
+            
+            
+                $scope.agent.mentionModelsSum=data.fundings.mentionModelsSum?data.fundings.mentionModelsSum:'';
+                $scope.agent.mentionModelsArriveTime=data.fundings.mentionModelsArriveTime?data.fundings.mentionModelsArriveTime:'';
+                $scope.agent.mentionModelsRemark=data.fundings.mentionModelsRemark?data.fundings.mentionModelsRemark:'';
+            
         };
-
-
 
 
 
@@ -196,11 +198,6 @@
         console.log('verifyDataSubmitting');
         Audit.verifyDataSubmitting.save({shopId:$scope._dbid})
         $scope.verifyDataSubmitting = true;
-        // $scope.btnFlag = $scope.verifyDataSubmitting;
-        // Shop.getShopsById.get({id:$scope.shopId},function(res){
-        //   console.log(res);
-        //   $scope.onwerShop = res;
-        // })
 
     }
 
@@ -305,30 +302,6 @@
       $scope.notcarShareholder.push($scope.inserted);
     }
     // 销售维修状况
-    /*$scope.maintenance=function(ServiceForm){
-
-    }*/
-    // $scope.maintenance=[
-    //     {
-    //         "COHR":'公司A',
-    //         "brand":'凯迪拉克',
-    //         "fourteen":{
-    //             "salesVolume":'800',
-    //             "marketShare":'20%',
-    //             "several":1000
-    //         },
-    //         "fifteen":{
-    //             "salesVolume":'1000',
-    //             "marketShare":'30%',
-    //             "several":1100
-    //         },
-    //         "sixteen":{
-    //             "salesVolume":'900',
-    //             "marketShare":'20%',
-    //             "several":1200
-    //         }
-    //     },
-    // ];
     $scope.delmaintenance = function(index) {
       $scope.maintenance.splice(index, 1);
     };
@@ -360,8 +333,7 @@
         $scope.submitcreditStatus = true;
         $scope.CSmessage={
            qualityRating: $scope.agent.qualityRating,
-           XYDJPJbank: $scope.agent.XYDJPJbank,
-           nowBank:$scope.nowBankDeposit
+           XYDJPJbank: $scope.agent.XYDJPJbank
         }
         console.log($scope.CSmessage);
     }
@@ -379,19 +351,6 @@
     }
 
     // 财务报表
-    /*$scope.financing=function(financeForm){
-
-    }*/
-    // $scope.financeStatusTable=[
-    //     {
-    //         "year":'2016',
-    //         "ASSET":'100',
-    //         "debt":'30',
-    //         "netMargin":'15%',
-    //         "netProfit":'60'
-    //     }
-    // ];
-    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     $scope.delfinanceStatusTable = function(index) {
       $scope.financeStatusTable.splice(index, 1);
     };
@@ -526,19 +485,15 @@
             landStatus: $scope.agent.landStatus,
             leaseStart: $scope.agent.leaseStart,
             leaseEnd: $scope.agent.leaseEnd,
-            firstShop:{
-               firstshop1: $scope.agent.firstShop.firstshop1,
-               firstshop2: $scope.agent.firstShop.firstshop2,
-               firstshop3: $scope.agent.firstShop.firstshop3,
-               firstshop4: $scope.agent.firstShop.firstshop4
-            },
-            notfirstShop:{
-                notfirstShop1:$scope.agent.notfirstShop.notfirstShop1,
-                notfirstShop2:$scope.agent.notfirstShop.notfirstShop2,
-                notfirstShop3:$scope.agent.notfirstShop.notfirstShop3,
-                notfirstShop4:$scope.agent.notfirstShop.notfirstShop4,
-                notfirstShop5:$scope.agent.notfirstShop.notfirstShop5
-            },
+            firstshopone: $scope.agent.firstshopone,
+            firstshoptwo: $scope.agent.firstshoptwo,
+            firstshopthree: $scope.agent.firstshopthree,
+            firstshopfour: $scope.agent.firstshopfour,
+            notfirstShopone:$scope.agent.notfirstShopone,
+            notfirstShoptwo:$scope.agent.notfirstShoptwo,
+            notfirstShopthree:$scope.agent.notfirstShopthree,
+            notfirstShopfour:$scope.agent.notfirstShopfour,
+            notfirstShopfive:$scope.agent.notfirstShopfive,
             jsMode: $scope.agent.jsMode,
             sqGrade: $scope.agent.sqGrade,
             constructionStart: $scope.agent.constructionStart,
@@ -556,28 +511,12 @@
         console.log($scope.bss);
     }
     // 建店城市商圈
-    // $scope.BSbusinessArea=[
-    //     {
-    //         "proposed":true,
-    //         "market":'东环汽车公园',
-    //         "distance":'14km',
-    //         "limousineBrand":"玛莎拉蒂、保时捷",
-    //         "otherBrand":"丰田,别克"
-    //     },
-    //     {
-    //         "proposed":true,
-    //         "market":'明宇汽车城',
-    //         "distance":'8km',
-    //         "limousineBrand":"宾利",
-    //         "otherBrand":"宝马,奔驰"
-    //     }
-    // ];
     $scope.delBSbusinessArea = function(index) {
       $scope.BSbusinessArea.splice(index, 1);
     };
     $scope.addBSbusinessArea= function() {
       $scope.inserted= {
-        proposed:false,
+        proposed:'false',
         market:'',
         distance:'',
         limousineBrand:"",
@@ -621,60 +560,59 @@
         console.log($scope.newCP);
     }
     // 新公司股权结构
+    $scope.delnewEquityStructure = function(index) {
+      $scope.newEquityStructure.splice(index, 1);
+    };
+    $scope.addnewEquityStructure = function() {
+      $scope.inserted= {
+        shareholder:"",
+        affiliation:"",
+        FundingSum:'',
+        Fundingscale:'',
+        nature:""
+      };
+      $scope.newEquityStructure.push($scope.inserted);
+    }
 
     // 资金筹备
     $scope.funding=function(fundingForm){
         $scope.submitfunding=true;
         // console.log($scope.agent.stream.OwnSum);
-        $scope.funding={
-            fixation:{
-                fixationOwnSum:$scope.agent.fixation.OwnSum,
-                fixationOwnArriveTime:$scope.agent.fixation.OwnArriveTime,
-                fixationOwnRemark:$scope.agent.fixation.OwnRemark,
-                fixationloanSum:$scope.agent.fixation.loanSum,
-                fixationloanArriveTime:$scope.agent.fixation.loanArriveTime,
-                fixationloanRemark:$scope.agent.fixation.loanRemark,
-                fixationrestSum:$scope.agent.fixation.restSum,
-                restArriveTime:$scope.agent.fixation.restArriveTime,
-                restRemark:$scope.agent.fixation.restRemark
-            },
-            stream:{
-                streamownSum:$scope.agent.stream.OwnSum,
-                streamownArriveTime:$scope.agent.stream.OwnArriveTime,
-                streamownRemark:$scope.agent.stream.OwnRemark,
-                streamloanSum:$scope.agent.stream.loanSum,
-                streamloanArriveTime:$scope.agent.stream.loanArriveTime,
-                streamloanRemark:$scope.agent.stream.loanRemark,
-                streamrestSum:$scope.agent.stream.restSum,
-                streamrestArriveTime:$scope.agent.stream.restArriveTime,
-                streamrestRemark:$scope.agent.stream.restRemark
-            },
-            cashDeposit:{
-                cashDepositSum:$scope.agent.cashDeposit.Sum,
-                cashDepositArriveTime:$scope.agent.cashDeposit.ArriveTime,
-                cashDepositRemark:$scope.agent.cashDeposit.Remark,
-            },
-            mentionModels:{
-                mentionModelsSum:$scope.agent.mentionModels.Sum,
-                mentionModelsArriveTime:$scope.agent.mentionModels.ArriveTime,
-                mentionModelsRemark:$scope.agent.mentionModels.Remark,
-            }
-
-
+        $scope.fundings={
+            
+                fixationOwnSum:$scope.agent.fixationOwnSum,
+                fixationOwnArriveTime:$scope.agent.fixationOwnArriveTime,
+                fixationOwnRemark:$scope.agent.fixationOwnRemark,
+                fixationloanSum:$scope.agent.fixationloanSum,
+                fixationloanArriveTime:$scope.agent.fixationloanArriveTime,
+                fixationloanRemark:$scope.agent.fixationloanRemark,
+                fixationrestSum:$scope.agent.fixationrestSum,
+                fixationrestArriveTime:$scope.agent.fixationrestArriveTime,
+                fixationrestRemark:$scope.agent.fixationrestRemark,
+                
+                streamownSum:$scope.agent.streamownSum,
+                streamownArriveTime:$scope.agent.streamownArriveTime,
+                streamownRemark:$scope.agent.streamownRemark,
+                streamloanSum:$scope.agent.streamloanSum,
+                streamloanArriveTime:$scope.agent.streamloanArriveTime,
+                streamloanRemark:$scope.agent.streamloanRemark,
+                streamrestSum:$scope.agent.streamrestSum,
+                streamrestArriveTime:$scope.agent.streamrestArriveTime,
+                streamrestRemark:$scope.agent.streamrestRemark,
+            
+                cashDepositSum:$scope.agent.cashDepositSum,
+                cashDepositArriveTime:$scope.agent.cashDepositArriveTime,
+                cashDepositRemark:$scope.agent.cashDepositRemark,
+            
+            
+                mentionModelsSum:$scope.agent.mentionModelsSum,
+                mentionModelsArriveTime:$scope.agent.mentionModelsArriveTime,
+                mentionModelsRemark:$scope.agent.mentionModelsRemark
         }
-        console.log($scope.funding);
+        console.log($scope.fundings);
 
     }
     // 店面建设计划
-    // $scope.StoreConstructionPlan=[
-    //     {
-    //         "city":"杭州",
-    //         "branch":'滨江网点',
-    //         "submitTime":'2016.06.09',
-    //         "startingTime":"2016.03.04",
-    //         "completeTime":"2016.06.08"
-    //     }
-    // ];
     $scope.delStoreConstructionPlan = function(index) {
       $scope.StoreConstructionPlan.splice(index, 1);
     };
@@ -689,21 +627,6 @@
       $scope.StoreConstructionPlan.push($scope.inserted);
     }
     // 关键岗位组建筹备
-    // $scope.keyJob=[
-    //     {
-    //         "post":"董事长",
-    //         "name":'曼妮',
-    //         "age":'32',
-    //         "educationalStatus":"本科",
-    //         "Experience":"8"
-    //     },{
-    //         "post":"董事长助理",
-    //         "name":'李四',
-    //         "age":'26',
-    //         "educationalStatus":"本科",
-    //         "Experience":"3"
-    //     }
-    // ];
     $scope.delkeyJob = function(index) {
       $scope.keyJob.splice(index, 1);
     };
@@ -755,17 +678,17 @@
             BSbusinessArea:$scope.BSbusinessArea,
             BSSdatum:$scope.BSSdatum,
             newCP:$scope.newCP,
-            funding:$scope.funding,
+            fundings:$scope.fundings,
             StoreConstructionPlan:$scope.StoreConstructionPlan,
             keyJob:$scope.keyJob,
             SchemaArrange:$scope.SchemaArrange,
             MFAform:$scope.MFAform,
-            shopApplyUserId:$scope.currentUser._id
+            shopApplyUserId:$scope.currentUser._id,
+            newEquityStructure:$scope.newEquityStructure,
+            nowBankDeposit:$scope.nowBankDeposit
 
         };
         // $scope.state=true;
-        console.log('hello word');
-        console.log($scope._dbid);
         //如果为真，则表示数据库存在，做update操作
         if($scope._dbid){
             Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
