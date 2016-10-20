@@ -13,6 +13,7 @@
     $stateProvider
         .state('ba.dashboard', {
           url: '/dashboard',
+          cache:'true', 
           controller: 'dashboardCtrl',
           templateUrl: 'app/pages/dashboard/dashboard.html',
           title: '工作台',

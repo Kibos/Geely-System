@@ -39,10 +39,10 @@
         })
         .catch( function(err) {
         console.log('log failed', err);
-     if(vm.user.email+""===""||vm.user.password+""===""||vm.user.name+""===""||vm.user.cellphone+""===""){
+          if(isUndefinedOrNull(vm.user.email)||isUndefinedOrNull(vm.user.password)||isUndefinedOrNull(vm.user.name)||isUndefinedOrNull(vm.user.cellphone)){
             showWarningMsg();
           }else{
-            showErrorMsg(err.message);
+            showErrorMsg();
           }
         vm.registerFail = true;
         });
@@ -50,20 +50,24 @@
 
     function showSuccessMsg() {
       toastr.success('注册成功!');
-    };
+    }
 
     function showInfoMsg() {
       toastr.info("请先登录!", '提示');
-    };
+    }
 
-    function showErrorMsg(mgs) {
+    function showErrorMsg() {
       toastr.error("注册失败", '错误');
-    };
+    }
     
     function showWarningMsg() {
       toastr.warning('请填写完整!', '提示');
-    };
+    }
   
+    function isUndefinedOrNull(value){
+       return angular.isUndefined(value) || value === null
+    }
+
   }
     
 
