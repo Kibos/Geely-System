@@ -90,6 +90,27 @@
       $scope.users = shop.users;
   //-----------拟建店简述  建店场地情况----
       $scope.store = shop.bss;
+  // ---------------拟建店筹备  新公司筹备--------
+
+      $scope.newCompany = shop.newCP;
+
+
+      if(shop.funding)
+        {
+          $scope.cashDeposit = {
+          Sum : shop.funding.cashDeposit.cashDepositSum,
+          ArriveTime : shop.funding.cashDeposit.cashDepositArriveTime,
+          Remark : shop.funding.cashDeposit.cashDepositRemark
+          };
+
+
+          $scope.mentionModels = {
+            Sum : shop.funding.mentionModels.mentionModelsSum,
+            ArriveTime : shop.funding.mentionModels.mentionModelsArriveTime,
+            Remark : shop.funding.mentionModels.mentionModelsRemark
+          }
+        }
+
      $scope.checkLog = shop.applyId.verify.slice(1)
      $scope.isornotinfo = function (bl) {
        if(bl){
