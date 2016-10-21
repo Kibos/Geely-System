@@ -28,15 +28,16 @@
         params:{'obj':{}},
 
       })
-      .state('ba.shcreatemgr.shigongtuguanli', {
-        url: '/shigongtuguanli',
-        template: '<div></div>',
-          title: '供货管理',
-          sidebarMeta: {
-            icon: 'ion-ios-pulse',
-            order: 100,
-          },
-      });
+      // .state('ba.shcreatemgr.shigongtuguanli', {
+      //   url: '/shigongtuguanli',
+      //   template: '<div></div>',
+      //     title: '供货管理',
+      //     sidebarMeta: {
+      //       icon: 'ion-ios-pulse',
+      //       order: 100,
+      //     },
+      // })
+      ;
 
 
   }
