@@ -529,9 +529,11 @@
     $scope.BuiltShopSiteTable=function(BSSdatumForm){
         $scope.submitBSSD = true;
         $scope.BSSdatum={
-
+            tradeArea:$scope.agent.tradeArea
         }
+        console.log("相关附件上传start");
         console.log($scope.BSSdatum);
+        console.log("相关附件end");
     }
 // ----------------------拟建店筹备-------------------------------
     // 新公司筹备

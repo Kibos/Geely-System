@@ -13,7 +13,7 @@
           	<div class="form-group">
           		<label class="info-lab">拟建店建筑尺寸图(新建可不上传)</label>
           		<div class="bsst-item">
-          			<input type="file" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+          			<input type="file" fileupload name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()" multiple data-url="server/uploadFile"/>
           		</div>
           	</div>
           	<div class="form-group">
