@@ -15,8 +15,8 @@
     $scope.applicants=[
   {
     id:1,
-    area:'北京',
-    company:'维擎科技',
+    area:'杭州',
+    company:'杭州吉利4S店',
     person:'李明',
     phone:'123456789',
     state:'待勘查内容确认',
@@ -24,8 +24,8 @@
   },
   {
     id:2,
-    area:'北京',
-    company:'维擎科技',
+    area:'杭州',
+    company:'杭州吉利4S店',
     person:'张新华',
     phone:'123456789',
     state:'设计初稿待审批',
@@ -33,8 +33,8 @@
   },
   {
     id:3,
-    area:'北京',
-    company:'维擎科技',
+    area:'杭州',
+    company:'杭州吉利4S店',
     person:'赵国栋',
     phone:'123456789',
     state:'设计初稿待领导审批',
@@ -42,8 +42,8 @@
   },
   {
     id:4,
-    area:'北京',
-    company:'维擎科技',
+    area:'杭州',
+    company:'杭州吉利4S店',
     person:'尚军',
     phone:'123456789',
     state:'设计终稿待审批',
@@ -52,7 +52,7 @@
   {
     id:5,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'李煜',
     phone:'123456789',
     state:'设计终稿待领导审批',
@@ -61,7 +61,7 @@
   {
     id:6,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'钱多多',
     phone:'123456789',
     state:'设计终稿待审批',
@@ -70,7 +70,7 @@
   {
     id:7,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'沈海',
     phone:'123456789',
     state:'设计终稿待领导审批',
@@ -83,7 +83,7 @@
   {
     id:1,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'李明',
     phone:'123456789',
     state:'待勘查内容确认',
@@ -92,7 +92,7 @@
   {
     id:2,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'张新华',
     phone:'123456789',
     state:'设计初稿待审批',
@@ -101,7 +101,7 @@
   {
     id:3,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'赵国栋',
     phone:'123456789',
     state:'设计初稿待领导审批',
@@ -110,7 +110,7 @@
   {
     id:4,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'尚军',
     phone:'123456789',
     state:'设计终稿待审批',
@@ -119,7 +119,7 @@
   {
     id:5,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'李煜',
     phone:'123456789',
     state:'设计终稿待领导审批',
@@ -128,7 +128,7 @@
   {
     id:6,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'钱多多',
     phone:'123456789',
     state:'设计终稿待审批',
@@ -137,7 +137,7 @@
   {
     id:7,
     area:'北京',
-    company:'维擎科技',
+    company:'北京吉利4S店',
     person:'沈海',
     phone:'123456789',
     state:'设计终稿待领导审批',
@@ -149,7 +149,7 @@ $scope.applicants2=[
 {
   id:1,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'李明',
   phone:'123456789',
   state:'待勘查内容确认',
@@ -157,8 +157,8 @@ $scope.applicants2=[
 },
 {
   id:2,
-  area:'北京',
-  company:'维擎科技',
+  area:'杭州',
+  company:'杭州吉利4S店',
   person:'张新华',
   phone:'123456789',
   state:'设计初稿待审批',
@@ -166,8 +166,8 @@ $scope.applicants2=[
 },
 {
   id:3,
-  area:'北京',
-  company:'维擎科技',
+  area:'杭州',
+  company:'杭州吉利4S店',
   person:'赵国栋',
   phone:'123456789',
   state:'设计初稿待领导审批',
@@ -175,8 +175,8 @@ $scope.applicants2=[
 },
 {
   id:4,
-  area:'北京',
-  company:'维擎科技',
+  area:'杭州',
+  company:'杭州吉利4S店',
   person:'尚军',
   phone:'123456789',
   state:'设计终稿待审批',
@@ -184,8 +184,8 @@ $scope.applicants2=[
 },
 {
   id:5,
-  area:'北京',
-  company:'维擎科技',
+  area:'杭州',
+  company:'杭州吉利4S店',
   person:'李煜',
   phone:'123456789',
   state:'设计终稿待领导审批',
@@ -193,8 +193,8 @@ $scope.applicants2=[
 },
 {
   id:6,
-  area:'北京',
-  company:'维擎科技',
+  area:'杭州',
+  company:'杭州吉利4S店',
   person:'钱多多',
   phone:'123456789',
   state:'设计终稿待审批',
@@ -202,8 +202,8 @@ $scope.applicants2=[
 },
 {
   id:7,
-  area:'北京',
-  company:'维擎科技',
+  area:'杭州',
+  company:'杭州吉利4S店',
   person:'沈海',
   phone:'123456789',
   state:'设计终稿待领导审批',
@@ -215,7 +215,7 @@ $scope.applicants3=[
 {
   id:1,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'李明',
   phone:'123456789',
   state:'待勘查内容确认',
@@ -224,7 +224,7 @@ $scope.applicants3=[
 {
   id:2,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'张新华',
   phone:'123456789',
   state:'设计初稿待审批',
@@ -233,7 +233,7 @@ $scope.applicants3=[
 {
   id:3,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'赵国栋',
   phone:'123456789',
   state:'设计初稿待领导审批',
@@ -242,7 +242,7 @@ $scope.applicants3=[
 {
   id:4,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'尚军',
   phone:'123456789',
   state:'设计终稿待审批',
@@ -251,7 +251,7 @@ $scope.applicants3=[
 {
   id:5,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'李煜',
   phone:'123456789',
   state:'设计终稿待领导审批',
@@ -260,7 +260,7 @@ $scope.applicants3=[
 {
   id:6,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'钱多多',
   phone:'123456789',
   state:'设计终稿待审批',
@@ -269,7 +269,7 @@ $scope.applicants3=[
 {
   id:7,
   area:'北京',
-  company:'维擎科技',
+  company:'北京吉利4S店',
   person:'沈海',
   phone:'123456789',
   state:'设计终稿待领导审批',

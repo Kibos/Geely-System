@@ -6,6 +6,7 @@
     <h4 class="modal-title" id="myModalLabel">保证金到期设置</h4>
   </div>
   <div class="modal-body">
+    <div>
       <label class="individual-label"> 保证金到期时间:</label>
             
             <input type="date"
@@ -15,6 +16,11 @@
                  rquired
                  ng-required
                  "/>
+    </div>
+    <div>
+        <label class="individual-label"> 保证金金额:</label>
+        <input type="number" name="money" class="form-control individual-iput" >
+    </div>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-primary" ng-click="$dismiss()">确定</button>
