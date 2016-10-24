@@ -19,14 +19,14 @@
         console.log(data);
               // console.log(data);
         $scope._dbid = data._id;
+        $scope.yanshouFile = data.yanshouFile;        
 
     })
-
 
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
     $scope.agent='杭州风景';
-    $scope.submit=function () {
+    $scope.submit=function (){
       // $state.go('components.acceptanceCheck');
       var acceptance={
           agent:$scope.agent,
@@ -35,14 +35,11 @@
       console.log(acceptance);
 
     }
-
-
-
     // 文件上传   开始 file upload
     $scope.fileList = [];
     var fileArray = [];
-    $scope.$watch('files', function (f) {
-      if(f&&f[0]) {
+    $scope.$watch('files',function(f){
+      if(f&&f[0]){
         $scope.upload(f);
         angular.forEach(f, function(file){
           $scope.fileList.push(file);
@@ -59,7 +56,8 @@
     //   });
     // };
 
-    $scope.upload = function (files) {
+    // 参数是数组
+    $scope.upload = function (files){
       if (files && files.length) {
         for (var i = 0; i < files.length; i++) {
           var file = files[i];
@@ -68,7 +66,7 @@
         }
       }
     };
-
+    // 参数是文件
     $scope.uploadFile = function(file){
 
       file.upload = $upload.upload({
@@ -77,7 +75,7 @@
       });
 
       file.upload.then(function(response) {
-        $timeout(function() {
+        $timeout(function(){
           file.result = response.data;
           fileArray.push(response.data)
 
@@ -110,3 +108,19 @@
 
   }
 })();
+
+
+
+// promi。then（
+// ）
+
+// upload({url,file},function(err,data){
+//   Shop.updateBaseinfo({shopid,data},function(err,data){
+
+//   })
+// })
+
+// file.upd=upload({url.file})
+// file.upd.then(function(data){
+
+// })

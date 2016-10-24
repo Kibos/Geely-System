@@ -232,7 +232,7 @@
     }
     // 股份构成
      // $scope.SharesConstitute=[];
-    $scope.removeSharesConstitute = function(index) {
+    $scope.removeSharesConstitute = function(index){
       $scope.SharesConstitute.splice(index, 1);
     };
     $scope.addSharesConstitute = function() {
