@@ -12,11 +12,12 @@
   function AuditCtrl($scope, $state, Shop, $timeout, $rootScope) {
 
 
+        //待审核
         $scope.shoplists = [];
         $scope.shoplists_data = [];
         function getNotVerifyShops() {
-          Shop.getShopByQuery.query({verifyDataSubmitting:true,notverify:false},function(data){
-            console.log(data);
+          Shop.getShopByQuery.query({verifyDataSubmitting:true,notverify:false,isVerify:false},function(data){
+            // console.log(data);
             $scope.shoplists_data = data;
             // $scope.shoplists = data;
 
@@ -66,11 +67,13 @@
 
         }
 
-        //没有通过
+        //通知         //全部审核完等待通知的isVerify
+
         $scope.tongzhishoplists = [];
         $scope.tongzhishoplists_data = [];
         function gettongzhishoplists() {
-          Shop.getShopByQuery.query({verifyDataSubmitting:true,isVerify:true},function(data){
+          Shop.getShopByQuery.query({isVerify:true},function(data){
+            console.log('{isVerify:true}');
             console.log(data);
             $scope.tongzhishoplists_data = data;
             // $scope.shoplists = data;
@@ -79,8 +82,17 @@
         }
         gettongzhishoplists()
 
-        //全部审核完等待通知的isVerify
+        $scope.notVerifyedshoplists = [];
+        $scope.notVerifyedshoplists_data = [];
+        function getnotVerifyedshoplists() {
+          Shop.getShopByQuery.query({notverify:true},function(data){
 
+            $scope.notVerifyedshoplists_data = data;
+            // $scope.shoplists = data;
+
+          })
+        }
+        getnotVerifyedshoplists()
 
 
         // $scope.applicants=[
@@ -151,17 +163,7 @@
         // ]
 
 
-        // $scope.notVerifyedshoplists = [];
-        // $scope.notVerifyedshoplists_data = [];
-        // function getnotVerifyedshoplists() {
-        //   Shop.getNotVerifyShops.query({notverify:true},function(data){
-        //
-        //     $scope.notVerifyedshoplists_data = data;
-        //     // $scope.shoplists = data;
-        //
-        //   })
-        // }
-        // getnotVerifyedshoplists()
+
 
         $scope.applicants2=[
             {
@@ -265,9 +267,9 @@
           // gettongzhishoplists()
 
 
-        // $scope.stateGo = function (operate) {
-        //  console.log(operate);
-        //
+        $scope.stateGo1 = function (operate) {
+         console.log(operate);
+                     $state.go('ba.rulisa.inform');
         //  if (operate === '通知') {
         //
         //      console.log('tongzhi')
@@ -278,7 +280,7 @@
         //
         //      $state.go('ba.rulisa.viewDetails');
         //  }
-        // }
+        }
 
   }
 })();

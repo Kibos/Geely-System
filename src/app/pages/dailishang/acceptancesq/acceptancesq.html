@@ -1,3 +1,22 @@
+<style>
+		.dropzone {
+				border: 2px dashed #bbb;
+				border-radius: 5px;
+				padding: 25px;
+				text-align: center;
+				font: 20pt bold;
+				color: #bbb;
+				margin-bottom: 20px;
+		}
+		.vertical-center{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+</style>
+
+
 <div ba-panel ba-panel-title="网络发展/代理商运营/验收申请" ba-panel-class="with-scroll">
 	<div class="col-md-6">
 		<form ng-submit="add(CompanyForm)" novalidate name="CompanyForm">
@@ -6,13 +25,49 @@
 					<span class="individual-iput" id="agent">{{agent}}</span>
 				</label>
 			</div>
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label class="" style="font-size:14px;font-weight:bolder;float:left">验收资料：</label>
 				<input type="file" id="inputfile" ng-model="file">
-			</div>
+			</div> -->
+
+
+
+
 			<div class="text-center">
 				<button type="submit" class="btn btn-primary" ng-click="submit()"style="margin-left:-250px;">提交</button>
 			</div>
 		</form>
 	</div>
+</div>
+
+<!-- 上传，注意上面有样式 -->
+<div class="" ng-show="true">
+	<div class="form-group">
+			 <div class="col-sm-12">
+					 <h1>
+					 </h1>
+					 <div ng-file-drop ng-file-select ng-model="files" class="dropzone"
+							 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+							 accept="">点击上传文件或者拖拽到这里</div>
+					 <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+					 <table class="table table-striped">
+							 <thead>
+									 <tr>
+											 <th>文件名</th>
+											 <th>文件大小</th>
+											 <th>进度</th>
+											 <th>预览</th>
+									 </tr>
+							 </thead>
+							 <tbody>
+									 <tr ng-repeat="f in fileList" style="font:smaller">
+											 <td>{{f.name}}</td>
+											 <td>{{f.size}}</td>
+											 <td><progressbar value="f.dynamic" style="margin-bottom:0px;" type="success"><b>{{f.dynamic}}%</b></progressbar></td>
+											 <td><a href="http://localhost:8080/public/files/{{f.result}}">{{f.result}}</a></td>
+									 </tr>
+							 </tbody>
+					 </table>
+			 </div>
+	 </div>
 </div>

@@ -33,7 +33,7 @@ angular.module('BlurAdmin')
         }).
         success(function(data) {
           console.log(data);
-          
+
         // $cookieStore.remove('token');
         // $cookieStore.remove('role');
         // PermPermissionStore.clearStore();

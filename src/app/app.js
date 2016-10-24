@@ -17,6 +17,7 @@ angular.module('BlurAdmin', [
   'permission',
   'permission.ui',
   'LocalStorageModule',
+  'angularFileUpload',
 
   'BlurAdmin.theme',
   'BlurAdmin.pages'
@@ -35,7 +36,7 @@ angular.module('BlurAdmin', [
   // });
   $httpProvider.interceptors.push('authInterceptor');
 })
- 
+
 .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
   return {
     // Add authorization token to headers
