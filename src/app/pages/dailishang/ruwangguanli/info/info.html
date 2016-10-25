@@ -92,8 +92,11 @@
               </div>
               <div class="form-group">
                 <label class="individual-label">汽车销售经验(年):</label>
-                <input type="text" name="sellSuffer" class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <input type="text" name="sellSuffer" required class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.sellSuffer.$error.pattern && submitbasic">
+                  请输入大于0的数字
+                </p>
+                <p class="help-block individual-p" ng-show="BasicForm.sellSuffer.$error.required && submitbasic">
                   请输入大于0的数字
                 </p>
               </div>
@@ -275,9 +278,12 @@
               <div class="form-group">
                 <label class="info-lab">租赁期限</label>
                 <div class="inner-box">
-                  <input type="text" name="leaseStart" ng-model="agent.leaseStart" ng-disabled="formstate()" required><span>至</span><input type="text" name="leaseEnd" ng-model="agent.leaseEnd" ng-disabled="formstate()" required>
+                  <input type="text" name="leaseStart" ng-model="agent.leaseStart" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"><span>至</span><input type="text" name="leaseEnd" ng-model="agent.leaseEnd" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
                   <p class="help-block njdsq-p" ng-show="(bssForm.leaseStart.$error.required && submitbss) || (bssForm.leaseEnd.$error.required && submitbss)">
                       请输入租赁期限
+                  </p>
+                  <p class="help-block njdsq-p" ng-show="(bssForm.leaseStart.$error.pattern && submitbss) || (bssForm.leaseEnd.$error.pattern && submitbss)">
+                      请输入正确的时间格式 如右所示:YYYY/MM/DD
                   </p>
                 </div>
               </div>
@@ -329,10 +335,13 @@
               <div class="form-group">
                 <label class="info-lab">建设时间</label>
                 <div class="inner-box">
-                  <div class="inner-box-child"><label>开工时间</label><input type="text" name="constructionStart" ng-model="agent.constructionStart" ng-disabled="formstate()" required></div>
-                  <div class="inner-box-child"><label>完工时间</label><input type="text" name="constructionEnd" ng-model="agent.constructionEnd" ng-disabled="formstate()" required></div>
+                  <div class="inner-box-child"><label>开工时间</label><input type="text" name="constructionStart" ng-model="agent.constructionStart" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"></div>
+                  <div class="inner-box-child"><label>完工时间</label><input type="text" name="constructionEnd" ng-model="agent.constructionEnd" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"></div>
                   <p class="help-block njdsq-p" ng-show="(bssForm.constructionStart.$error.required && submitbss) || (bssForm.constructionEnd.$error.required && submitbss)">
                       请输入建设时间
+                  </p>
+                  <p class="help-block njdsq-p" ng-show="(bssForm.constructionStart.$error.pattern && submitbss) || (bssForm.constructionEnd.$error.pattern && submitbss)">
+                      请输入正确的时间格式 如右所示:YYYY/MM/DD
                   </p>
                 </div>
               </div>
@@ -442,9 +451,12 @@
               </div>
               <div class="form-group">
                 <label class="info-lab">公司注册时间</label>
-                <input type="text" name="registrationTime" ng-model="agent.registrationTime" required ng-disabled="formstate()">
+                <input type="text" name="registrationTime" ng-model="agent.registrationTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
                 <p class="help-block njdsq-p" ng-show="newCPForm.registrationTime.$error.required && submitnewCP">
                   请输入公司注册时间
+                </p>
+                <p class="help-block njdsq-p" ng-show="newCPForm.registrationTime.$error.pattern && submitnewCP">
+                  请输入正确的时间格式 如右所示:YYYY/MM/DD
                 </p>
               </div>
               <div class="form-group">

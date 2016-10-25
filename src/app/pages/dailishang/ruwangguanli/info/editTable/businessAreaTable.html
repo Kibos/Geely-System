@@ -5,7 +5,7 @@
   <tr class="info-tr">
     <td>是否拟建店商圈</td>
     <td>汽车市场</td>
-    <td>距离市政府距离</td>
+    <td>距离市政府距离(公里)</td>
     <td>豪华车品牌</td>
     <td>其他汽车品牌</td>
     <td>操作</td>
@@ -22,8 +22,8 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.distance" e-name="distance" e-form="userform" e-required>
-          {{ user.distance}}
+        <span editable-number="user.distance" e-name="distance" e-form="userform" e-required>
+          {{ user.distance || '请输入数字'}}
         </span>
     </td>
     <td>
