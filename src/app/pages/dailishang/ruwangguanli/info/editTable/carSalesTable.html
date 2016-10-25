@@ -19,13 +19,13 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required>
-          {{ user.shark}}
+        <span editable-number="user.shark" e-name="shark" e-form="userform" e-required>
+          {{ user.shark || '请输入数字'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.date" e-name="date" e-form="userform" e-required>
-          {{ user.date}}
+        <span editable-date="user.date" e-name="date" e-form="userform" e-required>
+          {{ (user.date | date: "yyyy-MM-dd") || '请选择时间格式' }}
         </span>
     </td>
     <td>

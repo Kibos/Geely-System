@@ -244,6 +244,8 @@
       };
       $scope.SharesConstitute.push($scope.inserted);
     };
+    $scope.tableVerify=false;
+    
     // 关键人员背景
     // $scope.users=[];
     $scope.removeUser = function(index) {
@@ -276,7 +278,7 @@
       $scope.inserted= {
         firmName:'',
         shark:'',
-        date:'',
+        dates:'',
         brand:'',
         genre:'',
         address:'',
