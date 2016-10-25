@@ -12,7 +12,8 @@
     'BlurAdmin.pages.wangfa.buildingType',
     'BlurAdmin.pages.wangfa.manufacturerManage',
     'BlurAdmin.pages.wangfa.acceptancegl',
-    'BlurAdmin.pages.wangfa.bzjgl'
+    'BlurAdmin.pages.wangfa.bzjgl',
+    'BlurAdmin.pages.wangfa.zuzhijigou'
 
 
   ])
@@ -42,6 +43,22 @@
           template : '<ui-view></ui-view>',
           abstract: true,
           title: '建店管理',
+          sidebarMeta: {
+            icon: 'ion-gear-a',
+            order: 100,
+          },
+           data:{
+             permissions: {
+              only:'wangfa'
+           }
+          }
+        })
+        .state('ba.zuzhijigou', {
+          url: '/zuzhijigou',
+          controller: 'zuzhijigouCtrl',
+          templateUrl: 'app/pages/wangfa/zuzhijigou/zuzhijigou.html',
+          
+          title: '组织机构模板',
           sidebarMeta: {
             icon: 'ion-gear-a',
             order: 100,

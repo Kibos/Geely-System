@@ -5,7 +5,7 @@
 			    <thead>
 				    <tr class="sortable">
 				      <th class="table-id" st-sort="origin" st-sort-default="true"style="width: 100px;">事由</th>
-				      <th st-sort="time">账户</th>
+				      <th st-sort="account">账户</th>
 				      <th st-sort="money">金额</th>
 				      <th st-sort="time">时间</th>
 				    </tr>
@@ -13,7 +13,7 @@
 			    <tbody>
 				    <tr ng-repeat="item in informations | filter: $scope.filter" class="editable-tr-wrap">
 				      <td class="table-id">{{item.origin}}</td>
-				      <td>{{item.time}}</td>
+				      <td>{{item.account}}</td>
 				      <td>{{item.money}}</td>
 				      <td>{{item.time}}</td>
 

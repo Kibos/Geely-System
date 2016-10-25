@@ -57,6 +57,20 @@
       }
 
     ]
+    $scope.report = [
+      {
+        time1:'2016.1.1~1.7',
+        author:'李明',
+        time2:'2016.9.4 23:00',
+        description:'本周完成XXXXXXXXXXXXXXXXXXXXXXXXXXX'
+      },
+      {
+        time1:'2016.1.8~1.14',
+        author:'李红',
+        time2:'2016.9.4 23:00',
+        description:'本周完成XXXXXXXXXXXXXXXXXXXXXXXXXXX'
+      }
+    ]
 
   }
 })();

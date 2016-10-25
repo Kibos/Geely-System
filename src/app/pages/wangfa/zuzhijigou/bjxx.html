@@ -1,0 +1,27 @@
+<div ba-panel ba-panel-title="编辑详细信息" style="height:500px;">
+    <div class="form-group">
+      <label class="individual-label">编号:</label>
+      <input type="text" name="number" class="form-control individual-iput" ng-model="details.number"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">模板名称:</label>
+      <input type="text" name="name" class="form-control individual-iput" ng-model="details.name"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">适用类型:</label>
+      <input type="text" name="type" class="form-control individual-iput" ng-model="details.type"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">适用区域:</label>
+      <input type="text" name="area" class="form-control individual-iput" ng-model="details.area"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">状态:</label>
+      <input type="text" name="status" class="form-control individual-iput" ng-model="details.status"/>
+    </div>
+    <div class="text-center">
+    <button class="btn btn-primary" ng-click="save()">保存</button>
+    <button class="btn btn-default" ng-click="returnBack()">返回</button>
+    </div>
+
+</div>

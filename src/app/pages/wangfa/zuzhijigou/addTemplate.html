@@ -1,0 +1,81 @@
+<div ba-panel ba-panel-title="代理商基础信息维护->组织架构模板" ba-panel-class="with-scroll" >
+<div class="row">
+	<hr style="width: 1640px; background-color: 1d1b1d; margin-bottom: 5px;">
+	<form name="CompanyForm">
+		<div class="form-group">
+			<label class="individual-label">模板名称：</label>
+			<input type="text" name="companyName" class="form-control individual-iput" ng-model="template.name" placeholder="模板名称" required>
+			<p class="help-block individual-p" ng-show="CompanyForm.companyName.$error.required && CompanyForm.companyName.$touched">请输入模板名称</p> 
+		</div>
+		<div class="form-group">
+			<label class="individual-label">适用建店类型：</label>
+			<div class="input-demo checkbox-demo row" style="display:inline-block;">
+			    <div class="col-md-4">
+			      <label class="checkbox-inline custom-checkbox nowrap">
+			        <input type="checkbox" id="inlineCheckbox01" value="4S" ng-model="template.type1">
+			        <span>4S</span>
+			      </label>
+			    </div>
+			    <div class="col-md-4">
+			      <label class="checkbox-inline custom-checkbox nowrap">
+			        <input type="checkbox" id="inlineCheckbox02" value="SR" ng-model="template.type2">
+			        <span>SR</span>
+			      </label>
+			    </div>
+			    <div class="col-md-4">
+			      <label class="checkbox-inline custom-checkbox nowrap">
+			        <input type="checkbox" id="inlineCheckbox03" value="option3" ng-model="template.type3">
+			        <span>城市展厅</span>
+			      </label>
+			    </div>
+			 </div>
+			<p class="help-block individual-p" ng-show="CompanyForm.companyAddress.$error.required && CompanyForm.companyAddress.$touched">请选择适用建店类型</p> 
+
+		</div>
+		<div class="form-group">
+			<label class="individual-label">适用区域：</label>
+			<div class="input-demo checkbox-demo row" style="display:inline-block;">
+			    <div class="col-md-4">
+			      <label class="checkbox-inline custom-checkbox nowrap">
+			        <input type="checkbox" id="inlineCheckbox01" value="option1" ng-model="template.area1">
+			        <span>东北区</span>
+			      </label>
+			    </div>
+			    <div class="col-md-4">
+			      <label class="checkbox-inline custom-checkbox nowrap">
+			        <input type="checkbox" id="inlineCheckbox02" value="option2" ng-model="template.area2">
+			        <span>华北区</span>
+			      </label>
+			    </div>
+			    <div class="col-md-4">
+			      <label class="checkbox-inline custom-checkbox nowrap">
+			        <input type="checkbox" id="inlineCheckbox03" value="option3" ng-model="template.area3">
+			        <span>华南区</span>
+			      </label>
+			    </div>
+			</div>
+			<p class="help-block individual-p" ng-show="CompanyForm.companyPerson.$error.required && CompanyForm.companyPerson.$touched">请选择适用区域</p> 
+		</div>
+		<div class="form-group">
+			<label class="individual-label">模板说明：</label>
+			<textarea type="text" name="companyPhone" class="form-control individual-iput" ng-model="template.discrible" placeholder="模板说明" required></textarea> 
+			<p class="help-block individual-p" ng-show="CompanyForm.companyPhone.$error.required && CompanyForm.companyPhone.$touched">请输入模板说明</p> 
+		</div>
+		<div class="form-group">
+			<div class="form-group form-inline">
+			<label class="individual-label inline-block">状态：</label>
+			
+			<input type="checkbox" ng-model="template.state" value="using">
+		</div>
+
+		</div>
+		
+
+		<div class="text-center">
+			<button type="submit" class="btn btn-primary" ng-disabled="CompanyForm.$invalid" ng-click="submit()">确认</button>
+			<button type="submit" class="btn btn-default"s ng-click="return()">返回</button>
+		</div>
+	</form>
+
+</div>
+</div>
