@@ -66,4 +66,10 @@ angular.module('BlurAdmin')
     obj.userProduct = $resource('/api/products/user');
     return obj;
   }])
+    //供应商  /api/supplier
+    .factory('Supplier', ['$resource','serverUrl',function($resource,serverUrl){
+    var obj = {};
+    obj = $resource(serverUrl.url+'/api/supplier/:id', null, {'update': { method:'PUT' } });
+    return obj;
+  }])
 ;

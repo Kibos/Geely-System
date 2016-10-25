@@ -9,7 +9,7 @@
       .controller('supplierCtrl', supplierCtrl);
 
   /** @ngInject */
-  function supplierCtrl($scope,$state,$stateParams,$rootScope) {
+  function supplierCtrl($scope,$state,$stateParams,$rootScope,Supplier) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
     	$scope.add=function(){
@@ -34,6 +34,11 @@
                 number:'10'
             }
     			
-    	]
+    	];
+
+var entries =Supplier.query(function() {
+    console.log(entries);
+  }); //query() 返回有的entry
+        // console.log();
   }
 })();

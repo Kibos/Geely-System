@@ -9,7 +9,7 @@
       .controller('AddCtrl', AddCtrl);
 
   /** @ngInject */
-  function AddCtrl($scope,$state,$stateParams,$rootScope) {
+  function AddCtrl($scope,$state,$stateParams,$rootScope,Supplier,toastr) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
     // var arguments = $stateParams.obj;
@@ -28,17 +28,21 @@
       ];
       vm.submit=function(){
       var newadd={
-          companyName:vm.add.companyName,
-          companyAddress:vm.add.companyAddress,
-          companyPerson:vm.add.companyPerson,
-          companyPhone:vm.add.companyPhone,
-          companyEmail:vm.add.companyEmail,
-          account:vm.add.account
+          name:vm.add.companyName,
+          address:vm.add.companyAddress,
+          password:vm.add.password,
+          phone:vm.add.companyPhone,
+          email:vm.add.companyEmail,
+          ownName:vm.add.companyPerson
       }
-      $state.go('ba.hezuohuoban.shejichang');
-        console.log(vm.add.account);
-        console.log(vm.standardSelected)
-        console.log(newadd);
+      // supplier
+      // $state.go('ba.hezuohuoban.shejichang');
+      //   console.log(vm.add.account);
+
+Supplier.save(newadd,function(){
+toastr.success('添加成功!');
+});
+        // console.log(newadd);
         // $state.go('components.manufacturerManage');
 
     	}
