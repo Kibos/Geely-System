@@ -18,7 +18,7 @@
     </td>
     <td>
         <span editable-text="user.name" e-name="name" e-form="userform" e-required>
-          {{ user.name || 'empty' }}
+          {{ user.name}}
         </span>
     </td>
     <td>
@@ -32,18 +32,18 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.cellphone" e-name="cellphone" e-form="userform" e-required>
-          {{ user.cellphone}}
+        <span editable-tel="user.cellphone" e-name="cellphone" e-form="userform" e-required e-pattern="/^1[3,5,8]\d{9}$/">
+          {{ user.cellphone || "输入有效号码"}}
         </span>
     </td>
     <td>
         <span editable-email="user.Email" e-name="Email" e-form="userform" e-required>
-          {{ user.Email}}
+          {{ user.Email || '请输入有效邮箱'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required>
-          {{ user.shark}}
+        <span editable-number="user.shark" e-name="shark" e-form="userform" e-required>
+          {{ user.shark || "请输入数字"}}
         </span>
     </td>
     <td>
@@ -63,3 +63,6 @@
     </td>
   </tr>
 </table>
+<p class="help-block individual-p" ng-show="userform.cellphone.$error.pattern">
+     请输入正确的时间格式
+ </p>

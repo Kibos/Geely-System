@@ -14,6 +14,7 @@
     'BlurAdmin.pages.wangfa.acceptancegl',
     'BlurAdmin.pages.wangfa.bzjgl',
     'BlurAdmin.pages.wangfa.zuzhijigou'
+    'BlurAdmin.pages.wangfa.buildstorebt'
 
 
   ])
@@ -69,8 +70,7 @@
            }
           }
         })
-      
-      ;
+            ;
         // .state('ba.mianshiguanli', {
         //   url: '/mianshiguanli',
         //   template : '<ui-view></ui-view>',
@@ -152,7 +152,7 @@
         //    }
         //   }
         // })
-        
+
 
 
   }

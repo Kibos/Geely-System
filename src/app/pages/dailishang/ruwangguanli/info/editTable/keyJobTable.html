@@ -22,8 +22,8 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.age" e-name="age" e-form="userform" e-required>
-          {{ user.age}}
+        <span editable-number="user.age" e-name="age" e-form="userform" e-required>
+          {{ user.age || '请输入数字'}}
         </span>
     </td>
     <td>
@@ -32,8 +32,8 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.Experience" e-name="Experience" e-form="userform" e-required>
-          {{ user.Experience}}
+        <span editable-number="user.Experience" e-name="Experience" e-form="userform" e-required>
+          {{ user.Experience || '请输入数字'}}
         </span>
     </td>
     <td>

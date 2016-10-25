@@ -16,13 +16,13 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.fundingSum" e-name="fundingSum" e-form="userform" e-required>
-          {{ user.fundingSum}}
+        <span editable-number="user.fundingSum" e-name="fundingSum" e-form="userform" e-required>
+          {{ user.fundingSum || 'empty' }}
         </span>
     </td>
     <td>
-        <span editable-text="user.fundingRatio" e-name="fundingRatio" e-form="userform" e-required>
-          {{ user.fundingRatio}}
+        <span editable-number="user.fundingRatio" e-name="fundingRatio" e-form="userform" e-required>
+          {{ user.fundingRatio || 'empty'}}
         </span>
     </td>
     <td>

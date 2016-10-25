@@ -48,14 +48,17 @@
                 <input type="text" name="nature" class="form-control individual-iput" ng-model="agent.nature"
                        required placeholder="国有/合资/民营/股份/私有" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.nature.$error.required && submitbasic">
-                  请选择企业性质
+                  请输入企业性质
                 </p>
               </div>
               <div class="form-group">
                 <label class="individual-label">成立日期:</label>
-                <input type="text" name="establishDate" class="form-control individual-iput" ng-model="agent.establishDate" required ng-disabled="formstate()"/>
+                <input type="text" name="establishDate" class="form-control individual-iput" ng-model="agent.establishDate" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"/>
                 <p class="help-block individual-p" ng-show="BasicForm.establishDate.$error.required && submitbasic">
                   请输入公司成立日期
+                </p>
+                <p class="help-block individual-p" ng-show="BasicForm.establishDate.$error.pattern && submitbasic">
+                  请输入正确的日期格式 如右所示:YYYY/MM/DD
                 </p>
               </div>
               <div class="form-group">
@@ -89,8 +92,11 @@
               </div>
               <div class="form-group">
                 <label class="individual-label">汽车销售经验(年):</label>
-                <input type="text" name="sellSuffer" class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <input type="text" name="sellSuffer" required class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.sellSuffer.$error.pattern && submitbasic">
+                  请输入大于0的数字
+                </p>
+                <p class="help-block individual-p" ng-show="BasicForm.sellSuffer.$error.required && submitbasic">
                   请输入大于0的数字
                 </p>
               </div>
@@ -183,45 +189,102 @@
           <form ng-submit="buildStoreSite(bssForm)" novalidate name="bssForm" ng-switch-when="btn21" id="basic">
               <div class="form-group">
                 <label class="info-lab">拟申请商圈</label>
-                <input type="text" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()"/>
+                <input type="text" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()" required/>
+                <p class="help-block njdsq-p" ng-show="bssForm.tradeArea.$error.required && submitbss">
+                  请输入拟申请商圈
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">拟建店详细地址</label>
                 <input type="text" name="address" ng-model="agent.address" required ng-disabled="formstate()">
+                <p class="help-block njdsq-p" ng-show="bssForm.address.$error.required && submitbss">
+                  请输入拟建店详细地址
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">拟建店详细地址</label>
-                <select name="locations" ng-model="agent.locations" ng-options="item.id as item.text for item in locations" ng-disabled="formstate()">
+                <select name="locations" ng-model="agent.locations" ng-options="item.id as item.text for item in locations" ng-disabled="formstate()" required>
                 </select>
+                <p class="help-block njdsq-p" ng-show="bssForm.locations.$error.required && submitbss">
+                  请选着拟建店详细地址
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">拟建店所在商圈概况</label>
                   <div class="inner-box">
-                    <div class="inner-box-child"><label>商圈名称</label><input type="text" name="businessName" ng-model="agent.businessName" required ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>形成时间</label><input type="text" name="formationTime" ng-model="agent.formationTime" required ng-disabled="formstate()"></div></br>
-                    <div class="inner-box-child"><label>规模排名</label><input type="text" name="scaleRanked" ng-model="agent.scaleRanked" required ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>品牌数量</label><input type="text" name="brandNum" ng-model="agent.brandNum" required ng-disabled="formstate()"></div></br>
-                    <div class="inner-box-child"><label>品牌明细</label><input type="text" name="brandDetail" ng-model="agent.brandDetail" required ng-disabled="formstate()"></div>
+                    <div class="inner-box-child">
+                      <label>商圈名称</label>
+                      <input type="text" name="businessName" ng-model="agent.businessName" required ng-disabled="formstate()">
+                      <p class="help-block njdsq-p" ng-show="bssForm.businessName.$error.required && submitbss">
+                        请输入商圈名称
+                      </p>
+                    </div>
+                    <div class="inner-box-child">
+                      <label>形成时间</label>
+                      <input type="text" name="formationTime" ng-model="agent.formationTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
+                      <p class="help-block njdsq-p" ng-show="bssForm.formationTime.$error.required && submitbss">
+                        请输入形成时间
+                      </p>
+                      <p class="help-block njdsq-p" ng-show="bssForm.formationTime.$error.pattern && submitbss">
+                        请输入正确的时间格式 如右所示:YYYY/MM/DD
+                      </p>
+                    </div></br>
+                    <div class="inner-box-child">
+                      <label>规模排名</label>
+                      <input type="text" name="scaleRanked" ng-model="agent.scaleRanked" required ng-disabled="formstate()">
+                      <p class="help-block njdsq-p" ng-show="bssForm.scaleRanked.$error.required && submitbss">
+                        请输入规模排名
+                      </p>
+                    </div>
+                    <div class="inner-box-child">
+                      <label>品牌数量</label>
+                      <input type="text" name="brandNum" ng-model="agent.brandNum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
+                      <p class="help-block njdsq-p" ng-show="bssForm.brandNum.$error.required && submitbss">
+                        请输入品牌数量
+                      </p>
+                      <p class="help-block njdsq-p" ng-show="bssForm.brandNum.$error.pattern && submitbss">
+                        请大于0的整数
+                      </p>
+                    </div></br>
+                    <div class="inner-box-child">
+                      <label>品牌明细</label>
+                      <input type="text" name="brandDetail" ng-model="agent.brandDetail" required ng-disabled="formstate()">
+                      <p class="help-block njdsq-p" ng-show="bssForm.brandDetail.$error.required && submitbss">
+                        请输入品牌明细
+                      </p>
+                    </div>
                   </div>
               </div>
               <div class="form-group">
                 <label class="info-lab">土地来源</label>
-                <select name="landSources" ng-model="agent.landSources" ng-options="item.id as item.text for item in landSources" ng-disabled="formstate()">
+                <select name="landSources" ng-model="agent.landSources" ng-options="item.id as item.text for item in landSources" ng-disabled="formstate()" required>
                 </select>
+                <p class="help-block njdsq-p" ng-show="bssForm.landSources.$error.required && submitbss">
+                        请选着土地来源
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">土地性质</label>
                 <div class="inner-box">
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="gyyd" ng-model="agent.landStatus" value="industrialLand" ng-disabled="formstate()"><label for="gyyd">工业用地</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="syyd" ng-model="agent.landStatus" value="commercialLand" ng-disabled="formstate()"><label for="syyd">商业用地</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="nyyd" ng-model="agent.landStatus" value="agriculturalLand" ng-disabled="formstate()"><label for="nyyd">农业用地</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" id="qtyd" ng-model="agent.landStatus" value="otherLand" ng-disabled="formstate()"><label for="qtyd">其它</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="gyyd" ng-model="agent.landStatus" value="industrialLand" ng-disabled="formstate()"><label for="gyyd">工业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="syyd" ng-model="agent.landStatus" value="commercialLand" ng-disabled="formstate()"><label for="syyd">商业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="nyyd" ng-model="agent.landStatus" value="agriculturalLand" ng-disabled="formstate()"><label for="nyyd">农业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="qtyd" ng-model="agent.landStatus" value="otherLand" ng-disabled="formstate()"><label for="qtyd">其它</label></div></div>
+                  <p class="help-block njdsq-p" ng-show="bssForm.landStatus.$error.required && submitbss">
+                      请选择土地性质
+                  </p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="info-lab">租赁期限</label>
                 <div class="inner-box">
-                  <input type="text" name="leaseStart" ng-model="agent.leaseStart" ng-disabled="formstate()"><span>至</span><input type="text" name="leaseEnd" ng-model="agent.leaseEnd" ng-disabled="formstate()">
+                  <input type="text" name="leaseStart" ng-model="agent.leaseStart" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"><span>至</span><input type="text" name="leaseEnd" ng-model="agent.leaseEnd" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
+                  <p class="help-block njdsq-p" ng-show="(bssForm.leaseStart.$error.required && submitbss) || (bssForm.leaseEnd.$error.required && submitbss)">
+                      请输入租赁期限
+                  </p>
+                  <p class="help-block njdsq-p" ng-show="(bssForm.leaseStart.$error.pattern && submitbss) || (bssForm.leaseEnd.$error.pattern && submitbss)">
+                      请输入正确的时间格式 如右所示:YYYY/MM/DD
+                  </p>
                 </div>
               </div>
               <div class="form-group">
@@ -245,37 +308,58 @@
               </div>
               <div class="form-group">
                 <label class="info-lab">建设方式</label>
-                <div class="inner-box-child"><input type="radio" name="jsMode" id="jsfsxj" value="newConstruction" ng-model="agent.jsMode" ng-disabled="formstate()"><label for="jsfsxj">新建</label></div>
-                <div class="inner-box-child"><input type="radio" name="jsMode" id="jsfsgj" value="reconstruct" ng-model="agent.jsMode" ng-disabled="formstate()"><label for="jsfsgj">改建</label></div>
+                <div class="inner-box-child">
+                  <input type="radio" name="jsMode" id="jsfsxj" value="newConstruction" ng-model="agent.jsMode" ng-disabled="formstate()" required>
+                  <label for="jsfsxj">新建</label>
+                </div>
+                <div class="inner-box-child">
+                  <input type="radio" name="jsMode" id="jsfsgj" value="reconstruct" ng-model="agent.jsMode" ng-disabled="formstate()" required>
+                  <label for="jsfsgj">改建</label>
+                </div>
+                <p class="help-block njdsq-p" ng-show="bssForm.jsMode.$error.required && submitbss">
+                      请选择建设方式
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">申请级别</label>
-                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeA" value="sqGradeA" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeA">A级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeB" value="sqGradeB" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeB">B级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeC" value="sqGradeC" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeC">C级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeD" value="sqGradeD" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeD">D级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeE" value="sqGradeE" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeE">E级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" name="sqGrade" id="sqGradeF" value="sqGradeF" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeF">F级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeA" value="sqGradeA" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeA">A级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeB" value="sqGradeB" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeB">B级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeC" value="sqGradeC" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeC">C级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeD" value="sqGradeD" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeD">D级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeE" value="sqGradeE" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeE">E级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeF" value="sqGradeF" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeF">F级</label>&nbsp;</div>
+                <p class="help-block njdsq-p" ng-show="bssForm.sqGrade.$error.required && submitbss">
+                      请选择申请级别
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">建设时间</label>
                 <div class="inner-box">
-                  <div class="inner-box-child"><label>开工时间</label><input type="text" name="constructionStart" ng-model="agent.constructionStart" ng-disabled="formstate()"></div>
-                  <div class="inner-box-child"><label>完工时间</label><input type="text" name="constructionEnd" ng-model="agent.constructionEnd" ng-disabled="formstate()"></div>
+                  <div class="inner-box-child"><label>开工时间</label><input type="text" name="constructionStart" ng-model="agent.constructionStart" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"></div>
+                  <div class="inner-box-child"><label>完工时间</label><input type="text" name="constructionEnd" ng-model="agent.constructionEnd" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"></div>
+                  <p class="help-block njdsq-p" ng-show="(bssForm.constructionStart.$error.required && submitbss) || (bssForm.constructionEnd.$error.required && submitbss)">
+                      请输入建设时间
+                  </p>
+                  <p class="help-block njdsq-p" ng-show="(bssForm.constructionStart.$error.pattern && submitbss) || (bssForm.constructionEnd.$error.pattern && submitbss)">
+                      请输入正确的时间格式 如右所示:YYYY/MM/DD
+                  </p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="info-lab">规划店面</label>
                   <div class="inner-box">
-                    <div class="inner-box-child"><label>土地面积(m²)</label><input type="text" name="soilArea" ng-model="agent.soilArea" ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>土地宽度(m)</label><input type="text" name="soilWidth" ng-model="agent.soilWidth" ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>土地纵深(m)</label><input type="text" name="soilDepth" ng-model="agent.soilDepth" ng-disabled="formstate()"></br></div>
-                    <div class="inner-box-child"><label>建筑面积(m²)</label><input type="text" name="buildArea" ng-model="agent.buildArea" ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>建筑宽度(m)</label><input type="text" name="buildWidth" ng-model="agent.buildWidth" ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>建筑纵深(m)</label><input type="text" name="buildDepth" ng-model="agent.buildDepth" ng-disabled="formstate()"></br></div>
-                    <div class="inner-box-child"><label>整体高度(m)</label><input type="text" name="overallHeight" ng-model="agent.overallHeight" ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>展示区高度(m)</label><input type="text" name="showcaseHeight" ng-model="agent.showcaseHeight" ng-disabled="formstate()"></div>
-                    <div class="inner-box-child"><label>售后建筑面积(不含停车场,m²)</label><input type="text" name="afterSaleBuildArea" ng-model="agent.afterSaleBuildArea" ng-disabled="formstate()"></br></div>
+                    <div class="inner-box-child"><label>土地面积(m²)</label><input type="text" name="soilArea" ng-model="agent.soilArea" ng-disabled="formstate()" required></div>
+                    <div class="inner-box-child"><label>土地宽度(m)</label><input type="text" name="soilWidth" ng-model="agent.soilWidth" ng-disabled="formstate()" required></div>
+                    <div class="inner-box-child"><label>土地纵深(m)</label><input type="text" name="soilDepth" ng-model="agent.soilDepth" ng-disabled="formstate()" required></br></div>
+                    <div class="inner-box-child"><label>建筑面积(m²)</label><input type="text" name="buildArea" ng-model="agent.buildArea" ng-disabled="formstate()" required></div>
+                    <div class="inner-box-child"><label>建筑宽度(m)</label><input type="text" name="buildWidth" ng-model="agent.buildWidth" ng-disabled="formstate()" required></div>
+                    <div class="inner-box-child"><label>建筑纵深(m)</label><input type="text" name="buildDepth" ng-model="agent.buildDepth" ng-disabled="formstate()" required></br></div>
+                    <div class="inner-box-child"><label>整体高度(m)</label><input type="text" name="overallHeight" ng-model="agent.overallHeight" ng-disabled="formstate()" required></div>
+                    <div class="inner-box-child"><label>展示区高度(m)</label><input type="text" name="showcaseHeight" ng-model="agent.showcaseHeight" ng-disabled="formstate()" required></div>
+                    <div class="inner-box-child"><label>售后建筑面积(不含停车场,m²)</label><input type="text" name="afterSaleBuildArea" ng-model="agent.afterSaleBuildArea" ng-disabled="formstate()" required></br></div>
+                    <p class="help-block njdsq-p" ng-show="(bssForm.soilArea.$error.required && submitbss) || (bssForm.soilWidth.$error.required && submitbss) || (bssForm.soilDepth.$error.required && submitbss) || (bssForm.buildArea.$error.required && submitbss) || (bssForm.buildWidth.$error.required && submitbss) || (bssForm.buildDepth.$error.required && submitbss) || (bssForm.overallHeight.$error.required && submitbss) || (bssForm.showcaseHeight.$error.required && submitbss) || (bssForm.afterSaleBuildArea.$error.required && submitbss)">
+                      请把店面规划信息填写完整
+                    </p>
                   </div>
               </div>
               <div class="text-center">
@@ -327,35 +411,60 @@
               <div class="form-group">
                 <label class="info-lab-a">是否重新注册具有独立法人资格的新公司</label>
                 <div class="inner-box">
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="LPstatus" id="YesLPstatus" ng-model="agent.LPstatus" value="YesLPstatus" ng-disabled="formstate()"><label for="YesLPstatus">是</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="LPstatus" id="NotLPstatus" ng-model="agent.LPstatus" value="NotLPstatus" ng-disabled="formstate()"><label for="NotLPstatus">否</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="LPstatus" id="YesLPstatus" ng-model="agent.LPstatus" value="YesLPstatus" ng-disabled="formstate()"><label for="YesLPstatus">是</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="LPstatus" id="NotLPstatus" ng-model="agent.LPstatus" value="NotLPstatus" ng-disabled="formstate()"><label for="NotLPstatus">否</label></div>
+                  </div>
+                  <p class="help-block" ng-show="newCPForm.LPstatus.$error.required && submitnewCP" style="color:red">
+                  请选择是否重新注册具有独立法人资格的新公司
+                  </p>
                 </div>
               </div>
               <div class="form-group">
                 <label class="info-lab">公司名称</label>
                 <input type="text" name="companyName" ng-model="agent.companyName" required ng-disabled="formstate()">
+                <p class="help-block njdsq-p" ng-show="newCPForm.companyName.$error.required && submitnewCP">
+                  请输入公司名称
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">注册地址</label>
                 <input type="text" name="registeredAddress" ng-model="agent.registeredAddress" required ng-disabled="formstate()">
+                <p class="help-block njdsq-p" ng-show="newCPForm.registeredAddress.$error.required && submitnewCP">
+                  请输入注册地址
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">企业性质</label>
-                <select name="corporateProperty" ng-model="agent.corporateProperty" ng-options="item.id as item.text for item in EN" ng-disabled="formstate()">
+                <select name="corporateProperty" ng-model="agent.corporateProperty" ng-options="item.id as item.text for item in EN" ng-disabled="formstate()" required>
                 </select>
+                <p class="help-block njdsq-p" ng-show="newCPForm.corporateProperty.$error.required && submitnewCP">
+                  请输入企业性质
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">维修资质</label>
-                <select name="MaintenanceQualification" ng-model="agent.MaintenanceQualification" ng-options="item.id as item.text for item in MQ" ng-disabled="formstate()">
+                <select name="MaintenanceQualification" ng-model="agent.MaintenanceQualification" ng-options="item.id as item.text for item in MQ" ng-disabled="formstate()" required>
                 </select>
+                <p class="help-block njdsq-p" ng-show="newCPForm.MaintenanceQualification.$error.required && submitnewCP">
+                  请选择维修资质
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">公司注册时间</label>
-                <input type="text" name="registrationTime" ng-model="agent.registrationTime" required ng-disabled="formstate()">
+                <input type="text" name="registrationTime" ng-model="agent.registrationTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
+                <p class="help-block njdsq-p" ng-show="newCPForm.registrationTime.$error.required && submitnewCP">
+                  请输入公司注册时间
+                </p>
+                <p class="help-block njdsq-p" ng-show="newCPForm.registrationTime.$error.pattern && submitnewCP">
+                  请输入正确的时间格式 如右所示:YYYY/MM/DD
+                </p>
               </div>
               <div class="form-group">
                 <label class="info-lab">公司注册地址</label>
                 <input type="text" name="rirmRegisteredAddress" ng-model="agent.rirmRegisteredAddress" required ng-disabled="formstate()">
+                <p class="help-block njdsq-p" ng-show="newCPForm.rirmRegisteredAddress.$error.required && submitnewCP">
+                  请输入公司注册地址
+                </p>
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>

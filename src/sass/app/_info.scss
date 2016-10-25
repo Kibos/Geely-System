@@ -75,6 +75,13 @@ p.individual-p{
 	margin-top:8px;
 	color:#FA2700!important;
 }
+p.njdsq-p{
+	color:red!important;
+	margin-left:10%;
+}
+p.zjchb{
+	color:#FA2700!important;
+}
 input.individual-iput,textarea.individual-iput{
 	display:inline-block;
 	width:50%!important;
@@ -186,4 +193,7 @@ textarea{
 	right:100px;
 	top:0;
 
+}
+.table .editable-wrap .editable-controls input{
+	line-height: 30px!important;
 }

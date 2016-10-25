@@ -23,6 +23,7 @@ angular.module('BlurAdmin')
 
     obj.getNotVerifyShops=$resource(serverUrl.url+'/api/shops/getNotVerifyShops',{},{isArray:true});
     obj.getShopByQuery=$resource(serverUrl.url+'/api/shops/getShopByQuery',{},{ isArray:true});
+    obj.getShopByState=$resource(serverUrl.url+'/api/shops/getShopByState',{},{ isArray:true});
     obj.keyUsers=$resource(serverUrl.url+'/api/shops/keyUsers');
     obj.getShopsById=$resource(serverUrl.url+'/api/shops/getShopsById');
     obj.getShopsByuserId=$resource(serverUrl.url+'/api/shops/getShopsByuserId');
@@ -63,6 +64,12 @@ angular.module('BlurAdmin')
     obj = $resource(serverUrl.url+'/api/products/:id', null, {'update': { method:'PUT' } });
     obj.count = $resource('/api/products/count', null, {'update': { method:'PUT' }});
     obj.userProduct = $resource('/api/products/user');
+    return obj;
+  }])
+    //供应商  /api/supplier
+    .factory('Supplier', ['$resource','serverUrl',function($resource,serverUrl){
+    var obj = {};
+    obj = $resource(serverUrl.url+'/api/supplier/:id', null, {'update': { method:'PUT' } });
     return obj;
   }])
 ;

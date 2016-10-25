@@ -17,8 +17,8 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required>
-          {{ user.shark}}
+        <span editable-number="user.shark" e-name="shark" e-form="userform" e-required>
+          {{ user.shark || '请输入数字'}}
         </span>
     </td>
     <td>
@@ -27,13 +27,13 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.income" e-name="income" e-form="userform" e-required>
-          {{ user.income}}
+        <span editable-number="user.income" e-name="income" e-form="userform" e-required>
+          {{ user.income || '请输入数字'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.profit" e-name="profit" e-form="userform" e-required>
-          {{ user.profit}}
+        <span editable-number="user.profit" e-name="profit" e-form="userform" e-required>
+          {{ user.profit || '请输入数字'}}
         </span>
     </td>
     <td>

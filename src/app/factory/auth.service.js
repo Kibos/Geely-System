@@ -8,7 +8,6 @@ angular.module('BlurAdmin')
     if($cookieStore.get('token')) {
       currentUser = User.get();
     }
-    console.log('auth-----init')
     return {
 
       /**
@@ -20,7 +19,6 @@ angular.module('BlurAdmin')
        */
 
       setcurrentUser: function() {
-        console.log('setcurrentUser')
         currentUser = User.get();
         console.log(currentUser._id)
       },
@@ -35,7 +33,7 @@ angular.module('BlurAdmin')
         }).
         success(function(data) {
           console.log(data);
-          
+
         // $cookieStore.remove('token');
         // $cookieStore.remove('role');
         // PermPermissionStore.clearStore();
@@ -126,7 +124,6 @@ angular.module('BlurAdmin')
        * @return {Object} user
        */
       getCurrentUser: function() {
-        console.log('getCurrentUser')
         return currentUser;
       },
 
