@@ -25,15 +25,13 @@
             <th st-sort="detail">详情</th>
           </tr>
           <tr>
-            <!-- <th></th> -->
             <th><input st-search="agent" placeholder="Search agent" class="input-sm form-control search-input widthFix table-id"
                        type="search"/></th>
             <th><input st-search="type" placeholder="Search type" class="input-sm form-control search-input widthFix"
                        type="search"/></th>
             <th><input st-search="area" placeholder="Search area" class="input-sm form-control search-input widthFix"
                        type="search"/></th>
-            <th><input st-search="state" placeholder="Search state" class="input-sm form-control search-input widthFix" type="search"/>
-            </th>
+            <th><input st-search="state" placeholder="Search state" class="input-sm form-control search-input widthFix" type="search"/></th>
             <th></th>
           </tr>
           </thead>
@@ -45,7 +43,6 @@
             <td>{{item.area}}</td>
             <td>{{item.state}}</td>
             <td><a href="" ng-click="xq(item)" >详情</a></td>
-            <!-- <td><a ui-sref="components.designcheck({obj:item.id})">查看</a></td> -->
           </tr>
           </tbody>
           <tfoot>

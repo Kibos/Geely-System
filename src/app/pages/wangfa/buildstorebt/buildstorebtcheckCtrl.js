@@ -13,7 +13,6 @@
     $scope.smartTablePageSize = 5;
     var information = $stateParams.obj;
     console.log($stateParams.obj);
-    // console.log(information.agent);
     $scope.jdbt={
         agent:information.agent,
         type:information.type
