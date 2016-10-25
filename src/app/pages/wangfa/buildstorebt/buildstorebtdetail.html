@@ -1,0 +1,42 @@
+<style media="screen">
+  .widthFix {
+    width:100px;
+  }
+</style>
+<div class="row">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="网络发展/代理商/建店补贴" ba-panel-class="with-scroll">
+      <div class="form-group">
+				<label class="" id="partners1" style="font-size:14px;font-weight:bolder">代理商：
+          <!-- <input type="text" name="name" value="" ng-model="jdbt.agent"> -->
+					<span class="individual-iput" id="agent" >{{jdbt.agent}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder">代理商类型：
+					<span class="individual-iput" id="type"  ng-model="jdbt.type">{{jdbt.type}}</span>
+				</label>
+			</div>
+      <div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder;margin-left:220px">合同首付款
+          <input type="text" class="form-control individual-iput" ng-model="jdbt.pay1"/>元
+					<!-- <span class="individual-iput" id="type">{{pay1}}</span>元 -->
+				</label>
+			</div>
+      <div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder;margin-left:220px">材料&nbsp;补贴
+          <input type="text"  class="form-control individual-iput" ng-model="jdbt.pay2"/>元
+					<!-- <span class="individual-iput" id="type">{{pay2}}</span>元 -->
+				</label>
+			</div>
+      <div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder;margin-left:220px">提车&nbsp;补贴
+          <input type="text"  class="form-control individual-iput" ng-model="jdbt.pay3"/>元
+				</label>
+			</div>
+      <button type="submit" class="btn btn-info" ng-click="submit()" style="margin-left: 300px;">提交审核</button>
+
+
+    </div>
+  </div>
+</div>

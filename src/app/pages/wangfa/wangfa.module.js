@@ -12,7 +12,8 @@
     'BlurAdmin.pages.wangfa.buildingType',
     'BlurAdmin.pages.wangfa.manufacturerManage',
     'BlurAdmin.pages.wangfa.acceptancegl',
-    'BlurAdmin.pages.wangfa.bzjgl'
+    'BlurAdmin.pages.wangfa.bzjgl',
+    'BlurAdmin.pages.wangfa.buildstorebt'
 
 
   ])
@@ -52,7 +53,7 @@
            }
           }
         })
-      
+
       ;
         // .state('ba.mianshiguanli', {
         //   url: '/mianshiguanli',
@@ -135,7 +136,7 @@
         //    }
         //   }
         // })
-        
+
 
 
   }
