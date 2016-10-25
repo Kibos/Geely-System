@@ -1,0 +1,58 @@
+<style media="screen">
+  .widthFix {
+    width:100px;
+  }
+</style>
+<div class="row">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="网络发展/代理商/建店补贴审核" ba-panel-class="with-scroll">
+      <div class="form-group">
+				<label class="" id="partners1" style="font-size:14px;font-weight:bolder">代理商：
+					<span class="individual-iput" id="agent">{{jdbt.agent}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder">代理商类型：
+					<span class="individual-iput" id="type">{{jdbt.type}}</span>
+				</label>
+			</div>
+      <div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder;margin-left:220px">合同首付款
+          <input type="text" class="form-control individual-iput" ng-model="jdbt.pay1"/>元
+					<!-- <span class="individual-iput" id="type">{{pay1}}</span>元 -->
+				</label>
+			</div>
+      <div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder;margin-left:220px">材料&nbsp;补贴
+          <input type="text"  class="form-control individual-iput" ng-model="jdbt.pay2"/>元
+					<!-- <span class="individual-iput" id="type">{{pay2}}</span>元 -->
+				</label>
+			</div>
+      <div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder;margin-left:220px">提车&nbsp;补贴
+          <input type="text"  class="form-control individual-iput" ng-model="jdbt.pay3"/>元
+				</label>
+			</div>
+
+      <div class="form-group">
+				<label id="result" class="" style="font-size:14px;font-weight:bolder">审核结果：
+				</label>
+				<label class="radio-inline custom-radio nowrap ">
+					<input type="radio" name="result" class="form-control" id="disagree" value="disagree" ng-model="check.result" ng-click="nopass()" required="">
+					<span>不同意</span>
+				</label>
+				<label class="radio-inline custom-radio nowrap" id="agreeradio">
+					<input type="radio" name="result" class="form-control " id="agree" value="agree" ng-model="check.result" ng-click="pass()" required="">
+					<span>同意</span>
+				</label>
+			</div>
+      <div class="form-group">
+        <p style="font-size:14px;font-weight:bolder">审批意见</p>
+        <textarea class="form-control" placeholder="审核意见" ng-model="jdbt.description" required=""></textarea>
+      </div>
+      <button type="submit" class="btn btn-info" ng-click="submit()" style="margin-left: 300px;">提交</button>
+
+
+    </div>
+  </div>
+</div>
