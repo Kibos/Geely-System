@@ -25,6 +25,9 @@
         url: '/acceptanceglcheck',
         controller: 'acceptanceglcheckCtrl',
         templateUrl: 'app/pages/wangfa/acceptancegl/acceptanceglcheck.html',
+        params:{
+          obj:null
+        },
 
       });
   }

@@ -10,9 +10,22 @@
 
   /** @ngInject */
   function acceptanceglcheckCtrl($scope,$state,$stateParams,$rootScope) {
+    $scope.smartTablePageSize = 5;
+
+    var information = $stateParams.obj;
+    console.log(information);
+    $scope.ysgl={
+        agent:information.agent
+    }
+    $scope.submit=function(){
+      // $state.go('ba.jiandianguanli.buildstorebtcheck');
+      console.log($scope.ysgl);
+    }
+
+
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-    $scope.partners='杭州风景';
+    // $scope.partners='杭州风景';
     $scope.file='杭州风景';
     $scope.inform=false;
     $scope.pass=function(){
