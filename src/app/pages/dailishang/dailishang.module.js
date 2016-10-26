@@ -169,6 +169,9 @@
           url: '/hetonggh',
           controller: 'contractsupplyCtrl',
           templateUrl: 'app/pages/dailishang/hetonggh/contractsupply.html',
+          params:{
+            obj:null
+          },
           title: '合同供货管理',
           sidebarMeta: {
             icon: 'ion-gear-a',
