@@ -27,7 +27,7 @@
         templateUrl: 'app/pages/wangfa/acceptancegl/acceptanceglcheck.html',
         params:{
           obj:null
-        },
+        }
 
       });
   }

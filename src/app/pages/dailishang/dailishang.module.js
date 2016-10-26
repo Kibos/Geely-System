@@ -110,6 +110,9 @@
           url: '/yanshoushenqing',
           controller: 'acceptancesqCtrl',
           templateUrl: 'app/pages/dailishang/acceptancesq/acceptancesq.html',
+          params:{
+            obj:null
+          },
           title: '验收申请',
           sidebarMeta: {
             icon: 'ion-gear-a',
