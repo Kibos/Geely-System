@@ -724,9 +724,11 @@
 
     // 文件上传   开始 file upload
     $scope.flag = false;
-
-    $scope.fileIndex = function (index) {
+    $scope.zidaun = '';
+    $scope.fileIndex = function (index,ziduan) {
       $scope.indexFlag = index;
+      console.log(ziduan);
+      $scope.zidaun = ziduan;
     }
 
     var vm = this;
@@ -774,6 +776,7 @@
           console.log('fileArray------');
           console.log(fileArray);
           $scope.flag = true;
+          vm.saveFile();
           // Product.productImages.save({pid:$scope.pid, image:response.data}, function(res){
           //   })
           });
@@ -795,7 +798,7 @@
       console.log(ziduan);
       console.log(fileArray);
       var allmessage = {}
-      var key=ziduan;
+      var key=$scope.zidaun;
 
       // console.log($scope.files);
       if(fileArray === {}){
@@ -819,9 +822,40 @@
 
       }
       fileArray = {};
+    }
+
+
+    vm.removeFile = function (ziduan,index) {
+      console.log(ziduan);
+      console.log(fileArray);
+      var key=index;
+      fileArray[key]='';
+      var allmessage = {}
+      var key=ziduan;
+
+      // console.log($scope.files);
+      if(fileArray === {}){
+        console.log('0000000000000');
+      }else {
+        allmessage[key]=fileArray;
+
+        console.log('allmessage');
+        console.log(allmessage);
+
+          Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
+              console.log('updateBaseinfo')
+              console.log(err);
+              console.log(res);
+              getShop()
+          })
+      }
+      fileArray = {};
 
 
     }
+
+
+
 
 
   }

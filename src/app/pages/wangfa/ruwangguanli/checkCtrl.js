@@ -9,7 +9,7 @@
       .controller('CheckCtrl', CheckCtrl);
 
     /** @ngInject */
-    function CheckCtrl($scope,$state,$stateParams,$rootScope,Auth,Audit,localStorageService, filesUrl) {
+    function CheckCtrl($scope,$state,$stateParams,$rootScope,Auth,Audit,localStorageService, filesUrl , $upload, $timeout, Shop) {
       $scope.fileUrl = filesUrl.url;
       var shop = $stateParams.obj;
       $scope.shop = shop;
@@ -64,7 +64,8 @@
          info:state[shop.applyId.verify.length-1],
          bool:flag,
          step:shop.applyId.verify.length,
-         opinion: $scope.info.description
+         opinion: $scope.info.description,
+         fileName: $scope.fileArray[0]
        }
        console.log(verInfo);
         var post = {applyId:shop.applyId._id, verify:verInfo, shopId:shop._id, isVerify:isVerify}
@@ -122,6 +123,74 @@
          return '不通过'
        }
      }
+
+
+
+     var vm = this;
+     vm.fileUrl = filesUrl.url;
+
+     // 文件上传   开始 file upload
+     $scope.fileList = [];
+     $scope.fileArray = [];
+     $scope.$watch('vm.files',function(f){
+       console.log('change');
+       if(f&&f[0]){
+         $scope.upload(f);
+         angular.forEach(f, function(file){
+           $scope.fileList.push(file);
+         })
+       }
+     });
+
+     // $scope.removeFile = function(fileName) {
+     //   angular.forEach($scope.fileList, function(f, index){
+     //     if(f.name == fileName){
+     //       $scope.fileList.splice(index, 1);
+     //       return;
+     //     }
+     //   });
+     // };
+
+     // 参数是数组
+     $scope.upload = function (files){
+       if (files && files.length) {
+         for (var i = 0; i < files.length; i++) {
+           var file = files[i];
+           file.dynamic = 0;
+           $scope.uploadFile(file);
+         }
+       }
+     };
+     // 参数是文件
+     $scope.uploadFile = function(file){
+
+       file.upload = $upload.upload({
+         url: vm.fileUrl+'/api/files/updateFile',
+         file: file
+       });
+
+       file.upload.then(function(response) {
+         $timeout(function(){
+           file.result = response.data;
+           $scope.fileArray[0] = (response.data)
+
+           });
+       }, function(response) {});
+
+       file.upload.progress(function(evt) {
+         // Math.min is to fix IE which reports 200% sometimes
+         file.dynamic = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
+       });
+
+       // file.upload.xhr(function(xhr) {
+       //   // xhr.upload.addEventListener('abort', function(){console.log('abort complete')}, false);
+       // });
+     };
+
+     // 文件上传结束
+
+
+
 
     }
 })();

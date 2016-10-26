@@ -2,10 +2,19 @@
         <div class="form-group">
 
             <label class="info-lab">组织架构筹备</label>
-            <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0)" class="dropzone"
+            <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'organizationChart')" class="dropzone"
                 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
                 accept="">点击上传文件或者拖拽到这里</div>
             <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.organizationChart[0]}}">{{shop.organizationChart[0]}}</a> </label>
+            <div>
+            <button type="button" ng-if="shop.organizationChart[0]" class="btn btn-primary" ng-click="vm.removeFile('organizationChart',0)" ng-disabled="formstate()" sytle="">删除</button>
+            </div>
+            <!--
+            <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0)" class="dropzone"
+                drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+                accept="">点击上传文件或者拖拽到这里</div>
+            <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div> -->
 
           </div>
           	<!-- <label class="info-lab" style="text-align:right;padding-right:10px;">组织架构筹备</label>
@@ -13,9 +22,7 @@
           		<input type="file" name="organizationChart" ng-model="agent.organizationChart" ng-disabled="formstate()"/>
           	</div> -->
         </div>
-        <div class="text-center">
-          <button type="button" class="btn btn-primary" ng-click="vm.saveFile('organizationChart')" ng-disabled="formstate()">保存</button>
-        </div>
+
 </form>
 <!-- 上传，注意上面有样式 -->
 <!-- <div class="" ng-show="">
