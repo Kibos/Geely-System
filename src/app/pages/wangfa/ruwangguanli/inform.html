@@ -4,7 +4,7 @@
   	<div class="col-md-6">
       <div ba-panel ba-panel-title="合作商概览" ba-panel-class="with-scroll">
         <ul class="list-group" ng-repeat="item in partners ">
-			<label>合作商代码</label> 
+			<label>合作商代码</label>
 			<li class="list-group-item">{{item.id}}</li>
 			<label>申请公司</label>
 			<li class="list-group-item">{{item.compony}}</li>
@@ -23,19 +23,23 @@
     </div>
     <div class="col-md-6">
       <div ba-panel ba-panel-title="保证金设置" ba-panel-class="with-scroll">
-        <form>
+        <form name="informForm">
           	<div class="form-group">
 			    <label>保证金</label>
 			    <div>
-			      	<input type="email" class="form-control" ng-model="form.money" placeholder="请输入保证金金额" required>
+			      	<input type="number" class="form-control" ng-model="inform.money" placeholder="请输入保证金金额" required>
 			    </div>
 			    <label>打款期限</label>
 			    <div>
-			      	<input type="email" class="form-control" ng-model="form.date" placeholder="请输入打款期限" required>
+            <input type="date"
+                 class="form-control individual-iput" ng-model="inform.date"
+                 min="2016-10-12"
+                 max="2020-12-22"
+                 rquired>
 			    </div>
 			</div>
-          <button type="submit" class="btn btn-danger" ng-disabled="form.$invalid" ng-click="submit()">确认通知</button>
-          
+          <button type="submit" class="btn btn-danger" ng-disabled="informForm.$invalid" ng-click="submit()">确认通知</button>
+
         </form>
       </div>
     </div>

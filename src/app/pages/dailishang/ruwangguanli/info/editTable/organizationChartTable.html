@@ -1,11 +1,50 @@
 <form ng-submit="frameworkaRrange(organizeSchemaForm)" novalidate name="organizeSchemaForm" id="BSSdatum">
         <div class="form-group">
-          	<label class="info-lab" style="text-align:right;padding-right:10px;">组织架构筹备</label>
+
+            <label class="info-lab">组织架构筹备</label>
+            <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0)" class="dropzone"
+                drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+                accept="">点击上传文件或者拖拽到这里</div>
+            <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+
+          </div>
+          	<!-- <label class="info-lab" style="text-align:right;padding-right:10px;">组织架构筹备</label>
             <div class="bsst-item">
           		<input type="file" name="organizationChart" ng-model="agent.organizationChart" ng-disabled="formstate()"/>
-          	</div>
+          	</div> -->
         </div>
         <div class="text-center">
-            <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+          <button type="button" class="btn btn-primary" ng-click="vm.saveFile('organizationChart')" ng-disabled="formstate()">保存</button>
         </div>
 </form>
+<!-- 上传，注意上面有样式 -->
+<!-- <div class="" ng-show="">
+	<div class="form-group">
+			 <div class="col-sm-12">
+					 <h1>
+					 </h1>
+					 <div ng-file-drop ng-file-select ng-model="vm.files" class="dropzone"
+							 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+							 accept="">点击上传文件或者拖拽到这里</div>
+					 <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+					 <table class="table table-striped">
+							 <thead>
+									 <tr>
+											 <th>文件名</th>
+											 <th>文件大小</th>
+											 <th>进度</th>
+											 <th>预览</th>
+									 </tr>
+							 </thead>
+							 <tbody>
+									 <tr ng-repeat="f in fileList" style="font:smaller">
+											 <td>{{f.name}}</td>
+											 <td>{{f.size}}</td>
+											 <td><progressbar value="f.dynamic" style="margin-bottom:0px;" type="success"><b>{{f.dynamic}}%</b></progressbar></td>
+											 <td><a href="{{vm.fileUrl}}/public/files/{{f.result}}">{{f.result}}</a></td>
+									 </tr>
+							 </tbody>
+					 </table>
+			 </div>
+	 </div>
+</div> -->

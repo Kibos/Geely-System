@@ -9,9 +9,12 @@
       .controller('CheckCtrl', CheckCtrl);
 
     /** @ngInject */
-    function CheckCtrl($scope,$state,$stateParams,$rootScope,Auth,Audit,localStorageService) {
-
+    function CheckCtrl($scope,$state,$stateParams,$rootScope,Auth,Audit,localStorageService, filesUrl) {
+      $scope.fileUrl = filesUrl.url;
       var shop = $stateParams.obj;
+      $scope.shop = shop;
+
+      console.log(shop.jzcfhxFile[0]);
       if(shop){
         localStorageService.set('checkshop', shop);
       }else{

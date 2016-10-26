@@ -26,11 +26,16 @@
 					<select class="form-control" selectpicker title="验收结论" ng-model="vm.check.result" ng-options="item as item.label for item in vm.selectItems" required=""></select>
 				</div>
 			</div>
-			<div class="form-group">
-				<label class="individual-label" style="font-size:14px;font-weight:bolder">验收报告：</label>
-				<input type="file" id="inputfile" class="form-control individual-iput" ng-model="vm.check.file">
-			</div>
 
+			<div class="form-group">
+				<label class="info-lab">验收报告：</label>
+				<div ng-file-drop ng-file-select ng-model="vm.files" class="dropzone"
+						drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+						accept="">点击上传文件或者拖拽到这里</div>
+				<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+				<img ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[1]}}"  alt="" />
+
+			</div>
 			<div class="text-center">
 				<button type="submit" class="btn btn-primary" ng-disabled="CompanyForm.$invalid" ng-click="vm.submit()">提交</button>
 			</div>

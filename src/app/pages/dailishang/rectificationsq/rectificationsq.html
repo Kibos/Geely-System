@@ -15,11 +15,17 @@
 					<span class="individual-iput" id="check">{{information}}</span>
 				</label>
 			</div>
-			<div class="form-group">
 
-				<label class="individual-label" style="font-size:14px;font-weight:bolder">验收资料：</label>
-				<input type="file" id="inputfile" class="form-control individual-iput" ng-model="file">
-			</div>
+				<div class="form-group">
+					<label class="info-lab">验收资料：</label>
+					<div ng-file-drop ng-file-select ng-model="vm.files" class="dropzone"
+							drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+							accept="">点击上传文件或者拖拽到这里</div>
+					<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+					<img ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[1]}}"  alt="" />
+
+				</div>
+
 			<div class="text-center">
 				<button type="submit" class="btn btn-primary" ng-click="submit()">提交</button>
 			</div>
