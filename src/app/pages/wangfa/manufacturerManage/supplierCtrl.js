@@ -12,10 +12,16 @@
   function supplierCtrl($scope,$state,$stateParams,$rootScope,RoleUser,toastr,Supplier) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
+
     // var vm = this;
     $scope.add=function(){
     		$state.go('ba.hezuohuoban.add');
     }
+
+    	$scope.add=function(){
+    		$state.go('ba.hezuohuoban.add',{obj:2});
+    	}
+
     	
 //     Supplier.query(function(suppliers){ 
 //        $scope.suppliers=suppliers; 

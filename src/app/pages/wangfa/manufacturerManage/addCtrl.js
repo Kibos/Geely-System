@@ -12,6 +12,7 @@
   function AddCtrl($scope,$state,$stateParams,$rootScope,Supplier,toastr,RoleUser) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
+
     var vm = this;
     vm.return=function(){
     		$state.go('ba.hezuohuoban.gongyingshang');
@@ -20,6 +21,31 @@
     
    
     vm.submit=function(){
+
+    var information = $stateParams.obj;
+
+    console.log(information);
+      var vm = this;
+      //返回管理页面
+    	vm.return=function(){
+        if(information===1){
+          $state.go('ba.hezuohuoban.shejichang');
+          console.log(1);
+        }else{
+           $state.go('ba.hezuohuoban.gongyingshang');
+           console.log(2);
+        }
+    		
+    	}
+      //提交
+      vm.add={}
+      //下拉菜单
+      vm.selectItems=[
+        { label: '随机生成账号', value: 1},
+        { label: '联系人手机号作为账号', value: 2},
+      ];
+      vm.submit=function(){
+
       var newadd={
           name:vm.add.companyName,
          
@@ -51,6 +77,6 @@
        return angular.isUndefined(value) || value === null
     };
 
-    
-  }
+  }}
+ 
 })();

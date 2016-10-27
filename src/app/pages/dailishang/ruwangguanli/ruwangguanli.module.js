@@ -16,6 +16,7 @@
       .state('ba.ruwangguan.ruwangshenqinga', {
         url: '/ruwangguan.ruwangshenqinga',
         controller: 'InfoCtrl',
+        controllerAs: 'vm',
         templateUrl: 'app/pages/dailishang/ruwangguanli/info/info.html',
           title: '入网申请',
           sidebarMeta: {

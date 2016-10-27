@@ -13,6 +13,7 @@
     'BlurAdmin.pages.wangfa.manufacturerManage',
     'BlurAdmin.pages.wangfa.acceptancegl',
     'BlurAdmin.pages.wangfa.bzjgl',
+    'BlurAdmin.pages.wangfa.zuzhijigou',
     'BlurAdmin.pages.wangfa.buildstorebt'
 
 
@@ -53,8 +54,23 @@
            }
           }
         })
+        .state('ba.zuzhijigou', {
+          url: '/zuzhijigou',
+          controller: 'zuzhijigouCtrl',
+          templateUrl: 'app/pages/wangfa/zuzhijigou/zuzhijigou.html',
 
-      ;
+          title: '组织机构模板',
+          sidebarMeta: {
+            icon: 'ion-gear-a',
+            order: 100,
+          },
+           data:{
+             permissions: {
+              only:'wangfa'
+           }
+          }
+        })
+            ;
         // .state('ba.mianshiguanli', {
         //   url: '/mianshiguanli',
         //   template : '<ui-view></ui-view>',

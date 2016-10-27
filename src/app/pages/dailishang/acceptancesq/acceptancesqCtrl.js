@@ -19,7 +19,7 @@
         console.log(data);
               // console.log(data);
         $scope._dbid = data._id;
-        $scope.yanshouFile = data.yanshouFile;        
+        $scope.yanshouFile = data.yanshouFile;
 
     })
 

@@ -50,7 +50,7 @@
         url: '/hezuohuoban.gongyingshang',
         controller: 'supplierCtrl',
         templateUrl: 'app/pages/wangfa/manufacturerManage/supplier.html',
-      
+
           title: '供应商管理',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
@@ -63,6 +63,24 @@
         controller:'AddCtrl',
         controllerAs:'vm',
         templateUrl: 'app/pages/wangfa/manufacturerManage/add.html',
+        params:{
+          obj:null
+        }
+      })
+      .state('ba.hezuohuoban.sjsxx', {
+        url: '/sjsxx',
+        controller:'sjsxxCtrl',
+        controllerAs:'vm',
+        templateUrl: 'app/pages/wangfa/manufacturerManage/sjsxx.html',
+        params:{
+          obj:null
+        }
+      })
+      .state('ba.hezuohuoban.gysxx', {
+        url: '/gysxx',
+        controller:'gysxxCtrl',
+        controllerAs:'vm',
+        templateUrl: 'app/pages/wangfa/manufacturerManage/gysxx.html',
         params:{
           obj:null
         }

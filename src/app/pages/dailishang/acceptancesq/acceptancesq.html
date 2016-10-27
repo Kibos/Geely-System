@@ -25,21 +25,35 @@
 					<span class="individual-iput" id="agent">{{agent}}</span>
 				</label>
 			</div>
+			<!-- <div class="form-group">
+				<label class="" style="font-size:14px;font-weight:bolder;float:left">验收资料：</label>
+				<input type="file" id="inputfile" ng-model="file">
+			</div> -->
 
+			<div class="form-group">
+				<label class="info-lab">上传文件：</label>
+				<div ng-file-drop ng-file-select ng-model="vm.files" class="dropzone"
+						drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+						accept="">点击上传文件或者拖拽到这里</div>
+				<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+				<img ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[1]}}"  alt="" />
 
+			</div>
 
 
 			<div class="text-center">
-				<button type="submit" class="btn btn-primary" ng-click="submit()"style="margin-left:-250px;">提交</button>
+				<button type="button" class="btn btn-primary" ng-click="vm.saveFile('organizationChart')" ng-disabled="formstate()">保存</button>
 			</div>
 		</form>
 	</div>
 </div>
 
 <!-- 上传，注意上面有样式 -->
-<div class="" ng-show="true">
+<!-- <div class="" ng-show="true">
 	<div class="form-group">
 			 <div class="col-sm-12">
+					 <h1>
+					 </h1>
 					 <div ng-file-drop ng-file-select ng-model="files" class="dropzone"
 							 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
 							 accept="">点击上传文件或者拖拽到这里</div>
@@ -64,13 +78,4 @@
 					 </table>
 			 </div>
 	 </div>
-</div>
-
-
-
-
-
-<br>
-<div>filename</div>
-<div>{{yanshouFile}}</div>
-<div><a href="http://localhost:8080/public/files/{{yanshouFile}}">{{yanshouFile}}</a></div>
+</div> -->

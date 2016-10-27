@@ -16,7 +16,7 @@
       $state.go('ba.jiandianguanli.constructionStage');
     }
 
-    $scope.date = new Date('2015-12-12');
+    $scope.date = new Date('2016-10-12');
     $scope.construction = {};
     $scope.saveInfo = function(){
      var newconstruction = {
@@ -26,7 +26,8 @@
         time2:$scope.construction.time2
 
       }
-      console.log(newconstruction)
+      console.log(newconstruction);
+      $state.go('ba.jiandianguanli.constructionStage');
     }
 
    

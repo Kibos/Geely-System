@@ -1,8 +1,6 @@
 'use strict';
 
 angular.module('BlurAdmin')
-.value('redirectToUrlAfterLogin', { url: '/' })
-.value('serverUrl',{url:'http://127.0.0.1:8080'})   //上线环境 ''   开发环境：'http://127.0.0.1:8080'
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q, redirectToUrlAfterLogin,PermRoleStore,PermPermissionStore,serverUrl) {
     var currentUser = {};
     if($cookieStore.get('token')) {
