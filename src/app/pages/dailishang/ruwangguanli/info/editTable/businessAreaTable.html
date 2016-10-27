@@ -12,13 +12,14 @@
   </tr>
   <tr ng-repeat="user in BSbusinessArea" class="editable-row">
     <td>
-        <span editable-text="user.proposed" e-name="proposed" e-form="userform" e-required>
-          {{user.proposed}}
+        <span editable-checkbox="user.proposed" e-name="proposed" e-form="userform" e-required>
+          <!-- {{user.proposed}} -->
+          {{ user.proposed || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.market" e-name="market" e-form="userform" e-required>
-          {{ user.market}}
+          {{ user.market || '请输入信息'}}
         </span>
     </td>
     <td>
@@ -28,12 +29,12 @@
     </td>
     <td>
         <span editable-text="user.limousineBrand" e-name="limousineBrand" e-form="userform" e-required>
-          {{ user.limousineBrand}}
+          {{ user.limousineBrand || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.otherBrand" e-name="otherBrand" e-form="userform" e-required>
-          {{ user.otherBrand}}
+          {{ user.otherBrand || '请输入信息'}}
         </span>
     </td>
     <td>

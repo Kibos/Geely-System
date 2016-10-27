@@ -24,12 +24,12 @@
   <tr ng-repeat="user in maintenance" class="editable-row">
     <td>
         <span editable-text="user.COHR" e-name="COHR" e-form="userform" e-required>
-          {{ user.COHR}}
+          {{ user.COHR || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.brand" e-name="brand" e-form="userform" e-required>
-          {{ user.brand}}
+          {{ user.brand || '请输入信息'}}
         </span>
     </td>
     <td>

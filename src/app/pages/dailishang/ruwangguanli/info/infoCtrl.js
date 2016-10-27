@@ -17,7 +17,8 @@
     $scope.currentUser = Auth.getCurrentUser();
 
     console.log($scope.currentUser)
-
+    // 保存提示
+    $scope.save='savehide';
     function getShop() {
       Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
           console.log(data);
@@ -234,7 +235,13 @@
         legalRepresentative:$scope.agent.legalRepresentative
 
     	};
+
+
     	console.log($scope.basic);
+      var allmessage = {
+          basic:$scope.basic
+      }
+      saveInfoFixFuntion(allmessage)
 
     }
     // 股份构成
@@ -700,6 +707,7 @@
 
         };
         // $scope.state=true;
+        $scope.save='saveshow';
         //如果为真，则表示数据库存在，做update操作
         if($scope._dbid){
             Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
@@ -715,10 +723,19 @@
         })
         }
     }
-
     // 表单状态
     $scope.formstate=function(){
       return  $scope.verifyDataSubmitting;
+    }
+
+
+
+    function saveInfoFixFuntion (allmessage) {
+            Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
+            console.log('updateBaseinfo')
+            console.log(err);
+            console.log(res);
+        })
     }
 
 

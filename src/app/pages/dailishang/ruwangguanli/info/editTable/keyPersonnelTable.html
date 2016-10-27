@@ -17,53 +17,53 @@
         {{$index}}
     </td>
     <td>
-        <span editable-text="user.name" e-name="name" e-form="userform" e-required>
-          {{ user.name}}
+        <span editable-text="user.name" e-name="name" e-form="userformtwo" e-required>
+          {{ user.name || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.city" e-name="city" e-form="userform" e-required>
-          {{ user.city}}
+        <span editable-text="user.city" e-name="city" e-form="userformtwo" e-required>
+          {{ user.city || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.duty" e-name="duty" e-form="userform" e-required>
-          {{ user.duty}}
+        <span editable-text="user.duty" e-name="duty" e-form="userformtwo" e-required>
+          {{ user.duty || '请输入信息'}}
         </span>
     </td>
     <td>
-      <!-- <span editable-tel="user.cellphone" e-name="cellphone" e-form="userform" e-required e-pattern="/^1[3,5,8]\d{9}$/"> -->
-        <span editable-tel="user.cellphone" e-name="cellphone" e-form="userform" e-required >
+      <!-- <span editable-tel="user.cellphone" e-name="cellphone" e-form="userformtwo" e-required e-pattern="/^1[3,5,8]\d{9}$/"> -->
+        <span editable-number="user.cellphone" e-name="cellphone" e-form="userformtwo" e-required>
           {{ user.cellphone || "输入有效号码"}}
         </span>
     </td>
     <td>
-        <span editable-email="user.Email" e-name="Email" e-form="userform" e-required>
+        <span editable-email="user.Email" e-name="Email" e-form="userformtwo" e-required>
           {{ user.Email || '请输入有效邮箱'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.shark" e-name="shark" e-form="userform" e-required>
+        <span editable-number="user.shark" e-name="shark" e-form="userformtwo" e-required>
           {{ user.shark || "请输入数字"}}
         </span>
     </td>
     <td>
-      <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
+      <form editable-form name="userformtwo" ng-show="userformtwo.$visible" class="form-buttons form-inline"
             shown="inserted == user">
-        <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
+        <button type="submit" ng-disabled="userformtwo.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>
-        <button type="button" ng-disabled="userform.$waiting" ng-click="userform.$cancel()" class="btn btn-default editable-table-button btn-xs">
+        <button type="button" ng-disabled="userformtwo.$waiting" ng-click="userformtwo.$cancel()" class="btn btn-default editable-table-button btn-xs">
           取消
         </button>
       </form>
-      <div class="buttons" ng-show="!userform.$visible">
-        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
+      <div class="buttons" ng-show="!userformtwo.$visible">
+        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userformtwo.$show()" ng-disabled="formstate()">编辑</button>
         <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>
 </table>
-<p class="help-block individual-p" ng-show="userform.cellphone.$error.pattern">
+<p class="help-block individual-p" ng-show="userformtwo.cellphone.$error.pattern">
      请输入正确的时间格式
  </p>

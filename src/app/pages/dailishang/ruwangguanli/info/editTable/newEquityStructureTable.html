@@ -13,12 +13,12 @@
   <tr ng-repeat="user in newEquityStructure" class="editable-row">
     <td>
         <span editable-text="user.shareholder" e-name="shareholder" e-form="userform" e-required>
-          {{ user.shareholder}}
+          {{ user.shareholder || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.shareholder" e-name="shareholder" e-form="userform" e-required>
-          {{ user.affiliation}}
+          {{ user.affiliation || '请输入信息'}}
         </span>
     </td>
     <td>
@@ -33,7 +33,7 @@
     </td>
     <td>
         <span editable-text="user.nature" e-name="nature" e-form="userform" e-required>
-          {{ user.nature}}
+          {{ user.nature || '请输入信息'}}
         </span>
     </td>
     <td>

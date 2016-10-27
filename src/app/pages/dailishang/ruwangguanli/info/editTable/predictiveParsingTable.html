@@ -36,6 +36,7 @@
           		</div>
     </div>
 	<div class="text-center">
-        <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>
+        <button type="submit" class="btn btn-primary" ng-disabled="formstate()" ng-click="flag6=marketAnalyzeForm.$valid">保存</button>
+        <span class="saveformts" ng-show='flag6'>信息已保存</span>
     </div>
 </form>
