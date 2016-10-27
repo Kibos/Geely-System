@@ -75,6 +75,66 @@
   }
 
 ];
+    $scope.acceptancelist1s=[
+    {
+    agent:'杭州一汽',
+    type:'城市展厅',
+    area:'东区-浙江省杭州市',
+    state:'已完成验收',
+    detail:'123456789',
+    },
+    {
+    agent:'上海吉利',
+    type:'城市展厅',
+    area:'东区-上海市嘉定区',
+    state:'已完成验收',
+    detail:'123456789',
+    },
+    {
+    agent:'江苏华庭',
+    type:'A级4S店',
+    area:'东区-江苏省苏州市',
+    state:'已完成验收',
+    detail:'123456789',
+    },
+    {
+    agent:'上海华庭',
+    type:'A级4S店',
+    area:'东区-上海市嘉定区',
+    state:'已完成验收',
+    detail:'123456789',
+    },
+    {
+    agent:'杭州汽工贸',
+    type:'A级4S店',
+    area:'东区-浙江省杭州市',
+    state:'已完成验收',
+    detail:'123456789',
+    },
+    {
+    agent:'苏州汽工贸',
+    type:'A级4S店',
+    area:'江苏省苏州市',
+    state:'已完成验收',
+    detail:'123456789',
+    },
+    {
+    agent:'浙江汽工贸',
+    type:'A级4S店',
+    area:'东区-浙江省杭州市',
+    state:'已完成验收',
+    detail:'123456789',
+    },
+    {
+    agent:'广州汽工贸',
+    type:'A级4S店',
+    area:'东区-广州',
+    state:'已完成验收',
+    detail:'123456789',
+    }
+
+    ];
+
 
   }
 })();

@@ -15,7 +15,7 @@
   <tr ng-repeat="user in carShareholder" class="editable-row">
     <td>
         <span editable-text="user.firmName" e-name="firmName" e-form="userform" e-required>
-          {{ user.firmName}}
+          {{ user.firmName || '请输入信息'}}
         </span>
     </td>
     <td>
@@ -30,22 +30,22 @@
     </td>
     <td>
         <span editable-text="user.brand" e-name="brand" e-form="userform" e-required>
-          {{ user.brand}}
+          {{ user.brand || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.genre" e-name="genre" e-form="userform" e-required>
-          {{ user.genre}}
+          {{ user.genre || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.address" e-name="address" e-form="userform" e-required>
-          {{ user.address}}
+          {{ user.address || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.status" e-name="status" e-form="userform" e-required>
-          {{ user.status}}
+          {{ user.status || '请输入信息'}}
         </span>
     </td>
     <td>

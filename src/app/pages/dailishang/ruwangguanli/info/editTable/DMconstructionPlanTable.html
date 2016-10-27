@@ -13,28 +13,28 @@
   <tr ng-repeat="user in StoreConstructionPlan" class="editable-row">
     <td>
         <span editable-text="user.city" e-name="city" e-form="userform" e-required>
-          {{ user.city}}
+          {{ user.city || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-text="user.branch" e-name="branch" e-form="userform" e-required>
-          {{ user.branch}}
+          {{ user.branch || '请输入信息'}}
         </span>
     </td>
     <td>
         <span editable-date="user.submitTime" e-name="submitTime" e-form="userform" e-required>
           <!-- {{ (user.submitTime | data: "yyyy-MM-dd") || '请输入时间' }} -->
-           {{ (user.submitTime | date:"dd/MM/yyyy") || '请输入时间' }}
+           {{ (user.submitTime | date:"dd/MM/yyyy") || '请选择时间' }}
         </span>
     </td>
     <td>
         <span editable-date="user.startingTime" e-name="startingTime" e-form="userform" e-required>
-          {{ user.startingTime }}
+          {{ user.startingTime || '请选择时间'}}
         </span>
     </td>
     <td>
         <span editable-date="user.completeTime" e-name="completeTime" e-form="userform" e-required>
-          {{ user.completeTime}}
+          {{ user.completeTime || '请选择时间'}}
         </span>
     </td>
     <td>

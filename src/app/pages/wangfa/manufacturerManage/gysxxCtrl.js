@@ -14,7 +14,7 @@
     $rootScope.loginflag = true ;
     var information = $stateParams.obj;
     console.log(information.name);
-    $scope.sjsxx = {
+    $scope.gysxx = {
       name:information.name,
       adress:information.gonguser.address,
       person:information.gonguser.ownName,
