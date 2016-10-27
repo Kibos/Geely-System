@@ -12,7 +12,7 @@
   function ManufacturerManageCtrl($scope,$state,$stateParams,$rootScope,Supplier) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-<<<<<<< HEAD
+
     	$scope.add=function(){
     		$state.go('ba.hezuohuoban.add',{obj:1});
     	}
@@ -66,12 +66,11 @@
                 number:'10'
             }
     	]
-=======
+
     $scope.add=function(){
     	$state.go('ba.hezuohuoban.add',{obj:1});
     };
    
->>>>>>> 3db7327f9ad5fb55db702ef96ee378bf75fa33bb
-    	
+ 	
   }
 })();
