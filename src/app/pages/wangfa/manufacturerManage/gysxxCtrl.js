@@ -16,11 +16,11 @@
     console.log(information.name);
     $scope.sjsxx = {
       name:information.name,
-      adress:information.address,
-      person:information.person,
+      adress:information.gonguser.address,
+      person:information.gonguser.ownName,
       phone:information.phone,
-      time:information.time,
-      number:information.number
+      time:information.createAt,
+      number:information.gonguser.number
     }
     	$scope.returnBack=function(){
     		$state.go('ba.hezuohuoban.gongyingshang');

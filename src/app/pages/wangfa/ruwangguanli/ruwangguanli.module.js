@@ -28,6 +28,7 @@
     .state('ba.rulisa.check', {
       url: '/check',
       controller: 'CheckCtrl',
+      controllerAs: 'vm',
       templateUrl: 'app/pages/wangfa/ruwangguanli/check.html',
       params:{
         obj:null
@@ -64,7 +65,7 @@
        }}
 
     })
-    
+
       .state('admin.logoutModal', {
         url: '/logoutModal',
         controller: 'LogoutModalCtrl',
@@ -113,7 +114,7 @@
       //       order: 30,
       //     },
       // })
-      
+
       // .state('ba.jiandianguanli.jiandianbutie', {
       //   url: '/jiandianguanli.jiandianbutie',
       //   template: '<div></div>',
@@ -235,7 +236,7 @@
       //     },
       // })
       //合作伙伴管理
-     
+
       //通知模板设置
       .state('ba.tongzhimoban.duanxin', {
         url: '/tongzhimoban.duanxin',

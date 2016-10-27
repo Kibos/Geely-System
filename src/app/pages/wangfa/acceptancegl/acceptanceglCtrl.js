@@ -9,8 +9,19 @@
       .controller('acceptanceglCtrl', acceptanceglCtrl);
 
   /** @ngInject */
-  function acceptanceglCtrl($scope) {
+  function acceptanceglCtrl($scope,$state) {
     $scope.smartTablePageSize = 5;
+    $scope.xq = function(item){
+      if(item.state==='待提交申请'){
+        console.log("待提交验收申请")
+        // $state.go('ba.jiandianguanli.buildstorebtdetail',{obj:item});
+      }else if(item.state==='待安排验收')
+      {
+        $state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
+      }else{
+
+      }
+};
 
     $scope.acceptancelists=[
   {

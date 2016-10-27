@@ -1,17 +1,17 @@
 
-<div ba-panel ba-panel-title="网络发展/合作商运营/申请审核" ba-panel-class="with-scroll">
+<div ba-panel ba-panel-title="网络发展/代理商运营/申请审核" ba-panel-class="with-scroll">
 
 	<div class="col-md-6" >
 		<form name="checkForm">
 
 			<div class="form-group">
 				<label class="" id="partners1" style="font-size:14px;font-weight:bolder">申请代理商：
-					<span class="individual-iput" id="partners">{{partners}}</span>
+					<span class="individual-iput" id="agent">{{ysgl.agent}}</span>
 				</label>
 			</div>
 			<div class="form-group">
 				<label class="" id="infor1" style="font-size:14px;font-weight:bolder">验收资料：
-					<span class="individual-iput" id="file">{{file}}</span>
+					<span class="individual-iput" id="file">{{ysgl.file}}</span>
 				</label>
 			</div>
 			<div class="form-group">
@@ -26,7 +26,7 @@
 					<span>同意</span>
 				</label>
 			</div>
-			<div class="form-group" ng-show="inform">
+			<div class="form-group" ng-show="flag">
 				<div class="form-group">
 				    <label class="individual-label" style="font-size:14px;font-weight:bolder"> 验收时间:</label>
 

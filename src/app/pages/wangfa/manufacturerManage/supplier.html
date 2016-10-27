@@ -2,27 +2,29 @@
   	<uib-tab heading="供应商">
 	  	<div class="horizontal-scroll">
 	  		<button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
-		  	<table class="table table-hover" st-table="suppliers">
+		  	<table class="table table-hover" st-table="vm.suppliers">
 			    <thead>
 				    <tr class="sortable">
 				      <th class="table-id" st-sort="id" st-sort-default="true">供应商名</th>
 				      <th st-sort="address">公司地址</th>
-				      <th st-sort="person">联系人</th>
+				      <th st-sort="ownName">联系人</th>
 				      <th st-sort="phone">联系电话</th>
-				      <th st-sort="time">加入时间</th>
+				      <th st-sort="createAt">加入时间</th>
 				      <th st-sort="number">案例数</th>
-				      <th st-sort="zaozuo">操作</th>
+				      <th st-sort="zaozuo"> 操&nbsp;  作&nbsp; </th>
 				    </tr>
 			    </thead>
 			    <tbody>
 				    <tr ng-repeat="item in suppliers" class="editable-tr-wrap">
+							
 				      <td class="table-id">{{item.name}}</td>
-				      <td>{{item.address}}</td>
-				      <td>{{item.person}}</td>
-
+				      <td>{{item.gonguser.address}}</td>
+				      <td>{{item.gonguser.ownName}}</td>
+				      
 				      <td>{{item.phone}}</td>
-				      <td>{{item.time}}</td>
-				      <td>{{item.number}}</td>
+				      <td>{{item.createAt| date:"MM/dd/yyyy"}}</td>
+				      <td>{{item.gonguser.number}}</td>
+				      
 
 				      <td><a href="" ui-sref='ba.hezuohuoban.gysxx({obj:item})'>查看</a></td>
 

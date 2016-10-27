@@ -67,9 +67,14 @@ angular.module('BlurAdmin')
     return obj;
   }])
     //供应商  /api/supplier
-    .factory('Supplier', ['$resource','serverUrl',function($resource,serverUrl){
+  .factory('Supplier', ['$resource','serverUrl',function($resource,serverUrl){
     var obj = {};
     obj = $resource(serverUrl.url+'/api/supplier/:id', null, {'update': { method:'PUT' } });
+    return obj;
+  }])
+  .factory('RoleUser', ['$resource','serverUrl',function($resource,serverUrl){
+    var obj = {};
+    obj.gongUser = $resource(serverUrl.url+'/api/users/gong/:_id', null, {'update': { method:'PUT' } });
     return obj;
   }])
 ;

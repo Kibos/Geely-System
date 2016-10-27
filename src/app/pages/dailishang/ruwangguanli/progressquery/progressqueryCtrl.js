@@ -18,12 +18,17 @@
     console.log($scope.currentUser);
 
     Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
+
       console.log(data);
-      var arr = data.applyId.verify;
-      console.log(arr);
-      for (var i = 0; i < arr.length; i++) {
-        $scope.rwnums[i].bool = arr[i].bool;
+      if (data.applyId) {
+        var arr = data.applyId.verify;
+        console.log(arr);
+        for (var i = 0; i < arr.length; i++) {
+          $scope.rwnums[i].bool = arr[i].bool;
+        }
+
       }
+
 
     });
 

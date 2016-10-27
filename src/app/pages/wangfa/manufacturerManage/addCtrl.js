@@ -9,51 +9,70 @@
       .controller('AddCtrl', AddCtrl);
 
   /** @ngInject */
-  function AddCtrl($scope,$state,$stateParams,$rootScope,Supplier,toastr) {
+  function AddCtrl($scope,$state,$stateParams,$rootScope,Supplier,toastr,RoleUser) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-    var information = $stateParams.obj;
 
-    console.log(information);
-      var vm = this;
-      //返回管理页面
-    	vm.return=function(){
-        if(information===1){
-          $state.go('ba.hezuohuoban.shejichang');
-          console.log(1);
-        }else{
-           $state.go('ba.hezuohuoban.gongyingshang');
-           console.log(2);
-        }
+    var vm = this;
+    vm.return=function(){
+    		$state.go('ba.hezuohuoban.gongyingshang');
+    };
+    vm.add={};
+    
+   
+    // vm.submit=function(){
+
+    // var information = $stateParams.obj;
+
+    // console.log(information);
+    //   var vm = this;
+    //   //返回管理页面
+    // 	vm.return=function(){
+    //     if(information===1){
+    //       $state.go('ba.hezuohuoban.shejichang');
+    //       console.log(1);
+    //     }else{
+    //        $state.go('ba.hezuohuoban.gongyingshang');
+    //        console.log(2);
+    //     }
     		
-    	}
-      //提交
-      vm.add={}
-      //下拉菜单
-      vm.selectItems=[
-        { label: '随机生成账号', value: 1},
-        { label: '联系人手机号作为账号', value: 2},
-      ];
+    // 	}
+    //   //提交
+    //   vm.add={}
+    
       vm.submit=function(){
+
       var newadd={
           name:vm.add.companyName,
-          address:vm.add.companyAddress,
-          password:vm.add.password,
+         
+          password:vm.add.password||"123456",
           phone:vm.add.companyPhone,
           email:vm.add.companyEmail,
-          ownName:vm.add.companyPerson
+          role:"gonguser",
+          gonguser:{ownName:vm.add.companyPerson, address:vm.add.companyAddress}
       }
-      // supplier
-      // $state.go('ba.hezuohuoban.shejichang');
-      //   console.log(vm.add.account);
 
-Supplier.save(newadd,function(){
-toastr.success('添加成功!');
-});
-        // console.log(newadd);
-        // $state.go('components.manufacturerManage');
 
-    	}
-    
+      if(isUndefinedOrNull(newadd.name)||isUndefinedOrNull(newadd.gonguser.address)||isUndefinedOrNull(newadd.phone)||
+        isUndefinedOrNull(newadd.email)||isUndefinedOrNull(newadd.gonguser.ownName)){
+        toastr.warning('请填写完整!', '提示');
+      }else{
+          // Supplier.save(newadd,function(){
+          //  toastr.success('添加成功!');
+          // });
+
+          RoleUser.gongUser.save(newadd,function(){
+           toastr.success('添加成功!');
+          });
+      	$state.go('ba.hezuohuoban.gongyingshang');
+          //  vm.add={};
+      }
+    }
+
+    function isUndefinedOrNull(value){
+       return angular.isUndefined(value) || value === null
+    };
+
   }
+ 
 })();

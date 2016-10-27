@@ -9,9 +9,10 @@
       .controller('supplierCtrl', supplierCtrl);
 
   /** @ngInject */
-  function supplierCtrl($scope,$state,$stateParams,$rootScope,Supplier) {
+  function supplierCtrl($scope,$state,$stateParams,$rootScope,RoleUser,toastr,Supplier) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
+<<<<<<< HEAD
     	$scope.add=function(){
     		$state.go('ba.hezuohuoban.add',{obj:2});
     	}
@@ -67,10 +68,19 @@
             }
     			
     	];
+=======
+>>>>>>> 3db7327f9ad5fb55db702ef96ee378bf75fa33bb
 
-var entries =Supplier.query(function() {
-    console.log(entries);
-  }); //query() 返回有的entry
-        // console.log();
+    // var vm = this;
+    $scope.add=function(){
+    		$state.go('ba.hezuohuoban.addgycs');
+    }
+
+
+   var entries =RoleUser.gongUser.query(function() {
+      console.log(entries);
+      $scope.suppliers=entries;
+    //   console.log("si=="+suppliers.length);
+  });
   }
 })();

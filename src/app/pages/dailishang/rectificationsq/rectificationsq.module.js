@@ -15,6 +15,9 @@
         url: '/rectificationsq',
         controller: 'rectificationsqCtrl',
         templateUrl: 'app/pages/dailishang/rectificationsq/rectificationsq.html',
+        params:{
+          obj:null
+        },
         title: '整改申请',
         sidebarMeta: {
           icon: 'ion-gear-a',
@@ -30,6 +33,9 @@
         controller: 'submitreportCtrl',
         controllerAs: 'vm',
         templateUrl: 'app/pages/dailishang/rectificationsq/submitreport.html',
+        params:{
+          obj:null
+        }
 
       })
       .state('ba.leadercheck', {
@@ -37,6 +43,9 @@
         controller: 'leadercheckCtrl',
         controllerAs: 'vm',
         templateUrl: 'app/pages/dailishang/rectificationsq/leadercheck.html',
+        params:{
+          obj:null
+        }
 
       })
 
