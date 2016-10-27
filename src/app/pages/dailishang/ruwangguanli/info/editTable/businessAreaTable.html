@@ -12,9 +12,9 @@
   </tr>
   <tr ng-repeat="user in BSbusinessArea" class="editable-row">
     <td>
-        <span editable-checkbox="user.proposed" e-name="proposed" e-form="userform" e-required>
+        <span editable-checkbox="user.proposed" e-name="proposed" e-form="userform">
           <!-- {{user.proposed}} -->
-          {{ user.proposed || '请输入信息'}}
+          {{ user.proposed}}
         </span>
     </td>
     <td>
