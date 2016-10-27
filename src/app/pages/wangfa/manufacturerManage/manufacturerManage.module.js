@@ -50,7 +50,9 @@
         url: '/hezuohuoban.gongyingshang',
         controller: 'supplierCtrl',
         templateUrl: 'app/pages/wangfa/manufacturerManage/supplier.html',
-
+        params:{
+          obj:null
+        },
           title: '供应商管理',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
