@@ -9,16 +9,17 @@
               <p>审核结果</p>
               <div class="col-md-4">
                 <label class="radio-inline custom-radio nowrap">
-                  <input type="radio" name="result" id="disagree" value="false" ng-model="options.pass" required="">
-                  <span>审核不通过</span>
+                  <input type="radio" name="result" id="agree" value="true" ng-model="options.pass" ng-checked="true" required="">
+                  <span>审核通过</span>
                 </label>
               </div>
               <div class="col-md-4">
                 <label class="radio-inline custom-radio nowrap">
-                  <input type="radio" name="result" id="agree" value="true" ng-model="options.pass" required="">
-                  <span>审核通过</span>
+                  <input type="radio" name="result" id="disagree" value="false" ng-model="options.pass" required="">
+                  <span>审核不通过</span>
                 </label>
               </div>
+              
           </div>
           <div class="form-group">
             <p>审核意见</p>
