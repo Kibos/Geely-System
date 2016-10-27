@@ -58,7 +58,7 @@
           },
       })
 
-      .state('ba.hezuohuoban.add', {
+      .state('ba.hezuohuoban.addgycs', {
         url: '/add',
         controller:'AddCtrl',
         controllerAs:'vm',

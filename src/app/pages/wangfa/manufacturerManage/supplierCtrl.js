@@ -15,38 +15,14 @@
 
     // var vm = this;
     $scope.add=function(){
-    		$state.go('ba.hezuohuoban.add');
+    		$state.go('ba.hezuohuoban.addgycs');
     }
 
-    	$scope.add=function(){
-    		$state.go('ba.hezuohuoban.add',{obj:2});
-    	}
 
-    	
-//     Supplier.query(function(suppliers){ 
-//        $scope.suppliers=suppliers; 
-//        console.log("-->"+suppliers[0].name+" "+$scope.designManufacturers);
-//    });
-
-//    Supplier.query(function(res){
-//      console.log(res[0]);
-  
-//    }); 
    var entries =RoleUser.gongUser.query(function() {
       console.log(entries);
       $scope.suppliers=entries;
     //   console.log("si=="+suppliers.length);
   });
-
-  $scope.viewEntry=function(id){
-    		console.log(id);
-  
- }
-  $scope.deleteEntry=function(id){
-      console.log(id);
-      RoleUser.gongUser.delete({_id:id},function(){
-      toastr.success('删除成功!');
-    })
-    }
   }
 })();
