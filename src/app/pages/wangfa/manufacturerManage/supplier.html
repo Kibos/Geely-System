@@ -2,7 +2,7 @@
   	<uib-tab heading="供应商">
 	  	<div class="horizontal-scroll">
 	  		<button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
-		  	<table class="table table-hover" st-table="vm.suppliers">
+		  	<table class="table table-hover" st-table="suppliers">
 			    <thead>
 				    <tr class="sortable">
 				      <th class="table-id" st-sort="id" st-sort-default="true">供应商名</th>
@@ -23,17 +23,17 @@
 				      
 				      <td>{{item.phone}}</td>
 				      <td>{{item.createAt| date:"MM/dd/yyyy"}}</td>
-				      <td>{{item.gonguser.number}}</td>
+				      <td>{{item.gonguser.number||0}}</td>
 				      
 
 				      <td><a href="" ui-sref='ba.hezuohuoban.gysxx({obj:item})'>查看</a></td>
 
 				    </tr>
 			    </tbody>
-			    <tfoot>
+			   <tfoot>
 				    <tr>
 				      <td colspan="8" class="text-center">
-				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
+				        <div st-pagination="3" st-items-by-page="5" st-displayed-pages="2"></div>
 				      </td>
 				    </tr>
 			    </tfoot>

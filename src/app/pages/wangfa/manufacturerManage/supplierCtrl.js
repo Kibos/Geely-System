@@ -9,13 +9,13 @@
       .controller('supplierCtrl', supplierCtrl);
 
   /** @ngInject */
-  function supplierCtrl($scope,$state,$stateParams,$rootScope,RoleUser,toastr,Supplier) {
+  function supplierCtrl($scope,$state,$stateParams,$rootScope,RoleUser,toastr) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-
-    	$scope.add=function(){
+    $scope.suppliers=[];
+    $scope.add=function(){
     		$state.go('ba.hezuohuoban.add',{obj:2});
-    	}
+    }
     	
     	
 
@@ -24,8 +24,9 @@
 
 
    var entries =RoleUser.gongUser.query(function() {
-      console.log(entries);
-      $scope.suppliers=entries;
+      console.log("++++>>>"+entries);
+      $scope.supplier=entries;
+      // vm.suppliers=entries;
     //   console.log("si=="+suppliers.length);
   });
   }

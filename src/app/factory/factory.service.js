@@ -75,6 +75,8 @@ angular.module('BlurAdmin')
   .factory('RoleUser', ['$resource','serverUrl',function($resource,serverUrl){
     var obj = {};
     obj.gongUser = $resource(serverUrl.url+'/api/users/gong/:_id', null, {'update': { method:'PUT' } });
+    obj.daiUser = $resource(serverUrl.url+'/api/users/dai/:_id', null, {'update': { method:'PUT' } });
+    obj.updateUser = $resource(serverUrl.url+'/api/users/:_id', null, {'update': { method:'PUT' } });
     return obj;
   }])
 ;
