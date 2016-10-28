@@ -14,7 +14,6 @@
       var shop = $stateParams.obj;
       $scope.shop = shop;
 
-      console.log(shop.jzcfhxFile[0]);
       if(shop){
         localStorageService.set('checkshop', shop);
       }else{
@@ -22,8 +21,8 @@
       }
 
 
-      console.log(shop)
-
+      // console.log(shop)
+      $scope.btn="btn1";
       $scope.user = Auth.getCurrentUser()
 
       var state = [
@@ -39,7 +38,7 @@
 
 
       $scope.options = {
-        pass: false,
+        pass: 'true'
       };
       $scope.info = {
         description: ''

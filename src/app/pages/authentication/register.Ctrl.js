@@ -9,7 +9,7 @@
     .controller('registerCtrl', registerCtrl);
 
   /** @ngInject */
-  function registerCtrl($state,Auth,toastr) {
+  function registerCtrl($state,Auth,toastr,Shop) {
     var vm = this;
     console.log('res====ctroll')
 
@@ -31,11 +31,22 @@
 
     function registerClick() {
         Auth.createUser(vm.user)
-        .then( function() {
+        .then( function(data) {
           console.log('logined');
           showSuccessMsg();
-          $state.go('login');
-          showInfoMsg();
+          var allmessage={
+              shopApplyUserId:data.id
+          };
+
+          Shop.baseinfo.save(allmessage,function(err, res) {
+              console.log('first-allmessage')
+              console.log(err);
+              console.log(res);
+              $state.go('login');
+              showInfoMsg();
+
+
+          })
         })
         .catch( function(err) {
         console.log('log failed', err);

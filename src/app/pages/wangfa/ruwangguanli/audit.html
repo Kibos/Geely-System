@@ -89,13 +89,13 @@
             <tr ng-repeat="item in notVerifyedshoplists | filter: $scope.filter" class="editable-tr-wrap">
 				      <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
-				      <td>{{item.companyName}}</td>
+				      <td>{{item.basic.companyName}}</td>
 				      <td>{{item.shopApplyUserId.name}}</td>
 				      <td>{{item.shopApplyUserId.cellphone}}</td>
               			<td>{{test(item.applyId.verify)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
-				      <td><a ng-click="stateGo(item.operate)">查看</a></td>
+				      <td><a href="" ng-click="stateGo(item)">查看</a></td>
 
 				    </tr>
 			    </tbody>
@@ -139,7 +139,7 @@
 				      	<td>{{item.shopApplyUserId.cellphone}}</td>
               			<td>通知</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
-				      <td><a href="" ng-click="stateGo1(item.operate)">查看</a></td>
+				      <td><a href="" ng-click="stateGo1(item)">查看</a></td>
 				    </tr>
 			    </tbody>
 			    <tfoot>

@@ -95,7 +95,7 @@
           <button ng-click="btn='btn4'" class="btns" ng-class="{Selection:btn=='btn4'}">股份股东投资情况</button>
           <button ng-click="btn='btn5'" class="btns" ng-class="{Selection:btn=='btn5'}">销售维修状况</button>
           <button ng-click="btn='btn6'" class="btns" ng-class="{Selection:btn=='btn6'}">财务状况</button>
-          <button ng-click="btn='btn7'" class="btns" ng-class="{Selection:btn=='btn7'}">市场情况</button>
+
         </div>
         <div class="info-box" ng-switch="btn">
 
@@ -197,24 +197,7 @@
                     </div>
                   </div>
             </div>
-            <!-- 市场情况 -->
-            <div class="row" ng-switch-when="btn7">
-                  <div class="col-md-12">
-                    <div ba-panel ba-panel-title=" " ba-panel-class="with-scroll">
-                      <uib-tabset>
-                        <uib-tab heading="轿车">
-                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/carCaseTable.html"></div>
-                        </uib-tab>
-                        <uib-tab heading="SUV">
-                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/suvCaseTable.html"></div>
-                        </uib-tab>
-                        <uib-tab heading="区域代理商排名">
-                          <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/qydlspmCaseTable.html"></div>
-                        </uib-tab>
-                      </uib-tabset>
-                    </div>
-                  </div>
-            </div>
+
 
         </div>
       </div>
