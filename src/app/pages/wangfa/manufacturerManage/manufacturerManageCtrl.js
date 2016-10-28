@@ -12,7 +12,7 @@
   function ManufacturerManageCtrl($scope,$state,$stateParams,$rootScope,Supplier) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-    
+
 
     	$scope.add=function(){
     		$state.go('ba.hezuohuoban.add',{obj:1});
@@ -26,46 +26,46 @@
     			time:'20161010',
     			number:'10'
     		},
-            {
-                name:'杭州吉利4S店',
-                address:'杭州市',
-                person:'张三',
-                phone:'12344665689',
-                time:'20161010',
-                number:'10'
-            },
-            {
-                name:'北京吉利4S店',
-                address:'杭州市',
-                person:'张三',
-                phone:'12344665689',
-                time:'20161010',
-                number:'10'
-            },
-            {
-                name:'北京吉利4S店',
-                address:'杭州市',
-                person:'张三',
-                phone:'12344665689',
-                time:'20161010',
-                number:'10'
-            },
-            {
-                name:'北京吉利4S店',
-                address:'杭州市',
-                person:'张三',
-                phone:'12344665689',
-                time:'20161010',
-                number:'10'
-            },
-            {
-                name:'北京吉利4S店',
-                address:'杭州市',
-                person:'张三',
-                phone:'12344665689',
-                time:'20161010',
-                number:'10'
-            }
+        {
+            name:'杭州吉利4S店',
+            address:'杭州市',
+            person:'张三',
+            phone:'12344665689',
+            time:'20161010',
+            number:'10'
+        },
+        {
+            name:'北京吉利4S店',
+            address:'杭州市',
+            person:'张三',
+            phone:'12344665689',
+            time:'20161010',
+            number:'10'
+        },
+        {
+            name:'北京吉利4S店',
+            address:'杭州市',
+            person:'张三',
+            phone:'12344665689',
+            time:'20161010',
+            number:'10'
+        },
+        {
+            name:'北京吉利4S店',
+            address:'杭州市',
+            person:'张三',
+            phone:'12344665689',
+            time:'20161010',
+            number:'10'
+        },
+        {
+            name:'北京吉利4S店',
+            address:'杭州市',
+            person:'张三',
+            phone:'12344665689',
+            time:'20161010',
+            number:'10'
+        }
     	]
 
     $scope.add=function(){
