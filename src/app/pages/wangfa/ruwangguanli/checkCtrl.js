@@ -124,17 +124,21 @@
        }
      }
 
-     $scope.saloonCar = [
-        {
-        salesTarget:shop.MFAform.salesTarget,
-        forecastOne:shop.MFAform.forecastOne,
-        forecastTwo:shop.MFAform.forecastTwo
+     if (shop.MFAform) {
+
+       $scope.saloonCar = [
+          {
+          salesTarget:shop.MFAform.salesTarget,
+          forecastOne:shop.MFAform.forecastOne,
+          forecastTwo:shop.MFAform.forecastTwo
+       }
+       ] 
+       $scope.analyze = {
+        marketingAnalysis:shop.MFAform.marketingAnalysis
+       }
+
      }
-     ] 
-     console.log(shop.MFAform.salesTarget);
-     $scope.analyze = {
-      marketingAnalysis:shop.MFAform.marketingAnalysis
-     }
+
 
      var vm = this;
      vm.fileUrl = filesUrl.url;
