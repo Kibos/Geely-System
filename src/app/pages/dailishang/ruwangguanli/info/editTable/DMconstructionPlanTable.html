@@ -29,12 +29,12 @@
     </td>
     <td>
         <span editable-date="user.startingTime" e-name="startingTime" e-form="userform" e-required>
-          {{ user.startingTime || '请选择时间'}}
+          {{ (user.startingTime | date:"dd/MM/yyyy") || '请选择时间'}}
         </span>
     </td>
     <td>
         <span editable-date="user.completeTime" e-name="completeTime" e-form="userform" e-required>
-          {{ user.completeTime || '请选择时间'}}
+          {{ (user.completeTime | date:"dd/MM/yyyy") || '请选择时间'}}
         </span>
     </td>
     <td>

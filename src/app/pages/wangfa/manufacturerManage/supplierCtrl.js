@@ -9,22 +9,29 @@
       .controller('supplierCtrl', supplierCtrl);
 
   function supplierCtrl($scope,$state,$stateParams,$rootScope,RoleUser,toastr,Supplier) {
-    $scope.smartTablePageSize = 5;
-
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-    $scope.suppliers=[];
-    $scope.add=function(){
-    		$state.go('ba.hezuohuoban.add',{obj:2});
-    }
-    	
-    	
 
-   var entries =RoleUser.gongUser.query(function() {
-      console.log("++++>>>"+entries);
-      $scope.supplier=entries;
-      // vm.suppliers=entries;
-    //   console.log("si=="+suppliers.length);
-  });
+     // 添加
+    	$scope.add=function(){
+    		$state.go('ba.hezuohuoban.add',{obj:2});
+    	};
+      // 删除
+      $scope.remove=function(index){
+        $scope.suppliers.splice(index, 1);
+    	};
+      // 查看
+      $scope.see=function(item){
+    		$state.go('ba.hezuohuoban.gysxx',{obj:item});
+        // console.log();
+    	};
+
+     // 从数据库中取值
+     var entries =RoleUser.gongUser.query(function() {
+        console.log("++++>>>"+entries);
+        $scope.supplier=entries;
+        // vm.suppliers=entries;
+      //   console.log("si=="+suppliers.length);
+    });
   }
 })();
