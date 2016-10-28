@@ -28,49 +28,55 @@
     		{
     			name:'A公司',
     			address:'杭州市',
+          ownName:'张恒',
     			person:'张三',
     			phone:'12344665689',
-    			time:'20161010',
+    			createAt:'20161010',
     			number:'10'
     		},
         {
             name:'杭州吉利4S店',
             address:'杭州市',
+            ownName:'李恒',
             person:'张三',
             phone:'12344665689',
-            time:'20161010',
+            createAt:'20161010',
             number:'10'
         },
         {
             name:'北京吉利4S店',
             address:'杭州市',
+            ownName:'王璇',
             person:'张三',
             phone:'12344665689',
-            time:'20161010',
+            createAt:'20161010',
             number:'10'
         },
         {
             name:'北京吉利4S店',
             address:'杭州市',
+            ownName:'单军',
             person:'张三',
             phone:'12344665689',
-            time:'20161010',
+            createAt:'20161010',
             number:'10'
         },
         {
             name:'北京吉利4S店',
             address:'杭州市',
+            ownName:'刘健',
             person:'张三',
             phone:'12344665689',
-            time:'20161010',
+            createAt:'20161010',
             number:'10'
         },
         {
             name:'北京吉利4S店',
             address:'杭州市',
+            ownName:'金多多',
             person:'张三',
             phone:'12344665689',
-            time:'20161010',
+            createAt:'20161010',
             number:'10'
         }
     	]

@@ -9,7 +9,7 @@
       .controller('contractsupplyCtrl', contractsupplyCtrl);
 
   /** @ngInject */
-  function contractsupplyCtrl($scope,RoleUser,Auth) {
+  function contractsupplyCtrl($scope,RoleUser,Auth,toastr) {
 
    var entries =RoleUser.gongUser.query(function() {
       console.log(entries);
@@ -36,22 +36,47 @@
       $scope.menuState.show=!$scope.menuState.show;
       obj=Auth.getCurrentUser();
       obj.user={};
+      console.log("--------->>>"+$scope.formData.signingTime);
       if($scope.formData.radio=='true'){
-         obj.user.gonguser = $scope.suppliers[$scope.sid]._id||"";
-         obj.user.supplierName="";
+        if(isUndefinedOrNull($scope.sid)||isUndefinedOrNull($scope.formData.signingTime)){
+            toastr.warning('请填写完整!', '提示');
+            return;
+        }else{
+            obj.user.gonguser = $scope.suppliers[$scope.sid]._id||"";
+            obj.user.supplierName="";
+            obj.user.isOptional = ($scope.formData.radio=='true');
+            obj.user.signingTime = $scope.formData.signingTime||new Date();
+            obj.user.agreementFile = $scope.formData.agreementFile||"";
+            obj.$save(function(response){
+                $scope.message = response.message;
+            });
+
+        }
+      
+        
       }else{
-         obj.user.supplierName = $scope.formData.supplierName;
-         obj.user.gonguser="";
+         if(isUndefinedOrNull($scope.formData.supplierName)||isUndefinedOrNull($scope.formData.signingTime)){
+            toastr.warning('请填写完整!', '提示');
+            return;
+         }else{
+           obj.user.supplierName = $scope.formData.supplierName;
+           obj.user.gonguser="";
+           obj.user.isOptional = ($scope.formData.radio=='true');
+           obj.user.signingTime = $scope.formData.signingTime||new Date();
+           obj.user.agreementFile = $scope.formData.agreementFile||"";
+           obj.$save(function(response){
+                $scope.message = response.message;
+           });
+         }
+  
       }
-      obj.user.isOptional = $scope.formData.radio;
-      obj.user.signingTime = $scope.signingTime||new Date();
-      obj.user.agreementFile = $scope.agreementFile||"";
+     
 
       console.log(obj);
 
-      RoleUser.updateUser.update({_id:obj._id},obj,function(){
-           toastr.success('修改成功!');
-      });
+      // RoleUser.updateUser.update({id:obj._id},obj,function(){
+      //      toastr.success('修改成功!');
+      // });
 
 
       }
@@ -75,6 +100,9 @@
       }
     };
 
-    
+    function isUndefinedOrNull(value){         
+      return angular.isUndefined(value) || value === null||value==""; 
+    };
+
   }
 })();
