@@ -17,7 +17,7 @@
         $scope.shoplists_data = [];
         function getNotVerifyShops() {
           Shop.getShopByQuery.query({verifyDataSubmitting:true,notverify:false,isVerify:false},function(data){
-            // console.log(data);
+            console.log(data);
             $scope.shoplists_data = data;
             // $scope.shoplists = data;
 
