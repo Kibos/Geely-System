@@ -43,15 +43,19 @@
          obj.user.supplierName = $scope.formData.supplierName;
          obj.user.gonguser="";
       }
-      obj.user.isOptional = $scope.formData.radio;
+      obj.user.isOptional = ($scope.formData.radio=='true');
       obj.user.signingTime = $scope.signingTime||new Date();
       obj.user.agreementFile = $scope.agreementFile||"";
 
+      obj.$save(function(response){
+						$scope.message = response.message;
+					});
+
       console.log(obj);
 
-      RoleUser.updateUser.update({_id:obj._id},obj,function(){
-           toastr.success('修改成功!');
-      });
+      // RoleUser.updateUser.update({id:obj._id},obj,function(){
+      //      toastr.success('修改成功!');
+      // });
 
 
       }

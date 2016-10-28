@@ -22,9 +22,9 @@ angular.module('BlurAdmin', [
   'BlurAdmin.theme',
   'BlurAdmin.pages'
 ])
-.value('filesUrl',{url:'http://localhost:8080'}) //上线环境 ''   开发环境：'http://127.0.0.1:8080'
+.value('filesUrl',{url:''}) //上线环境 ''   开发环境：'http://127.0.0.1:8080'
 .value('redirectToUrlAfterLogin', { url: '/' }) //不变
-.value('serverUrl',{url:'http://localhost:8080'})   //上线环境 ''   开发环境：'http://127.0.0.1:8080'
+.value('serverUrl',{url:''})   //上线环境 ''   开发环境：'http://127.0.0.1:8080'
 .run(permissionRun)
 
 .config(function ($httpProvider, $locationProvider, localStorageServiceProvider) {
