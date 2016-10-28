@@ -30,7 +30,7 @@
      // 从数据库中取值
      var entries =RoleUser.gongUser.query(function() {
         console.log("++++>>>"+entries);
-        $scope.supplier=entries;
+        $scope.suppliers=entries;
         // vm.suppliers=entries;
       //   console.log("si=="+suppliers.length);
     });
