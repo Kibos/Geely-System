@@ -14,9 +14,9 @@
     $rootScope.loginflag = true ;
 
     var vm = this;
-    vm.return=function(){
-    		$state.go('ba.hezuohuoban.gongyingshang');
-    };
+    // vm.return=function(){
+    // 		$state.go('ba.hezuohuoban.gongyingshang');
+    // };
     vm.add={};
     
    
@@ -27,16 +27,16 @@
     // console.log(information);
     //   var vm = this;
     //   //返回管理页面
-    // 	vm.return=function(){
-    //     if(information===1){
-    //       $state.go('ba.hezuohuoban.shejichang');
-    //       console.log(1);
-    //     }else{
-    //        $state.go('ba.hezuohuoban.gongyingshang');
-    //        console.log(2);
-    //     }
+    	vm.return=function(){
+        if(information===1){
+          $state.go('ba.hezuohuoban.shejichang');
+          console.log(1);
+        }else{
+           $state.go('ba.hezuohuoban.gongyingshang');
+           console.log(2);
+        }
     		
-    // 	}
+    	}
     //   //提交
     //   vm.add={}
     

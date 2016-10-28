@@ -56,7 +56,7 @@
           title: '供应商管理',
           sidebarMeta: {
             icon: 'ion-ios-pulse',
-            order: 100,
+            order: 50,
           },
       })
 

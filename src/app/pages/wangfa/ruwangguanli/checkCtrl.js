@@ -124,7 +124,17 @@
        }
      }
 
-
+     $scope.saloonCar = [
+        {
+        salesTarget:shop.MFAform.salesTarget,
+        forecastOne:shop.MFAform.forecastOne,
+        forecastTwo:shop.MFAform.forecastTwo
+     }
+     ] 
+     console.log(shop.MFAform.salesTarget);
+     $scope.analyze = {
+      marketingAnalysis:shop.MFAform.marketingAnalysis
+     }
 
      var vm = this;
      vm.fileUrl = filesUrl.url;
