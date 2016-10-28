@@ -9,13 +9,21 @@
       .controller('ManufacturerManageCtrl', ManufacturerManageCtrl);
 
   /** @ngInject */
-  function ManufacturerManageCtrl($scope,$state,$stateParams,$rootScope,Supplier) {
+  function ManufacturerManageCtrl($scope,$state,$stateParams,$rootScope,Supplier,RoleUser) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
+    
 
-    	$scope.add=function(){
+    $scope.add=function(){
     		$state.go('ba.hezuohuoban.add',{obj:1});
-    	}
+    }
+
+//         var entries =RoleUser.gongUser.query(function() {
+//          console.log(entries);
+//           $scope.designManufacturers=entries;
+//     //   console.log("si=="+suppliers.length);
+//   });
+
     	$scope.designManufacturers=[
     		{
     			name:'A公司',
@@ -66,11 +74,5 @@
                 number:'10'
             }
     	]
-
-    $scope.add=function(){
-    	$state.go('ba.hezuohuoban.add',{obj:1});
-    };
-   
- 	
   }
 })();
