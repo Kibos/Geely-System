@@ -6,9 +6,9 @@
       <span ng-class="{ReviewShowed:show=='check2'}">恭喜你,审核已通过</span>
       <span ng-class="{ReviewShowed:show=='check3'}">审核未通过(请保证信息的真实性和完整性)</span>
 
-      <button ng-click="allSubmit()" class="btn btn-primary" ng-disabled="btnFlag" id="allsubmit2" style="">保存所有信息</button>
+      <button ng-click="allSubmit()" class="btn btn-primary" id="allsubmit2" ng-disabled="formstate()">保存所有信息</button>
 
-      <button ng-click="verifyDataSubmittingBtn()" class="btn btn-primary" ng-disabled="btnFlag" id="allsubmit">提交审核</button>
+      <button ng-click="verifyDataSubmittingBtn()" class="btn btn-primary" ng-disabled="formstate()" id="allsubmit">提交审核</button>
       <p class="savats" ng-class="{savashow:save=='saveshow'}">信息保存成功!!!</p>
 </div>
 <uib-tabset active="$tabSetStatus.activeTab">
