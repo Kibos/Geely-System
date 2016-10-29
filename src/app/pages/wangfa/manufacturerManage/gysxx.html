@@ -1,20 +1,6 @@
 <div ba-panel ba-panel-title="供应厂商信息" style="height:500px;">
-  <!-- <form editable-form name="rowform" ng-show="!rowform.$visible" class="form-buttons form-inline"
-            shown="inserted == user">
-    <button type="submit" ng-disabled="rowform.$waiting" class="btn btn-primary editable-table-button btn-xs">
-      Save
-    </button>
-    <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" class="btn btn-default editable-table-button btn-xs">
-      Cancel
-    </button>
-  </form>
-  <div class="buttons" ng-show="rowform.$visible">
-    <button class="btn btn-primary editable-table-button btn-xs" ng-click="rowform.$show()">Edit</button>
-    <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">Delete</button>
-  </div> -->
-  <div class="buttons" ng-show="flag">
+  <!-- <div class="buttons" ng-show="flag">
     <button class="btn btn-primary editable-table-button btn-xs" ng-click="editClick()">编辑</button>
-    <!-- <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)">删除</button> -->
   </div>
   <div class="buttons" ng-show="!flag">
     <button type="submit"
@@ -22,22 +8,14 @@
             ng-click="saveClick()">保存
     </button>
     <button type="button"
-            ng-click="cancelClick()"
-            class="btn btn-default editable-table-button btn-xs">取消
+            class="btn btn-default editable-table-button btn-xs"
+            ng-click="cancelClick()">取消
     </button>
-  </div>
+  </div> -->
   <form>
     <div class="form-group">
       <label class="individual-label">供应厂商名称:</label>
-      <!-- <label type="text" name="id" class="form-control individual-iput" ng-model="gysxx.name" ng-value="{{gysxx.name}}" ng-show="flag">
-        {{gysxx.name}}
-      </label>
-      <input type="text" ng-show="!flag"
-             name="name"
-             class="form-control individual-iput"
-             ng-model="gysxx.name"
-             ng-disabled="flag"/> -->
-       <input type="text"
+      <input type="text"
               name="name"
               class="form-control individual-iput"
               ng-model="gysxx.name"
@@ -84,7 +62,23 @@
              ng-disabled="flag"/>
     </div>
     <div class="text-center">
-      <button class="btn btn-primary" ng-click="returnBack()">返回</button>
+      <div class="buttons" style="float:left">
+        <button class="btn btn-primary" ng-click="returnBack()">返回</button>
+      </div>
+      <!--显示与隐藏 -->
+      <div class="buttons" ng-show="flag">
+        <button class="btn btn-primary" ng-click="editClick()">编辑</button>
+      </div>
+      <div class="buttons" ng-show="!flag">
+        <button type="submit"
+                class="btn btn-primary"
+                ng-click="saveClick()">保存
+        </button>
+        <button type="button"
+                class="btn btn-default"
+                ng-click="cancelClick()">取消
+        </button>
+      </div>
     </div>
   </form>
 </div>

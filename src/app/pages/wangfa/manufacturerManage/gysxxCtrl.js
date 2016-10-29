@@ -43,11 +43,7 @@
      //取消
      $scope.cancelClick = function(){
        $scope.flag = !$scope.flag;
-
-      //  var info = $stateParams.obj;
        $scope.gysxx = info;
-
-
      };
      //保存
      $scope.saveClick = function(){
