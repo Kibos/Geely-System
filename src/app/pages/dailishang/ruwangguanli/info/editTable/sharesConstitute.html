@@ -9,40 +9,40 @@
     <td>股东性质</td>
     <td>操作</td>
   </tr>
-  <tr ng-repeat="user in SharesConstitute" class="editable-row">
+  <tr ng-repeat="userone in SharesConstitute" class="editable-row">
     <td>
-        <span editable-text="user.stockholder" e-name="stockholder" e-form="userformone" e-required>
-          {{ user.stockholder || '请输入信息'}}
+        <span editable-text="userone.stockholder" e-name="stockholder" e-form="usernameone" e-required>
+          {{ userone.stockholder || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fundingSum" e-name="fundingSum" e-form="userformone" e-required>
-          {{ user.fundingSum || '请输入数字' }}
+        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-required>
+          {{ userone.fundingSum || '请输入数字' }}
         </span>
     </td>
     <td>
-        <span editable-number="user.fundingRatio" e-name="fundingRatio" e-form="userformone" e-required>
-          {{ user.fundingRatio || '请输入信息'}}
+        <span editable-number="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-required>
+          {{ userone.fundingRatio || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.stockholderQuale" e-name="stockholderQuale" e-form="userformone" e-required>
-          {{ user.stockholderQuale || '请输入信息'}}
+        <span editable-text="userone.stockholderQuale" e-name="stockholderQuale" e-form="usernameone" e-required>
+          {{ userone.stockholderQuale || '请输入信息'}}
         </span>
     </td>
 
     <td>
-      <form editable-form name="userformone" ng-show="userformone.$visible" class="form-buttons form-inline"
-            shown="inserted == user">
-        <button type="submit" ng-disabled="userformone.$waiting" class="btn btn-primary editable-table-button btn-xs">
+      <form editable-form name="usernameone" ng-show="usernameone.$visible" class="form-buttons form-inline"
+            shown="inserted == userone">
+        <button type="submit" ng-disabled="usernameone.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>
-        <button type="button" ng-disabled="userformone.$waiting" ng-click="userformone.$cancel()" class="btn btn-default editable-table-button btn-xs">
+        <button type="button" ng-disabled="usernameone.$waiting" ng-click="usernameone.$cancel()" class="btn btn-default editable-table-button btn-xs">
           取消
         </button>
       </form>
-      <div class="buttons" ng-show="!userformone.$visible">
-        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userformone.$show()" ng-disabled="formstate()">编辑</button>
+      <div class="buttons" ng-show="!usernameone.$visible">
+        <button class="btn btn-primary editable-table-button btn-xs" ng-click="usernameone.$show()" ng-disabled="formstate()">编辑</button>
         <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeSharesConstitute($index)" ng-disabled="formstate()">删除</button>
       </div>
     </td>

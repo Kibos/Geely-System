@@ -17,12 +17,12 @@
     <div class="row">
       <div class="col-md-12">
         <div id="title">
-          <button ng-click="btn='btn1'" class="btns" ng-class="{Selection:btn=='btn1'}">基本信息</button>
-          <button ng-click="btn='btn2'" class="btns" ng-class="{Selection:btn=='btn2'}">股份构成</button>
-          <button ng-click="btn='btn3'" class="btns" ng-class="{Selection:btn=='btn3'}">关键人员背景</button>
-          <button ng-click="btn='btn4'" class="btns" ng-class="{Selection:btn=='btn4'}">股份股东投资情况</button>
-          <button ng-click="btn='btn5'" class="btns" ng-class="{Selection:btn=='btn5'}">销售维修状况</button>
-          <button ng-click="btn='btn6'" class="btns" ng-class="{Selection:btn=='btn6'}">财务状况</button>
+          <button ng-click="tabone('btn1')" class="btns" ng-class="{Selection:btn=='btn1'}">基本信息</button>
+          <button ng-click="tabone('btn2')" class="btns" ng-class="{Selection:btn=='btn2'}">股份构成</button>
+          <button ng-click="tabone('btn3')" class="btns" ng-class="{Selection:btn=='btn3'}">关键人员背景</button>
+          <button ng-click="tabone('btn4')" class="btns" ng-class="{Selection:btn=='btn4'}">股份股东投资情况</button>
+          <button ng-click="tabone('btn5')" class="btns" ng-class="{Selection:btn=='btn5'}">销售维修状况</button>
+          <button ng-click="tabone('btn6')" class="btns" ng-class="{Selection:btn=='btn6'}">财务状况</button>
         </div>
         <div class="info-box" ng-switch="btn">
 
@@ -117,6 +117,8 @@
                 <span class="saveformts" ng-show='flag1'>信息已保存</span>
               </div>
             </form>
+
+
             <!--股份构成  -->
             <div class="row" ng-switch-when="btn2">
                   <div class="col-md-12">
