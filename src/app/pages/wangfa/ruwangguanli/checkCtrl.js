@@ -13,8 +13,7 @@
       $scope.fileUrl = filesUrl.url;
       var shop = $stateParams.obj;
       $scope.shop = shop;
-
-      console.log(shop.jzcfhxFile[0]);
+      console.log(shop);
       if(shop){
         localStorageService.set('checkshop', shop);
       }else{
@@ -22,7 +21,10 @@
       }
 
 
-      console.log(shop)
+      // console.log(shop)
+      $scope.btn="btn1";
+      $scope.btn2="btn21";
+      $scope.btn3="btn31";
 
       $scope.user = Auth.getCurrentUser()
 
@@ -39,7 +41,7 @@
 
 
       $scope.options = {
-        pass: false,
+        pass: 'true'
       };
       $scope.info = {
         description: ''
@@ -138,8 +140,86 @@
        }
 
      }
+     //股份股东投资情况
+     if(shop.carShareholder){
+         $scope.carShareholder = shop.carShareholder;
+     }
+    if(shop.notcarShareholder){
+         $scope.notcarShareholder = shop.notcarShareholder;
+     }
+     //销售维修状况
+     if(shop.maintenance){
+         $scope.maintenance = shop.maintenance;
+     }
+     //财务状况
+      if(shop.financeStatusTable){
+         $scope.financeStatusTable = shop.financeStatusTable;
+     }
+     if(shop.nowBankDeposit){
+         $scope.nowBankDeposit = shop.nowBankDeposit;
+     }
+     //资信情况
+    
+      if (shop.CSmessage){
+        $scope.credit = {
+          grade:shop.CSmessage.qualityRating,
+          XYDJPJbank : shop.CSmessage.XYDJPJbank
+        }
+      }
+     
+     //建店城市圈
+     if(shop.BSbusinessArea){
+         $scope.BSbusinessArea = shop.BSbusinessArea;
+     }
+     //新公司股权结构
+     if(shop.newEquityStructure){
+         $scope.newEquityStructure = shop.newEquityStructure;
+     }
+     //店面建设计划
+     if(shop.StoreConstructionPlan){
+         $scope.StoreConstructionPlan = shop.StoreConstructionPlan;
+     }
+     //关键岗位筹备
+     if(shop.keyJob){
+         $scope.keyJob = shop.keyJob;
+     }
+     //资金筹备
+     if(shop.fundings){
+          $scope.fixation={
 
-
+                OwnSum:shop.fundings.fixationOwnSum,
+                OwnArriveTime:shop.fundings.fixationOwnArriveTime,
+                OwnRemark:shop.fundings.fixationOwnRemark,
+                loanSum:shop.fundings.fixationloanSum,
+                loanArriveTime:shop.fundings.fixationloanArriveTime,
+                loanRemark:shop.fundings.fixationloanRemark,
+                restSum:shop.fundings.fixationrestSum,
+                restArriveTime:shop.fundings.fixationrestArriveTime,
+                restRemark:shop.fundings.fixationrestRemark,
+              }
+            $scope.stream = {
+                OwnSum:shop.fundings.streamownSum,
+                OwnArriveTime:shop.fundings.streamownArriveTime,
+                OwnRemark:shop.fundings.streamownRemark,
+                loanSum:shop.fundings.streamloanSum,
+                loanArriveTime:shop.fundings.streamloanArriveTime,
+                loanRemark:shop.fundings.streamloanRemark,
+                restSum:shop.fundings.streamrestSum,
+                restArriveTime:shop.fundings.streamrestArriveTime,
+                restRemark:shop.fundings.streamrestRemark,
+              }
+                $scope.cashDeposit = {
+                Sum:shop.fundings.cashDepositSum,
+                ArriveTime:shop.fundings.cashDepositArriveTime,
+                Remark:shop.fundings.cashDepositRemark,
+              }
+                $scope.mentionModels = {
+                Sum:shop.fundings.mentionModelsSum,
+                ArriveTime:shop.fundings.mentionModelsArriveTime,
+                Remark:shop.fundings.mentionModelsRemark
+              }
+     }
+     
      var vm = this;
      vm.fileUrl = filesUrl.url;
 

@@ -9,7 +9,7 @@
   <tr ng-repeat="user in BSbusinessArea" class="editable-row">
     <td>
         <span>
-          <input type="checkbox" ng-true-value="true" ng-false-value="false" ng-model="BSbusinessArea.proposed" editable-text="user.proposed" e-name="proposed" e-form="userform" e-required>
+          {{ user.proposed}}
         </span>
     </td>
     <td>

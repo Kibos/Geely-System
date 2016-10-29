@@ -1,24 +1,8 @@
 <uib-tabset >
   	<uib-tab heading="待审核">
-  		<form class="row form-inline">
+  		<!-- <form class="row form-inline">
   		<div class="form-group">
-			<!-- <label for="name">省</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;
-
-			<label for="name">市县</label>
-			<select class="form-control">
-				<option>北京</option>
-				<option>河北省</option>
-				<option>河南省</option>
-				<option>湖南省</option>
-				<option>湖北省</option>
-			</select>&nbsp;&nbsp;&nbsp;&nbsp; -->
+			
 
 			<label for="name">当前状态</label>
 			<select ng-model="selectStateQuery" class="form-control">
@@ -35,9 +19,10 @@
 
 			</div>
 		  	<button type="submit" class="btn btn-primary" style="" ng-click="selectState(selectStateQuery)">搜索</button>
-		</form>
+		</form> -->
+		
 	  	<div class="horizontal-scroll">
-
+			
 		  	<table class="table table-hover" st-table="shoplists" st-safe-src="shoplists_data" >
 			    <thead>
 				    <tr class="sortable">
@@ -78,11 +63,12 @@
   	<uib-tab heading="审核未通过">
 
 	  	<div class="horizontal-scroll">
+	  		
 		  	<table class="table table-hover" st-table="notVerifyedshoplists" st-safe-src="notVerifyedshoplists_data">
 			    <thead>
 				    <tr class="sortable">
 				      <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
-				      <!-- <th st-sort="area">区域</th> -->
+				     <!--  <th st-sort="area">区域</th> -->
 				      <th st-sort="company">申请公司</th>
 				      <th st-sort="person">联系人</th>
 				      <th st-sort="phone">手机号码</th>
@@ -95,13 +81,13 @@
             <tr ng-repeat="item in notVerifyedshoplists" class="editable-tr-wrap">
 				      <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
-				      <td>{{item.companyName}}</td>
+				      <td>{{item.basic.companyName}}</td>
 				      <td>{{item.shopApplyUserId.name}}</td>
 				      <td>{{item.shopApplyUserId.cellphone}}</td>
-              <td>{{test(item.applyId.verify)}}</td>
+              			<td>{{test(item.applyId.verify)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
-				      <td><a ng-click="stateGo(item.operate)">查看</a></td>
+				      <td><a href="" ng-click="stateGo(item)">查看</a></td>
 
 				    </tr>
 			    </tbody>
@@ -117,14 +103,6 @@
   	</uib-tab>
 
   	<uib-tab heading="入网通知">
-
-
-
-
-
-
-
-
 	  	<div class="horizontal-scroll">
 		  	<table class="table table-hover" st-table="tongzhishoplists" st-safe-src="tongzhishoplists_data">
 			    <thead>
@@ -143,12 +121,12 @@
 				    <tr ng-repeat="item in tongzhishoplists" class="editable-tr-wrap">
               <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
-              <td>{{item.basic.companyName}}</td>
-				      <td>{{item.shopApplyUserId.name}}</td>
-				      <td>{{item.shopApplyUserId.cellphone}}</td>
-              <td>通知</td>
+              			<td>{{item.basic.companyName}}</td>
+				      	<td>{{item.shopApplyUserId.name}}</td>
+				      	<td>{{item.shopApplyUserId.cellphone}}</td>
+              			<td>通知</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
-				      <td><a href="" ng-click="stateGo1(item.operate)">查看</a></td>
+				      <td><a href="" ng-click="stateGo1(item)">查看</a></td>
 				    </tr>
 			    </tbody>
 			    <tfoot>
@@ -164,3 +142,6 @@
 
 
   </uib-tabset>
+
+
+

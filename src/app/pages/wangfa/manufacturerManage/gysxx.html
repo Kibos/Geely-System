@@ -2,32 +2,70 @@
   <form>
     <div class="form-group">
       <label class="individual-label">供应厂商名称:</label>
-      <input type="text" name="name" class="form-control individual-iput" ng-model="gysxx.name" disabled="true"/>
+      <input type="text"
+              name="name"
+              class="form-control individual-iput"
+              ng-model="gysxx.name"
+              ng-disabled="flag"/>
     </div>
     <div class="form-group">
       <label class="individual-label">公司地址:</label>
-      <input type="text" name="description" class="form-control individual-iput" ng-model="gysxx.adress" disabled="true"/>
+      <input type="text"
+             name="address"
+             class="form-control individual-iput"
+             ng-model="gysxx.gonguser.address"
+             ng-disabled="flag"/>
     </div>
     <div class="form-group">
       <label class="individual-label">联系人:</label>
-      <input type="text" name="time" class="form-control individual-iput" ng-model="gysxx.person" disabled="true"/>
+      <input type="text"
+             name="ownName"
+             class="form-control individual-iput"
+             ng-model="gysxx.gonguser.ownName"
+             ng-disabled="flag"/>
     </div>
     <div class="form-group">
       <label class="individual-label">联系电话:</label>
-      <input type="text" name="time" class="form-control individual-iput" ng-model="gysxx.phone" disabled="true"/>
+      <input type="text"
+             name="phone"
+             class="form-control individual-iput"
+             ng-model="gysxx.phone"
+             ng-disabled="flag"/>
     </div>
     <div class="form-group">
       <label class="individual-label">加入时间:</label>
-      <input type="text" name="time" class="form-control individual-iput" ng-model="gysxx.time" disabled="true"/>
+      <input type="text"
+             name="createAt"
+             class="form-control individual-iput"
+             ng-model="gysxx.createAt"
+             ng-disabled="flag"/>
     </div>
     <div class="form-group">
       <label class="individual-label">案例数:</label>
-      <input type="text" name="time" class="form-control individual-iput" ng-model="gysxx.number" disabled="true"/>
+      <input type="text"
+             name="number"
+             class="form-control individual-iput"
+             ng-model="gysxx.gonguser.number"
+             ng-disabled="flag"/>
     </div>
     <div class="text-center">
-
-          <button class="btn btn-primary" ng-click="returnBack()">返回</button>
-          </div>
-        </form>
+      <div class="buttons" style="float:left">
+        <button class="btn btn-primary" ng-click="returnBack()">返回</button>
       </div>
-
+      <!--显示与隐藏 -->
+      <div class="buttons" ng-show="flag">
+        <button class="btn btn-primary" ng-click="editClick()">编辑</button>
+      </div>
+      <div class="buttons" ng-show="!flag">
+        <button type="submit"
+                class="btn btn-primary"
+                ng-click="saveClick()">保存
+        </button>
+        <button type="button"
+                class="btn btn-default"
+                ng-click="cancelClick()">取消
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

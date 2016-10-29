@@ -3,7 +3,6 @@
   	<uib-tab heading="供应商">
 	  	<div class="horizontal-scroll">
 	  		<button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
-        <!-- <button class="btn btn-default" ng-click="remove($index)"><i class="ion-plus"></i>删除</button> -->
 		  	<table class="table table-hover" st-table="$scope.suppliers">
 			    <thead>
 				    <tr class="sortable">
@@ -14,8 +13,24 @@
 				      <th st-sort="phone">联系电话</th>
 				      <th st-sort="createAt">加入时间</th>
 				      <th st-sort="number">案例数</th>
-				      <th st-sort="zaozuo"> 操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp; </th>
+				      <th st-sort="zaozuo"> 操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp; </th>
 				    </tr>
+            <!-- <tr>
+              <th></th>
+              <th><input st-search="name" placeholder="Search name" class="input-sm form-control search-input"
+                         type="search"/></th>
+              <th><input st-search="address" placeholder="Search address" class="input-sm form-control search-input"
+                         type="search"/></th>
+              <th><input st-search="ownName" placeholder="Search ownName" class="input-sm form-control search-input"
+                         type="search"/></th>
+              <th><input st-search="phone" placeholder="Search phone" class="input-sm form-control search-input" type="search"/>
+              </th>
+              <th><input st-search="createAt" placeholder="Search createAt" class="input-sm form-control search-input" type="search"/>
+              </th>
+              <th><input st-search="number" placeholder="Search number" class="input-sm form-control search-input" type="search"/>
+              </th>
+              <th></th>
+            </tr> -->
 			    </thead>
 			    <tbody>
 				    <tr ng-repeat="item in suppliers" class="editable-tr-wrap">
@@ -27,8 +42,7 @@
 
 				      <td>{{item.phone}}</td>
 				      <td>{{item.createAt| date:"MM/dd/yyyy"}}</td>
-				      <td>{{item.gonguser.number}}</td>
-
+				      <td>{{item.gonguser.number||0}}</td>
 
 				      <td>
                 <div class="buttons">

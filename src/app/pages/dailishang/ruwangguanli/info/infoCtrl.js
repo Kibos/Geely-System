@@ -246,10 +246,7 @@
 
 
     	console.log($scope.basic);
-      var allmessage = {
-          basic:$scope.basic
-      }
-      saveInfoFixFuntion(allmessage)
+
 
     }
     // 股份构成

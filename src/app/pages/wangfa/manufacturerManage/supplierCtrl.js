@@ -18,8 +18,10 @@
     		$state.go('ba.hezuohuoban.add',{obj:2});
     	};
       // 删除
-      $scope.remove=function(index){
+      $scope.remove=function(index){  
+        RoleUser.gongUser.delete($scope.suppliers[index]);
         $scope.suppliers.splice(index, 1);
+        toastr.success('删除成功!');
     	};
       // 查看
       $scope.see=function(item){
