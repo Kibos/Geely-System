@@ -22,11 +22,7 @@
 		</form> -->
 		
 	  	<div class="horizontal-scroll">
-			<div class="form-group">
-				<label class="individual-label">搜索：</label>
-				<input type="text" class="form-control individual-iput ion-search" ng-model="$scope.filter.$" placeholder="请输入要搜索的条件">
-				 
-			</div>
+			
 		  	<table class="table table-hover" st-table="shoplists" st-safe-src="shoplists_data" >
 			    <thead>
 				    <tr class="sortable">
@@ -41,7 +37,7 @@
 				    </tr>
 			    </thead>
 			    <tbody>
-				    <tr ng-repeat="item in shoplists | filter: $scope.filter" class="editable-tr-wrap">
+				    <tr ng-repeat="item in shoplists" class="editable-tr-wrap">
 				      <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
 				      <td>{{item.basic.companyName}}</td>
@@ -67,11 +63,7 @@
   	<uib-tab heading="审核未通过">
 
 	  	<div class="horizontal-scroll">
-	  		<div class="form-group">
-				<label class="individual-label">搜索：</label>
-				<input type="text" class="form-control individual-iput ion-search" ng-model="$scope.filter.$" placeholder="请输入要搜索的条件">
-				 
-			</div>
+	  		
 		  	<table class="table table-hover" st-table="notVerifyedshoplists" st-safe-src="notVerifyedshoplists_data">
 			    <thead>
 				    <tr class="sortable">
@@ -86,7 +78,7 @@
 				    </tr>
 			    </thead>
 			    <tbody>
-            <tr ng-repeat="item in notVerifyedshoplists | filter: $scope.filter" class="editable-tr-wrap">
+            <tr ng-repeat="item in notVerifyedshoplists" class="editable-tr-wrap">
 				      <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
 				      <td>{{item.basic.companyName}}</td>
@@ -112,11 +104,6 @@
 
   	<uib-tab heading="入网通知">
 	  	<div class="horizontal-scroll">
-	  		<div class="form-group">
-				<label class="individual-label">搜索：</label>
-				<input type="text" class="form-control individual-iput ion-search" ng-model="$scope.filter.$" placeholder="请输入要搜索的条件">
-				 
-			</div>
 		  	<table class="table table-hover" st-table="tongzhishoplists" st-safe-src="tongzhishoplists_data">
 			    <thead>
 				    <tr class="sortable">
@@ -131,7 +118,7 @@
 				    </tr>
 			    </thead>
 			    <tbody>
-				    <tr ng-repeat="item in tongzhishoplists | filter: $scope.filter" class="editable-tr-wrap">
+				    <tr ng-repeat="item in tongzhishoplists" class="editable-tr-wrap">
               <td class="table-id">{{item.shopId}}</td>
 				      <!-- <td>{{item.area}}</td> -->
               			<td>{{item.basic.companyName}}</td>

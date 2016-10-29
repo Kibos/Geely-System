@@ -19,17 +19,17 @@
     </td>
     <td>
         <span editable-text="user.submitTime" e-name="submitTime" e-form="userform" e-required>
-          {{ user.submitTime}}
+          {{ user.submitTime | date:"yyyy/MM/dd"}}
         </span>
     </td>
     <td>
         <span editable-text="user.startingTime" e-name="startingTime" e-form="userform" e-required>
-          {{ user.startingTime}}
+          {{ user.startingTime | date:"yyyy/MM/dd"}}
         </span>
     </td>
     <td>
         <span editable-text="user.completeTime" e-name="completeTime" e-form="userform" e-required>
-          {{ user.completeTime}}
+          {{ user.completeTime | date:"yyyy/MM/dd"}}
         </span>
     </td>
   </tr>
