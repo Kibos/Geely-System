@@ -35,9 +35,9 @@
           	</div> -->
             <div class="form-group">
               <label class="info-lab">拟建店建筑尺寸图(新建可不上传)</label>
-              <div  ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'jzcfhxFile')" class="dropzone"
+              <div ngAccept=“jpeg”  ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'jzcfhxFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <img ng-if="shop.jzcfhxFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[0]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[0]}}">{{shop.jzcfhxFile[0]}}</a> </label>
               <div>
@@ -50,7 +50,7 @@
               <label class="info-lab">新建场地红线图的一</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(1,'jzcfhxFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.jzcfhxFile[1]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[1]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[1]}}">{{shop.jzcfhxFile[1]}}</a> </label>
@@ -63,7 +63,7 @@
               <label class="info-lab">新建场地红线图的二</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(2,'jzcfhxFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.jzcfhxFile[2]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[2]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[2]}}">{{shop.jzcfhxFile[2]}}</a> </label>
@@ -102,7 +102,7 @@
               <label class="info-lab">土地证</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'tdzFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.tdzFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.tdzFile[0]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.tdzFile[0]}}">{{shop.tdzFile[0]}}</a> </label>
@@ -116,7 +116,7 @@
               <label class="info-lab">土地租赁协议</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(1,'tdzFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.tdzFile[1]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.tdzFile[1]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.tdzFile[1]}}">{{shop.tdzFile[1]}}</a> </label>
@@ -128,7 +128,7 @@
               <label class="info-lab">土地意向租赁协议</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(2,'tdzFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.tdzFile[2]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.tdzFile[2]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.tdzFile[2]}}">{{shop.tdzFile[2]}}</a> </label>
@@ -176,7 +176,7 @@
               <label class="info-lab">改建店平面图</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'gjdFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.gjdFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.gjdFile[0]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.gjdFile[0]}}">{{shop.gjdFile[0]}}</a> </label>
@@ -189,7 +189,7 @@
               <label class="info-lab">改建店立面图</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(1,'gjdFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.gjdFile[1]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.gjdFile[1]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.gjdFile[1]}}">{{shop.gjdFile[1]}}</a> </label>
@@ -202,7 +202,7 @@
               <label class="info-lab">改建店剖面图</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(2,'gjdFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.gjdFile[2]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.gjdFile[2]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.gjdFile[2]}}">{{shop.gjdFile[2]}}</a> </label>
@@ -214,7 +214,7 @@
               <label class="info-lab">其他</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(3,'gjdFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.gjdFile[3]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.gjdFile[3]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.gjdFile[3]}}">{{shop.gjdFile[3]}}</a> </label>
@@ -291,7 +291,7 @@
              <label class="info-lab">正面全貌</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[0]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[0]}}">{{shop.cdwbnbFile[0]}}</a> </label>
@@ -303,7 +303,7 @@
              <label class="info-lab">后面全貌</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(1,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[1]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[1]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[1]}}">{{shop.cdwbnbFile[1]}}</a> </label>
@@ -315,7 +315,7 @@
              <label class="info-lab">店面左侧全貌</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(2,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[2]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[2]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[2]}}">{{shop.cdwbnbFile[2]}}</a> </label>
@@ -327,7 +327,7 @@
              <label class="info-lab">店面右侧全貌</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(3,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[3]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[3]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[3]}}">{{shop.cdwbnbFile[3]}}</a> </label>
@@ -341,7 +341,7 @@
              <label class="info-lab">左侧45度全貌</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(4,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[4]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[4]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[4]}}">{{shop.cdwbnbFile[4]}}</a> </label>
@@ -353,7 +353,7 @@
              <label class="info-lab">右侧45度全貌</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(5,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[5]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[5]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[5]}}">{{shop.cdwbnbFile[5]}}</a> </label>
@@ -365,7 +365,7 @@
              <label class="info-lab">店面道路左侧品牌照片</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(6,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[6]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[6]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[6]}}">{{shop.cdwbnbFile[6]}}</a> </label>
@@ -377,7 +377,7 @@
              <label class="info-lab">店面道路右侧品牌照片</label>
              <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(7,'cdwbnbFile')" class="dropzone"
                  drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                 accept="">点击上传文件或者拖拽到这里</div>
+                 accept="">点击上传文件</div>
              <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
              <img ng-if="shop.cdwbnbFile[7]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[7]}}"  alt="" /><br>
              <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.cdwbnbFile[7]}}">{{shop.cdwbnbFile[7]}}</a> </label>
@@ -413,7 +413,7 @@
               <label class="info-lab">展厅内</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'ztjnbzpFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.ztjnbzpFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.ztjnbzpFile[0]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.ztjnbzpFile[0]}}">{{shop.ztjnbzpFile[0]}}</a> </label>
@@ -425,7 +425,7 @@
               <label class="info-lab">车间内</label>
               <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(1,'ztjnbzpFile')" class="dropzone"
                   drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                  accept="">点击上传文件或者拖拽到这里</div>
+                  accept="">点击上传文件</div>
               <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
               <img ng-if="shop.ztjnbzpFile[1]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.ztjnbzpFile[1]}}"  alt="" /><br>
               <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.ztjnbzpFile[1]}}">{{shop.ztjnbzpFile[1]}}</a> </label>
@@ -445,7 +445,7 @@
             <label class="info-lab">拟建店附近竞品网点照片</label>
             <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'njdfjjpwdFile')" class="dropzone"
                 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                accept="">点击上传文件或者拖拽到这里</div>
+                accept="">点击上传文件</div>
             <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
             <img ng-if="shop.njdfjjpwdFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.njdfjjpwdFile[0]}}"  alt="" /><br>
             <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.njdfjjpwdFile[0]}}">{{shop.njdfjjpwdFile[0]}}</a> </label>
@@ -466,7 +466,7 @@
             <label class="info-lab">售后外协单位照片</label>
             <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'shwxpwdFile')" class="dropzone"
                 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                accept="">点击上传文件或者拖拽到这里</div>
+                accept="">点击上传文件</div>
             <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
             <img ng-if="shop.shwxpwdFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.shwxpwdFile[0]}}"  alt="" /><br>
             <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.shwxpwdFile[0]}}">{{shop.shwxpwdFile[0]}}</a> </label>
@@ -478,7 +478,7 @@
             <label class="info-lab">外协单位维修资质证明</label>
             <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(1,'shwxpwdFile')" class="dropzone"
                 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                accept="">点击上传文件或者拖拽到这里</div>
+                accept="">点击上传文件</div>
             <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
             <img ng-if="shop.shwxpwdFile[1]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.shwxpwdFile[1]}}"  alt="" /><br>
             <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.shwxpwdFile[1]}}">{{shop.shwxpwdFile[1]}}</a> </label>
@@ -486,7 +486,7 @@
             <button type="button" ng-if="shop.shwxpwdFile[1]" class="btn btn-primary" ng-click="vm.removeFile('shwxpwdFile',1)" ng-disabled="formstate()" sytle="">删除</button>
             </div>
           </div>
-        
+
         </div>
         <!-- <div class="text-center">
             <button type="submit" class="btn btn-primary" ng-disabled="formstate()">保存</button>

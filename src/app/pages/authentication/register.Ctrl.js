@@ -26,17 +26,20 @@
     vm.showInfoMsg=showInfoMsg;
     vm.showErrorMsg=showErrorMsg;
     vm.showWarningMsg=showWarningMsg;
-    
+
     ////////////////
 
     function registerClick() {
         Auth.createUser(vm.user)
         .then( function(data) {
           console.log('logined');
+          console.log(data);
           showSuccessMsg();
           var allmessage={
               shopApplyUserId:data.id
           };
+
+          console.log(allmessage);
 
           Shop.baseinfo.save(allmessage,function(err, res) {
               console.log('first-allmessage')
@@ -70,16 +73,16 @@
     function showErrorMsg() {
       toastr.error("注册失败", '错误');
     }
-    
+
     function showWarningMsg() {
       toastr.warning('请填写完整!', '提示');
     }
-  
+
     function isUndefinedOrNull(value){
        return angular.isUndefined(value) || value === null
     }
 
   }
-    
+
 
 })();
