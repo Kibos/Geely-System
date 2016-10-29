@@ -1,49 +1,59 @@
-<uib-tabset active="$tabSetStatus.activeTab">
-
-  	<uib-tab heading="供应商">
-	  	<div class="horizontal-scroll">
-	  		<button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
-		  	<table class="table table-hover" st-table="$scope.suppliers">
-			    <thead>
-				    <tr class="sortable">
-				      <th class="table-id" st-sort="id" st-sort-default="true">#</th>
+<style media="screen">
+  .widthFix {
+    width:100px;
+  }
+</style>
+<div class="row">
+  <div class="col-md-12">
+    <div ba-panel ba-panel-title="网络发展/供应商列表" ba-panel-class="with-scroll">
+      <div class="horizontal-scroll">
+        <div class="form-group select-page-size-wrap widthFix">
+          <label>每页显示条数
+            <select class="widthFix form-control selectpicker show-tick" title="Rows on page" selectpicker
+                    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+            </select>
+          </label>
+          <button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
+        </div>
+        <table class="table" st-table="$scope.suppliers">
+          <thead>
+            <tr class="sortable">
+              <th class="table-id" st-sort="id" st-sort-default="true">#</th>
               <th st-sort="name">供应商名</th>
 				      <th st-sort="address">公司地址</th>
 				      <th st-sort="ownName">联系人</th>
 				      <th st-sort="phone">联系电话</th>
 				      <th st-sort="createAt">加入时间</th>
 				      <th st-sort="number">案例数</th>
-				      <th st-sort="zaozuo"> 操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp; </th>
-				    </tr>
+				      <th st-sort="caozuo">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp;</th>
+            </tr>
             <!-- <tr>
-              <th></th>
-              <th><input st-search="name" placeholder="Search name" class="input-sm form-control search-input"
+              <th><input st-search="" placeholder="Search " class="input-sm form-control search-input widthFix table-id"
                          type="search"/></th>
-              <th><input st-search="address" placeholder="Search address" class="input-sm form-control search-input"
+              <th><input st-search="name" placeholder="Search name" class="input-sm form-control search-input widthFix"
                          type="search"/></th>
-              <th><input st-search="ownName" placeholder="Search ownName" class="input-sm form-control search-input"
+              <th><input st-search="gonguser.address" placeholder="Search address" class="input-sm form-control search-input widthFix"
                          type="search"/></th>
-              <th><input st-search="phone" placeholder="Search phone" class="input-sm form-control search-input" type="search"/>
-              </th>
-              <th><input st-search="createAt" placeholder="Search createAt" class="input-sm form-control search-input" type="search"/>
-              </th>
-              <th><input st-search="number" placeholder="Search number" class="input-sm form-control search-input" type="search"/>
-              </th>
+              <th><input st-search="gonguser.ownName" placeholder="Search ownName" class="input-sm form-control search-input widthFix"
+                         type="search"/></th>
+              <th><input st-search="phone" placeholder="Search phone" class="input-sm form-control search-input widthFix" type="search"/></th>
+              <th><input st-search="createAt" placeholder="Search createAt" class="input-sm form-control search-input widthFix"
+                         type="search"/></th>
+              <th><input st-search="gonguser.number" placeholder="Search number" class="input-sm form-control search-input widthFix"
+                         type="search"/></th>
               <th></th>
             </tr> -->
-			    </thead>
-			    <tbody>
-				    <tr ng-repeat="item in suppliers" class="editable-tr-wrap">
-
-				      <td class="table-id">{{$index}}</td>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in suppliers">
+              <td class="table-id">{{$index}}</td>
               <td>{{item.name}}</td>
 				      <td>{{item.gonguser.address}}</td>
 				      <td>{{item.gonguser.ownName}}</td>
 
 				      <td>{{item.phone}}</td>
 				      <td>{{item.createAt| date:"MM/dd/yyyy"}}</td>
-				      <td>{{item.gonguser.number}}</td>
-
+				      <td>{{item.gonguser.number||0}}</td>
 
 				      <td>
                 <div class="buttons">
@@ -55,17 +65,17 @@
                   </button>
                 </div>
               </td>
-
-				    </tr>
-			    </tbody>
-			    <tfoot>
-				    <tr>
-				      <td colspan="8" class="text-center">
-				        <div st-pagination="" st-items-by-page="5" st-displayed-pages="5"></div>
-				      </td>
-				    </tr>
-			    </tfoot>
-		  	</table>
-		</div>
-  	</uib-tab>
-  </uib-tabset>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="8" class="text-center">
+                <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

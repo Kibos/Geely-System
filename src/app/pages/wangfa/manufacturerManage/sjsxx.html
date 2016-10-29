@@ -1,33 +1,71 @@
-
-      <div ba-panel ba-panel-title="设计厂商信息" style="height:500px;">
-        <form>
-          <div class="form-group">
-            <label class="individual-label">设计厂商名称:</label>
-            <input type="text" name="name" class="form-control individual-iput" ng-model="sjsxx.name" disabled="true"/>
-          </div>
-          <div class="form-group">
-            <label class="individual-label">公司地址:</label>
-            <input type="text" name="description" class="form-control individual-iput" ng-model="sjsxx.adress" disabled="true"/>
-          </div>
-          <div class="form-group">
-            <label class="individual-label">联系人:</label>
-            <input type="text" name="time" class="form-control individual-iput" ng-model="sjsxx.person" disabled="true"/>
-          </div>
-          <div class="form-group">
-            <label class="individual-label">联系电话:</label>
-            <input type="text" name="time" class="form-control individual-iput" ng-model="sjsxx.phone" disabled="true"/>
-          </div>
-          <div class="form-group">
-            <label class="individual-label">加入时间:</label>
-            <input type="text" name="time" class="form-control individual-iput" ng-model="sjsxx.time" disabled="true"/>
-          </div>
-          <div class="form-group">
-            <label class="individual-label">案例数:</label>
-            <input type="text" name="time" class="form-control individual-iput" ng-model="sjsxx.number" disabled="true"/>
-          </div>
-          <div class="text-center">
-
-          <button class="btn btn-primary" ng-click="returnBack()">返回</button>
-          </div>
-        </form>
+<div ba-panel ba-panel-title="设计厂商信息" style="height:500px;">
+  <form>
+    <div class="form-group">
+      <label class="individual-label">设计厂商名称:</label>
+      <input type="text"
+              name="name"
+              class="form-control individual-iput"
+              ng-model="sjsxx.name"
+              ng-disabled="flag"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">公司地址:</label>
+      <input type="text"
+             name="address"
+             class="form-control individual-iput"
+             ng-model="sjsxx.address"
+             ng-disabled="flag"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">联系人:</label>
+      <input type="text"
+             name="ownName"
+             class="form-control individual-iput"
+             ng-model="sjsxx.ownName"
+             ng-disabled="flag"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">联系电话:</label>
+      <input type="text"
+             name="phone"
+             class="form-control individual-iput"
+             ng-model="sjsxx.phone"
+             ng-disabled="flag"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">加入时间:</label>
+      <input type="text"
+             name="createAt"
+             class="form-control individual-iput"
+             ng-model="sjsxx.createAt"
+             ng-disabled="flag"/>
+    </div>
+    <div class="form-group">
+      <label class="individual-label">案例数:</label>
+      <input type="text"
+             name="number"
+             class="form-control individual-iput"
+             ng-model="sjsxx.number"
+             ng-disabled="flag"/>
+    </div>
+    <div class="text-center">
+      <div class="buttons" style="float:left">
+        <button class="btn btn-primary" ng-click="returnBack()">返回</button>
       </div>
+      <!--显示与隐藏 -->
+      <div class="buttons" ng-show="flag">
+        <button class="btn btn-primary" ng-click="editClick()">编辑</button>
+      </div>
+      <div class="buttons" ng-show="!flag">
+        <button type="submit"
+                class="btn btn-primary"
+                ng-click="saveClick()">保存
+        </button>
+        <button type="button"
+                class="btn btn-default"
+                ng-click="cancelClick()">取消
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

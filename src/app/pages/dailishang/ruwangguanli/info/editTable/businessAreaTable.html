@@ -14,7 +14,7 @@
     <td>
         <span editable-checkbox="user.proposed" e-name="proposed" e-form="userform">
           <!-- {{user.proposed}} -->
-          {{ user.proposed}}
+          {{ user.proposed && "是" || "否"}}
         </span>
     </td>
     <td>

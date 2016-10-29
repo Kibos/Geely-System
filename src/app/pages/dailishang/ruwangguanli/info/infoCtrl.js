@@ -218,6 +218,14 @@
     // $scope.state=false;
 
     $scope.btn="btn1";
+    // 表格切换   
+    $scope.tabone=function(hit){
+      $scope.btn=hit;
+      console.log($scope.username123);
+      if($scope.btn==hit){
+           // $scope.userform.$cancel();
+      };
+    };
 // ----------------------代理商简述------------------------------
     // 基本信息
     $scope.basicInformation=function(BasicForm)
@@ -247,13 +255,13 @@
       $scope.SharesConstitute.splice(index, 1);
     };
     $scope.addSharesConstitute = function() {
-      $scope.inserted = {
+      $scope.insertedgfgc = {
         stockholder:"",
         fundingSum:"",
         fundingRatio:"",
         stockholderQuale:""
       };
-      $scope.SharesConstitute.push($scope.inserted);
+      $scope.SharesConstitute.push($scope.insertedgfgc);
     };
     $scope.tableVerify=false;
 
@@ -263,7 +271,7 @@
       $scope.users.splice(index, 1);
     };
     $scope.addUser = function() {
-      $scope.inserted = {
+      $scope.insertedgjrybj = {
         id: $scope.users.length+1,
         name: '',
         city:'',
@@ -272,7 +280,7 @@
         Email:'',
         shark:''
       };
-      $scope.users.push($scope.inserted);
+      $scope.users.push($scope.insertedgjrybj);
     };
     // 股份股东投资情况
     /*$scope.investment=function(InvestForm){
@@ -286,7 +294,7 @@
       $scope.carShareholder.splice(index, 1);
     };
     $scope.addcarShareholder= function(){
-      $scope.inserted= {
+      $scope.insertedgdqcxslythree= {
         firmName:'',
         shark:'',
         dates:'',
@@ -295,7 +303,7 @@
         address:'',
         status:''
       };
-      $scope.carShareholder.push($scope.inserted);
+      $scope.carShareholder.push($scope.insertedgdqcxslythree);
     }
     // 非汽车销售领域
     // $scope.notcarShareholder=[
@@ -305,21 +313,21 @@
       $scope.notcarShareholder.splice(index, 1);
     };
     $scope.addnotcarShareholder= function() {
-      $scope.inserted= {
+      $scope.insertedfourgdfqcxs= {
         firmName: '',
         shark:'',
         mainBusiness:'',
         income:null,
         profit:''
       };
-      $scope.notcarShareholder.push($scope.inserted);
+      $scope.notcarShareholder.push($scope.insertedfourgdfqcxs);
     }
     // 销售维修状况
     $scope.delmaintenance = function(index) {
       $scope.maintenance.splice(index, 1);
     };
     $scope.addmaintenance= function() {
-      $scope.inserted= {
+      $scope.insertedxswxqkthree= {
             COHR:'',
             brand:'',
             fourteen:{
@@ -338,7 +346,7 @@
                 several:null
             }
       };
-      $scope.maintenance.push($scope.inserted);
+      $scope.maintenance.push($scope.insertedxswxqkthree);
     }
     // 资信状况
     $scope.creditStatus=function(CSMessageForm)
@@ -355,12 +363,12 @@
       $scope.nowBankDeposit.splice(index,1);
     };
     $scope.addnowBankDeposit= function() {
-      $scope.inserted={
+      $scope.insertedzxqk={
            bank:"",
             sum:"",
             adjunct:""
       };
-      $scope.nowBankDeposit.push($scope.inserted);
+      $scope.nowBankDeposit.push($scope.insertedzxqk);
     }
 
     // 财务报表
@@ -368,14 +376,14 @@
       $scope.financeStatusTable.splice(index, 1);
     };
     $scope.addfinanceStatusTable= function() {
-      $scope.inserted= {
+      $scope.insertedcwbb= {
             year:'',
             ASSET:'',
             debt:'',
             netMargin:'',
             netProfit:''
       };
-      $scope.financeStatusTable.push($scope.inserted);
+      $scope.financeStatusTable.push($scope.insertedcwbb);
     }
     // 市场情况
     $scope.saloonCar=[
@@ -528,14 +536,14 @@
       $scope.BSbusinessArea.splice(index, 1);
     };
     $scope.addBSbusinessArea= function() {
-      $scope.inserted= {
-        proposed:'false',
+      $scope.insertedjdcssq= {
+        proposed:false,
         market:'',
         distance:'',
         limousineBrand:"",
         otherBrand:""
       };
-      $scope.BSbusinessArea.push($scope.inserted);
+      $scope.BSbusinessArea.push($scope.insertedjdcssq);
     };
     // 建店场地相关资料
     $scope.btn23="btn231";
@@ -579,14 +587,14 @@
       $scope.newEquityStructure.splice(index, 1);
     };
     $scope.addnewEquityStructure = function() {
-      $scope.inserted= {
+      $scope.insertedxgsgqjg= {
         shareholder:"",
         affiliation:"",
         FundingSum:'',
         Fundingscale:'',
         nature:""
       };
-      $scope.newEquityStructure.push($scope.inserted);
+      $scope.newEquityStructure.push($scope.insertedxgsgqjg);
     }
 
     // 资金筹备
@@ -632,28 +640,28 @@
       $scope.StoreConstructionPlan.splice(index, 1);
     };
     $scope.addStoreConstructionPlan = function() {
-      $scope.inserted= {
+      $scope.inserteddmjsjh= {
         city:"",
         branch:'',
         submitTime:'',
         startingTime:"",
         completeTime:""
       };
-      $scope.StoreConstructionPlan.push($scope.inserted);
+      $scope.StoreConstructionPlan.push($scope.inserteddmjsjh);
     }
     // 关键岗位组建筹备
     $scope.delkeyJob = function(index) {
       $scope.keyJob.splice(index, 1);
     };
     $scope.addkeyJob = function() {
-      $scope.inserted= {
+      $scope.insertedgjgwzjcb= {
         post:"",
         name:'',
         age:'',
         educationalStatus:"",
         Experience:""
       };
-      $scope.keyJob.push($scope.inserted);
+      $scope.keyJob.push($scope.insertedgjgwzjcb);
     }
     // 组建架构筹备
     $scope.frameworkaRrange=function(organizeSchemaForm){

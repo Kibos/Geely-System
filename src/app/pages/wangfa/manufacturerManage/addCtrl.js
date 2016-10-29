@@ -18,15 +18,16 @@
     // 		$state.go('ba.hezuohuoban.gongyingshang');
     // };
     vm.add={};
-    
-   
+
+
     // vm.submit=function(){
 
     // var information = $stateParams.obj;
 
     // console.log(information);
     //   var vm = this;
-    //   //返回管理页面
+    //
+      //返回管理页面
     	vm.return=function(){
         if(information===1){
           $state.go('ba.hezuohuoban.shejichang');
@@ -34,17 +35,17 @@
         }else{
            $state.go('ba.hezuohuoban.gongyingshang');
            console.log(2);
-        }
-    		
+        };
+
     	}
     //   //提交
     //   vm.add={}
-    
+
       vm.submit=function(){
 
       var newadd={
           name:vm.add.companyName,
-         
+
           password:vm.add.password||"123456",
           phone:vm.add.companyPhone,
           email:vm.add.companyEmail,
@@ -74,5 +75,5 @@
     };
 
   }
- 
+
 })();

@@ -12,13 +12,14 @@
   function supplierCtrl($scope,$state,$stateParams,$rootScope,RoleUser,toastr,Supplier) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
+    $scope.smartTablePageSize = 5;
 
      // 添加
     	$scope.add=function(){
     		$state.go('ba.hezuohuoban.add',{obj:2});
     	};
       // 删除
-      $scope.remove=function(index){  
+      $scope.remove=function(index){
         RoleUser.gongUser.delete($scope.suppliers[index]);
         $scope.suppliers.splice(index, 1);
         toastr.success('删除成功!');

@@ -9,7 +9,9 @@
       .controller('acceptancesqCtrl', acceptancesqCtrl);
 
   /** @ngInject */
-  function acceptancesqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop) {
+  function acceptancesqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop, $filter, $http) {
+
+
 
     $scope.currentUser = Auth.getCurrentUser();
 
@@ -105,6 +107,48 @@
     };
 
     // 文件上传结束
+
+
+
+
+
+
+
+
+
+
+
+
+  $scope.user = {
+    id: 1,
+    name: 'awesome user',
+    status: 2,
+    group: 4,
+    groupName: 'admin'
+  }; 
+
+  $scope.statuses = [
+    {value: 1, text: 'status1'},
+    {value: 2, text: 'status2'},
+    {value: 3, text: 'status3'},
+    {value: 4, text: 'status4'}
+  ]; 
+
+
+
+
+
+        console.log($scope.editableForm)
+
+
+
+
+
+
+
+
+
+
 
   }
 })();
