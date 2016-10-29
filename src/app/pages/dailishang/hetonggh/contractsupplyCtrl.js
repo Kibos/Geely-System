@@ -9,17 +9,26 @@
       .controller('contractsupplyCtrl', contractsupplyCtrl);
 
   /** @ngInject */
-  function contractsupplyCtrl($scope,RoleUser,Auth,toastr) {
+  function contractsupplyCtrl($scope,RoleUser,Auth,toastr,filesUrl) {
 
+   $scope.formData={};
    var entries =RoleUser.gongUser.query(function() {
       console.log(entries);
        $scope.suppliers=entries;
-  });
+   });
+  //  var vm= this;
+ 
 
-  $scope.formData={};
+  //   $scope.uploadFile = function(file){
+  //     console.log($scope.indexFlag);
+  //     file.upload = $upload.upload({
+  //       url: vm.fileUrl+'/api/files/updateFile',
+  //       file: file,
+  //       data: {index: $scope.indexFlag}
+  //     });
+
   // $scope.supplierName='';
 
-  //  $scope.isOptional
     $scope.isOptional={show: true};
     $scope.radioClick=function(){
       if($scope.formData.radio=='true'){

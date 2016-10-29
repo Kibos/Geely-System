@@ -19,15 +19,15 @@
         </div>
   			<div class="form-group">
   	        <label class="individual-label">建店类型:</label>
-  	        <input type="text" name="type" class="form-control individual-iput" ng-model="partners.type" disabled="true" />
+  	        <input type="text" name="type" value="旗舰店" class="form-control individual-iput" disabled="true" />
   	    </div>
         <div class="form-group">
           <label class="individual-label">联系人:</label>
-          <input type="text" name="person" class="form-control individual-iput" ng-model="partners.person" disabled="true"/>
+          <input type="text" name="person" class="form-control individual-iput" ng-model="partners.name" disabled="true"/>
         </div>
   			<div class="form-group">
           <label class="individual-label">联系电话:</label>
-          <input type="text" name="phone" class="form-control individual-iput" ng-model="partners.phone" disabled="true"/>
+          <input type="text" name="phone" class="form-control individual-iput" ng-model="partners.cellphone" disabled="true"/>
         </div>
 
   </div>
@@ -38,7 +38,7 @@
 
   		  <div class="form-group">
           <label class="individual-label">供应商代码:</label>
-          <input type="text" name="id" class="form-control individual-iput" ng-model="supplier.id" disabled="true"/>
+          <input type="text" name="id" class="form-control individual-iput" ng-model="supplier.gonguser.code" disabled="true"/>
         </div>
         <div class="form-group">
           <label class="individual-label">公司名称:</label>
@@ -46,15 +46,15 @@
         </div>
         <div class="form-group">
           <label class="individual-label">联系人:</label>
-          <input type="text" name="person" class="form-control individual-iput" ng-model="supplier.person" disabled="true"/>
+          <input type="text" name="person" class="form-control individual-iput" ng-model="supplier.gonguser.ownName" disabled="true"/>
         </div>
   			<div class="form-group">
           <label class="individual-label">联系电话:</label>
-          <input type="text" name="phone" class="form-control individual-iput" ng-model="supplier.phone" disabled="true"/>
+          <input type="text" name="phone" class="form-control individual-iput" ng-model="supplier.cellphone" disabled="true"/>
         </div>
         <div class="form-group">
           <label>简介：</label>
-          <textarea class="form-control" placeholder="简介" ng-model="supplier.message">{{ supplier.message || 'empty' }}</textarea>
+          <textarea class="form-control" placeholder="简介" ng-model="supplier.gonguser.info">{{ supplier.gonguser.info || 'empty' }}</textarea>
         </div>
 
 
