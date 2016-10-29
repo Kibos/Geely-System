@@ -203,9 +203,17 @@
 
 
     $scope.verifyDataSubmittingBtn=function(){
+
+      if ($scope.shop.shenheshibaiFlag === false) {
         console.log('verifyDataSubmitting');
         Audit.verifyDataSubmitting.save({shopId:$scope._dbid})
         $scope.verifyDataSubmitting = true;
+      } else {
+        console.log('reVerifyDataSub');
+        Audit.reVerifyDataSub.save({shopId:$scope._dbid})
+        $scope.verifyDataSubmitting = true;
+      }
+
 
     }
 
@@ -218,7 +226,7 @@
     // $scope.state=false;
 
     $scope.btn="btn1";
-    // 表格切换   
+    // 表格切换
     $scope.tabone=function(hit){
       $scope.btn=hit;
       console.log($scope.username123);

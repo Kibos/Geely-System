@@ -56,7 +56,9 @@ angular.module('BlurAdmin')
     obj.verifyDataSubmitting = $resource(serverUrl.url+'/api/audits/verifyDataSubmitting');//params : shopId
     obj.getApplyById = $resource(serverUrl.url+'/api/audits/getApplyById');//params : shopId
     obj.stepVerify = $resource(serverUrl.url+'/api/audits/stepVerify');//params : shopId
+    obj.reVerifyDataSub = $resource(serverUrl.url+'/api/audits/reVerifyDataSub');//params : shopId
     return obj;
+
 
   }])
   .factory('Product', ['$resource','serverUrl',function($resource,serverUrl){
