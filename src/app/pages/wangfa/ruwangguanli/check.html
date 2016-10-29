@@ -149,7 +149,6 @@
             <!--股份构成  -->
             <div class="row" ng-switch-when="btn2">
                   <div class="col-md-12">
-                    <div style="color:red;margin-bottom:10px">股东之间有亲属关系（如父子、母女、兄弟、姐妹等）请注明，如有公司法人股东时，该法人股东的股份结构也需分解，直至全部为自然人股东</div>
                       <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/sharesConstitute.html"></div>
 
                   </div>
@@ -441,7 +440,12 @@
               <div class="col-md-12">
                   <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
                       <!-- <div include-with-scope="app/pages/wangfa/ruwangguanli/editTable/organizationChartTable.html"></div> -->
-                      <a href="{{fileUrl}}/public/files/{{shop.organizationChart}}">附件</a>
+                      <div class="form-group">
+                        <label class="info-lab">组织架构筹备</label>
+                        <div>
+                          <img ng-if="shop.organizationChart[0]" height="200" ng-src="{{fileUrl}}/public/files/{{shop.organizationChart[0]}}"  alt="" />
+                        </div>
+                      </div>
                   </div>
               </div>
           </div>
