@@ -16,11 +16,11 @@
                 </select>
               </label>
             </div>
-            <table class="table" st-table="applicants1">
+            <table class="table" st-table="$scope.applicants">
               <thead>
               <tr class="sortable ">
                 <th class="table-id" st-sort="id" st-sort-default="true">编号</th>
-                <th st-sort="area">区域</th>
+                <th st-sort="area">地址</th>
                 <th st-sort="company">申请公司</th>
                 <th st-sort="person">联系人</th>
                 <th st-sort="phone">手机号码</th>
@@ -57,15 +57,15 @@
               </tr>
               </thead>
               <tbody>
-              <tr ng-repeat="item in applicants1">
-                <td class="table-id">{{item.id}}</td>
-                <td>{{item.area}}</td>
-                <td>{{item.company}}</td>
-                <td>{{item.person}}</td>
-                <td>{{item.phone}}</a></td>
-                <td>{{item.state}}</td>
-                <td>{{item.date}}</td>
-                <td><a ui-sref="ba.contractglview({obj:item.id})">查看</a></td>
+              <tr ng-repeat="item in applicants">
+                <td class="table-id">{{$index+1}}</td>
+                <td>{{item.address[0]||'北京'}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.cellphone}}</a></td>
+                <td>{{item.status||"未开始"}}</td>
+                <td>{{item.updateAt| date:"MM/dd/yyyy"}}</td>
+                <td><a ui-sref="ba.contractglview({obj:item})">查看</a></td>
               </tr>
               </tbody>
               <tfoot>
