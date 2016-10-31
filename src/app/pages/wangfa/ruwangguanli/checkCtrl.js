@@ -25,7 +25,7 @@
       $scope.btn="btn1";
       $scope.btn2="btn21";
       $scope.btn3="btn31";
-
+      $scope.btn23="btn231";
       $scope.user = Auth.getCurrentUser()
 
       var state = [
@@ -134,7 +134,7 @@
           forecastOne:shop.MFAform.forecastOne,
           forecastTwo:shop.MFAform.forecastTwo
        }
-       ] 
+       ]
        $scope.analyze = {
         marketingAnalysis:shop.MFAform.marketingAnalysis
        }
@@ -159,14 +159,14 @@
          $scope.nowBankDeposit = shop.nowBankDeposit;
      }
      //资信情况
-    
+
       if (shop.CSmessage){
         $scope.credit = {
           grade:shop.CSmessage.qualityRating,
           XYDJPJbank : shop.CSmessage.XYDJPJbank
         }
       }
-     
+
      //建店城市圈
      if(shop.BSbusinessArea){
          $scope.BSbusinessArea = shop.BSbusinessArea;
@@ -219,7 +219,7 @@
                 Remark:shop.fundings.mentionModelsRemark
               }
      }
-     
+
      var vm = this;
      vm.fileUrl = filesUrl.url;
 
