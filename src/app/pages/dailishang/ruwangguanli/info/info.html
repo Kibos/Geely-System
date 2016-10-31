@@ -93,7 +93,7 @@
               </div>
               <div class="form-group">
                 <label class="individual-label">汽车销售经验(年):</label>
-                <input type="text" name="sellSuffer" required class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <input type="text" name="sellSuffer" required class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^[1-9]\d*(\.\d+)?$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.sellSuffer.$error.pattern && submitbasic">
                   请输入大于0的数字
                 </p>
@@ -104,7 +104,7 @@
               <div class="form-group">
                 <label class="individual-label">汽车售后服务经验(年):</label>
                 <input type="text" name="afterSale" class="form-control individual-iput" ng-model="agent.afterSale"
-                       required placeholder="汽车售后服务经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                       required placeholder="汽车售后服务经验，不加单位" ng-pattern="/^[1-9]\d*(\.\d+)?$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.afterSale.$error.required && submitbasic">
                   请输入汽车售后服务经验
                 </p>
