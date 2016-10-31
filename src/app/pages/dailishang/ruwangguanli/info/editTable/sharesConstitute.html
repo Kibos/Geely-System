@@ -16,8 +16,8 @@
         </span>
     </td>
     <td>
-        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-required>
-          {{ userone.fundingSum || '请输入数字' }}
+        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-required pattern="/^\+?[1-9]\d*$/">
+          {{ userone.fundingSum || '请输入数字'}}
         </span>
     </td>
     <td>
