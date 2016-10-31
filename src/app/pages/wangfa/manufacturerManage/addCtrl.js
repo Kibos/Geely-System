@@ -22,15 +22,18 @@
 
     // vm.submit=function(){
 
+
    var information = $stateParams.obj;
 
-    // console.log(information);
+
+     console.log(information);
     //   var vm = this;
     //
       //返回管理页面
     	vm.return=function(){
         if(information===1){
           $state.go('ba.hezuohuoban.gongyingshang');
+
           console.log(1);
         }else{
            $state.go('ba.hezuohuoban.shejichang');
