@@ -17,7 +17,7 @@
        $scope.suppliers=entries;
    });
   //  var vm= this;
- 
+
 
   //   $scope.uploadFile = function(file){
   //     console.log($scope.indexFlag);
@@ -38,11 +38,13 @@
       }
     };
     // 显示与隐藏
-    $scope.menuState={show: false};
+    $scope.mark= true;
+    $scope.flag= true;
 
     var obj={};
-    $scope.toggleMenu=function(){
-      $scope.menuState.show=!$scope.menuState.show;
+    $scope.saveClick=function(){
+      $scope.mark=!$scope.mark;
+      $scope.flag=!$scope.flag;
       obj=Auth.getCurrentUser();
       obj.user={};
       console.log("--------->>>"+$scope.formData.signingTime);
@@ -61,8 +63,8 @@
             });
 
         }
-      
-        
+
+
       }else{
          if(isUndefinedOrNull($scope.formData.supplierName)||isUndefinedOrNull($scope.formData.signingTime)){
             toastr.warning('请填写完整!', '提示');
@@ -77,9 +79,9 @@
                 $scope.message = response.message;
            });
          }
-  
+
       }
-     
+
 
       console.log(obj);
 
@@ -90,7 +92,7 @@
 
       }
 
-     
+
 
     // };
 
@@ -109,8 +111,8 @@
       }
     };
 
-    function isUndefinedOrNull(value){         
-      return angular.isUndefined(value) || value === null||value==""; 
+    function isUndefinedOrNull(value){
+      return angular.isUndefined(value) || value === null||value=="";
     };
 
   }
