@@ -49,17 +49,14 @@
        $scope.flag = !$scope.flag;
 
 
-       $scope.gysxx.$save(function(response){
-            $scope.message = response.message;
-       });
-      //  RoleUser.updateUser.save(JSON.stringify(info),JSON.stringify($scope.gysxx),function(err){
-      //    if(err){
-      //       toastr.error("保存失败!", '错误');
-      //    }else{
-      //      toastr.success('保存成功!');
-      //    }
-       //
+     console.log("------????>>"+JSON.stringify($scope.gysxx));
+      //  $scope.gysxx.$save(function(response){
+      //       $scope.message = response.message;
       //  });
+
+       RoleUser.gongUser.save({_id:$scope.gysxx._id},$scope.gysxx,function(response){ 
+          toastr.success('更新成功!');      
+       });
 
      }
 
