@@ -16,7 +16,7 @@
 
      // 添加
     	$scope.add=function(){
-    		$state.go('ba.hezuohuoban.add',{obj:2});
+    		$state.go('ba.hezuohuoban.add',{obj:1});
     	};
       // 删除
       $scope.remove=function(index){
