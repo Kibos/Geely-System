@@ -93,7 +93,7 @@
               </div>
               <div class="form-group">
                 <label class="individual-label">汽车销售经验(年):</label>
-                <input type="text" name="sellSuffer" required class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                <input type="text" name="sellSuffer" required class="form-control individual-iput" ng-model="agent.sellSuffer" placeholder="汽车销售经验，不加单位" ng-pattern="/^[1-9]\d*(\.\d+)?$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.sellSuffer.$error.pattern && submitbasic">
                   请输入大于0的数字
                 </p>
@@ -104,7 +104,7 @@
               <div class="form-group">
                 <label class="individual-label">汽车售后服务经验(年):</label>
                 <input type="text" name="afterSale" class="form-control individual-iput" ng-model="agent.afterSale"
-                       required placeholder="汽车售后服务经验，不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
+                       required placeholder="汽车售后服务经验，不加单位" ng-pattern="/^[1-9]\d*(\.\d+)?$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.afterSale.$error.required && submitbasic">
                   请输入汽车售后服务经验
                 </p>
@@ -270,10 +270,10 @@
               <div class="form-group">
                 <label class="info-lab">土地性质</label>
                 <div class="inner-box">
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="gyyd" ng-model="agent.landStatus" value="industrialLand" ng-disabled="formstate()"><label for="gyyd">工业用地</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="syyd" ng-model="agent.landStatus" value="commercialLand" ng-disabled="formstate()"><label for="syyd">商业用地</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="nyyd" ng-model="agent.landStatus" value="agriculturalLand" ng-disabled="formstate()"><label for="nyyd">农业用地</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="qtyd" ng-model="agent.landStatus" value="otherLand" ng-disabled="formstate()"><label for="qtyd">其它</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="gyyd" ng-model="agent.landStatus" value="工业用地" ng-disabled="formstate()"><label for="gyyd">工业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="syyd" ng-model="agent.landStatus" value="商业用地" ng-disabled="formstate()"><label for="syyd">商业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="nyyd" ng-model="agent.landStatus" value="农业用地" ng-disabled="formstate()"><label for="nyyd">农业用地</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" name="landStatus" required id="qtyd" ng-model="agent.landStatus" value="其它" ng-disabled="formstate()"><label for="qtyd">其它</label></div></div>
                   <p class="help-block njdsq-p" ng-show="bssForm.landStatus.$error.required && submitbss">
                       请选择土地性质
                   </p>
@@ -294,7 +294,7 @@
               <div class="form-group">
                 <label class="info-lab">该城市首店</label>
                 <div class="inner-box">
-                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopone" id="firstshop1" ng-disabled="formstate()"><label for="firstshop1">标准4S店</label></div>
+                  <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopone" id="firstshop1" value="标准4S店"  ng-disabled="formstate()"><label for="firstshop1">标准4S店</label></div>
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshoptwo" id="firstshop2" ng-disabled="formstate()"><label for="firstshop2">SR/商超店+独立维修站(E级)</label></div>
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopthree" id="firstshop3" ng-disabled="formstate()"><label for="firstshop3">SR/商超店+快修店+独立维修站(E级)</label></div>
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopfour" id="firstshop4" ng-disabled="formstate()"><label for="firstshop4">SR/商超店+快修店(F级,已有吉利维修站升级等)</label></div>
@@ -313,11 +313,11 @@
               <div class="form-group">
                 <label class="info-lab">建设方式</label>
                 <div class="inner-box-child">
-                  <input type="radio" name="jsMode" id="jsfsxj" value="newConstruction" ng-model="agent.jsMode" ng-disabled="formstate()" required>
+                  <input type="radio" name="jsMode" id="jsfsxj" value="新建" ng-model="agent.jsMode" ng-disabled="formstate()" required>
                   <label for="jsfsxj">新建</label>
                 </div>
                 <div class="inner-box-child">
-                  <input type="radio" name="jsMode" id="jsfsgj" value="reconstruct" ng-model="agent.jsMode" ng-disabled="formstate()" required>
+                  <input type="radio" name="jsMode" id="jsfsgj" value="改建" ng-model="agent.jsMode" ng-disabled="formstate()" required>
                   <label for="jsfsgj">改建</label>
                 </div>
                 <p class="help-block njdsq-p" ng-show="bssForm.jsMode.$error.required && submitbss">
@@ -326,12 +326,12 @@
               </div>
               <div class="form-group">
                 <label class="info-lab">申请级别</label>
-                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeA" value="sqGradeA" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeA">A级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeB" value="sqGradeB" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeB">B级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeC" value="sqGradeC" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeC">C级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeD" value="sqGradeD" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeD">D级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeE" value="sqGradeE" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeE">E级</label>&nbsp;</div>
-                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeF" value="sqGradeF" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeF">F级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeA" value="A级" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeA">A级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeB" value="B级" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeB">B级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeC" value="C级" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeC">C级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeD" value="D级" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeD">D级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeE" value="E级" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeE">E级</label>&nbsp;</div>
+                <div class="inner-box-child"><input type="radio" required name="sqGrade" id="sqGradeF" value="F级" ng-model="agent.sqGrade" ng-disabled="formstate()"><label for="sqGradeF">F级</label>&nbsp;</div>
                 <p class="help-block njdsq-p" ng-show="bssForm.sqGrade.$error.required && submitbss">
                       请选择申请级别
                 </p>
@@ -416,8 +416,8 @@
               <div class="form-group">
                 <label class="info-lab-a">是否重新注册具有独立法人资格的新公司</label>
                 <div class="inner-box">
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="LPstatus" id="YesLPstatus" ng-model="agent.LPstatus" value="YesLPstatus" ng-disabled="formstate()"><label for="YesLPstatus">是</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="LPstatus" id="NotLPstatus" ng-model="agent.LPstatus" value="NotLPstatus" ng-disabled="formstate()"><label for="NotLPstatus">否</label></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="LPstatus" id="YesLPstatus" ng-model="agent.LPstatus" value="是" ng-disabled="formstate()"><label for="YesLPstatus">是</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="LPstatus" id="NotLPstatus" ng-model="agent.LPstatus" value="否" ng-disabled="formstate()"><label for="NotLPstatus">否</label></div>
                   </div>
                   <p class="help-block" ng-show="newCPForm.LPstatus.$error.required && submitnewCP" style="color:red">
                   请选择是否重新注册具有独立法人资格的新公司

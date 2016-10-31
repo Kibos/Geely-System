@@ -63,10 +63,10 @@
                   <tbody>
                     <tr ng-repeat="item in checkLog">
                       <td>{{$index+1}}</td>
-                      <td>{{item.time}}</td>
+                      <td>{{item.time | date:"yyyy/MM/dd"}}</td>
                       <td>{{item.name}}</td>
-                      <td>{{item.info}}</td>
-                      <td>
+                      <td style="widt:200px;">{{item.info}}</td>
+                      <td style="widt:200px;">
                         {{item.opinion}}
                       </td>
                       <td>{{isornotinfo(item.bool)}}</td>
@@ -260,14 +260,34 @@
                   <label class="individual-label">租赁期限:</label>
                   <input type="text" name="leaseStart" class="form-control individual-iput" ng-model="store.leaseStart" disabled="true" />
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                   <label class="individual-label">该城市首店:</label>
                   <input type="text" name="firstShop" class="form-control individual-iput" ng-model="store.firstShop" disabled="true" />
               </div>
               <div class="form-group">
                   <label class="individual-label">非该城市首店:</label>
                   <input type="text" name="notfirstShop" class="form-control individual-iput" ng-model="store.notfirstShop" disabled="true" />
+              </div> -->
+              <div class="form-group">
+                <label class="individual-label">该城市首店:</label>
+                <div class="inner-box" style="margin-left:510px; display:inline-block">
+                  <div class="inner-box-child"><input type="checkbox"  name="firstShop" ng-model="firstStore.firstshopone" id="firstshop1"  ng-disabled="true"><label for="firstshop1">标准4S店</label></div>
+                  <div class="inner-box-child"><input type="checkbox"  name="firstShop" ng-model="firstStore.firstshoptwo" id="firstshop2" ng-disabled="true"><label for="firstshop2">SR/商超店+独立维修站(E级)</label></div>
+                  <div class="inner-box-child"><input type="checkbox"  name="firstShop" ng-model="firstStore.firstshopthree" id="firstshop3" ng-disabled="true"><label for="firstshop3">SR/商超店+快修店+独立维修站(E级)</label></div>
+                  <div class="inner-box-child"><input type="checkbox"  name="firstShop" ng-model="firstStore.firstshopfour" id="firstshop4" ng-disabled="true"><label for="firstshop4">SR/商超店+快修店(F级,已有吉利维修站升级等)</label></div>
+                </div>
               </div>
+              <div class="form-group">
+                <label class="individual-label">非该城市首店:</label>
+                <div class="inner-box" style="margin-left:510px;">
+                  <div class="inner-box-child"><input type="checkbox"  name="notfirstShop" ng-model="firstStore.notfirstShopone" id="notfirstshop1" ng-disabled="true"><label for="notfirstshop1">4S店</label></div>
+                  <div class="inner-box-child"><input type="checkbox"  name="notfirstShop" ng-model="firstStore.notfirstShoptwo" id="notfirstshop2" ng-disabled="true"><label for="notfirstshop2">品牌体验中心</label></div>
+                  <div class="inner-box-child"><input type="checkbox"  name="notfirstShop" ng-model="firstStore.notfirstShopthree" id="notfirstshop3" ng-disabled="true"><label for="notfirstshop3">快修店</label></div>
+                  <div class="inner-box-child"><input type="checkbox"  name="notfirstShop" ng-model="firstStore.notfirstShopfour" id="notfirstshop4" ng-disabled="true"><label for="notfirstshop4">独立维修站</label></div>
+                  <div class="inner-box-child"><input type="checkbox"  name="notfirstShop" ng-model="firstStore.notfirstShopfive" id="notfirstshop5" ng-disabled="true"><label for="notfirstshop4">商超店</label></div>
+                </div>
+              </div>
+
               <div class="form-group">
                   <label class="individual-label">建设方式:</label>
                   <input type="text" name="jsMode" class="form-control individual-iput" ng-model="store.jsMode" disabled="true" />

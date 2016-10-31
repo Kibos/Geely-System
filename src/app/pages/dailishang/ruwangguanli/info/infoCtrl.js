@@ -485,17 +485,17 @@
     // ---------------------拟建店简述------------------------
     $scope.btn2="btn21";
     $scope.locations=[
-        {id:"01","text":"汽车城、汽车交易市场"},
-        {id:"02","text":"汽车交易一条街"},
-        {id:"03","text":"主干道"},
-        {id:"04","text":"其他"}
+        {id:"汽车城、汽车交易市场","text":"汽车城、汽车交易市场"},
+        {id:"汽车交易一条街","text":"汽车交易一条街"},
+        {id:"主干道","text":"主干道"},
+        {id:"其他","text":"其他"}
     ];
     $scope.landSources=[
-        {id:"11","text":"已购买"},
-        {id:"12","text":"已租赁"},
-        {id:"13","text":"意向购买"},
-        {id:"14","text":"意向租赁"},
-        {id:"15","text":"其它"}
+        {id:"已购买","text":"已购买"},
+        {id:"已租赁","text":"已租赁"},
+        {id:"意向购买","text":"意向购买"},
+        {id:"意向租赁","text":"意向租赁"},
+        {id:"其它","text":"其它"}
     ]
     // 建店场地情况
     $scope.buildStoreSite=function(bssForm)
@@ -568,13 +568,13 @@
     // 新公司筹备
     $scope.btn3="btn31";
     $scope.MQ=[
-        {id:"301","text":"一类"},
-        {id:"302","text":"二类"},
-        {id:"303","text":"三类"}
+        {id:"一类","text":"一类"},
+        {id:"二类","text":"二类"},
+        {id:"三类","text":"三类"}
     ];
     $scope.EN=[
-        {id:"311","text":"国有"},
-        {id:"312","text":"集体"}
+        {id:"国有","text":"国有"},
+        {id:"集体","text":"集体"}
     ];
     $scope.newCompanyPrepare=function(newCPForm)
     {
