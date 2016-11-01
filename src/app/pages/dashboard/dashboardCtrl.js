@@ -9,9 +9,10 @@
       .controller('dashboardCtrl', dashboardCtrl);
 
   /** @ngInject */
-  function dashboardCtrl($scope,Auth) {
+  function dashboardCtrl($scope,Auth,$rootScope) {
 
-    //供应商概览
+
+
     $scope.supplier = {id:'100502154',name:'浙江XX集团',person:'张三',phone:'1868989898',message:'供应商概览简介--------'};
 
     $scope.user=Auth.getCurrentUser();
