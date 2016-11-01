@@ -2,7 +2,7 @@
   	<uib-tab heading="待审核">
   		<!-- <form class="row form-inline">
   		<div class="form-group">
-			
+
 
 			<label for="name">当前状态</label>
 			<select ng-model="selectStateQuery" class="form-control">
@@ -20,9 +20,9 @@
 			</div>
 		  	<button type="submit" class="btn btn-primary" style="" ng-click="selectState(selectStateQuery)">搜索</button>
 		</form> -->
-		
+
 	  	<div class="horizontal-scroll">
-			
+
 		  	<table class="table table-hover" st-table="shoplists" st-safe-src="shoplists_data" >
 			    <thead>
 				    <tr class="sortable">
@@ -63,7 +63,7 @@
   	<uib-tab heading="审核未通过">
 
 	  	<div class="horizontal-scroll">
-	  		
+
 		  	<table class="table table-hover" st-table="notVerifyedshoplists" st-safe-src="notVerifyedshoplists_data">
 			    <thead>
 				    <tr class="sortable">
@@ -87,7 +87,7 @@
               			<td>{{test(item.applyId.verify)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
-				      <td><a href="" ng-click="stateGo(item)">查看</a></td>
+				      <td><a href="" ng-click="chakan(item)">查看</a></td>
 
 				    </tr>
 			    </tbody>
@@ -142,6 +142,3 @@
 
 
   </uib-tabset>
-
-
-

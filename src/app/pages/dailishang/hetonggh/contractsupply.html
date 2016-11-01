@@ -79,84 +79,85 @@
 
   </uib-tab>
   <uib-tab heading="供应商合同">
-    <div class="col-md-6">
-      <div class="" style='margin-bottom:20px;' >
-        <label class=""  style='display: inline-block;'>是否使用L品牌合作供应商</label>
-           <label class="radio"  style='margin-left: 60px;display: inline-block;'>
-              <input type="radio" name="type3" value="true" ng-checked="formData.radio" ng-click="radioClick()" ng-model="formData.radio" >
-                    是
-           </label>
-           <label class="radio"  style='margin-left: 60px;display: inline-block;'>
-              <input type="radio" name="type3" value="false" ng-checked="formData.radio"  ng-click="radioClick()" ng-model="formData.radio">
-                    否
-           </label>
-      </div>
-
-      <div class="sj  animate-show" style="margin-bottom:20px;"  ng-show="isOptional.show" >
-        <label>L品牌合作供应商：</label>
-        <div class="" style="width:210px;margin-bottom:20px;">
-          <select  ng-model="suppmodel"  ng-change="getSuppID()"  style="width:180px;" style="margin-bottom:20px;">
-            <option value="" style="font-size:12px;color:#999999">请选择</option>
-            <option style="font-size:12px;color:#666666" ng-repeat=" x in suppliers" >{{x.name}}</option>
-          </select>
-        </div>
-      </div>
-
-       <div class="sj  animate-show" style="margin-bottom:20px;"  ng-hide="isOptional.show" >
-          <label>请输入您的供应商名称：</label>
-          <div class="" style="width:210px;">
-            <input type="text" ng-model="formData.supplierName">
+    <form name="gysForm">
+        <div class="col-md-6">
+          <div class="" style='margin-bottom:20px;' >
+            <label class=""  style='display: inline-block;'>是否使用L品牌合作供应商</label>
+               <label class="radio"  style='margin-left: 60px;display: inline-block;'>
+                  <input type="radio" name="type3" value="true" ng-checked="formData.radio" ng-click="radioClick()" ng-model="formData.radio" ng-disabled="Flag" required="">
+                        是
+               </label>
+               <label class="radio"  style='margin-left: 60px;display: inline-block;'>
+                  <input type="radio" name="type3" value="false" ng-checked="formData.radio"  ng-click="radioClick()" ng-model="formData.radio" ng-disabled="Flag" required="">
+                        否
+               </label>
           </div>
-       </div>
 
-      <div class="sj" style="margin-bottom:20px;">
-        <label>签订时间：</label>
-        <input type="date"
-           ng-model="formData.signingTime"
-           min="2015-12-12"
-           max="2016-12-22"
-           rquired
-           ng-required
-           ng-change="change()"/>
-      </div>
-      <!-- <div class="sj" style="margin-bottom:20px;">
-        <label>电子版合同：</label>
-        <input type="file" id="inputfile" ng-model="formData.agreementFile">
-      </div> -->
+          <div class="sj  animate-show" style="margin-bottom:20px;"  ng-show="isOptional.show" >
+            <label>L品牌合作供应商：</label>
+            <div class="" style="width:210px;margin-bottom:20px;">
+              <select  ng-model="suppmodel"  ng-change="getSuppID()"  style="width:180px;" style="margin-bottom:20px;" ng-disabled="Flag" ng-required="reSelect">
+                <option value="" style="font-size:12px;color:#999999">请选择</option>
+                <option style="font-size:12px;color:#666666" ng-repeat=" x in suppliers" >{{x.name}}</option>
+              </select>
+            </div>
+          </div>
 
-    </div>
-    <div class="col-md-6">
-      <div ba-panel ba-panel-title="供应商概览">
+           <div class="sj  animate-show" style="margin-bottom:20px;"  ng-hide="isOptional.show" >
+              <label>请输入您的供应商名称：</label>
+              <div class="" style="width:210px;">
+                <input type="text" ng-model="formData.supplierName" ng-disabled="Flag" ng-required="Inp">
+              </div>
+           </div>
 
-      		  <div class="form-group">
-              <label>供应商代码:</label>
-              <label type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid].id" ng-value="{{suppliers[sid].id}}" disabled="true">{{suppliers[sid].id}}</label>
-              <!-- <input type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid].id" ng-value="{{suppliers[sid].id}}" disabled="true"/> -->
-            </div>
-            <div class="form-group">
-              <label>公司名称:</label>
-              <label type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid].name" disabled="true">{{suppliers[sid].name}}</label>
-              <!-- <input type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid].name" disabled="true"/> -->
-            </div>
-            <div class="form-group">
-              <label>联系人:</label>
-              <label type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid].gonguser.ownName" disabled="true">{{suppliers[sid].gonguser.ownName}}</label>
-              <!-- <input type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid].gonguser.ownName" disabled="true"/> -->
-            </div>
-      			<div class="form-group">
-              <label>联系电话:</label>
-              <label type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid].phone" disabled="true">{{suppliers[sid].phone}}</label>
-              <!-- <input type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid].phone" disabled="true"/> -->
-            </div>
-            <div class="form-group">
-              <label>简介：</label>
-              <textarea class="form-control" placeholder="简介" ng-model="suppliers[sid].message" disabled="true">{{ supplier.message || 'empty' }}</textarea>
-            </div>
+          <div class="sj" style="margin-bottom:20px;">
+            <label>签订时间：</label>
+            <input type="date"
+               ng-model="formData.signingTime"
+               min="2015-12-12"
+               max="2016-12-22"
+               ng-required="true"
+               ng-change="change()" ng-disabled="Flag">
+          </div>
+          <!-- <div class="sj" style="margin-bottom:20px;">
+            <label>电子版合同：</label>
+            <input type="file" id="inputfile" ng-model="formData.agreementFile">
+          </div> -->
+
+        </div>
+        <div class="col-md-6">
+          <div ba-panel ba-panel-title="供应商概览">
+
+          		  <div class="form-group">
+                  <label>供应商代码:</label>
+                  <label type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid].id" ng-value="{{suppliers[sid].id}}" disabled="true">{{suppliers[sid].id}}</label>
+                  <!-- <input type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid].id" ng-value="{{suppliers[sid].id}}" disabled="true"/> -->
+                </div>
+                <div class="form-group">
+                  <label>公司名称:</label>
+                  <label type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid].name" disabled="true">{{suppliers[sid].name}}</label>
+                  <!-- <input type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid].name" disabled="true"/> -->
+                </div>
+                <div class="form-group">
+                  <label>联系人:</label>
+                  <label type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid].gonguser.ownName" disabled="true">{{suppliers[sid].gonguser.ownName}}</label>
+                  <!-- <input type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid].gonguser.ownName" disabled="true"/> -->
+                </div>
+          			<div class="form-group">
+                  <label>联系电话:</label>
+                  <label type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid].phone" disabled="true">{{suppliers[sid].phone}}</label>
+                  <!-- <input type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid].phone" disabled="true"/> -->
+                </div>
+                <div class="form-group">
+                  <label>简介：</label>
+                  <textarea class="form-control" placeholder="简介" ng-model="suppliers[sid].message" disabled="true">{{ supplier.message || 'empty' }}</textarea>
+                </div>
 
 
-      </div>
-    </div>
-    <button class="btn btn-primary" ng-click="saveClick()">保存</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" ng-click="saveClick()" ng-disabled="Flag || gysForm.$invalid" ng-disabled="">保存</button>
+    </form>
 
   </uib-tab>
   <uib-tab heading="合同供货流程">
