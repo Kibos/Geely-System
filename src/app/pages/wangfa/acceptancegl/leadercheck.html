@@ -1,0 +1,41 @@
+<div ba-panel ba-panel-title="网络发展/合作商运营/验收领导审核" ba-panel-class="with-scroll">
+
+	<div class="col-md-6">
+
+		<form novalidate name="CompanyForm">
+
+			<div class="form-group">
+				<label class="individual-label" id="partners1" style="font-size:14px;font-weight:bolder">申请代理商：
+					<span class="individual-iput" id="partners">{{vm.partners}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<label class="individual-label" id="data1" style="font-size:14px;font-weight:bolder;margin-left:-45px">验收资料：
+					<span class="individual-iput" id="data">{{vm.information}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<label class="individual-label" id="olddata1" style="font-size:14px;font-weight:bolder;margin-left:-30px">验收资料历史：
+					<span class="individual-iput" id="olddata">{{vm.oldinformation}}</span>
+				</label>
+			</div>
+
+			<div class="form-group form-inline">
+				<label class="individual-label inline-block" style="font-size:14px;font-weight:bolder;margin-left:-80px">验收结论：</label>
+				<div style="display:inline-block;width:50%">
+					<select class="form-control"selectpicker title="验收结论" ng-model="vm.check.result" ng-options="item as item.label for item in vm.selectItems" required>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="individual-label" style="font-size:14px;font-weight:bolder;margin-left:-80px">验收审核意见：</label>
+				<textarea type="text" class="form-control individual-iput" ng-model="vm.check.opinion" placeholder="请填写验收审核意见"></textarea>
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary" ng-disabled="CompanyForm.$invalid" ng-click="vm.submit()">提交</button>
+			</div>
+		</form>
+
+	</div>
+
+</div>

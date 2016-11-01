@@ -25,7 +25,6 @@ angular.module('BlurAdmin', [
 .value('filesUrl',{url:'http://127.0.0.1:8080'}) //上线环境 ''   开发环境：'http://127.0.0.1:8080'
 .value('redirectToUrlAfterLogin', { url: '/' }) //不变
 .value('serverUrl',{url:'http://127.0.0.1:8080'})   //上线环境 ''   开发环境：'http://127.0.0.1:8080'
-.run(permissionRun)
 
 .config(function ($httpProvider, $locationProvider, localStorageServiceProvider) {
   localStorageServiceProvider
@@ -66,16 +65,11 @@ angular.module('BlurAdmin', [
   };
 })
 
+.run(permissionRun)
 
 
    function permissionRun($rootScope,  $cookieStore, $state, PermRoleStore, PermPermissionStore, Auth) {
-        // normally this would be done at the login page but to show quick
-        // demo we grab username from cookie and login the user
-        /*var cookieUser = $cookies.get('tri-user');
-        if(angular.isDefined(cookieUser)) {
-            UserService.login(cookieUser);
-        }*/
-        // console.log('~~~~~~~~~~~~permissionRun~~~~~~~~~~~~~~');
+
         PermPermissionStore
               .definePermission('wangfa', function () {
                 return $cookieStore.get('role')==="admin";
@@ -96,33 +90,7 @@ angular.module('BlurAdmin', [
               .definePermission('canlist',function(){
                   return true;
               });
-// -----------------------------
-        // create roles for app
-        // PermRoleStore
-        // .defineRole('canReadInvoice', ['canReadInvoice'],checkRole);
 
-       PermRoleStore
-        .defineRole('USER', ['canReadInvoice','canReadCharts','canlist'],function(){
-            return $cookieStore.get('role')==='user';
-        });
-       PermRoleStore
-        .defineRole('ADMIN', ['canReadInvoice','canReadCharts','canlist'],function(){
-            return $cookieStore.get('role')==='admin';
-        });
-
-//  PermRoleStore
-//   // Or use your own function/service to validate role
-//   .defineRole('USER', function () {
-//     return $cookieStore.get('role');
-//   });
-
-
-// PermRoleStore
-// // Or use your own function/service to validate role
-// .defineManyRoles({
-// 'USER': ['canReadInvoices'],
-// 'ADMIN': ['canReadInvoices','canEditInvoices','canUploadImages']
-// });
 
         // default redirect if access is denied
         function accessDenied() {
@@ -130,21 +98,6 @@ angular.module('BlurAdmin', [
             $state.go('401');
         }
 
-        // function that calls user service to check if permission is allowed
-        // function that calls user service to check if permission is allowed
-        // function checkRole(permission, transitionProperties) {
-        //      console.log('22checkRole ======'+$cookieStore.get('role'));
-        //       if($cookieStore.get('role')==='user')
-        //         return true;
-        //     return false;
-        // }
-
-       function checkRole(permission, transitionProperties) {
-            console.log('22checkRole  lll'+$cookieStore.get('role'));
-            return Auth.hasPermission(permission, transitionProperties);
-        }
-
-        // watches
 
         // redirect all denied permissions to 401
         var deniedHandle = $rootScope.$on('$stateChangePermissionDenied', accessDenied);
@@ -153,8 +106,4 @@ angular.module('BlurAdmin', [
         $rootScope.$on('$destroy', function() {
             deniedHandle();
         });
-    }
-
-
-
-;
+    };
