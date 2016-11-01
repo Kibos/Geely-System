@@ -17,7 +17,7 @@
        $scope.suppliers=entries;
    });
   //  var vm= this;
- 
+
 
   //   $scope.uploadFile = function(file){
   //     console.log($scope.indexFlag);
@@ -38,11 +38,13 @@
       }
     };
     // 显示与隐藏
-    $scope.menuState={show: false};
+    $scope.mark= true;
+    $scope.flag= true;
 
     var obj={};
-    $scope.toggleMenu=function(){
-      $scope.menuState.show=!$scope.menuState.show;
+    $scope.saveClick=function(){
+      $scope.mark=!$scope.mark;
+      $scope.flag=!$scope.flag;
       obj=Auth.getCurrentUser();
       obj.user={};
       console.log("--------->>>"+$scope.formData.signingTime);
@@ -61,8 +63,8 @@
             });
 
         }
-      
-        
+
+
       }else{
          if(isUndefinedOrNull($scope.formData.supplierName)||isUndefinedOrNull($scope.formData.signingTime)){
             toastr.warning('请填写完整!', '提示');
@@ -77,9 +79,9 @@
                 $scope.message = response.message;
            });
          }
-  
+
       }
-     
+
 
       console.log(obj);
 
@@ -90,14 +92,24 @@
 
       }
 
-     
+
 
     // };
 
     // 步骤状态
+    /*合同供货流程 */
+    // $scope.nums =[{bool:false},{bool:true},{bool:false},{bool:false},{bool:false},{bool:false}];
     $scope.nums=['1','2','3','4','5'];
     $scope.steps=['合同上传','首付款凭证','供货商发货','供货商到货确认','供货商安装完成确认'];
     $scope.states=['合同已上传备案','首付款凭证已上传','供应商已发货','供应商已完成到货确认','供应商已完成安装确认'];
+
+    $scope.process = [
+    {nums:'1',steps:'合同上传',states:'合同已上传备案'},
+    {nums:'2',steps:'首付款凭证',states:'首付款凭证已上传'},
+    {nums:'3',steps:'供货商发货',states:'供应商已发货'},
+    {nums:'4',steps:'供货商到货确认',states:'供应商已完成到货确认'},
+  ];
+
 
     $scope.getSuppID=function(){
       var i=0;
@@ -109,8 +121,8 @@
       }
     };
 
-    function isUndefinedOrNull(value){         
-      return angular.isUndefined(value) || value === null||value==""; 
+    function isUndefinedOrNull(value){
+      return angular.isUndefined(value) || value === null||value=="";
     };
 
   }

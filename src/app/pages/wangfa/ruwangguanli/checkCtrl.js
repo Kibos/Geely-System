@@ -13,7 +13,8 @@
       $scope.fileUrl = filesUrl.url;
       var shop = $stateParams.obj;
       $scope.shop = shop;
-      console.log(shop);
+      //$scope.store = shop.bss;
+
       if(shop){
         localStorageService.set('checkshop', shop);
       }else{
@@ -125,6 +126,26 @@
          return '不通过'
        }
      }
+
+
+      if(shop.bss){
+       $scope.firstStore =
+         {
+            firstshopone : shop.bss.firstshopone,
+            firstshoptwo : shop.bss.firstshoptwo,
+            firstshopthree : shop.bss.firstshopthree,
+            firstshopfour : shop.bss.firstshopfour,
+
+            notfirstShopone : shop.bss.notfirstShopone,
+            notfirstShoptwo : shop.bss.notfirstShoptwo,
+            notfirstShopthree : shop.bss.notfirstShopthree,
+            notfirstShopfour : shop.bss.notfirstShopfour,
+            notfirstShopfive : shop.bss.notfirstShopfive,
+
+
+         }
+
+       }
 
      if (shop.MFAform) {
 

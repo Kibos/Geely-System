@@ -13,13 +13,16 @@
     $scope.smartTablePageSize = 5;
     $scope.xq = function(item){
       if(item.state==='待提交申请'){
-        console.log("待提交验收申请")
+        console.log("待提交验收申请");
         // $state.go('ba.jiandianguanli.buildstorebtdetail',{obj:item});
       }else if(item.state==='待安排验收')
       {
         $state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
+        console.log("待安排验收");
+      }else if(item.state==='待提交整改申请'){
+        console.log("待提交整改申请");
       }else{
-
+        console.log("已完成验收");
       }
 };
 
@@ -39,7 +42,7 @@
     detail:'123456789',
   },
   {
-    agent:'上海华庭',
+    agent:'江苏省苏州市吉利汽贸',
     type:'A级4S店',
     area:'东区-江苏省苏州市',
     state:'待安排验收',
