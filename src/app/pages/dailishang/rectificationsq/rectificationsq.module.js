@@ -28,26 +28,26 @@
             only:'dailishang'
          }}
       })
-      .state('ba.submitreport', {
-        url: '/submitreport',
-        controller: 'submitreportCtrl',
-        controllerAs: 'vm',
-        templateUrl: 'app/pages/dailishang/rectificationsq/submitreport.html',
-        params:{
-          obj:null
-        }
-
-      })
-      .state('ba.leadercheck', {
-        url: '/leadercheck',
-        controller: 'leadercheckCtrl',
-        controllerAs: 'vm',
-        templateUrl: 'app/pages/dailishang/rectificationsq/leadercheck.html',
-        params:{
-          obj:null
-        }
-
-      })
+      // .state('ba.submitreport', {
+      //   url: '/submitreport',
+      //   controller: 'submitreportCtrl',
+      //   controllerAs: 'vm',
+      //   templateUrl: 'app/pages/dailishang/rectificationsq/submitreport.html',
+      //   params:{
+      //     obj:null
+      //   }
+      //
+      // })
+      // .state('ba.leadercheck', {
+      //   url: '/leadercheck',
+      //   controller: 'leadercheckCtrl',
+      //   controllerAs: 'vm',
+      //   templateUrl: 'app/pages/dailishang/rectificationsq/leadercheck.html',
+      //   params:{
+      //     obj:null
+      //   }
+      //
+      // })
 
   }
 })();

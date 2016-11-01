@@ -17,27 +17,22 @@
     $scope.ysgl={
         agent:information.agent
     };
-    $scope.submit=function(){
-      // $state.go('ba.jiandianguanli.buildstorebtcheck');
-      console.log($scope.ysgl);
-    };
-
 
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
     // $scope.partners='杭州风景';
     $scope.file='杭州风景';
-    $scope.flag=false;
-    $scope.pass=function(){
-      $scope.flag=true;
-    };
-    $scope.nopass=function(){
-      $scope.flag=false;
-    };
-
+    $scope.flag=true;
     $scope.check = {};
-    $scope.submit=function(){
-      $state.go("ba.jiandianguanli.acceptancegl");
+    $scope.submit=function(result){
+
+      console.log($scope.check.result);
+      if($scope.check.result==='agree'){
+          $state.go("ba.submitreport");
+      }else{
+        $state.go("ba.jiandianguanli.acceptancegl");
+      };
+
       var newcheck={
           result:$scope.check.result,
           receptionTime:$scope.check.receptionTime,

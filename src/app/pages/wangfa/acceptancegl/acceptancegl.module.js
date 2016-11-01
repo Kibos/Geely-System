@@ -29,6 +29,26 @@
           obj:null
         }
 
+      })
+      .state('ba.submitreport', {
+        url: '/submitreport',
+        controller: 'submitreportCtrl',
+        controllerAs: 'vm',
+        templateUrl: 'app/pages/wangfa/acceptancegl/submitreport.html',
+        params:{
+          obj:null
+        }
+
+      })
+      .state('ba.leadercheck', {
+        url: '/leadercheck',
+        controller: 'leadercheckCtrl',
+        controllerAs: 'vm',
+        templateUrl: 'app/pages/wangfa/acceptancegl/leadercheck.html',
+        params:{
+          obj:null
+        }
+
       });
   }
 })();
