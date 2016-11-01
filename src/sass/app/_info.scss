@@ -132,7 +132,8 @@ input.individual-iput,textarea.individual-iput{
 	margin-right:15px;
 	margin-left:4px;
 	font-weight:400;
-	text-align:right;
+	text-align:left;
+	min-width:85px;
 }
 #basic span,#basic span{
 	display:inline-block;

@@ -226,12 +226,12 @@
                     </div>
                     <div class="inner-box-child">
                       <label>形成时间</label>
-                      <input type="text" name="formationTime" ng-model="agent.formationTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
+                      <input type="text" name="formationTime" ng-model="agent.formationTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/" placeholder="YYYY/MM/DD">
                       <p class="help-block njdsq-p" ng-show="bssForm.formationTime.$error.required && submitbss">
                         请输入形成时间
                       </p>
                       <p class="help-block njdsq-p" ng-show="bssForm.formationTime.$error.pattern && submitbss">
-                        请输入正确的时间格式 如右所示:YYYY/MM/DD
+                        请输入正确的时间格式
                       </p>
                     </div></br>
                     <div class="inner-box-child">
