@@ -16,13 +16,13 @@
         </span>
     </td>
     <td>
-        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-required pattern="/^\+?[1-9]\d*$/">
-          {{ userone.fundingSum || '请输入数字'}}
+        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ userone.fundingSum || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-required>
-          {{ userone.fundingRatio || '请输入信息'}}
+        <span editable-text="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+          {{ userone.fundingRatio || '请输入百分比(%)'}}
         </span>
     </td>
     <td>

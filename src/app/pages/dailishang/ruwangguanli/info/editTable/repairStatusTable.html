@@ -11,13 +11,13 @@
     <td rowspan="2">操作</td>
   </tr>
   <tr class="info-tr">
-    <td>销量</td>
+    <td>销量(台)</td>
     <td>市场占有率(%)</td>
     <td>进厂台次</td>
-    <td>销量</td>
+    <td>销量(台)</td>
     <td>市场占有率(%)</td>
     <td>进厂台次</td>
-    <td>销量</td>
+    <td>销量(台)</td>
     <td>市场占有率(%)</td>
     <td>进厂台次</td>
   </tr>
@@ -33,48 +33,48 @@
         </span>
     </td>
     <td>
-        <span editable-number="user.fourteen.salesVolume" e-name="fourteenSalesVolume" e-form="userform" e-required>
-          {{ user.fourteen.salesVolume || '请输入数字'}}
+        <span editable-number="user.fourteen.salesVolume" e-name="fourteenSalesVolume" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.fourteen.salesVolume || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required>
-          {{ user.fourteen.marketShare || '请输入数字'}}
+        <span editable-text="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+          {{ user.fourteen.marketShare || '请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fourteen.several" e-name="fourteenSeveral" e-form="userform" e-required>
-          {{ user.fourteen.several || '请输入数字'}}
+        <span editable-number="user.fourteen.several" e-name="fourteenSeveral" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.fourteen.several || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fifteen.salesVolume" e-name="fifteenSalesVolume" e-form="userform" e-required>
-          {{ user.fifteen.salesVolume || '请输入数字'}}
+        <span editable-number="user.fifteen.salesVolume" e-name="fifteenSalesVolume" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.fifteen.salesVolume || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required>
-          {{ user.fifteen.marketShare || '请输入数字'}}
+        <span editable-text="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+          {{ user.fifteen.marketShare || '请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fifteen.several" e-name="fifteenSeveral" e-form="userform" e-required>
-          {{ user.fifteen.several || '请输入数字'}}
+        <span editable-number="user.fifteen.several" e-name="fifteenSeveral" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.fifteen.several || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.sixteen.salesVolume" e-name="sixteenSalesVolume" e-form="userform" e-required>
-          {{ user.sixteen.salesVolume || '请输入数字'}}
+        <span editable-number="user.sixteen.salesVolume" e-name="sixteenSalesVolume" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.sixteen.salesVolume || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required>
-          {{ user.sixteen.marketShare || '请输入数字'}}
+        <span editable-text="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+          {{ user.sixteen.marketShare || '请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.sixteen.several" e-name="sixteenSeveral" e-form="userform" e-required>
-          {{ user.sixteen.several || '请输入数字'}}
+        <span editable-number="user.sixteen.several" e-name="sixteenSeveral" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.sixteen.several || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
