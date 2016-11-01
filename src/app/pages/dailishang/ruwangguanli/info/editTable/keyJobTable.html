@@ -7,7 +7,7 @@
     <td>姓名</td>
     <td>年龄</td>
     <td>教育程度</td>
-    <td>汽车行业从业经验</td>
+    <td>汽车行业从业经验(年)</td>
     <td>操作</td>
   </tr>
   <tr ng-repeat="user in keyJob" class="editable-row">
@@ -22,8 +22,8 @@
         </span>
     </td>
     <td>
-        <span editable-number="user.age" e-name="age" e-form="userform" e-required>
-          {{ user.age || '请输入数字'}}
+        <span editable-number="user.age" e-name="age" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.age || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
@@ -32,8 +32,8 @@
         </span>
     </td>
     <td>
-        <span editable-number="user.Experience" e-name="Experience" e-form="userform" e-required>
-          {{ user.Experience || '请输入数字'}}
+        <span editable-number="user.Experience" e-name="Experience" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.Experience || '请输入大于0的数字'}}
         </span>
     </td>
     <td>

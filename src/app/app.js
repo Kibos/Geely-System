@@ -95,7 +95,7 @@ angular.module('BlurAdmin', [
         // default redirect if access is denied
         function accessDenied() {
             console.log('401');
-            $state.go('401');
+            $state.go('login');
         }
 
 

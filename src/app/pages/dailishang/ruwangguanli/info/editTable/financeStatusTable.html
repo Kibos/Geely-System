@@ -17,23 +17,23 @@
         </span>
     </td>
     <td>
-        <span editable-number="user.ASSET" e-name="ASSET" e-form="userform" e-required>
-          {{ user.ASSET || '请输入数字'}}
+        <span editable-number="user.ASSET" e-name="ASSET" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.ASSET || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.debt" e-name="debt" e-form="userform" e-required>
-          {{ user.debt || '请输入数字'}}
+        <span editable-number="user.debt" e-name="debt" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.debt || '请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.netMargin" e-name="netMargin" e-form="userform" e-required>
-          {{ user.netMargin || '请输入数字'}}
+        <span editable-text="user.netMargin" e-name="netMargin" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+          {{ user.netMargin || '请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.netProfit" e-name="netProfit" e-form="userform" e-required>
-          {{ user.netProfit || '请输入数字'}}
+        <span editable-number="user.netProfit" e-name="netProfit" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.netProfit || '请输入大于0的数字'}}
         </span>
     </td>
     <td>

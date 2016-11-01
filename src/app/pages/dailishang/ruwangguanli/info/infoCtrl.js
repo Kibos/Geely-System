@@ -27,14 +27,15 @@
           $scope._dbid = data._id;
           $scope.verifyDataSubmitting = data.verifyDataSubmitting;
           $scope._data = data;
-          if($scope._data.verifyDataSubmitting) {
+          if($scope._data.verifyDataSubmitting && $scope._data.shenheshibaiFlag!==true) {
             $scope.show="check1";
           }
           if($scope._data.isVerify) {
             $scope.show="check2";
           }
-          if($scope._data.notverify) {
+          if($scope._data.shenheshibaiFlag) {
             $scope.show="check3";
+            $scope.notInfo = data.applyId.verify[data.applyId.verify.length-1].opinion;
           }
           $scope.btnFlag = $scope.verifyDataSubmitting;
           ////////////////////////////////表格信息处理/////////////////////////////////////////////////////////////////////////
@@ -67,9 +68,12 @@
 
           //获取数据库中是否存有相关信息的标示
           // 基本信息
+
           if (data.basic){
              $scope._dbid = data._id;
               $scope.agent.companyName=data.basic.companyName?data.basic.companyName:'';
+              $scope.saveSuccess = false;
+
               $scope.agent.carBrand= data.basic.carBrand?data.basic.carBrand:'';
               $scope.agent.nature= data.basic.nature?data.basic.nature:'';
               $scope.agent.establishDate= data.basic.establishDate?data.basic.establishDate:'';
@@ -200,22 +204,39 @@
 
 
     $scope.verifyDataSubmittingBtn=function(){
+      var sureconfirm=window.confirm("请确认是否提交审核!");
+      if (sureconfirm==true)
+      {
+        if ($scope.shop.shenheshibaiFlag === false)
+        {
+          console.log('verifyDataSubmitting');
+          Audit.verifyDataSubmitting.save({shopId:$scope._dbid},function () {
+              $scope.verifyDataSubmitting = true;
+              $scope.saveSuccess = true;
 
-      if ($scope.shop.shenheshibaiFlag === false) {
-        console.log('verifyDataSubmitting');
-        Audit.verifyDataSubmitting.save({shopId:$scope._dbid})
-        $scope.verifyDataSubmitting = true;
-      } else {
-        console.log('reVerifyDataSub');
-        Audit.reVerifyDataSub.save({shopId:$scope._dbid})
-        $scope.verifyDataSubmitting = true;
+              $scope.show="check1";
+          })
+        }else{
+          console.log('reVerifyDataSub');
+          Audit.reVerifyDataSub.save({shopId:$scope._dbid},function () {
+              $scope.verifyDataSubmitting = true;
+              $scope.show="check1";
+              $scope.saveSuccess = true;
+
+          })
+
+        }
+      }else{
+        return;
       }
+      
 
 
     }
 
     $scope.someinfo = 'info';
     // 审核状态
+    $scope.saveSuccess = true;
 
     $scope.show="check0";
 
@@ -704,10 +725,10 @@
         console.log($scope.MFAform);
     }
 
-    //-------------------- 相关附件上传------------------------
-    // 提交审核
+    // 提交审核///////////////////////////////////////////////
+    // typeof($scope.basic)!='undefined' && typeof($scope.CSmessage)!='undefined' && typeof($scope.bss)!='undefined' && typeof($scope.newCP)!='undefined' && typeof($scope.fundings)!='undefined' && typeof($scope.MFAform)!='undefined'
     $scope.allSubmit=function(){
-      if (typeof($scope.basic)!='undefined' && typeof($scope.CSmessage)!='undefined' && typeof($scope.bss)!='undefined' && typeof($scope.newCP)!='undefined' && typeof($scope.fundings)!='undefined' && typeof($scope.MFAform)!='undefined')
+      if (typeof($scope.basic)!='undefined')
       {
         console.log("提交审核，表单验证通过")
         var allmessage={
@@ -735,12 +756,15 @@
         };
         // $scope.state=true;
         $scope.save='saveshow';
+        $scope.saveSuccess = false;
         //如果为真，则表示数据库存在，做update操作
         if($scope._dbid){
             Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
             console.log('updateBaseinfo')
             console.log(err);
             console.log(res);
+            //数据库的回调
+            // $scope.saveSuccess = false;
         })
         }else{
         Shop.baseinfo.save(allmessage,function(err, res) {

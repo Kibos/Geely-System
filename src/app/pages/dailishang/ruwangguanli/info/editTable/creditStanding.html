@@ -33,7 +33,7 @@
                 		<tr class="info-tr">
 						    <td>银行</td>
 						    <td>金额(万)</td>
-						    <td>附件</td>
+						    <td>详细信息</td>
 						    <td>操作</td>
 						</tr>
 						<tr ng-repeat="user in nowBankDeposit" class="editable-row">
@@ -43,13 +43,13 @@
 						        </span>
 						    </td>
 						    <td>
-						        <span editable-number="user.sum" e-name="sum" e-form="userform" e-required>
-						          {{ user.sum || '请输入数字'}}
+						        <span editable-number="user.sum" e-name="sum" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+						          {{ user.sum || '请输入大于0的数字'}}
 						        </span>
 						    </td>
 						    <td>
 						        <span editable-text="user.adjunct" e-name="adjunct" e-form="userform" e-required>
-						          {{ user.adjunct || '请输入信息'}}
+						          {{ user.adjunct || '请输入详细信息'}}
 						        </span>
 						    </td>
 						    <td>

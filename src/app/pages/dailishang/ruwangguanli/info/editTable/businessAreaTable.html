@@ -23,8 +23,8 @@
         </span>
     </td>
     <td>
-        <span editable-number="user.distance" e-name="distance" e-form="userform" e-required>
-          {{ user.distance || '请输入数字'}}
+        <span editable-number="user.distance" e-name="distance" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+          {{ user.distance || '请输入大于0的数字'}}
         </span>
     </td>
     <td>

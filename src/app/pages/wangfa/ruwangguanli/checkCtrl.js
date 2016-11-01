@@ -11,9 +11,18 @@
     /** @ngInject */
     function CheckCtrl($scope,$state,$stateParams,$rootScope,Auth,Audit,localStorageService, filesUrl , $upload, $timeout, Shop) {
       $scope.fileUrl = filesUrl.url;
-      var shop = $stateParams.obj;
+      var shop = $stateParams.obj.item;
       $scope.shop = shop;
       //$scope.store = shop.bss;
+      
+      //判断是否显示审核框
+      console.log($stateParams.obj.test);
+      $scope.showFlag = true;
+      if($stateParams.obj.test === '1'){
+        $scope.showFlag = false;
+      }else{
+        $scope.showFlag = true;
+      }
 
       if(shop){
         localStorageService.set('checkshop', shop);

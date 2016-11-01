@@ -24,10 +24,13 @@
           })
         }
         getNotVerifyShops()
-
+        $scope.chakan = function(item){
+          console.log('chakan');
+          $state.go('ba.rulisa.check',{obj:{item:item,test:"1"}})
+        }
         $scope.stateGo = function (item) {
           console.log('stateGo');
-          $state.go("ba.rulisa.check",{obj:item})
+          $state.go("ba.rulisa.check",{obj:{item:item,test:"2"}})
         }
         var state = [
           '开发经理审核',

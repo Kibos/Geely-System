@@ -12,18 +12,34 @@
   function acceptanceglCtrl($scope,$state) {
     $scope.smartTablePageSize = 5;
     $scope.xq = function(item){
-      if(item.state==='待提交申请'){
+      // if(item.state==='待提交申请'){
+      //   console.log("待提交验收申请");
+      //
+      // }else if(item.state==='待安排验收')
+      // {
+      //   $state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
+      //   console.log("待安排验收");
+      // }else if(item.state==='待提交整改申请'){
+      //   console.log("待提交整改申请");
+      // }else{
+      //   console.log("已完成验收");
+      // }
+      if (item.state==='待提交申请') {
         console.log("待提交验收申请");
-        // $state.go('ba.jiandianguanli.buildstorebtdetail',{obj:item});
-      }else if(item.state==='待安排验收')
-      {
-        $state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
-        console.log("待安排验收");
-      }else if(item.state==='待提交整改申请'){
-        console.log("待提交整改申请");
-      }else{
-        console.log("已完成验收");
+      }else {
+        if (item.state==='待安排验收') {
+          $state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
+          console.log("待安排验收");
+        }else {
+          if (item.state==='待提交整改申请') {
+            console.log("待提交整改申请");
+          }else {
+            console.log("已完成验收");
+          }
+        }
       }
+
+
 };
 
     $scope.acceptancelists=[
