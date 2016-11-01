@@ -9,7 +9,7 @@
     .controller('loginCtrl', loginCtrl);
 
   /** @ngInject */
-  function loginCtrl($state, Auth,toastr) {
+  function loginCtrl($state, Auth,toastr,$rootScope) {
     var vm = this;
 
     vm.user = {
@@ -43,7 +43,7 @@
           }else{
             showErrorMsg(err.message);
           }
-          
+
            vm.loginFail = true;
         });
     }
@@ -63,7 +63,7 @@
     function showErrorMsg(mgs) {
       toastr.error("登录失败", '错误');
     };
-    
+
     function showWarningMsg() {
       toastr.warning('请填写完整!', '提示');
     };
@@ -71,5 +71,10 @@
     function isUndefinedOrNull(value){
        return angular.isUndefined(value) || value === null};
     }
+
+
+
+
+
 
 })();

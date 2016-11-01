@@ -1,10 +1,34 @@
 'use strict';
 
 angular.module('BlurAdmin')
+
   .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q, redirectToUrlAfterLogin,PermRoleStore,PermPermissionStore,serverUrl) {
+    console.log('auth---init');
     var currentUser = {};
     if($cookieStore.get('token')) {
       currentUser = User.get();
+
+      console.log('cookies-----set-role');
+      PermPermissionStore
+            .definePermission('wangfa', function () {
+              return $cookieStore.get('role')==="admin";
+            });
+      PermPermissionStore
+            .definePermission('dailishang', function () {
+              return $cookieStore.get('role')==="user";
+            });
+      PermPermissionStore
+            .definePermission('gongyingshang', function () {
+              return $cookieStore.get('role')==="gonguser";
+            });
+      PermPermissionStore
+            .definePermission('shejichangshang', function () {
+              return $cookieStore.get('role')==="deuser";
+            });
+      PermPermissionStore
+            .definePermission('canlist',function(){
+                return true;
+            });
     }
     return {
 
@@ -30,6 +54,7 @@ angular.module('BlurAdmin')
           password: user.password
         }).
         success(function(data) {
+          console.log('loginClick----');
           console.log(data);
 
         // $cookieStore.remove('token');
@@ -38,6 +63,35 @@ angular.module('BlurAdmin')
 
           $cookieStore.put('token', data.token);
           $cookieStore.put('role', data.role);
+
+          console.log('~~~~~~~~~~~~permissionRun~~~~~~~~~~~~~~');
+          console.log($cookieStore.get('role'));
+
+
+                PermPermissionStore
+                      .definePermission('wangfa', function () {
+                        return data.role==="admin";
+                      });
+                PermPermissionStore
+                      .definePermission('dailishang', function () {
+                        return data.role==="user";
+                      });
+                PermPermissionStore
+                      .definePermission('gongyingshang', function () {
+                        return data.role==="gonguser";
+                      });
+                PermPermissionStore
+                      .definePermission('shejichangshang', function () {
+                        return data.role==="deuser";
+                      });
+                PermPermissionStore
+                      .definePermission('canlist',function(){
+                          return true;
+                      });
+
+
+
+
           currentUser = User.get();
           deferred.resolve(data);
           return cb();
