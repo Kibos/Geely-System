@@ -78,10 +78,12 @@ angular.module('BlurAdmin')
     var obj = {};
     obj.gongUser = $resource(serverUrl.url+'/api/users/gong/:_id', null, {'update': { method:'PUT' } });
     obj.daiUser = $resource(serverUrl.url+'/api/users/dai/:_id', null, {'update': { method:'PUT' } });
+    obj.sheUser = $resource(serverUrl.url+'/api/users/she/:_id', null, {'update': { method:'PUT' } });
+
     obj.updateUser = $resource(serverUrl.url+'/api/users/:id', null, {'update': { method:'PUT' } });
 
     //供应商角色下 与代理商之间的合同
-    obj.myContract = $resource(serverUrl.url+'/api/users/gong/contract/:id', null, {'update': { method:'PUT' } });
+    obj.myContract = $resource(serverUrl.url+'/api/users/gong/contract/:_id', null, {'update': { method:'PUT' } });
     return obj;
   }])
 ;

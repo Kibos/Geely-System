@@ -9,7 +9,7 @@
       .controller('acceptancesqCtrl', acceptancesqCtrl);
 
   /** @ngInject */
-  function acceptancesqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop, $filter, $http) {
+  function acceptancesqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop, $filter, $http,filesUrl) {
 
 
 
@@ -72,7 +72,7 @@
     $scope.uploadFile = function(file){
 
       file.upload = $upload.upload({
-        url: 'http://127.0.0.1:8080/api/files/updateFile',
+        url: filesUrl.url+'/api/files/updateFile',
         file: file
       });
 
@@ -111,14 +111,6 @@
 
 
 
-
-
-
-
-
-
-
-
   $scope.user = {
     id: 1,
     name: 'awesome user',
@@ -134,37 +126,7 @@
     {value: 4, text: 'status4'}
   ]; 
 
-
-
-
-
         console.log($scope.editableForm)
-
-
-
-
-
-
-
-
-
-
 
   }
 })();
-
-
-
-// promi。then（
-// ）
-
-// upload({url,file},function(err,data){
-//   Shop.updateBaseinfo({shopid,data},function(err,data){
-
-//   })
-// })
-
-// file.upd=upload({url.file})
-// file.upd.then(function(data){
-
-// })
