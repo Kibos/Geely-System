@@ -18,7 +18,6 @@
 
     console.log($scope.currentUser)
     // 保存提示
-    $scope.save='savehide';
     function getShop() {
       Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
           console.log(data);
@@ -182,8 +181,6 @@
 
           };
 
-
-
           // 组建架构筹备
           // 营销预测分析
           if (data.MFAform){
@@ -239,21 +236,22 @@
     $scope.basicInformation=function(BasicForm)
     {
     	$scope.submitbasic = true;
-    	$scope.basic = {
-    		companyName: $scope.agent.companyName,
-    		carBrand: $scope.agent.carBrand,
-    		nature: $scope.agent.nature,
-    		establishDate: $scope.agent.establishDate,
-    		registerCapital: $scope.agent.registerCapital,
-    		shopNumber: $scope.agent.shopNumber,
-    		sellSuffer: $scope.agent.sellSuffer,
-    		afterSale: $scope.agent.afterSale,
+      if (BasicForm.$valid){
+        $scope.basic = {
+        companyName: $scope.agent.companyName,
+        carBrand: $scope.agent.carBrand,
+        nature: $scope.agent.nature,
+        establishDate: $scope.agent.establishDate,
+        registerCapital: $scope.agent.registerCapital,
+        shopNumber: $scope.agent.shopNumber,
+        sellSuffer: $scope.agent.sellSuffer,
+        afterSale: $scope.agent.afterSale,
         legalRepresentative:$scope.agent.legalRepresentative
+      };
 
-    	};
-
-
-    	console.log($scope.basic);
+    }
+    console.log("代理商简述基本信息");
+    console.log($scope.basic);
 
 
     }
@@ -360,10 +358,14 @@
     $scope.creditStatus=function(CSMessageForm)
     {
         $scope.submitcreditStatus = true;
-        $scope.CSmessage={
+        if (CSMessageForm.$valid)
+        {
+          $scope.CSmessage={
            qualityRating: $scope.agent.qualityRating,
            XYDJPJbank: $scope.agent.XYDJPJbank
+          }
         }
+        
         console.log($scope.CSmessage);
     }
     // $scope.nowBankDeposit=[];
@@ -394,94 +396,94 @@
       $scope.financeStatusTable.push($scope.insertedcwbb);
     }
     // 市场情况
-    $scope.saloonCar=[
-        {
-            "competitiveBrand":"长安福特",
-            "storesNumber":"2",
-            "lastYearTotalSales":"60",
-            "lastYearMeanSalesVolume":"XXXX",
-            "lastYearBrandShare":"XXXX",
-            "CompetingModels":"福睿斯",
-            "CompetingModelsSales":"x,xx",
-            "CompetingModelsShare":"x.xx%"
-        },{
-            "competitiveBrand":"长安福特",
-            "storesNumber":"2",
-            "lastYearTotalSales":"60",
-            "lastYearMeanSalesVolume":"XXXX",
-            "lastYearBrandShare":"XXXX",
-            "CompetingModels":"福睿斯",
-            "CompetingModelsSales":"x,xx",
-            "CompetingModelsShare":"x.xx%"
-        },{
-            "competitiveBrand":"长安福特",
-            "storesNumber":"2",
-            "lastYearTotalSales":"60",
-            "lastYearMeanSalesVolume":"XXXX",
-            "lastYearBrandShare":"XXXX",
-            "CompetingModels":"福睿斯",
-            "CompetingModelsSales":"x,xx",
-            "CompetingModelsShare":"x.xx%"
-        }
-    ];
-    $scope.suvsaloonCar=[
-        {
-            "competitiveBrand":"长安福特",
-            "storesNumber":"2",
-            "lastYearTotalSales":"60",
-            "lastYearMeanSalesVolume":"XXXX",
-            "lastYearBrandShare":"XXXX",
-            "CompetingModels":"福睿斯",
-            "CompetingModelsSales":"x,xx",
-            "CompetingModelsShare":"x.xx%"
-        },{
-            "competitiveBrand":"长安福特",
-            "storesNumber":"2",
-            "lastYearTotalSales":"60",
-            "lastYearMeanSalesVolume":"XXXX",
-            "lastYearBrandShare":"XXXX",
-            "CompetingModels":"福睿斯",
-            "CompetingModelsSales":"x,xx",
-            "CompetingModelsShare":"x.xx%"
-        },{
-            "competitiveBrand":"长安福特",
-            "storesNumber":"2",
-            "lastYearTotalSales":"60",
-            "lastYearMeanSalesVolume":"XXXX",
-            "lastYearBrandShare":"XXXX",
-            "CompetingModels":"福睿斯",
-            "CompetingModelsSales":"x,xx",
-            "CompetingModelsShare":"x.xx%"
-        }
-    ];
+    // $scope.saloonCar=[
+    //     {
+    //         "competitiveBrand":"长安福特",
+    //         "storesNumber":"2",
+    //         "lastYearTotalSales":"60",
+    //         "lastYearMeanSalesVolume":"XXXX",
+    //         "lastYearBrandShare":"XXXX",
+    //         "CompetingModels":"福睿斯",
+    //         "CompetingModelsSales":"x,xx",
+    //         "CompetingModelsShare":"x.xx%"
+    //     },{
+    //         "competitiveBrand":"长安福特",
+    //         "storesNumber":"2",
+    //         "lastYearTotalSales":"60",
+    //         "lastYearMeanSalesVolume":"XXXX",
+    //         "lastYearBrandShare":"XXXX",
+    //         "CompetingModels":"福睿斯",
+    //         "CompetingModelsSales":"x,xx",
+    //         "CompetingModelsShare":"x.xx%"
+    //     },{
+    //         "competitiveBrand":"长安福特",
+    //         "storesNumber":"2",
+    //         "lastYearTotalSales":"60",
+    //         "lastYearMeanSalesVolume":"XXXX",
+    //         "lastYearBrandShare":"XXXX",
+    //         "CompetingModels":"福睿斯",
+    //         "CompetingModelsSales":"x,xx",
+    //         "CompetingModelsShare":"x.xx%"
+    //     }
+    // ];
+    // $scope.suvsaloonCar=[
+    //     {
+    //         "competitiveBrand":"长安福特",
+    //         "storesNumber":"2",
+    //         "lastYearTotalSales":"60",
+    //         "lastYearMeanSalesVolume":"XXXX",
+    //         "lastYearBrandShare":"XXXX",
+    //         "CompetingModels":"福睿斯",
+    //         "CompetingModelsSales":"x,xx",
+    //         "CompetingModelsShare":"x.xx%"
+    //     },{
+    //         "competitiveBrand":"长安福特",
+    //         "storesNumber":"2",
+    //         "lastYearTotalSales":"60",
+    //         "lastYearMeanSalesVolume":"XXXX",
+    //         "lastYearBrandShare":"XXXX",
+    //         "CompetingModels":"福睿斯",
+    //         "CompetingModelsSales":"x,xx",
+    //         "CompetingModelsShare":"x.xx%"
+    //     },{
+    //         "competitiveBrand":"长安福特",
+    //         "storesNumber":"2",
+    //         "lastYearTotalSales":"60",
+    //         "lastYearMeanSalesVolume":"XXXX",
+    //         "lastYearBrandShare":"XXXX",
+    //         "CompetingModels":"福睿斯",
+    //         "CompetingModelsSales":"x,xx",
+    //         "CompetingModelsShare":"x.xx%"
+    //     }
+    // ];
     // 区域代理商排名
-    $scope.RegionalAgents=[
-        {
-            "ranking":1,
-            "dealerGroupName":"xxxx",
-            "pitNum":"12"
-        },{
-            "ranking":2,
-            "dealerGroupName":"xxxx",
-            "pitNum":"12"
-        },{
-            "ranking":3,
-            "dealerGroupName":"xxxx",
-            "pitNum":"12"
-        },{
-            "ranking":4,
-            "dealerGroupName":"xxxx",
-            "pitNum":"12"
-        },{
-            "ranking":5,
-            "dealerGroupName":"xxxx",
-            "pitNum":"12"
-        },{
-            "ranking":6,
-            "dealerGroupName":"xxxx",
-            "pitNum":"12"
-        },
-    ]
+    // $scope.RegionalAgents=[
+    //     {
+    //         "ranking":1,
+    //         "dealerGroupName":"xxxx",
+    //         "pitNum":"12"
+    //     },{
+    //         "ranking":2,
+    //         "dealerGroupName":"xxxx",
+    //         "pitNum":"12"
+    //     },{
+    //         "ranking":3,
+    //         "dealerGroupName":"xxxx",
+    //         "pitNum":"12"
+    //     },{
+    //         "ranking":4,
+    //         "dealerGroupName":"xxxx",
+    //         "pitNum":"12"
+    //     },{
+    //         "ranking":5,
+    //         "dealerGroupName":"xxxx",
+    //         "pitNum":"12"
+    //     },{
+    //         "ranking":6,
+    //         "dealerGroupName":"xxxx",
+    //         "pitNum":"12"
+    //     },
+    // ]
     // ---------------------拟建店简述------------------------
     $scope.btn2="btn21";
     $scope.locations=[
@@ -501,7 +503,8 @@
     $scope.buildStoreSite=function(bssForm)
     {
         $scope.submitbss = true;
-        $scope.bss = {
+        if (bssForm.$valid){
+          $scope.bss = {
             tradeArea: $scope.agent.tradeArea,
             address: $scope.agent.address,
             locations: $scope.agent.locations,
@@ -536,7 +539,9 @@
             overallHeight: $scope.agent.overallHeight,
             showcaseHeight: $scope.agent.showcaseHeight,
             afterSaleBuildArea: $scope.agent.afterSaleBuildArea
+          }
         }
+        
         console.log($scope.bss);
     }
     // 建店城市商圈
@@ -579,7 +584,8 @@
     $scope.newCompanyPrepare=function(newCPForm)
     {
         $scope.submitnewCP = true;
-        $scope.newCP = {
+        if (newCPForm.$valid){
+          $scope.newCP={
             LPstatus: $scope.agent.LPstatus,
             companyName: $scope.agent.companyName,
             registeredAddress: $scope.agent.registeredAddress,
@@ -587,7 +593,9 @@
             MaintenanceQualification: $scope.agent.MaintenanceQualification,
             registrationTime: $scope.agent.registrationTime,
             rirmRegisteredAddress: $scope.agent.rirmRegisteredAddress
+          }
         }
+        
         console.log($scope.newCP);
     }
     // 新公司股权结构
@@ -608,8 +616,9 @@
     // 资金筹备
     $scope.funding=function(fundingForm){
         $scope.submitfunding=true;
-        // console.log($scope.agent.stream.OwnSum);
-        $scope.fundings={
+        if (fundingForm.$valid)
+        {
+          $scope.fundings={
 
                 fixationOwnSum:$scope.agent.fixationOwnSum,
                 fixationOwnArriveTime:$scope.agent.fixationOwnArriveTime,
@@ -639,9 +648,9 @@
                 mentionModelsSum:$scope.agent.mentionModelsSum,
                 mentionModelsArriveTime:$scope.agent.mentionModelsArriveTime,
                 mentionModelsRemark:$scope.agent.mentionModelsRemark
+            }
         }
         console.log($scope.fundings);
-
     }
     // 店面建设计划
     $scope.delStoreConstructionPlan = function(index) {
@@ -683,19 +692,24 @@
     $scope.MarkeMarketDog=function(marketAnalyzeForm)
     {
         $scope.submitMFA=true;
-        $scope.MFAform={
+        if (marketAnalyzeForm.$valid){
+          $scope.MFAform={
             salesTarget:$scope.agent.salesTarget,
             forecastOne:$scope.agent.forecastOne,
             forecastTwo:$scope.agent.forecastTwo,
             marketingAnalysis:$scope.agent.marketingAnalysis
+          }
         }
+        
         console.log($scope.MFAform);
     }
 
     //-------------------- 相关附件上传------------------------
     // 提交审核
     $scope.allSubmit=function(){
-
+      if (typeof($scope.basic)!='undefined' && typeof($scope.CSmessage)!='undefined' && typeof($scope.bss)!='undefined' && typeof($scope.newCP)!='undefined' && typeof($scope.fundings)!='undefined' && typeof($scope.MFAform)!='undefined')
+      {
+        console.log("提交审核，表单验证通过")
         var allmessage={
             basic:$scope.basic,
             SharesConstitute:$scope.SharesConstitute,
@@ -735,6 +749,13 @@
             console.log(res);
         })
         }
+
+
+
+      }else{
+        $scope.save='savehide';
+      }
+        
     }
     // 表单状态
     $scope.formstate=function(){
