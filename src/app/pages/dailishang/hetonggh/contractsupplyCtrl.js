@@ -33,8 +33,10 @@
     $scope.radioClick=function(){
       if($scope.formData.radio=='true'){
           $scope.isOptional.show=true;
+          $scope.reSelect = true
       }else{
           $scope.isOptional.show=false;
+          $scope.Inp = true;
       }
     };
     // 显示与隐藏
@@ -43,6 +45,7 @@
 
     var obj={};
     $scope.saveClick=function(){
+      $scope.Flag = true;
       $scope.mark=!$scope.mark;
       $scope.flag=!$scope.flag;
       obj=Auth.getCurrentUser();
