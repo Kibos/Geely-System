@@ -9,7 +9,7 @@
   <tr ng-repeat="user in BSbusinessArea" class="editable-row">
     <td>
         <span>
-          {{ user.proposed}}
+          {{ user.proposed  && "是" || "否"}}
         </span>
     </td>
     <td>

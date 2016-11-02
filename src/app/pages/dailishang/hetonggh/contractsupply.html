@@ -172,7 +172,7 @@
               <label class="col-md-2"></label>
               <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
               <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;态</label>
-              <label class="col-md-2">附&nbsp;&nbsp;&nbsp;&nbsp;件</label>
+              <label class="col-md-3">附&nbsp;&nbsp;&nbsp;&nbsp;件</label>
               <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;作</label>
             </div>
             <div class="hetong" ng-repeat="item in process">
@@ -182,6 +182,16 @@
               </label>
               <label class="col-md-2">{{item.steps}}</label>
               <label class="col-md-2"><button class="btn btn-info">{{item.states}}</button></label>
+              <!-- <div class="col-md-2">
+                <div ngAccept=“jpeg” ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'jzcfhxFile')" class="dropzone"
+                    drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+                    accept="" style="font-weight:normal;display:inline-block;width:50px;">上传文件</div>
+                <img ng-if="shop.jzcfhxFile[0]" height="200" width="200" ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[0]}}"  alt="" /><br>
+                <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[0]}}">{{shop.jzcfhxFile[0]}}</a> </label>
+                <div>
+                <button type="button" ng-if="shop.jzcfhxFile[0]" class="btn btn-primary" ng-click="vm.removeFile('jzcfhxFile',0)" ng-disabled="formstate()" sytle="">删除</button>
+                </div>
+              </div> -->
               <label class="col-md-2" style="font-weight:normal"><input type="file" id="inputfile" ng-model="file" ng-disabled="flag"></label>
               <label class="col-md-3"><button class="btn btn-info">提交</button></label>
             </div>
