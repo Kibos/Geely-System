@@ -172,7 +172,7 @@
               <label class="col-md-2"></label>
               <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
               <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;态</label>
-              <label class="col-md-2">附&nbsp;&nbsp;&nbsp;&nbsp;件</label>
+              <label class="col-md-3">附&nbsp;&nbsp;&nbsp;&nbsp;件</label>
               <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;作</label>
             </div>
             <div class="hetong" ng-repeat="item in process">
@@ -181,6 +181,7 @@
                 <hr class="processhr"></hr>
               </label>
               <label class="col-md-2">{{item.steps}}</label>
+
               <label class="col-md-2">
                 <button class="btn"
                         ng-class="{true:'btn-info',false:'btn-waring'}[item.bool]">
@@ -196,6 +197,7 @@
                   <span>提&nbsp;交</span>
                 </button>
               </label>
+
             </div>
             <div class="hetonglast">
               <label class="col-md-1"><div ng-class="{true:'processed',false:'process'}[last.bool]"><span>{{last.num}}</span></div></label>
