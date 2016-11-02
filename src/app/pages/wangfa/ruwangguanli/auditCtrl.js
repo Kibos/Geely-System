@@ -75,7 +75,7 @@
         $scope.tongzhishoplists = [];
         $scope.tongzhishoplists_data = [];
         function gettongzhishoplists() {
-          Shop.getShopByQuery.query({isVerify:true},function(data){
+          Shop.getShopByQuery.query({isVerify:true,shenheshibaiFlag:false},function(data){
             console.log('通知');
             console.log(data);
             $scope.tongzhishoplists_data = data;
@@ -88,7 +88,7 @@
         $scope.notVerifyedshoplists = [];
         $scope.notVerifyedshoplists_data = [];
         function getnotVerifyedshoplists() {
-          Shop.getShopByQuery.query({shenheshibaiFlag:true},function(data){
+          Shop.getShopByQuery.query({isVerify:true,shenheshibaiFlag:true},function(data){
             console.log(data);
             $scope.notVerifyedshoplists_data = data;
             // $scope.shoplists = data;
