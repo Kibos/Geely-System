@@ -19,11 +19,11 @@
    var entries =RoleUser.daiUser.query(function() {
         console.log("++++>>>"+entries.length);
 
-    let flag = false;
-    for(let i=0;i<entries.length;i++){
+    var flag = false;
+    for(var i=0;i<entries.length;i++){
       flag = false;
      if(entries[i].user.status.length>=3){
-        for(let j=0;j<entries[i].user.status.length;j++){
+        for(var j=0;j<entries[i].user.status.length;j++){
           if($scope.status[entries[i].user.status.length]=="已完成验收"){
               $scope.acceptancelist1s.push(entries[i]);
               flag=true;
@@ -43,7 +43,7 @@
 
 
     $scope.xq = function(item){
-    let temp=item.user.status;
+    var temp=item.user.status;
     switch(temp.length||0){
       case 0: console.log("待提交验收申请"); break;
       case 1: 

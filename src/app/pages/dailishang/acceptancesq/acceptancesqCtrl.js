@@ -19,7 +19,6 @@
 
     Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
         console.log(data);
-              // console.log(data);
         $scope._dbid = data._id;
         $scope.yanshouFile = data.yanshouFile;
 
