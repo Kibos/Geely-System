@@ -177,20 +177,44 @@
             </div>
             <div class="hetong" ng-repeat="item in process">
               <label class="col-md-1">
-                <div class="process"><span ng-model="item.nums">{{item.nums}}</span></div>
+                <div ng-class="{true:'processed',false:'process'}[item.bool]"><span ng-model="item.nums">{{item.nums}}</span></div>
                 <hr class="processhr"></hr>
               </label>
               <label class="col-md-2">{{item.steps}}</label>
-              <label class="col-md-2"><button class="btn btn-info">{{item.states}}</button></label>
-              <label class="col-md-2" style="font-weight:normal"><input type="file" id="inputfile" ng-model="file" ng-disabled="flag"></label>
-              <label class="col-md-3"><button class="btn btn-info">提交</button></label>
+              <label class="col-md-2">
+                <button class="btn"
+                        ng-class="{true:'btn-info',false:'btn-waring'}[item.bool]">
+                        {{item.states}}
+                </button>
+              </label>
+              <label class="col-md-2" style="font-weight:normal"><input type="file" id="inputfile" ng-model="file" ng-disabled="item.bool"></label>
+              <label class="col-md-3">
+                <button class="btn btn-info"  ng-show="item.bool" disabled>
+                  <span>已提交</span>
+                </button>
+                <button class="btn btn-info" ng-show="!item.bool">
+                  <span>提&nbsp;交</span>
+                </button>
+              </label>
             </div>
             <div class="hetonglast">
-              <label class="col-md-1"><div class="process"><span>{{nums[4]}}</span></div></label>
-              <label class="col-md-2">{{steps[4]}}</label>
-              <label class="col-md-2"><button class="btn btn-info">{{states[4]}}</button></label>
-              <label class="col-md-2" style="font-weight:normal"><input type="file" id="inputfile" ng-model="file" ng-disabled="flag"></label>
-              <label class="col-md-3"><button class="btn btn-info">提交</button></label>
+              <label class="col-md-1"><div ng-class="{true:'processed',false:'process'}[last.bool]"><span>{{last.num}}</span></div></label>
+              <label class="col-md-2">{{last.steps}}</label>
+              <label class="col-md-2">
+                <button class="btn"
+                        ng-class="{true:'btn-info',false:'btn-waring'}[last.bool]">
+                        {{last.states}}
+                </button>
+              </label>
+              <label class="col-md-2" style="font-weight:normal"><input type="file" id="inputfile" ng-model="file" ng-disabled="last.bool"></label>
+              <label class="col-md-3">
+                <button class="btn btn-info"  ng-show="last.bool" disabled>
+                  <span>已提交</span>
+                </button>
+                <button class="btn btn-info" ng-show="!last.bool">
+                  <span>提&nbsp;交</span>
+                </button>
+              </label>
             </div>
 
             <center><button class="btn btn-info btn-lg" ng-click="" style="margin-top:10px;" >确认</button></center>
