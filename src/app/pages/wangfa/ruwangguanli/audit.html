@@ -38,7 +38,7 @@
 			    </thead>
 			    <tbody>
 				    <tr ng-repeat="item in shoplists" class="editable-tr-wrap">
-				      <td class="table-id">{{item.shopId}}</td>
+				      <td class="table-id">{{$index+1}}</td>
 				      <!-- <td>{{item.area}}</td> -->
 				      <td>{{item.basic.companyName}}</td>
 				      <td>{{item.shopApplyUserId.name}}</td>
@@ -79,7 +79,7 @@
 			    </thead>
 			    <tbody>
             <tr ng-repeat="item in notVerifyedshoplists" class="editable-tr-wrap">
-				      <td class="table-id">{{item.shopId}}</td>
+				      <td class="table-id">{{$index+1}}</td>
 				      <!-- <td>{{item.area}}</td> -->
 				      <td>{{item.basic.companyName}}</td>
 				      <td>{{item.shopApplyUserId.name}}</td>
@@ -119,7 +119,7 @@
 			    </thead>
 			    <tbody>
 				    <tr ng-repeat="item in tongzhishoplists" class="editable-tr-wrap">
-              <td class="table-id">{{item.shopId}}</td>
+              <td class="table-id">{{$index+1}}</td>
 				      <!-- <td>{{item.area}}</td> -->
               			<td>{{item.basic.companyName}}</td>
 				      	<td>{{item.shopApplyUserId.name}}</td>

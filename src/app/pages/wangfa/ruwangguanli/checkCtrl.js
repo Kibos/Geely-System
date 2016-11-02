@@ -14,7 +14,7 @@
       var shop = $stateParams.obj.item;
       $scope.shop = shop;
       //$scope.store = shop.bss;
-      
+
       //判断是否显示审核框
       console.log($stateParams.obj.test);
       $scope.showFlag = true;
@@ -127,7 +127,7 @@
           }
         }
 
-     $scope.checkLog = shop.applyId.verify.slice(1)
+     $scope.checkLog = shop.applyId.verifyHistory.concat(shop.applyId.verify.slice(1));
      $scope.isornotinfo = function (bl) {
        if(bl){
          return '通过'

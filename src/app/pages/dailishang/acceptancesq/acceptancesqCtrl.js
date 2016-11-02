@@ -27,7 +27,7 @@
 
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
-    $scope.agent='杭州风景';
+
     $scope.submit=function (){
       // $state.go('components.acceptanceCheck');
       var acceptance={
@@ -110,23 +110,6 @@
 
 
 
-
-  $scope.user = {
-    id: 1,
-    name: 'awesome user',
-    status: 2,
-    group: 4,
-    groupName: 'admin'
-  }; 
-
-  $scope.statuses = [
-    {value: 1, text: 'status1'},
-    {value: 2, text: 'status2'},
-    {value: 3, text: 'status3'},
-    {value: 4, text: 'status4'}
-  ]; 
-
-        console.log($scope.editableForm)
 
   }
 })();
