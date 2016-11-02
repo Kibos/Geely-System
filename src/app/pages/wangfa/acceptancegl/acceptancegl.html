@@ -16,7 +16,7 @@
                 </select>
               </label>
             </div>
-            <table class="table" st-table="acceptancelists">
+            <table class="table" st-table="$scope.acceptancelists">
               <thead>
               <tr class="sortable ">
                 <!-- <th class="table-id" st-sort="id" st-sort-default="true">编号</th> -->
@@ -40,10 +40,10 @@
               <tbody>
               <tr ng-repeat="item in acceptancelists">
                 <!-- <td class="table-id">{{item.id}}</td> -->
-                <td class="table-id">{{item.agent}}</td>
-                <td>{{item.type}}</td>
-                <td>{{item.area}}</td>
-                <td>{{item.state}}</td>
+                <td class="table-id">{{item.name}}</td>
+                <td>{{item.type||'A级4S店'}}</td>
+                <td>{{item.address||""}}</td>
+                <td>{{status[item.user.status.length||0]}}</td>
                 <td><a href="" ng-click="xq(item)" >详情</a></td>
               </tr>
               </tbody>
@@ -72,7 +72,7 @@
                 </select>
               </label>
             </div>
-            <table class="table" st-table="acceptancelist1s">
+            <table class="table" st-table="$scope.acceptancelist1s">
               <thead>
               <tr class="sortable ">
                 <!-- <th class="table-id" st-sort="id" st-sort-default="true">编号</th> -->
@@ -96,10 +96,10 @@
               <tbody>
               <tr ng-repeat="item in acceptancelist1s">
                 <!-- <td class="table-id">{{item.id}}</td> -->
-                <td class="table-id">{{item.agent}}</td>
-                <td>{{item.type}}</td>
-                <td>{{item.area}}</td>
-                <td>{{item.state}}</td>
+                      <td class="table-id">{{item.name}}</td>
+                <td>{{item.type||'A级4S店'}}</td>
+                <td>{{item.address||""}}</td>
+                <td>{{status[4]}}</td>
                 <td><a href="" ng-click="xq(item)" >详情</a></td>
               </tr>
               </tbody>
