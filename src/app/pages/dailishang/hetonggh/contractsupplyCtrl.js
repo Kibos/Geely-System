@@ -95,23 +95,21 @@
 
       }
 
-
-
     // };
 
-    // 步骤状态
-    /*合同供货流程 */
-    // $scope.nums =[{bool:false},{bool:true},{bool:false},{bool:false},{bool:false},{bool:false}];
-    $scope.nums=['1','2','3','4','5'];
-    $scope.steps=['合同上传','首付款凭证','供货商发货','供货商到货确认','供货商安装完成确认'];
-    $scope.states=['合同已上传备案','首付款凭证已上传','供应商已发货','供应商已完成到货确认','供应商已完成安装确认'];
-
+    /*合同供货流程 步骤状态*/
+    //ng-repeat
     $scope.process = [
-    {nums:'1',steps:'合同上传',states:'合同已上传备案'},
-    {nums:'2',steps:'首付款凭证',states:'首付款凭证已上传'},
-    {nums:'3',steps:'供货商发货',states:'供应商已发货'},
-    {nums:'4',steps:'供货商到货确认',states:'供应商已完成到货确认'},
+    {nums:'1',steps:'合同上传',states:' 合同已上传备案 ',bool:true},
+    {nums:'2',steps:'首付款凭证',states:' 首付款凭证已上传 ',bool:true},
+    {nums:'3',steps:'供货商发货',states:'供 应 商 已 发 货',bool:true},
+    {nums:'4',steps:'供货商到货确认',states:'供应商已完成到货确认',bool:false},
   ];
+  //最后一个步骤
+    $scope.last = {
+      num:'5',steps:'供货商安装完成确认',states:'供应商已完成安装确认',bool:false
+    };
+
 
 
     $scope.getSuppID=function(){

@@ -1,11 +1,26 @@
-.process{
+.processed{
          width:50px;
          height:50px;
          background-color:#00BFFF;
          border-radius:25px;
          margin-top:0px;
 }
+.process{
+         width:50px;
+         height:50px;
+         background-color:#9370DB;
+         border-radius:25px;
+         margin-top:0px;
+}
 .process span{
+         height:50px;
+         line-height:50px;
+         display:block;
+         color:#FFF;
+         text-align:center;
+         font-size:16px;
+}
+.processed span{
          height:50px;
          line-height:50px;
          display:block;
@@ -39,7 +54,7 @@
          display:inline-block;
          transform:translateY(-50px);
 }
-.hetonglast .process{
+.hetonglast .processed{
          width:50px;
          height:50px;
          background-color:#00BFFF;
