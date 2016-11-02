@@ -12,6 +12,17 @@
       <p class="savats" ng-class="{savashow:save=='saveshow'}">信息保存成功!</p>
       <p class="savats" ng-class="{savashow:save=='savehide'}">请把表单信息补充完整后再提交信息!</p>
 </div>
+<!-- showmask:masklayer=='masklayer1' -->
+<div class="mask-layer" ng-class="{true:'maskshow',false:'maskhide'}[masklayer]">
+  <div class="toolTip-box">
+    <div class="toolTip-tit">确认要提交审核吗?</div>
+    <div class="toolTip-btn">
+      <button ng-click="toolTip('affirm')" class="btn btn-danger btnqr">确认</button>
+      <button ng-click="toolTip('cancel')" class="btn btn-primary">取消</button>
+   </div>
+  </div>
+</div>
+ 
 <uib-tabset active="$tabSetStatus.activeTab">
 <!-- ————————————————————代理商简述——————————————————————————— -->
   <uib-tab heading="代理商简述">
@@ -207,7 +218,7 @@
                 </p>
               </div>
               <div class="form-group">
-                <label class="info-lab">拟建店详细地址</label>
+                <label class="info-lab">拟建店位置</label>
                 <select name="locations" ng-model="agent.locations" ng-options="item.id as item.text for item in locations" ng-disabled="formstate()" required>
                 </select>
                 <p class="help-block njdsq-p" ng-show="bssForm.locations.$error.required && submitbss">

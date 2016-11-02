@@ -21,7 +21,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+        <span editable-text="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
           {{ userone.fundingRatio || '请输入百分比(%)'}}
         </span>
     </td>

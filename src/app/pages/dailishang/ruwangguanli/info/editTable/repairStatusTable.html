@@ -38,7 +38,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+        <span editable-text="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
           {{ user.fourteen.marketShare || '请输入百分比(%)'}}
         </span>
     </td>
@@ -53,7 +53,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+        <span editable-text="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
           {{ user.fifteen.marketShare || '请输入百分比(%)'}}
         </span>
     </td>
@@ -68,7 +68,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+        <span editable-text="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
           {{ user.sixteen.marketShare || '请输入百分比(%)'}}
         </span>
     </td>

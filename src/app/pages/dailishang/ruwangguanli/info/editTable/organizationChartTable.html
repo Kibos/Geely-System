@@ -4,7 +4,7 @@
             <label class="info-lab">组织架构筹备</label>
             <div ng-file-drop ng-file-select ng-model="vm.files" ng-click="fileIndex(0,'organizationChart')" class="dropzone"
                 drag-over-class="dragover" ng-multiple="true" allow-dir="true"
-                accept="">点击上传文件</div>
+                accept="" ng-disabled="formstate()">点击上传文件</div>
             <div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
             <label class="info-lab"> <a href="{{vm.fileUrl}}/public/files/{{shop.organizationChart[0]}}">{{shop.organizationChart[0]}}</a> </label>
             <div>

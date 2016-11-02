@@ -19,7 +19,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required e-pattern="((\d+\.?\d*)|(\d*\.\d+))\%">
+        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
           {{ user.shark || '请输入百分比(%)'}}
         </span>
     </td>

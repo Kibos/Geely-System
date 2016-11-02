@@ -16,7 +16,7 @@
     // console.log('info-start');
     $scope.currentUser = Auth.getCurrentUser();
 
-    console.log($scope.currentUser)
+    console.log($scope.currentUser);
     // 保存提示
     function getShop() {
       Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
@@ -202,10 +202,12 @@
 
 
 
-
-    $scope.verifyDataSubmittingBtn=function(){
-      var sureconfirm=window.confirm("请确认是否提交审核!");
-      if (sureconfirm==true)
+    // 审核确认提示
+    $scope.masklayer=false;
+    // 审核确认信息按钮
+     $scope.toolTip=function(start)
+    {
+      if (start=='affirm')
       {
         if ($scope.shop.shenheshibaiFlag === false)
         {
@@ -216,7 +218,8 @@
 
               $scope.show="check1";
           })
-        }else{
+        }
+        else{
           console.log('reVerifyDataSub');
           Audit.reVerifyDataSub.save({shopId:$scope._dbid},function () {
               $scope.verifyDataSubmitting = true;
@@ -227,12 +230,17 @@
 
         }
       }else{
+        $scope.masklayer=false;
         return;
       }
+      $scope.masklayer=false;
       
-
-
     }
+    $scope.verifyDataSubmittingBtn=function(){
+      $scope.masklayer=true;
+    }
+    
+
 
     $scope.someinfo = 'info';
     // 审核状态
