@@ -184,7 +184,7 @@
       // .state('ba.yunyingguanli.hezuoshangliebiao', {
       //   url: '/yunyingguanli.hezuoshangliebiao',
       //   template: '<div></div>',
-      //     title: '合作商列表',
+      //     title: '代理商列表',
       //     sidebarMeta: {
       //       icon: 'ion-ios-pulse',
       //       order: 100,

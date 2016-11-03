@@ -37,7 +37,7 @@
         // .state('ba.xinxiweihu', {
         //   url: '/xinxiweihu',
         //   template : '<ui-view></ui-view>',
-        //   title: '合作商信息维护',
+        //   title: '代理商信息维护',
         //   sidebarMeta: {
         //     icon: 'ion-gear-a',
         //     order: 100,
