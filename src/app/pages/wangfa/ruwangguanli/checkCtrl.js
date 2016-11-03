@@ -66,7 +66,7 @@
         }
         // todo add role to info
         var isVerify = false;
-        if(state[shop.applyId.verify.length-1]==='合作商入网审批'){
+        if(state[shop.applyId.verify.length-1]==='合作商入网审批' && flag){
           isVerify = true;
         }
         var verInfo = {

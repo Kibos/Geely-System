@@ -88,7 +88,7 @@
         $scope.notVerifyedshoplists = [];
         $scope.notVerifyedshoplists_data = [];
         function getnotVerifyedshoplists() {
-          Shop.getShopByQuery.query({isVerify:true,shenheshibaiFlag:true},function(data){
+          Shop.getShopByQuery.query({isVerify:false,shenheshibaiFlag:true},function(data){
             console.log(data);
             $scope.notVerifyedshoplists_data = data;
             // $scope.shoplists = data;
