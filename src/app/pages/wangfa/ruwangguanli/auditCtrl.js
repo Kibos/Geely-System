@@ -38,14 +38,18 @@
           '实地考察审核（上传评估报告)',
           '内部评审会',
           '陈述会结果审核',
-          '合作商入网审批'
+          '代理商入网审批'
         ]
         $scope.test = function (item) {
 
           return state[item.length-1];
 
         }
+        $scope.nottest = function (item) {
 
+          return item.verifyHistory[item.verifyHistory.length-1].info;
+
+        }
         $scope.spliceTime = function (time) {
           return time.slice(0,10)
         }
@@ -97,192 +101,9 @@
         }
         getnotVerifyedshoplists()
 
-
-        // $scope.applicants=[
-        //  {
-        //      id:1,
-        //      area:'北京',
-        //      company:'维擎科技',
-        //      person:'黎明',
-        //      phone:'123456789',
-        //      state:'未通过',
-        //      date:'20161006',
-        //  },
-        //  {
-        //      id:2,
-        //      area:'北京',
-        //      company:'维擎科技',
-        //      person:'黎明',
-        //      phone:'123456789',
-        //      state:'未通过',
-        //      date:'20161006',
-        //  },
-        //  {
-        //      id:1,
-        //      area:'北京',
-        //      company:'维擎科技',
-        //      person:'黎明',
-        //      phone:'123456789',
-        //      state:'未通过',
-        //      date:'20161006',
-        //  },
-        //  {
-        //      id:3,
-        //      area:'北京',
-        //      company:'维擎科技',
-        //      person:'黎明',
-        //      phone:'123456789',
-        //      state:'未通过',
-        //      date:'20161006',
-        //  },
-        //  {
-        //      id:1,
-        //      area:'北京',
-        //      company:'维擎科技',
-        //      person:'黎明',
-        //      phone:'123456789',
-        //      state:'未通过',
-        //      date:'20161006',
-        //  },
-        //  {
-        //      id:4,
-        //      area:'北京',
-        //      company:'维擎科技',
-        //      person:'黎明',
-        //      phone:'123456789',
-        //      state:'未通过',
-        //      date:'20161006',
-        //  },
-        //  {
-        //      id:5,
-        //      area:'北京',
-        //      company:'维擎科技',
-        //      person:'黎明',
-        //      phone:'123456789',
-        //      state:'未通过',
-        //      date:'20161006',
-        //  }
-        //
-        // ]
-
-
-
-
-        $scope.applicants2=[
-            {
-                id:1,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-            },
-            {
-                id:2,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-            },
-            {
-                id:1,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-            },
-            {
-                id:3,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-            },
-            {
-                id:1,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-            },
-            {
-                id:4,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-            },
-            {
-                id:5,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-            }
-
-        ]
-
-        $scope.applicants3=[
-            {
-                id:5,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-                operate:'通知'
-            },
-            {
-                id:1,
-                area:'北京',
-                company:'维擎科技',
-                person:'黎明',
-                phone:'123456789',
-                state:'未通过',
-                date:'20161006',
-                operate:'查看'
-            }
-            ]
-          // $scope.tongzhishoplists = [];
-          // $scope.tongzhishoplists_data = [];
-          // function gettongzhishoplists() {
-          //   Shop.getShopByQuery.query({isVerify:true},function(data){
-          //     console.log(data);
-          //     $scope.tongzhishoplists_data = data;
-          //     // $scope.shoplists = data;
-          //
-          //   })
-          // }
-          // gettongzhishoplists()
-
-
         $scope.stateGo1 = function (operate) {
          console.log(operate);
                      $state.go('ba.rulisa.inform');
-        //  if (operate === '通知') {
-        //
-        //      console.log('tongzhi')
-        //
-        //      $state.go('ba.rulisa.inform');
-        //  } else {
-        //      console.log('chakan')
-        //
-        //      $state.go('ba.rulisa.viewDetails');
-        //  }
         }
 
   }

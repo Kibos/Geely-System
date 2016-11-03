@@ -35,7 +35,7 @@
           }
           if($scope._data.shenheshibaiFlag) {
             $scope.show="check3";
-            $scope.notInfo = data.applyId.verify[data.applyId.verify.length-1].opinion;
+            $scope.notInfo = data.applyId.verifyHistory[data.applyId.verifyHistory.length-1].opinion;
           }
           $scope.btnFlag = $scope.verifyDataSubmitting;
           ////////////////////////////////表格信息处理/////////////////////////////////////////////////////////////////////////
@@ -234,12 +234,12 @@
         return;
       }
       $scope.masklayer=false;
-      
+
     }
     $scope.verifyDataSubmittingBtn=function(){
       $scope.masklayer=true;
     }
-    
+
 
 
     $scope.someinfo = 'info';
@@ -394,7 +394,7 @@
            XYDJPJbank: $scope.agent.XYDJPJbank
           }
         }
-        
+
         console.log($scope.CSmessage);
     }
     // $scope.nowBankDeposit=[];
@@ -570,7 +570,7 @@
             afterSaleBuildArea: $scope.agent.afterSaleBuildArea
           }
         }
-        
+
         console.log($scope.bss);
     }
     // 建店城市商圈
@@ -624,7 +624,7 @@
             rirmRegisteredAddress: $scope.agent.rirmRegisteredAddress
           }
         }
-        
+
         console.log($scope.newCP);
     }
     // 新公司股权结构
@@ -729,7 +729,7 @@
             marketingAnalysis:$scope.agent.marketingAnalysis
           }
         }
-        
+
         console.log($scope.MFAform);
     }
 
@@ -771,6 +771,7 @@
             console.log('updateBaseinfo')
             console.log(err);
             console.log(res);
+            getShop()
             //数据库的回调
             // $scope.saveSuccess = false;
         })
@@ -779,6 +780,7 @@
             console.log('first-allmessage')
             console.log(err);
             console.log(res);
+            getShop()
         })
         }
 
@@ -787,7 +789,7 @@
       }else{
         $scope.save='savehide';
       }
-        
+
     }
     // 表单状态
     $scope.formstate=function(){

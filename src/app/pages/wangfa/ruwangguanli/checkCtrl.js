@@ -44,7 +44,7 @@
         '实地考察审核（上传评估报告)',
         '内部评审会',
         '陈述会结果审核',
-        '合作商入网审批'
+        '代理商入网审批'
       ]
 
       $scope.paneltitle = state[shop.applyId.verify.length-1];
@@ -66,7 +66,7 @@
         }
         // todo add role to info
         var isVerify = false;
-        if(state[shop.applyId.verify.length-1]==='合作商入网审批' && flag){
+        if(state[shop.applyId.verify.length-1]==='代理商入网审批' && flag){
           isVerify = true;
         }
         var verInfo = {

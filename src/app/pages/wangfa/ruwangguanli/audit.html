@@ -13,7 +13,7 @@
 				<option>实地考察审核（上传评估报告)</option>
 				<option>内部评审会</option>
 				<option>陈述会结果审核</option>
-				<option>合作商入网审批</option>
+				<option>代理商入网审批</option>
 			</select>
       {{selectStateQuery}}
 
@@ -84,7 +84,7 @@
 				      <td>{{item.basic.companyName}}</td>
 				      <td>{{item.shopApplyUserId.name}}</td>
 				      <td>{{item.shopApplyUserId.cellphone}}</td>
-              			<td>{{test(item.applyId.verify)}}</td>
+              			<td>{{nottest(item.applyId)}}</td>
 				      <td>{{spliceTime(item.meta.createAt)}}</td>
 				      <!-- <td>{{item.date}}</td> -->
 				      <td><a href="" ng-click="chakan(item)">查看</a></td>
