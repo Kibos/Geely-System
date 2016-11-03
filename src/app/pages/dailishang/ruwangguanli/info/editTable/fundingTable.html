@@ -35,7 +35,7 @@
 
 	    </td>
 	    <td>
-	       <input type="text" name="fixationOwnRemark" ng-model="agent.fixationOwnRemark" required ng-disabled="formstate()"> 
+	    	<textarea name="fixationOwnRemark" cols="20" rows="1" ng-model="agent.fixationOwnRemark" required ng-disabled="formstate()"  onscroll="this.rows++;"></textarea>
 	    </td>
 	    <!-- ********************************** -->
 	    <td>

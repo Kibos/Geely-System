@@ -3,6 +3,9 @@
 	<p class="help-block" ng-show="(marketAnalyzeForm.salesTarget.$error.required || marketAnalyzeForm.forecastOne.$error.required || marketAnalyzeForm.forecastTwo.$error.required) && submitMFA" style="color:red;">
         请把表格补充完整
 	</p>
+	<p class="help-block" ng-show="(marketAnalyzeForm.salesTarget.$error.pattern || marketAnalyzeForm.forecastOne.$error.pattern || marketAnalyzeForm.forecastTwo.$error.pattern) && submitMFA" style="color:red;">
+        请输入正整数
+	</p>
 	<table class="fund-table table-bordered">
 	  <tr class="info-tr">
 	  	<td>年份</td>
@@ -15,13 +18,13 @@
 	       预估计销量(台)
 	    </td>
 	    <td>
-	       <input type="text" name="salesTarget" ng-model="agent.salesTarget" required ng-disabled="formstate()" > 
+	       <input type="number" name="salesTarget" ng-model="agent.salesTarget" required ng-disabled="formstate()" ng-pattern="/^[0-9]*[1-9][0-9]*$/"> 
 	    </td>
 	    <td>
-	       <input type="text" name="forecastOne" ng-model="agent.forecastOne" required ng-disabled="formstate()"> 
+	       <input type="number" name="forecastOne" ng-model="agent.forecastOne" required ng-disabled="formstate()" ng-pattern="/^[0-9]*[1-9][0-9]*$/"> 
 	    </td>
 	    <td>
-	       <input type="text" name="forecastTwo" ng-model="agent.forecastTwo" required ng-disabled="formstate()"> 
+	       <input type="number" name="forecastTwo" ng-model="agent.forecastTwo" required ng-disabled="formstate()" ng-pattern="/^[0-9]*[1-9][0-9]*$/"> 
 	    </td>
 	  </tr>
 	</table>

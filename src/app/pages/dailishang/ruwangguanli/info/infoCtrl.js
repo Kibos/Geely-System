@@ -11,8 +11,10 @@
   /** @ngInject */
   function InfoCtrl($scope, Shop, Auth, Audit, $upload, $timeout, filesUrl)
   {
-    $scope.agent={}
-
+    // 二级联动开始/////////////////////////////////////////////////////
+      
+    // 二级联动结束
+    $scope.agent={};
     // console.log('info-start');
     $scope.currentUser = Auth.getCurrentUser();
 

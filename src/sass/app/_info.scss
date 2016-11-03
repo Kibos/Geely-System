@@ -173,7 +173,7 @@ input.individual-iput,textarea.individual-iput{
 
 }
 .fund-table tr{
-	height:30px;
+	min-height:30px;
 	line-height:30px;
 }
 .fund-table td input{
@@ -182,7 +182,15 @@ input.individual-iput,textarea.individual-iput{
 	box-sizing:border-box;
 	padding:0 5px;
 	text-align:center;
-	height:28px;
+	min-height:28px;
+	line-height:28px;
+}
+.fund-table td textarea{
+	border:1px solid transparent;
+	outline:none;
+	box-sizing:border-box;
+	padding:0 5px;
+	min-height:28px;
 	line-height:28px;
 }
 .funding-title{

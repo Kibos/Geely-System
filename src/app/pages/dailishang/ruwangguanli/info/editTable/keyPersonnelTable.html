@@ -3,7 +3,6 @@
 </div>
 <table class="table table-bordered table-hover table-condensed">
   <tr class="info-tr">
-    <td>序号</td>
     <td>姓名</td>
     <td>日常居住城市</td>
     <td>职务</td>
@@ -13,9 +12,6 @@
     <td>操作</td>
   </tr>
   <tr ng-repeat="user in users" class="editable-row">
-    <td>
-        {{$index}}
-    </td>
     <td>
         <span editable-text="user.name" e-name="name" e-form="userform" e-required>
           {{ user.name || '请输入信息'}}
