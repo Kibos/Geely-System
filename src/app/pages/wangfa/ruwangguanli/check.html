@@ -23,7 +23,8 @@
           </div>
           <div class="form-group">
             <p>审核意见</p>
-            <textarea class="form-control" placeholder="审核意见" ng-model="info.description" required=""></textarea>
+            <textarea class="form-control" name="description" placeholder="请输入不多于200字的审核意见" ng-maxlength="200" ng-model="info.description" required=""></textarea>
+            <p class="help-block individual-p"ng-show="checkForm.description.$error.maxlength">请输入不多于200字的审核意见</p>
           </div>
           <div class="form-group form-inline" role="form">
             <p>附件</p>
@@ -33,7 +34,7 @@
                 accept="">点击上传文件
             </div>
 
-            <label ng-if="fileArray[0]" >{{fileArray[0]}}</label>
+            <label ng-if="fileArray[0]" ><a href="{{fileUrl}}/public/files/{{fileArray[0]}}" download >附件：{{fileArray[0]}}</a></label>
 
 
 
@@ -69,6 +70,11 @@
                       <td style="widt:200px;">
                         {{item.opinion}}
                       </td>
+                      <td>
+                        <a ng-if="item.fileName" href="{{fileUrl}}/public/files/{{item.fileName}}" download >附件</a>
+                        <span ng-if="!item.fileName">无附件</span>
+                      </td>
+
                       <td>{{isornotinfo(item.bool)}}</td>
                     </tr>
                   </tbody>
@@ -225,6 +231,10 @@
                 <input type="text" name="address" class="form-control individual-iput" ng-model="store.address" disabled="true" />
               </div>
               <div class="form-group">
+                  <label class="individual-label">拟建店位置:</label>
+                  <input type="text" name="landSources" class="form-control individual-iput" ng-model="store.locations" disabled="true" />
+              </div>
+              <div class="form-group">
                 <label class="individual-label">拟建店所在商圈概况</label>
                 <div class="form-group">
                   <label class="individual-label">商圈名称:</label>
@@ -258,7 +268,13 @@
               </div>
               <div class="form-group">
                   <label class="individual-label">租赁期限:</label>
-                  <input type="text" name="leaseStart" class="form-control individual-iput" ng-model="store.leaseStart" disabled="true" />
+                  <input type="text" class="form-control  individual-iput" name="leaseStart" ng-model="store.leaseStart" ng-disabled="true">
+                  <!-- <input type="text" name="leaseStart" class="form-control individual-iput" ng-model="store.leaseStart" disabled="true" /> -->
+              </div>
+              <div class="form-group">
+                  <label class="individual-label">至:</label>
+                <input type="text" class="form-control individual-iput" name="leaseEnd" ng-model="store.leaseEnd" ng-disabled="true">
+
               </div>
               <!-- <div class="form-group">
                   <label class="individual-label">该城市首店:</label>
