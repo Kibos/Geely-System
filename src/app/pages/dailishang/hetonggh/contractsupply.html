@@ -17,7 +17,7 @@
       </div>
       <div class="sj" style="margin-bottom:20px;">
         <label>签订时间：</label>
-        <input type="date"
+        <input type="datetime-local"
            ng-model="date"
            min="2015-12-12"
            max="2016-12-22"
@@ -25,6 +25,7 @@
            ng-required
            ng-change="change()"/>
       </div>
+      <!-- {{date}} -->
       <div class="sj" style="margin-bottom:20px;">
         <label>电子版合同：</label>
         <input type="file" id="inputfile" ng-model="file">

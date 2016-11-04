@@ -75,7 +75,7 @@
                 </p>
               </div>
               <div class="form-group">
-                <label class="individual-label">注册资本:</label>
+                <label class="individual-label">注册资本(万元):</label>
                 <input type="text" name="registerCapital" class="form-control individual-iput" ng-model="agent.registerCapital"
                        required placeholder="注册资本（万），不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.registerCapital.$error.required && submitbasic">
@@ -291,7 +291,7 @@
                   </p>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-hide="agent.landSources=='已购买'">
                 <label class="info-lab">租赁期限</label>
                 <div class="inner-box">
                   <input type="text" name="leaseStart" ng-model="agent.leaseStart" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"><span>至</span><input type="text" name="leaseEnd" ng-model="agent.leaseEnd" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
@@ -303,7 +303,7 @@
                   </p>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-hide="agent.notfirstShopone==true || agent.notfirstShoptwo==true || agent.notfirstShopthree==true || agent.notfirstShopfour==true || agent.notfirstShopfive==true">
                 <label class="info-lab">该城市首店</label>
                 <div class="inner-box">
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopone" id="firstshop1" value="标准4S店"  ng-disabled="formstate()"><label for="firstshop1">标准4S店</label></div>
@@ -312,7 +312,7 @@
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopfour" id="firstshop4" ng-disabled="formstate()"><label for="firstshop4">SR/商超店+快修店(F级,已有吉利维修站升级等)</label></div>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-hide="agent.firstshopone==true || agent.firstshoptwo==true || agent.firstshopthree==true || agent.firstshopfour==true">
                 <label class="info-lab">非该城市首店</label>
                 <div class="inner-box">
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="notfirstShop" ng-model="agent.notfirstShopone" id="notfirstshop1" ng-disabled="formstate()"><label for="notfirstshop1">4S店</label></div>
