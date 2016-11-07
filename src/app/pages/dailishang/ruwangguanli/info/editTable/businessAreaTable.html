@@ -23,7 +23,7 @@
     </td>
     <td>
         <span editable-number="user.distance" e-name="distance" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
-          {{ user.distance || '请输入大于0的数字'}}
+          {{ user.distance || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
@@ -38,7 +38,7 @@
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="inserted == user">
+            shown="insertedjdcssq.market == user.market">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>
