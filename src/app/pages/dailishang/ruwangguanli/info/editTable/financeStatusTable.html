@@ -13,32 +13,32 @@
   <tr ng-repeat="user in financeStatusTable" class="editable-row">
     <td>
         <span editable-number="user.year" e-name="year" e-form="userform" e-required>
-          {{ user.year || '请输入数字'}}
+          {{ user.year || '格式错误,请输入数字'}}
         </span>
     </td>
     <td>
         <span editable-number="user.ASSET" e-name="ASSET" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
-          {{ user.ASSET || '请输入大于0的数字'}}
+          {{ user.ASSET || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
         <span editable-number="user.debt" e-name="debt" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
-          {{ user.debt || '请输入大于0的数字'}}
+          {{ user.debt || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
         <span editable-text="user.netMargin" e-name="netMargin" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
-          {{ user.netMargin || '请输入百分比(%)'}}
+          {{ user.netMargin || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
         <span editable-number="user.netProfit" e-name="netProfit" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
-          {{ user.netProfit || '请输入大于0的数字'}}
+          {{ user.netProfit || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="inserted == user">
+            shown="insertedcwbb.year == user.year">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>

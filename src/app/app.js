@@ -18,9 +18,12 @@ angular.module('BlurAdmin', [
   'permission.ui',
   'LocalStorageModule',
   'angularFileUpload',
+    'angular.city.select',
+
 
   'BlurAdmin.theme',
   'BlurAdmin.pages'
+
 ])
 .value('filesUrl',{url:'http://127.0.0.1:8080'}) //上线环境 ''   开发环境：'http://127.0.0.1:8080'
 .value('redirectToUrlAfterLogin', { url: '/' }) //不变

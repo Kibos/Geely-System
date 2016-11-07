@@ -262,6 +262,7 @@
            // $scope.userform.$cancel();
       };
     };
+    
 // ----------------------代理商简述------------------------------
     // 基本信息
     $scope.basicInformation=function(BasicForm)
@@ -280,6 +281,7 @@
         legalRepresentative:$scope.agent.legalRepresentative
       };
 
+
     }
     console.log("代理商简述基本信息");
     console.log($scope.basic);
@@ -287,7 +289,6 @@
 
     }
     // 股份构成
-     // $scope.SharesConstitute=[];
     $scope.removeSharesConstitute = function(index){
       $scope.SharesConstitute.splice(index, 1);
     };
@@ -298,8 +299,10 @@
         fundingRatio:"",
         stockholderQuale:""
       };
-      $scope.SharesConstitute.push($scope.insertedgfgc);
+      var test = JSON.parse(JSON.stringify($scope.insertedgfgc));
+      $scope.SharesConstitute.push(test);
     };
+    
     $scope.tableVerify=false;
 
     // 关键人员背景
@@ -317,16 +320,14 @@
         Email:'',
         shark:''
       };
-      $scope.users.push($scope.insertedgjrybj);
+      var testTwo = JSON.parse(JSON.stringify($scope.insertedgjrybj));
+      $scope.users.push(testTwo);
     };
     // 股份股东投资情况
     /*$scope.investment=function(InvestForm){
 
     }*/
     // 汽车销售领域
-    // $scope.carShareholder=[
-
-    // ]
     $scope.delShareholder = function(index) {
       $scope.carShareholder.splice(index, 1);
     };
@@ -340,7 +341,8 @@
         address:'',
         status:''
       };
-      $scope.carShareholder.push($scope.insertedgdqcxslythree);
+      var testthree=JSON.parse(JSON.stringify($scope.insertedgdqcxslythree))
+      $scope.carShareholder.push(testthree);
     }
     // 非汽车销售领域
     // $scope.notcarShareholder=[
@@ -357,7 +359,8 @@
         income:null,
         profit:''
       };
-      $scope.notcarShareholder.push($scope.insertedfourgdfqcxs);
+      var testfour = JSON.parse(JSON.stringify($scope.insertedfourgdfqcxs));
+      $scope.notcarShareholder.push(testfour);
     }
     // 销售维修状况
     $scope.delmaintenance = function(index) {
@@ -383,7 +386,8 @@
                 several:null
             }
       };
-      $scope.maintenance.push($scope.insertedxswxqkthree);
+      var testfive = JSON.parse(JSON.stringify($scope.insertedxswxqkthree));
+      $scope.maintenance.push(testfive);
     }
     // 资信状况
     $scope.creditStatus=function(CSMessageForm)
@@ -409,7 +413,8 @@
             sum:"",
             adjunct:""
       };
-      $scope.nowBankDeposit.push($scope.insertedzxqk);
+      var testseven = JSON.parse(JSON.stringify($scope.insertedzxqk));
+      $scope.nowBankDeposit.push(testseven);
     }
 
     // 财务报表
@@ -424,97 +429,10 @@
             netMargin:'',
             netProfit:''
       };
-      $scope.financeStatusTable.push($scope.insertedcwbb);
+      var testsix = JSON.parse(JSON.stringify($scope.insertedcwbb));
+      $scope.financeStatusTable.push(testsix);
     }
-    // 市场情况
-    // $scope.saloonCar=[
-    //     {
-    //         "competitiveBrand":"长安福特",
-    //         "storesNumber":"2",
-    //         "lastYearTotalSales":"60",
-    //         "lastYearMeanSalesVolume":"XXXX",
-    //         "lastYearBrandShare":"XXXX",
-    //         "CompetingModels":"福睿斯",
-    //         "CompetingModelsSales":"x,xx",
-    //         "CompetingModelsShare":"x.xx%"
-    //     },{
-    //         "competitiveBrand":"长安福特",
-    //         "storesNumber":"2",
-    //         "lastYearTotalSales":"60",
-    //         "lastYearMeanSalesVolume":"XXXX",
-    //         "lastYearBrandShare":"XXXX",
-    //         "CompetingModels":"福睿斯",
-    //         "CompetingModelsSales":"x,xx",
-    //         "CompetingModelsShare":"x.xx%"
-    //     },{
-    //         "competitiveBrand":"长安福特",
-    //         "storesNumber":"2",
-    //         "lastYearTotalSales":"60",
-    //         "lastYearMeanSalesVolume":"XXXX",
-    //         "lastYearBrandShare":"XXXX",
-    //         "CompetingModels":"福睿斯",
-    //         "CompetingModelsSales":"x,xx",
-    //         "CompetingModelsShare":"x.xx%"
-    //     }
-    // ];
-    // $scope.suvsaloonCar=[
-    //     {
-    //         "competitiveBrand":"长安福特",
-    //         "storesNumber":"2",
-    //         "lastYearTotalSales":"60",
-    //         "lastYearMeanSalesVolume":"XXXX",
-    //         "lastYearBrandShare":"XXXX",
-    //         "CompetingModels":"福睿斯",
-    //         "CompetingModelsSales":"x,xx",
-    //         "CompetingModelsShare":"x.xx%"
-    //     },{
-    //         "competitiveBrand":"长安福特",
-    //         "storesNumber":"2",
-    //         "lastYearTotalSales":"60",
-    //         "lastYearMeanSalesVolume":"XXXX",
-    //         "lastYearBrandShare":"XXXX",
-    //         "CompetingModels":"福睿斯",
-    //         "CompetingModelsSales":"x,xx",
-    //         "CompetingModelsShare":"x.xx%"
-    //     },{
-    //         "competitiveBrand":"长安福特",
-    //         "storesNumber":"2",
-    //         "lastYearTotalSales":"60",
-    //         "lastYearMeanSalesVolume":"XXXX",
-    //         "lastYearBrandShare":"XXXX",
-    //         "CompetingModels":"福睿斯",
-    //         "CompetingModelsSales":"x,xx",
-    //         "CompetingModelsShare":"x.xx%"
-    //     }
-    // ];
-    // 区域代理商排名
-    // $scope.RegionalAgents=[
-    //     {
-    //         "ranking":1,
-    //         "dealerGroupName":"xxxx",
-    //         "pitNum":"12"
-    //     },{
-    //         "ranking":2,
-    //         "dealerGroupName":"xxxx",
-    //         "pitNum":"12"
-    //     },{
-    //         "ranking":3,
-    //         "dealerGroupName":"xxxx",
-    //         "pitNum":"12"
-    //     },{
-    //         "ranking":4,
-    //         "dealerGroupName":"xxxx",
-    //         "pitNum":"12"
-    //     },{
-    //         "ranking":5,
-    //         "dealerGroupName":"xxxx",
-    //         "pitNum":"12"
-    //     },{
-    //         "ranking":6,
-    //         "dealerGroupName":"xxxx",
-    //         "pitNum":"12"
-    //     },
-    // ]
+
     // ---------------------拟建店简述------------------------
     $scope.btn2="btn21";
     $scope.locations=[
@@ -531,6 +449,10 @@
         {id:"其它","text":"其它"}
     ]
     // 建店场地情况
+    $scope.item = {
+        city: [ '福建', '泉州', '安溪' ]
+        // city: '350524'
+      };
     $scope.buildStoreSite=function(bssForm)
     {
         $scope.submitbss = true;
@@ -587,7 +509,8 @@
         limousineBrand:"",
         otherBrand:""
       };
-      $scope.BSbusinessArea.push($scope.insertedjdcssq);
+      var testeight=JSON.parse(JSON.stringify($scope.insertedjdcssq));
+      $scope.BSbusinessArea.push(testeight);
     };
     // 建店场地相关资料
     $scope.btn23="btn231";
@@ -641,7 +564,8 @@
         Fundingscale:'',
         nature:""
       };
-      $scope.newEquityStructure.push($scope.insertedxgsgqjg);
+      var testnice = JSON.parse(JSON.stringify($scope.insertedxgsgqjg));
+      $scope.newEquityStructure.push(testnice);
     }
 
     // 资金筹备
@@ -695,7 +619,8 @@
         startingTime:"",
         completeTime:""
       };
-      $scope.StoreConstructionPlan.push($scope.inserteddmjsjh);
+      var testten = JSON.parse(JSON.stringify($scope.inserteddmjsjh));
+      $scope.StoreConstructionPlan.push(testten);
     }
     // 关键岗位组建筹备
     $scope.delkeyJob = function(index) {
@@ -709,7 +634,8 @@
         educationalStatus:"",
         Experience:""
       };
-      $scope.keyJob.push($scope.insertedgjgwzjcb);
+      var testele = JSON.parse(JSON.stringify($scope.insertedgjgwzjcb));
+      $scope.keyJob.push(testele);
     }
     // 组建架构筹备
     $scope.frameworkaRrange=function(organizeSchemaForm){
@@ -734,64 +660,72 @@
 
         console.log($scope.MFAform);
     }
-
+    //提交保存弹框
+    $scope.masksave=false;
     // 提交审核///////////////////////////////////////////////
     // typeof($scope.basic)!='undefined' && typeof($scope.CSmessage)!='undefined' && typeof($scope.bss)!='undefined' && typeof($scope.newCP)!='undefined' && typeof($scope.fundings)!='undefined' && typeof($scope.MFAform)!='undefined'
     $scope.allSubmit=function(){
-      if (typeof($scope.basic)!='undefined')
-      {
-        console.log("提交审核，表单验证通过")
-        var allmessage={
-            basic:$scope.basic,
-            SharesConstitute:$scope.SharesConstitute,
-            users:$scope.users,
-            carShareholder:$scope.carShareholder,
-            notcarShareholder:$scope.notcarShareholder,
-            maintenance:$scope.maintenance,
-            CSmessage:$scope.CSmessage,
-            financeStatusTable:$scope.financeStatusTable,
-            bss:$scope.bss,
-            BSbusinessArea:$scope.BSbusinessArea,
-            BSSdatum:$scope.BSSdatum,
-            newCP:$scope.newCP,
-            fundings:$scope.fundings,
-            StoreConstructionPlan:$scope.StoreConstructionPlan,
-            keyJob:$scope.keyJob,
-            SchemaArrange:$scope.SchemaArrange,
-            MFAform:$scope.MFAform,
-            shopApplyUserId:$scope.currentUser._id,
-            newEquityStructure:$scope.newEquityStructure,
-            nowBankDeposit:$scope.nowBankDeposit
+      $scope.masksave=true;
+    }
+    $scope.toolTipsave=function(start){
+        if (start=='affirm')
+        {
+            if (typeof($scope.basic)!='undefined')
+            {
+              var allmessage={
+                basic:$scope.basic,
+                SharesConstitute:$scope.SharesConstitute,
+                users:$scope.users,
+                carShareholder:$scope.carShareholder,
+                notcarShareholder:$scope.notcarShareholder,
+                maintenance:$scope.maintenance,
+                CSmessage:$scope.CSmessage,
+                financeStatusTable:$scope.financeStatusTable,
+                bss:$scope.bss,
+                BSbusinessArea:$scope.BSbusinessArea,
+                BSSdatum:$scope.BSSdatum,
+                newCP:$scope.newCP,
+                fundings:$scope.fundings,
+                StoreConstructionPlan:$scope.StoreConstructionPlan,
+                keyJob:$scope.keyJob,
+                SchemaArrange:$scope.SchemaArrange,
+                MFAform:$scope.MFAform,
+                shopApplyUserId:$scope.currentUser._id,
+                newEquityStructure:$scope.newEquityStructure,
+                nowBankDeposit:$scope.nowBankDeposit
+              };
+              // $scope.state=true;
+              $scope.save='saveshow';
+              $scope.saveSuccess = false;
+              //如果为真，则表示数据库存在，做update操作
+              if($scope._dbid){
+                Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
+                console.log('updateBaseinfo')
+                console.log(err);
+                console.log(res);
+                getShop()
+                //数据库的回调
+                // $scope.saveSuccess = false;
+                })
+              }else{
+                  Shop.baseinfo.save(allmessage,function(err, res){
+                  console.log('first-allmessage')
+                  console.log(err);
+                  console.log(res);
+                  getShop()
+                })
+              }
 
-        };
-        // $scope.state=true;
-        $scope.save='saveshow';
-        $scope.saveSuccess = false;
-        //如果为真，则表示数据库存在，做update操作
-        if($scope._dbid){
-            Shop.updateBaseinfo.save({shopId:$scope._dbid, baseinfo:allmessage},function(err, res){
-            console.log('updateBaseinfo')
-            console.log(err);
-            console.log(res);
-            getShop()
-            //数据库的回调
-            // $scope.saveSuccess = false;
-        })
+
+
+          }else{
+            $scope.save='savehide';
+          }
         }else{
-        Shop.baseinfo.save(allmessage,function(err, res) {
-            console.log('first-allmessage')
-            console.log(err);
-            console.log(res);
-            getShop()
-        })
+          $scope.masksave=false;
+          return;
         }
-
-
-
-      }else{
-        $scope.save='savehide';
-      }
-
+        $scope.masksave=false;
     }
     // 表单状态
     $scope.formstate=function(){
