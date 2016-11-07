@@ -41,7 +41,7 @@
           if(isUndefinedOrNull(vm.user.email)||isUndefinedOrNull(vm.user.password)){
             showWarningMsg();
           }else{
-            showErrorMsg(err.message);
+            showErrorMsg();
           }
 
            vm.loginFail = true;
