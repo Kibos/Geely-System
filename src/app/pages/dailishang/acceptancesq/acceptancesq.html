@@ -25,13 +25,9 @@
 					<span class="individual-iput" id="agent">{{currentUser.name}}</span>
 				</label>
 			</div>
-			<!-- <div class="form-group">
-				<label class="" style="font-size:14px;font-weight:bolder;float:left">验收资料：</label>
-				<input type="file" id="inputfile" ng-model="file">
-			</div> -->
 
 			<div class="form-group">
-				<label class="info-lab">上传文件：</label>
+				<label class="info-lab" style="font-size:14px;font-weight:bolder">验收资料：</label>
 				<div ng-file-drop ng-file-select ng-model="vm.files" class="dropzone"
 						drag-over-class="dragover" ng-multiple="true" allow-dir="true"
 						accept="">点击上传文件或者拖拽到这里</div>
@@ -42,7 +38,7 @@
 
 
 			<div class="text-center">
-				<button type="button" class="btn btn-primary" ng-click="vm.saveFile('organizationChart')" ng-disabled="formstate()">保存</button>
+				<button type="button" class="btn btn-primary" ng-click="vm.saveFile('organizationChart')" ng-disabled="formstate()">提交</button>
 			</div>
 		</form>
 	</div>
@@ -79,5 +75,3 @@
 			 </div>
 	 </div>
 </div> -->
-
-

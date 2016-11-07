@@ -1,4 +1,54 @@
+<style>
+		.dropzone {
+				border: 2px dashed #bbb;
+				border-radius: 5px;
+				padding: 25px;
+				text-align: center;
+				font: 20pt bold;
+				color: #bbb;
+				margin-bottom: 20px;
+		}
+		.vertical-center{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+</style>
+
 <div ba-panel ba-panel-title="网络发展/代理商运营/验收整改" ba-panel-class="with-scroll">
+	<div class="col-md-6">
+		<form ng-submit="add(CompanyForm)" novalidate name="CompanyForm">
+			<div class="form-group">
+				<label class="" id="partners1" style="font-size:14px;font-weight:bolder">申请代理商：
+					<span class="individual-iput" id="agent">{{currentUser.name}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<label class="" id="check1" style="font-size:14px;font-weight:bolder">上一次验收资料：
+					<span class="individual-iput" id="check">{{information}}</span>
+				</label>
+			</div>
+
+			<div class="form-group">
+				<label class="info-lab" style="font-size:14px;font-weight:bolder">验收资料：</label>
+				<div ng-file-drop ng-file-select ng-model="vm.files" class="dropzone"
+						drag-over-class="dragover" ng-multiple="true" allow-dir="true"
+						accept="">点击上传文件或者拖拽到这里</div>
+				<div ng-no-file-drop>File Drag/Drop is not supported for this browser</div>
+				<img ng-src="{{vm.fileUrl}}/public/files/{{shop.jzcfhxFile[1]}}"  alt="" />
+
+			</div>
+
+
+			<div class="text-center">
+				<button type="button" class="btn btn-primary" ng-click="vm.saveFile('organizationChart')" ng-disabled="formstate()">提交</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- <div ba-panel ba-panel-title="网络发展/代理商运营/验收整改" ba-panel-class="with-scroll">
 
 	<div class="col-md-6">
 		<form ng-submit="add(CompanyForm)" novalidate name="CompanyForm">
@@ -32,4 +82,4 @@
 
 	</div>
 
-</div>
+</div> -->
