@@ -18,6 +18,7 @@ angular.module('BlurAdmin', [
   'permission.ui',
   'LocalStorageModule',
   'angularFileUpload',
+  'angular.city.select',
 
 
   'BlurAdmin.theme',

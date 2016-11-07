@@ -449,6 +449,10 @@
         {id:"其它","text":"其它"}
     ]
     // 建店场地情况
+    $scope.item = {
+    city: [ '北京' ]
+};
+
     $scope.buildStoreSite=function(bssForm)
     {
         $scope.submitbss = true;
