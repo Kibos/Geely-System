@@ -6,7 +6,7 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.dailishang.ruwangguanlia', [
-      'angular.city.select',
+      
 
     'BlurAdmin.pages.dailishang.ruwangguanli.progressquery'
   ])

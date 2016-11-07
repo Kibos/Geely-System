@@ -59,8 +59,7 @@
     "angular-material": "1.1.0-rc.5",
     "angular-permission": "^4.0.6",
     "ng-file-upload": "~3.3.1",
-    "angular-xeditable": "^0.5.0",
-    "angular-city-select": "*"
+    "angular-xeditable": "^0.5.0"
   },
   "resolutions": {
     "angular": "1.5.8"

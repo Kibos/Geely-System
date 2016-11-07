@@ -449,10 +449,6 @@
         {id:"其它","text":"其它"}
     ]
     // 建店场地情况
-    $scope.item = {
-        city: [ '福建', '泉州', '安溪' ]
-        // city: '350524'
-      };
     $scope.buildStoreSite=function(bssForm)
     {
         $scope.submitbss = true;
