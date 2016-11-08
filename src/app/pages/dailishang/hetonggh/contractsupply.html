@@ -9,11 +9,6 @@
       <div class="sj" style="margin-bottom:20px;">
         <label>供应厂商：</label>
         <div class="" style="width:210px;">
-          <!--<select class="selectpicker" title="供应厂商一" selectpicker>
-            <option>供应厂商一</option>
-            <option>供应厂商二</option>
-            <option>供应厂商三</option>
-          </select>-->
           <select  ng-model="suppmodel"  ng-change="getSuppID()">
             <option value="" style="font-size:12px;color:#999999">请选择</option>
             <option style="font-size:12px;color:#666666" ng-repeat=" x in suppliers">{{x.name}}</option>
@@ -22,7 +17,7 @@
       </div>
       <div class="sj" style="margin-bottom:20px;">
         <label>签订时间：</label>
-        <input type="date"
+        <input type="datetime-local"
            ng-model="date"
            min="2015-12-12"
            max="2016-12-22"
@@ -30,6 +25,7 @@
            ng-required
            ng-change="change()"/>
       </div>
+      <!-- {{date}} -->
       <div class="sj" style="margin-bottom:20px;">
         <label>电子版合同：</label>
         <input type="file" id="inputfile" ng-model="file">

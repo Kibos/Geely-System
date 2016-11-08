@@ -11,29 +11,28 @@
   </tr>
   <tr ng-repeat="userone in SharesConstitute" class="editable-row">
     <td>
-        <span editable-text="userone.stockholder" e-name="stockholder" e-form="usernameone" e-required>
+        <span editable-text="userone.stockholder" e-name="stockholder" e-form="usernameone" e-placeholder="请输入信息" e-required>
           {{ userone.stockholder || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-required e-pattern="[1-9]\d*(\.\d+)?">
-          {{ userone.fundingSum || '请输入大于0的数字'}}
+        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-pattern="[1-9]\d*(\.\d+)?" e-placeholder="请输入大于0的数字" e-required>
+          {{ userone.fundingSum || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-text="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
-          {{ userone.fundingRatio || '请输入百分比(%)'}}
+        <span editable-text="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" e-placeholder="请输入百分比(%)" e-required>
+          {{ userone.fundingRatio || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-text="userone.stockholderQuale" e-name="stockholderQuale" e-form="usernameone" e-required>
+        <span editable-text="userone.stockholderQuale" e-name="stockholderQuale" e-form="usernameone" e-placeholder="请输入信息" e-required>
           {{ userone.stockholderQuale || '请输入信息'}}
         </span>
     </td>
-
     <td>
       <form editable-form name="usernameone" ng-show="usernameone.$visible" class="form-buttons form-inline"
-            shown="inserted == userone">
+            shown="insertedgfgc.stockholder == userone.stockholder">
         <button type="submit" ng-disabled="usernameone.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>

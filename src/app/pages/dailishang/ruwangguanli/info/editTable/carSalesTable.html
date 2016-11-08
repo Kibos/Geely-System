@@ -20,12 +20,12 @@
     </td>
     <td>
         <span editable-text="user.shark" e-name="shark" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
-          {{ user.shark || '请输入百分比(%)'}}
+          {{ user.shark || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
         <span editable-date="user.date" e-name="date" e-form="userform" e-required>
-          {{ (user.date | date: "yyyy-MM-dd") || '请选择时间格式' }}
+          {{ (user.date | date: "yyyy/MM/dd") || '格式错误,请选择时间格式' }}
         </span>
     </td>
     <td>
@@ -50,7 +50,7 @@
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="inserted == user">
+            shown="insertedgdqcxslythree.firmName == user.firmName">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>

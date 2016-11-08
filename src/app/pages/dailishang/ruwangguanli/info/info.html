@@ -9,10 +9,9 @@
       <button ng-click="allSubmit()" class="btn btn-primary" id="allsubmit2" ng-disabled="formstate()">保存所有信息</button>
 
       <button ng-click="verifyDataSubmittingBtn()" class="btn btn-primary" ng-disabled="formstate() || saveSuccess" id="allsubmit">提交审核</button>
-      <p class="savats" ng-class="{savashow:save=='saveshow'}">信息保存成功!</p>
+<!--       <p class="savats" ng-class="{savashow:save=='saveshow'}">信息保存成功!</p> -->
       <p class="savats" ng-class="{savashow:save=='savehide'}">请把表单信息补充完整后再提交信息!</p>
 </div>
-<!-- showmask:masklayer=='masklayer1' -->
 <div class="mask-layer" ng-class="{true:'maskshow',false:'maskhide'}[masklayer]">
   <div class="toolTip-box">
     <div class="toolTip-tit">确认要提交审核吗?</div>
@@ -22,7 +21,15 @@
    </div>
   </div>
 </div>
- 
+<div class="mask-layer" ng-class="{true:'maskshow',false:'maskhide'}[masksave]">
+  <div class="toolTip-box">
+    <div class="toolTip-tit">确认要保存所有信息吗?</div>
+    <div class="toolTip-btn">
+      <button ng-click="toolTipsave('affirm')" class="btn btn-danger btnqr">确认</button>
+      <button ng-click="toolTipsave('cancel')" class="btn btn-primary">取消</button>
+   </div>
+  </div>
+</div>
 <uib-tabset active="$tabSetStatus.activeTab">
 <!-- ————————————————————代理商简述——————————————————————————— -->
   <uib-tab heading="代理商简述">
@@ -75,7 +82,7 @@
                 </p>
               </div>
               <div class="form-group">
-                <label class="individual-label">注册资本:</label>
+                <label class="individual-label">注册资本(万元):</label>
                 <input type="text" name="registerCapital" class="form-control individual-iput" ng-model="agent.registerCapital"
                        required placeholder="注册资本（万），不加单位" ng-pattern="/^\+?[1-9]\d*$/" ng-disabled="formstate()"/>
                 <p class="help-block individual-p" ng-show="BasicForm.registerCapital.$error.required && submitbasic">
@@ -205,10 +212,17 @@
           <form ng-submit="buildStoreSite(bssForm)" novalidate name="bssForm" ng-switch-when="btn21" id="basic">
               <div class="form-group">
                 <label class="info-lab">拟申请商圈</label>
-                <input type="text" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()" required/>
-                <p class="help-block njdsq-p" ng-show="bssForm.tradeArea.$error.required && submitbss">
+                <!--<input type="text" name="tradeArea" ng-model="agent.tradeArea" ng-disabled="formstate()" required/>
+                <p class="help-block njdsq-p" ng-show="bssForm.tradeArea.$error.required && submitbss">-->
                   请输入拟申请商圈
-                </p>
+                <city-select ng-model="item.city"></city-select>
+
+
+                <label class="col-sm-2 control-label">Result</label>
+                <div class="col-sm-10">
+                  <p class="form-control-static">{{item}}</p>
+                </div>
+
               </div>
               <div class="form-group">
                 <label class="info-lab">拟建店详细地址</label>
@@ -291,7 +305,7 @@
                   </p>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-hide="agent.landSources=='已购买'">
                 <label class="info-lab">租赁期限</label>
                 <div class="inner-box">
                   <input type="text" name="leaseStart" ng-model="agent.leaseStart" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"><span>至</span><input type="text" name="leaseEnd" ng-model="agent.leaseEnd" ng-disabled="formstate()" required ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
@@ -303,7 +317,7 @@
                   </p>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-hide="agent.notfirstShopone==true || agent.notfirstShoptwo==true || agent.notfirstShopthree==true || agent.notfirstShopfour==true || agent.notfirstShopfive==true">
                 <label class="info-lab">该城市首店</label>
                 <div class="inner-box">
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopone" id="firstshop1" value="标准4S店"  ng-disabled="formstate()"><label for="firstshop1">标准4S店</label></div>
@@ -312,7 +326,7 @@
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="firstShop" ng-model="agent.firstshopfour" id="firstshop4" ng-disabled="formstate()"><label for="firstshop4">SR/商超店+快修店(F级,已有吉利维修站升级等)</label></div>
                 </div>
               </div>
-              <div class="form-group">
+              <div class="form-group" ng-hide="agent.firstshopone==true || agent.firstshoptwo==true || agent.firstshopthree==true || agent.firstshopfour==true">
                 <label class="info-lab">非该城市首店</label>
                 <div class="inner-box">
                   <div class="inner-box-child"><input type="checkbox" ng-true-value="true" ng-false-value="false" name="notfirstShop" ng-model="agent.notfirstShopone" id="notfirstshop1" ng-disabled="formstate()"><label for="notfirstshop1">4S店</label></div>

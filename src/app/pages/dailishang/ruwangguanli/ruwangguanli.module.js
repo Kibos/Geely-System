@@ -6,6 +6,8 @@
   'use strict';
 
   angular.module('BlurAdmin.pages.dailishang.ruwangguanlia', [
+      
+
     'BlurAdmin.pages.dailishang.ruwangguanli.progressquery'
   ])
     .config(routeConfig);

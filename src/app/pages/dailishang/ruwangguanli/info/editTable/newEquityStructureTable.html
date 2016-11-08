@@ -23,12 +23,12 @@
     </td>
     <td>
         <span editable-number="user.FundingSum" e-name="FundingSum" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
-          {{ user.FundingSum || '请输入大于0的数字'}}
+          {{ user.FundingSum || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
         <span editable-text="user.Fundingscale" e-name="Fundingscale" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
-          {{ user.Fundingscale || '请输入百分比(%)'}}
+          {{ user.Fundingscale || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
@@ -38,7 +38,7 @@
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="inserted == user">
+            shown="insertedxgsgqjg.shareholder == user.shareholder">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>
