@@ -9,10 +9,15 @@
       .controller('AuditCtrl', AuditCtrl);
 
   /** @ngInject */
-  function AuditCtrl($scope, $state, Shop, $timeout, $rootScope) {
+  function AuditCtrl($scope, $state, Shop, $timeout, $rootScope,$stateParams) {
 
-
+        var info = $stateParams.obj;
+        console.log(info);
         //待审核
+        $scope.status = "待通知";
+        if(info === "1"){
+            $scope.status = "待打款";
+        }
         $scope.shoplists = [];
         $scope.shoplists_data = [];
         function getNotVerifyShops() {
@@ -101,9 +106,9 @@
         }
         getnotVerifyedshoplists()
 
-        $scope.stateGo1 = function (operate) {
-         console.log(operate);
-                     $state.go('ba.rulisa.inform');
+        $scope.stateGo1 = function (item) {
+         //console.log(operate);
+          $state.go("ba.rulisa.inform",{obj:item});
         }
 
   }

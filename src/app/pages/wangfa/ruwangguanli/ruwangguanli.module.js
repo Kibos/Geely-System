@@ -20,6 +20,9 @@
           icon: 'ion-ios-pulse',
           order: 100,
         },
+        params:{
+          obj:null
+        },
         data:{
            permissions: {
             only:'wangfa'
