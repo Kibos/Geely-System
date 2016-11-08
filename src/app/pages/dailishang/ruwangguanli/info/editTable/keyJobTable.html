@@ -12,33 +12,33 @@
   </tr>
   <tr ng-repeat="user in keyJob" class="editable-row">
     <td>
-        <span editable-text="user.post" e-name="post" e-form="userform" e-required>
+        <span editable-text="user.post" e-name="post" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.post || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.name" e-name="name" e-form="userform" e-required>
+        <span editable-text="user.name" e-name="name" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.name || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.age" e-name="age" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+        <span editable-number="user.age" e-name="age" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
           {{ user.age || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.educationalStatus" e-name="educationalStatus" e-form="userform" e-required>
+        <span editable-text="user.educationalStatus" e-name="educationalStatus" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.educationalStatus || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.Experience" e-name="Experience" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+        <span editable-number="user.Experience" e-name="Experience" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
           {{ user.Experience || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="insertedgjgwzjcb.post == user.post">
+            shown="insertedgjgwzjcb.post == user.post" onaftersave="saveTableM()">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs" ng-click="aa()">
           保存
         </button>

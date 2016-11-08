@@ -115,11 +115,14 @@ input.individual-iput,textarea.individual-iput{
 #basic .info-lab,#StoreSite .info-lab{
 	color:#333;
 	display:inline-block;
-	width:120px;
+	width:130px;
 	text-align:right;
 	margin-right:30px;
 	font-weight:600;
 	vertical-align:top;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
 }
 #basic .inner-box,#StoreSite .inner-box{
 	display:inline-block;
@@ -131,6 +134,9 @@ input.individual-iput,textarea.individual-iput{
 	font-weight:400;
 	text-align:left;
 	min-width:87px;
+	height:30px;
+	line-height:38px;
+	vertical-align:top;
 }
 #basic span,#basic span{
 	display:inline-block;
@@ -266,4 +272,37 @@ textarea{
 .btnqr{
 	margin-right:10px;
 }
+.city-select-tab{
+	min-width:700px!important;
+}
+.city-select-panel{
+	min-width:700px!important;
+}
+.ng-binding{
+	border-color:#A9A9A9!important;
+	border-radius:0px!important;
+}
+.jdcdqk-input{
+	height:30px!important;
+}
+.inner-box-njdsq{
+	display:inline-block;
+}
+.inner-box-njdsq .inner-box-child{
+	margin-right:20px;
+}
+.info-jdcdqk-lab{
+	height:30px!important;
+	vertical-align:top;
+	line-height:38px;
+}
+.info-njdsqgk-lab{
+	width:70px;
+}
+.editable-error{
+	color:#C54949;
+}
+
+
+
 

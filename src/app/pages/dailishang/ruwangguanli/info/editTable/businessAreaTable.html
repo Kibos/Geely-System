@@ -17,28 +17,28 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.market" e-name="market" e-form="userform" e-required>
+        <span editable-text="user.market" e-name="market" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.market || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.distance" e-name="distance" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+        <span editable-number="user.distance" e-name="distance" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
           {{ user.distance || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.limousineBrand" e-name="limousineBrand" e-form="userform" e-required>
+        <span editable-text="user.limousineBrand" e-name="limousineBrand" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.limousineBrand || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.otherBrand" e-name="otherBrand" e-form="userform" e-required>
+        <span editable-text="user.otherBrand" e-name="otherBrand" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.otherBrand || '请输入信息'}}
         </span>
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="insertedjdcssq.market == user.market">
+            shown="insertedjdcssq.market == user.market" onaftersave="saveTableH()">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>

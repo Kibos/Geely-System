@@ -12,33 +12,33 @@
   </tr>
   <tr ng-repeat="user in financeStatusTable" class="editable-row">
     <td>
-        <span editable-number="user.year" e-name="year" e-form="userform" e-required>
+        <span editable-number="user.year" e-name="year" e-form="userform" e-required onbeforesave="checkInteger($data)">
           {{ user.year || '格式错误,请输入数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.ASSET" e-name="ASSET" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+        <span editable-number="user.ASSET" e-name="ASSET" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
           {{ user.ASSET || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.debt" e-name="debt" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+        <span editable-number="user.debt" e-name="debt" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
           {{ user.debt || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.netMargin" e-name="netMargin" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
+        <span editable-text="user.netMargin" e-name="netMargin" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.netMargin || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.netProfit" e-name="netProfit" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+        <span editable-number="user.netProfit" e-name="netProfit" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
           {{ user.netProfit || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="insertedcwbb.year == user.year">
+            shown="insertedcwbb.year == user.year" onaftersave="saveTableFa()">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>

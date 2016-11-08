@@ -13,38 +13,38 @@
   </tr>
   <tr ng-repeat="user in users" class="editable-row">
     <td>
-        <span editable-text="user.name" e-name="name" e-form="userform" e-required>
+        <span editable-text="user.name" e-name="name" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.name || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.city" e-name="city" e-form="userform" e-required>
+        <span editable-text="user.city" e-name="city" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.city || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.duty" e-name="duty" e-form="userform" e-required>
+        <span editable-text="user.duty" e-name="duty" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.duty || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.cellphone" e-name="cellphone" e-form="userform" e-required e-pattern="1[3,5,8]\d{9}">
+        <span editable-number="user.cellphone" e-name="cellphone" e-form="userform" e-required e-pattern="1[3,5,8]\d{9}" onbeforesave="checkphone($data)">
           {{ user.cellphone || "格式错误,输入有效号码"}}
         </span>
     </td>
     <td>
-        <span editable-email="user.Email" e-name="Email" e-form="userform" e-required>
+        <span editable-email="user.Email" e-name="Email" e-form="userform" e-required onbeforesave="checkEmail($data)">
           {{ user.Email || '格式错误,请输入邮箱格式'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
+        <span editable-text="user.shark" e-name="shark" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.shark || "格式错误,请输入百分比(%)"}}
         </span>
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="insertedgjrybj.name == user.name">
+            shown="insertedgjrybj.name == user.name" onaftersave="saveTableC()">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>

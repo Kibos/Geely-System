@@ -38,23 +38,23 @@
 						</tr>
 						<tr ng-repeat="user in nowBankDeposit" class="editable-row">
 							<td>
-						        <span editable-text="user.bank" e-name="bank" e-form="userform" e-required>
+						        <span editable-text="user.bank" e-name="bank" e-form="userform" e-required onbeforesave="checkNull($data)">
 						          {{ user.bank || '请输入信息'}}
 						        </span>
 						    </td>
 						    <td>
-						        <span editable-number="user.sum" e-name="sum" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?">
+						        <span editable-number="user.sum" e-name="sum" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
 						          {{ user.sum || '请输入大于0的数字'}}
 						        </span>
 						    </td>
 						    <td>
-						        <span editable-text="user.adjunct" e-name="adjunct" e-form="userform" e-required>
+						        <span editable-text="user.adjunct" e-name="adjunct" e-form="userform" e-required onbeforesave="checkNull($data)">
 						          {{ user.adjunct || '请输入详细信息'}}
 						        </span>
 						    </td>
 						    <td>
 							      <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-							            shown="insertedzxqk.bank == user.bank">
+							            shown="insertedzxqk.bank == user.bank" onaftersave="saveTableFb()">
 							        <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
 							          保存
 							        </button>

@@ -102,7 +102,7 @@
 
           // 建店场地情况
           if (data.bss){
-              $scope.agent.tradeArea=data.bss.tradeArea?data.bss.tradeArea:'';
+              $scope.item.city.cn=data.bss.tradeArea?data.bss.tradeArea:'';
               $scope.agent.address=data.bss.address?data.bss.address:'';
               $scope.agent.locations=data.bss.locations?data.bss.locations:'';
               $scope.agent.businessName=data.bss.businessName?data.bss.businessName:'';
@@ -262,6 +262,44 @@
            // $scope.userform.$cancel();
       };
     };
+// ///////////////////表格信息验证/////////////////////////////////////////////
+  // 表格不为空
+  $scope.checkNull=function(data){
+    if (data==""){
+      return "表格信息不为空";
+    }
+  }
+  // 大于0的数字
+  $scope.checkExceedzero=function(data){
+    if (!/^[1-9]\d*(\.\d+)?$/.test(data)){
+      return "请输入大于0的数字";
+    }
+  }
+  // 百分比验证
+  $scope.checkPercent=function(data){
+    if (!/^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$/.test(data)){
+      return "输入百分比(0~100之间不加百分号)";
+    }
+  }
+  // 手机号码验证
+  $scope.checkphone=function(data){
+    if (!/^1[3,5,8]\d{9}$/.test(data)){
+      return "请输入有效的手机号码";
+    }
+  }
+  // 邮箱格式验证
+  $scope.checkEmail=function(data){
+    if (!/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/.test(data)){
+      return "请输入有效的邮箱格式";
+    }
+  }
+  // 正整数
+  $scope.checkInteger=function(data){
+    if (!/^[0-9]*[1-9][0-9]*$/.test(data)){
+      return "请输入正整数";
+    }
+  }
+
     
 // ----------------------代理商简述------------------------------
     // 基本信息
@@ -281,7 +319,10 @@
         legalRepresentative:$scope.agent.legalRepresentative
       };
 
-
+      var a = {
+        basic:$scope.basic
+      };
+      saveInfoFixFuntion(a);
     }
     console.log("代理商简述基本信息");
     console.log($scope.basic);
@@ -302,7 +343,12 @@
       var test = JSON.parse(JSON.stringify($scope.insertedgfgc));
       $scope.SharesConstitute.push(test);
     };
-    
+    $scope.saveTableA=function(){
+      var b={
+        SharesConstitute:$scope.SharesConstitute
+      }
+      saveInfoFixFuntion(b);
+    }
     $scope.tableVerify=false;
 
     // 关键人员背景
@@ -323,6 +369,12 @@
       var testTwo = JSON.parse(JSON.stringify($scope.insertedgjrybj));
       $scope.users.push(testTwo);
     };
+    $scope.saveTableC=function(){
+      var c={
+        users:$scope.users
+      };
+      saveInfoFixFuntion(c);
+    }
     // 股份股东投资情况
     /*$scope.investment=function(InvestForm){
 
@@ -344,6 +396,12 @@
       var testthree=JSON.parse(JSON.stringify($scope.insertedgdqcxslythree))
       $scope.carShareholder.push(testthree);
     }
+    $scope.saveTableDa=function(){
+      var da={
+        carShareholder:$scope.carShareholder
+      }
+      saveInfoFixFuntion(da);
+    }
     // 非汽车销售领域
     // $scope.notcarShareholder=[
 
@@ -361,6 +419,12 @@
       };
       var testfour = JSON.parse(JSON.stringify($scope.insertedfourgdfqcxs));
       $scope.notcarShareholder.push(testfour);
+    }
+    $scope.saveTableDb=function(){
+      var db={
+        notcarShareholder:$scope.notcarShareholder
+      };
+      saveInfoFixFuntion(db);
     }
     // 销售维修状况
     $scope.delmaintenance = function(index) {
@@ -389,6 +453,12 @@
       var testfive = JSON.parse(JSON.stringify($scope.insertedxswxqkthree));
       $scope.maintenance.push(testfive);
     }
+    $scope.saveTableE=function(){
+      var e={
+        maintenance:$scope.maintenance
+      };
+      saveInfoFixFuntion(e);
+    }
     // 资信状况
     $scope.creditStatus=function(CSMessageForm)
     {
@@ -398,7 +468,11 @@
           $scope.CSmessage={
            qualityRating: $scope.agent.qualityRating,
            XYDJPJbank: $scope.agent.XYDJPJbank
-          }
+          };
+          var fc={
+            CSmessage:$scope.CSmessage
+          };
+          saveInfoFixFuntion(fc);
         }
 
         console.log($scope.CSmessage);
@@ -416,6 +490,12 @@
       var testseven = JSON.parse(JSON.stringify($scope.insertedzxqk));
       $scope.nowBankDeposit.push(testseven);
     }
+    $scope.saveTableFb=function(){
+      var fb={
+        nowBankDeposit:$scope.nowBankDeposit
+      };
+      saveInfoFixFuntion(fb);
+    }
 
     // 财务报表
     $scope.delfinanceStatusTable = function(index) {
@@ -432,7 +512,12 @@
       var testsix = JSON.parse(JSON.stringify($scope.insertedcwbb));
       $scope.financeStatusTable.push(testsix);
     }
-
+    $scope.saveTableFa=function(){
+      var fa={
+        financeStatusTable:$scope.financeStatusTable
+      };
+      saveInfoFixFuntion(fa);
+    }
     // ---------------------拟建店简述------------------------
     $scope.btn2="btn21";
     $scope.locations=[
@@ -451,14 +536,16 @@
     // 建店场地情况
     $scope.item = {
     city: [ '北京' ]
-};
+    };
 
     $scope.buildStoreSite=function(bssForm)
     {
         $scope.submitbss = true;
+        console.log("省市联动");
+        console.log($scope.item.city.cn);
         if (bssForm.$valid){
-          $scope.bss = {
-            tradeArea: $scope.agent.tradeArea,
+            $scope.bss = {
+            tradeArea: $scope.item.city.cn,
             address: $scope.agent.address,
             locations: $scope.agent.locations,
             businessName: $scope.agent.businessName,
@@ -493,6 +580,10 @@
             showcaseHeight: $scope.agent.showcaseHeight,
             afterSaleBuildArea: $scope.agent.afterSaleBuildArea
           }
+          var g={
+            bss:$scope.bss
+          };
+          saveInfoFixFuntion(g);
         }
 
         console.log($scope.bss);
@@ -512,6 +603,12 @@
       var testeight=JSON.parse(JSON.stringify($scope.insertedjdcssq));
       $scope.BSbusinessArea.push(testeight);
     };
+    $scope.saveTableH=function(){
+      var h={
+        BSbusinessArea:$scope.BSbusinessArea
+      };
+      saveInfoFixFuntion(h);
+    }
     // 建店场地相关资料
     $scope.btn23="btn231";
     $scope.BuiltShopSiteTable=function(BSSdatumForm){
@@ -548,6 +645,10 @@
             registrationTime: $scope.agent.registrationTime,
             rirmRegisteredAddress: $scope.agent.rirmRegisteredAddress
           }
+          var i={
+            newCP:$scope.newCP
+          };
+          saveInfoFixFuntion(i);
         }
 
         console.log($scope.newCP);
@@ -567,7 +668,12 @@
       var testnice = JSON.parse(JSON.stringify($scope.insertedxgsgqjg));
       $scope.newEquityStructure.push(testnice);
     }
-
+    $scope.saveTableJ=function(){
+      var j={
+        newEquityStructure:$scope.newEquityStructure
+      };
+      saveInfoFixFuntion(j);
+    }
     // 资金筹备
     $scope.funding=function(fundingForm){
         $scope.submitfunding=true;
@@ -604,6 +710,10 @@
                 mentionModelsArriveTime:$scope.agent.mentionModelsArriveTime,
                 mentionModelsRemark:$scope.agent.mentionModelsRemark
             }
+            var k={
+              fundings:$scope.fundings
+            };
+            saveInfoFixFuntion(k);
         }
         console.log($scope.fundings);
     }
@@ -622,6 +732,12 @@
       var testten = JSON.parse(JSON.stringify($scope.inserteddmjsjh));
       $scope.StoreConstructionPlan.push(testten);
     }
+    $scope.saveTableL=function(){
+      var l={
+        StoreConstructionPlan:$scope.StoreConstructionPlan
+      };
+      saveInfoFixFuntion(l);
+    }
     // 关键岗位组建筹备
     $scope.delkeyJob = function(index) {
       $scope.keyJob.splice(index, 1);
@@ -636,6 +752,12 @@
       };
       var testele = JSON.parse(JSON.stringify($scope.insertedgjgwzjcb));
       $scope.keyJob.push(testele);
+    }
+    $scope.saveTableM=function(){
+      var m={
+        keyJob:$scope.keyJob
+      };
+      saveInfoFixFuntion(m);
     }
     // 组建架构筹备
     $scope.frameworkaRrange=function(organizeSchemaForm){
@@ -656,6 +778,10 @@
             forecastTwo:$scope.agent.forecastTwo,
             marketingAnalysis:$scope.agent.marketingAnalysis
           }
+          var n={
+            MFAform:$scope.MFAform
+          };
+          saveInfoFixFuntion(n);
         }
 
         console.log($scope.MFAform);

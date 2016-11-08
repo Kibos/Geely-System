@@ -12,12 +12,14 @@
   </tr>
   <tr ng-repeat="user in StoreConstructionPlan" class="editable-row">
     <td>
-        <span editable-text="user.city" e-name="city" e-form="userform" e-required>
+        <span editable-text="user.city" e-name="city" e-form="userform" e-required onbeforesave="checkNull($data)"
+>
           {{ user.city || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.branch" e-name="branch" e-form="userform" e-required>
+        <span editable-text="user.branch" e-name="branch" e-form="userform" e-required onbeforesave="checkNull($data)"
+>
           {{ user.branch || '请输入信息'}}
         </span>
     </td>
@@ -38,7 +40,7 @@
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="inserteddmjsjh.city == user.city">
+            shown="inserteddmjsjh.city == user.city" onaftersave="saveTableL()">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>

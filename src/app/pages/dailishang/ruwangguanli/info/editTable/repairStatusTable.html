@@ -23,63 +23,63 @@
   </tr>
   <tr ng-repeat="user in maintenance" class="editable-row">
     <td>
-        <span editable-text="user.COHR" e-name="COHR" e-form="userform" e-required>
+        <span editable-text="user.COHR" e-name="COHR" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.COHR || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.brand" e-name="brand" e-form="userform" e-required>
+        <span editable-text="user.brand" e-name="brand" e-form="userform" e-required onbeforesave="checkNull($data)">
           {{ user.brand || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fourteen.salesVolume" e-name="fourteenSalesVolume" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$">
+        <span editable-number="user.fourteen.salesVolume" e-name="fourteenSalesVolume" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$" onbeforesave="checkInteger($data)">
           {{ user.fourteen.salesVolume || '格式错误,请输入正整数'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
+        <span editable-text="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.fourteen.marketShare || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fourteen.several" e-name="fourteenSeveral" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$">
+        <span editable-number="user.fourteen.several" e-name="fourteenSeveral" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$" onbeforesave="checkInteger($data)">
           {{ user.fourteen.several || '格式错误,请输入正整数'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fifteen.salesVolume" e-name="fifteenSalesVolume" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$">
+        <span editable-number="user.fifteen.salesVolume" e-name="fifteenSalesVolume" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$" onbeforesave="checkInteger($data)">
           {{ user.fifteen.salesVolume || '格式错误,请输入正整数'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
+        <span editable-text="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.fifteen.marketShare || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.fifteen.several" e-name="fifteenSeveral" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$">
+        <span editable-number="user.fifteen.several" e-name="fifteenSeveral" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$" onbeforesave="checkInteger($data)">
           {{ user.fifteen.several || '格式错误,请输入正整数'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.sixteen.salesVolume" e-name="sixteenSalesVolume" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$">
+        <span editable-number="user.sixteen.salesVolume" e-name="sixteenSalesVolume" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$" onbeforesave="checkInteger($data)">
           {{ user.sixteen.salesVolume || '格式错误,请输入正整数'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$">
+        <span editable-text="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.sixteen.marketShare || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.sixteen.several" e-name="sixteenSeveral" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$">
+        <span editable-number="user.sixteen.several" e-name="sixteenSeveral" e-form="userform" e-required e-pattern="^[0-9]*[1-9][0-9]*$" onbeforesave="checkInteger($data)">
           {{ user.sixteen.several || '格式错误,请输入正整数'}}
         </span>
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="insertedxswxqkthree.COHR == user.COHR">
+            shown="insertedxswxqkthree.COHR == user.COHR" onaftersave="saveTableE()">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>
