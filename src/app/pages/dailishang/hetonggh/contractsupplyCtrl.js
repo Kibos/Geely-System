@@ -10,6 +10,9 @@
 
   /** @ngInject */
   function contractsupplyCtrl($scope,RoleUser,Auth,toastr,filesUrl) {
+    $scope.saveDesign = function(){
+      $scope.Flag = true;
+    };
 
    $scope.formData={};
    var entries =RoleUser.gongUser.query(function() {

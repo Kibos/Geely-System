@@ -46,7 +46,7 @@
     var temp=item.user.status;
     switch(temp.length||0){
       case 0: console.log("待提交验收申请"); break;
-      case 1: 
+      case 1:
           {$state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
           console.log("待安排验收"); }break;
       case 2:  console.log("待提交整改申请"); break;
