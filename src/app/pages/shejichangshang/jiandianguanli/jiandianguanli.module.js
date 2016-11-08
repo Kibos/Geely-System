@@ -25,21 +25,27 @@
         url: '/designfirst',
         controller: 'designfirstCtrl',
         templateUrl: 'app/pages/shejichangshang/jiandianguanli/designfirst.html',
-        params:{'obj':{}},
+        params:{
+          obj:null
+        },
 
       })
       .state('ba.designfinal', {
         url: '/designfinal',
         controller: 'designfinalCtrl',
         templateUrl: 'app/pages/shejichangshang/jiandianguanli/designfinal.html',
-        params:{'obj':{}},
+        params:{
+          obj:null
+        },
 
       })
       .state('ba.designfinished', {
         url: '/designfinished',
         controller: 'designfinishedCtrl',
         templateUrl: 'app/pages/shejichangshang/jiandianguanli/designfinished.html',
-        params:{'obj':{}},
+        params:{
+          obj:null
+        }, 
 
       })
       .state('ba.jdgli.shigongtu', {

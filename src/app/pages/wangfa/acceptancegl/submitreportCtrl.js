@@ -12,6 +12,7 @@
   function submitreportCtrl($scope,$state,$stateParams,$rootScope) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
+
     var vm = this;
     vm.partners='杭州吉利4S店';
     vm.information = '杭州吉利4S店';
@@ -19,8 +20,8 @@
     vm.selectItems=[
         { label:'通过',value: 1},
         { label:'不通过',value: 2}
-    ]
-    vm.check = {}
+    ];
+    vm.check = {};
     vm.submit=function () {
       var newcheck =  {
           result:vm.check.result,

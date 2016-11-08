@@ -8,11 +8,11 @@
     <div ba-panel ba-panel-title="网络发展/供应商列表" ba-panel-class="with-scroll">
       <div class="horizontal-scroll">
         <div class="form-group select-page-size-wrap widthFix">
-          <label>每页显示条数
+          <!-- <label>每页显示条数
             <select class="widthFix form-control selectpicker show-tick" title="Rows on page" selectpicker
                     ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
             </select>
-          </label>
+          </label> -->
           <button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
         </div>
         <table class="table" st-table="$scope.suppliers">
@@ -25,24 +25,8 @@
 				      <th st-sort="phone">联系电话</th>
 				      <th st-sort="createAt">加入时间</th>
 				      <th st-sort="number">案例数</th>
-				      <th st-sort="caozuo">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp;</th>
+				      <th st-sort="caozuo">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp;</th>
             </tr>
-            <!-- <tr>
-              <th><input st-search="" placeholder="Search " class="input-sm form-control search-input widthFix table-id"
-                         type="search"/></th>
-              <th><input st-search="name" placeholder="Search name" class="input-sm form-control search-input widthFix"
-                         type="search"/></th>
-              <th><input st-search="gonguser.address" placeholder="Search address" class="input-sm form-control search-input widthFix"
-                         type="search"/></th>
-              <th><input st-search="gonguser.ownName" placeholder="Search ownName" class="input-sm form-control search-input widthFix"
-                         type="search"/></th>
-              <th><input st-search="phone" placeholder="Search phone" class="input-sm form-control search-input widthFix" type="search"/></th>
-              <th><input st-search="createAt" placeholder="Search createAt" class="input-sm form-control search-input widthFix"
-                         type="search"/></th>
-              <th><input st-search="gonguser.number" placeholder="Search number" class="input-sm form-control search-input widthFix"
-                         type="search"/></th>
-              <th></th>
-            </tr> -->
           </thead>
           <tbody>
             <tr ng-repeat="item in suppliers">
@@ -57,10 +41,10 @@
 
 				      <td>
                 <div class="buttons">
-                  <button class="btn btn-primary editable-table-button btn-sm" ng-click="see(item)">
+                  <button class="btn btn-primary btn-sm" ng-click="see(item)">
                     <i class=""></i>查看
                   </button>
-                  <button class="btn btn-danger editable-table-button btn-sm" ng-click="remove($index)">
+                  <button class="btn btn-danger btn-sm" ng-click="remove($index)">
                     <i class="ion-delete"></i>删除
                   </button>
                 </div>

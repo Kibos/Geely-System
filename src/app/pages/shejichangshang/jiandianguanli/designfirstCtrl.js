@@ -9,17 +9,19 @@
       .controller('designfirstCtrl', designfirstCtrl);
 
   /** @ngInject */
-  function designfirstCtrl($scope) {
+  function designfirstCtrl($scope,$stateParams,$state) {
+    var information = $stateParams.obj;
+    console.log(information);
     /** 代理商概览*/
     $scope.partners=
        	{
-       		id:1,
-       		compony:'北京xx',
+       		id:information.id,
+       		compony:information.company,
        		name:'汽车',
        		place:'北京',
        		type:'旗舰店',
-       		person:'黎明',
-       		phone:'13235556556',
+       		person:information.person,
+       		phone:information.phone,
        		email:'1213444@qq.com'
        	};
 
@@ -81,6 +83,9 @@
         $scope.submit=function(){
             console.log('提交审核');
         };
+        $scope.cancel = function(){
+          $state.go("ba.jdgli.design");
+        }
 
   }
 })();
