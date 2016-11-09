@@ -27,15 +27,24 @@
       // 查看
       $scope.see=function(item){
     		$state.go('ba.hezuohuoban.gysxx',{obj:item});
-        // console.log();
     	};
 
      // 从数据库中取值
+     $scope.suppliers = [];
      var entries =RoleUser.gongUser.query(function() {
         console.log("++++>>>"+entries);
-        $scope.suppliers=entries;
+        // console.log("++++>>>111"+JSON.stringify(entries));
+        console.log("++++>>>222"+JSON.stringify(entries[0]));
+        for (var i = 0; i < entries.length; i++) {
+          $scope.suppliers[i] = entries[i]
+        };
+        // $scope.suppliers=entries;
         // vm.suppliers=entries;
       //   console.log("si=="+suppliers.length);
     });
+
+
+
+
   }
 })();
