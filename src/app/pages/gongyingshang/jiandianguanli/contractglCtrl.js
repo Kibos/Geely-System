@@ -9,17 +9,22 @@
       .controller('contractglCtrl', contractglCtrl);
 
   /** @ngInject */
-  function contractglCtrl($scope,RoleUser,Auth,$rootScope) {
+  function contractglCtrl($scope,$state,RoleUser,Auth,$rootScope) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
     $scope.smartTablePageSize = 5;
-    $scope.applicants=[];
 
-    var entries =RoleUser.myContract.query({_id:Auth.getCurrentUser()._id},function() {
+    // 查看   把当前页面的代理商的信息传给contractglview页面
+    $scope.see=function(item){
+      $state.go('ba.contractglview',{obj:item});
+    };
 
-        $scope.applicants=entries;
-          console.log("++++>>>"+JSON.stringify(entries)+"   ......>>>"+Auth.getCurrentUser()._id);
-    });
+    // $scope.applicants=[];
+    // var entries =RoleUser.myContract.query({_id:Auth.getCurrentUser()._id},function() {
+    //
+    //     $scope.applicants=entries;
+    //       console.log("++++>>>"+JSON.stringify(entries)+"   ......>>>"+Auth.getCurrentUser()._id);
+    // });
 
         $scope.applicants = [
           {

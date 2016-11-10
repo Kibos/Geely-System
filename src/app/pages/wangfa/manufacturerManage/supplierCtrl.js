@@ -33,7 +33,9 @@
      $scope.suppliers = [];
      var entries =RoleUser.gongUser.query(function() {
         console.log("++++>>>"+entries);
-        // console.log("++++>>>111"+JSON.stringify(entries));
+        console.log("++++>>>111"+JSON.stringify(entries,null, "\t"));
+        
+        console.log("++++>>>111"+JSON.stringify(entries,["name", "gonguser.address", "gonguser.ownName", "phone", "createAt", "gonguser.number"], "\t"));
         console.log("++++>>>222"+JSON.stringify(entries[0]));
         for (var i = 0; i < entries.length; i++) {
           $scope.suppliers[i] = entries[i]

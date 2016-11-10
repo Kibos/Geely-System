@@ -6,7 +6,7 @@
           <input type="text"
                  name="id"
                  class="form-control individual-iput"
-                 ng-model="partners.id"
+                 ng-model="applicant.id"
                  disabled="true"/>
         </div>
         <div class="form-group">
@@ -14,7 +14,7 @@
           <input type="text"
                  name="compony"
                  class="form-control individual-iput"
-                 ng-model="partners.compony"
+                 ng-model="applicant.compony"
                  disabled="true"/>
         </div>
         <div class="form-group">
@@ -22,7 +22,7 @@
           <input type="text"
                  name="name"
                  class="form-control individual-iput"
-                 ng-model="partners.name"
+                 ng-model="applicant.name"
                  disabled="true"/>
         </div>
         <div class="form-group">
@@ -30,7 +30,7 @@
           <input type="text"
                  name="place"
                  class="form-control individual-iput"
-                 ng-model="partners.place"
+                 ng-model="applicant.place"
                  disabled="true"/>
         </div>
   			<div class="form-group">
@@ -46,7 +46,7 @@
           <input type="text"
                  name="person"
                  class="form-control individual-iput"
-                 ng-model="partners.name"
+                 ng-model="applicant.name"
                  disabled="true"/>
         </div>
   			<div class="form-group">
@@ -54,7 +54,7 @@
           <input type="text"
                  name="phone"
                  class="form-control individual-iput"
-                 ng-model="partners.cellphone"
+                 ng-model="applicant.cellphone"
                  disabled="true"/>
         </div>
   </div>
@@ -96,15 +96,18 @@
                  disabled="true"/>
         </div>
         <div class="form-group">
-          <label>简介：</label>
-          <textarea class="form-control"
+          <label class="individual-label">简介：</label>
+          <textarea type="text"
+                    name="info"
+                    class="form-control individual-iput"
                     placeholder="简介"
-                    ng-model="supplier.gonguser.info">{{ supplier.gonguser.info || 'empty' }}
+                    ng-model="supplier.gonguser.info"
+                    id="jianjie"
+                    disabled="true">{{ supplier.gonguser.info || 'empty' }}
           </textarea>
         </div>
   </div>
 </div>
-
 
 <div class="col-md-12">
   <div class="" style="margin-top:100px;">
