@@ -9,54 +9,70 @@
       .controller('acceptanceglCtrl', acceptanceglCtrl);
 
   /** @ngInject */
-  function acceptanceglCtrl($scope,$state,RoleUser) {
-
+  function acceptanceglCtrl($scope,RoleUser,$rootScope,$state) {
+    $rootScope.sidebartopfalg = false;
+    $rootScope.loginflag = true ;
     $scope.smartTablePageSize = 5;
-    // 不完善
-    $scope.status=["待提交申请","待安排验收","待提交整改申请","整改申请待安排验收","已完成验收"];
-    $scope.acceptancelists = [] ;
-    $scope.acceptancelist1s = [] ;
 
-    var entries =RoleUser.daiUser.query(function() {
-    console.log("++++>>>"+entries.length);
-    console.log(entries);
+    $scope.acceptancelists=[
+      {
+        name:'杭州远景',
+        type:'城市展厅',
+        address:'东区-浙江省杭州市',
+        status:'待提交申请'
+      },
+      {
+        name:'杭州远景',
+        type:'城市展厅',
+        address:'东区-上海市嘉定区',
+        status:'待提交申请'
+      },
+      {
+        name:'上海华庭',
+        type:'A级4S店',
+        address:'东区-江苏省苏州市',
+        status:'待安排验收'
+      },
+      {
+        name:'上海华庭',
+        type:'A级4S店',
+        address:'东区-上海市嘉定区',
+        status:'待安排验收'
+      },
+      {
+        name:'苏州汽工贸',
+        type:'A级4S店',
+        address:'东区-浙江省杭州市',
+        status:'待提交整改申请'
+      },
+      {
+        name:'苏州汽工贸',
+        type:'A级4S店',
+        address:'江苏省苏州市',
+        status:'待提交整改申请'
+      },
+      {
+        name:'苏州汽工贸',
+        type:'A级4S店',
+        address:'东区-浙江省杭州市',
+        status:'待提交申请'
+      }
 
-    var flag = false;
-    for(var i=0;i<entries.length;i++){
-      flag = false;
-     if(entries[i].user.status.length>=3){
-        for(var j=0;j<entries[i].user.status.length;j++){
-          if($scope.status[entries[i].user.status.length]=="已完成验收"){
-              $scope.acceptancelist1s.push(entries[i]);
-              flag=true;
-              break;
-          }
-        }
-        if(!flag){
-            $scope.acceptancelists.push(entries[i]);
-            console.log("---<<<<:i="+i+"  "+entries[i]);
-        }
-     }else{
-       $scope.acceptancelists.push(entries[i]);
-       console.log("---<<<<:i="+i+"  "+entries[i]);
-     }
-    }
-   });
-
-
+    ];
     $scope.xq = function(item){
-    var temp=item.user.status;
-    switch(temp.length||0){
-      case 0: console.log("待提交验收申请"); break;
-      case 1:
-          {$state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
-          console.log("待安排验收"); }break;
-      case 2:  console.log("待提交整改申请"); break;
-      case 3: console.log("整改申请待安排验收");break;
-      case 4: console.log("已完成验收");break;
-      default:console.log("END");
-    }
-   };
+       if(item.status==='待提交申请'){
+        console.log("待提交验收申请");
+         // $state.go('ba.jiandianguanli.buildstorebtdetail',{obj:item});
+       }else if(item.status==='待安排验收')
+       {
+         $state.go('ba.jiandianguanli.acceptanceglcheck',{obj:item});
+        console.log("待安排验收");
+      }else if(item.status==='待提交整改申请'){
+        console.log("待提交整改申请");
+      }else if(item.status==='已完成验收'){
+       console.log("已完成验收");
+       }
+ };
 
 
   }

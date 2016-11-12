@@ -45,7 +45,7 @@
         templateUrl: 'app/pages/shejichangshang/jiandianguanli/designfinished.html',
         params:{
           obj:null
-        }, 
+        },
 
       })
       .state('ba.jdgli.shigongtu', {
@@ -65,7 +65,18 @@
             icon: 'ion-ios-pulse',
             order: 30,
           },
-      });
+      })
+      .state('ba.jdgli.yanshougl', {
+        url: '/jdgli.yanshougl',
+        controller: 'yanshouglCtrl',
+        templateUrl: 'app/pages/shejichangshang/jiandianguanli/yanshougl/yanshougl.html',
+          title: '验收管理',
+          sidebarMeta: {
+            icon: 'ion-ios-pulse',
+            order: 40,
+          },
+      })
+      ;
 
 
   }

@@ -8,7 +8,7 @@
   <uib-tab heading="待验收">
     <div class="row">
       <div class="col-md-12">
-        <div ba-panel ba-panel-title="网络发展/代理商运营/验收列表" ba-panel-class="with-scroll">
+        <div ba-panel ba-panel-title="设计厂商/验收管理/验收列表" ba-panel-class="with-scroll">
           <div class="horizontal-scroll">
             <div class="form-group select-page-size-wrap widthFix">
               <label>每页显示条数
@@ -42,8 +42,8 @@
                 <tr ng-repeat="item in acceptancelists">
                   <!-- <td class="table-id">{{item.id}}</td> -->
                   <td class="table-id">{{item.name}}</td>
-                  <td>{{item.type||'A级4S店'}}</td>
-                  <td>{{item.address||""}}</td>
+                  <td>{{item.type}}</td>
+                  <td>{{item.address}}</td>
                   <td>{{item.status}}</td>
                   <td><a href="" ng-click="xq(item)" >详情</a></td>
                 </tr>
@@ -64,7 +64,7 @@
   <uib-tab heading="已完成验收">
     <div class="row">
       <div class="col-md-12">
-        <div ba-panel ba-panel-title="网络发展/代理商运营/验收列表" ba-panel-class="with-scroll">
+        <div ba-panel ba-panel-title="设计厂商/验收管理/验收列表" ba-panel-class="with-scroll">
           <div class="horizontal-scroll">
             <div class="form-group select-page-size-wrap widthFix">
               <label>每页显示条数
