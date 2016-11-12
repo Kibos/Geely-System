@@ -19,41 +19,41 @@
             </div>
             <table class="table" st-table="$scope.acceptancelists">
               <thead>
-              <tr class="sortable ">
-                <!-- <th class="table-id" st-sort="id" st-sort-default="true">编号</th> -->
-                <th class="table-id" st-sort="agent">代理商</th>
-                <th st-sort="type">代理商类型</th>
-                <th st-sort="area">所在地区</th>
-                <th st-sort="state">状态</th>
-                <th st-sort="detail">详情</th>
-              </tr>
-              <tr>
-                <th><input st-search="agent" placeholder="Search agent" class="input-sm form-control search-input widthFix table-id"
-                           type="search"/></th>
-                <th><input st-search="type" placeholder="Search type" class="input-sm form-control search-input widthFix"
-                           type="search"/></th>
-                <th><input st-search="area" placeholder="Search area" class="input-sm form-control search-input widthFix"
-                           type="search"/></th>
-                <th><input st-search="state" placeholder="Search state" class="input-sm form-control search-input widthFix" type="search"/></th>
-                <th></th>
-              </tr>
+                <tr class="sortable ">
+                  <!-- <th class="table-id" st-sort="id" st-sort-default="true">编号</th> -->
+                  <th class="table-id" st-sort="name">代理商</th>
+                  <th st-sort="type">代理商类型</th>
+                  <th st-sort="address">所在地区</th>
+                  <th st-sort="status">状态</th>
+                  <th st-sort="detail">详情</th>
+                </tr>
+                <tr>
+                  <th><input st-search="name" placeholder="Search agent" class="input-sm form-control search-input widthFix table-id"
+                             type="search"/></th>
+                  <th><input st-search="type" placeholder="Search type" class="input-sm form-control search-input widthFix"
+                             type="search"/></th>
+                  <th><input st-search="address" placeholder="Search address" class="input-sm form-control search-input widthFix"
+                             type="search"/></th>
+                  <th><input st-search="status" placeholder="Search status" class="input-sm form-control search-input widthFix" type="search"/></th>
+                  <th></th>
+                </tr>
               </thead>
               <tbody>
-              <tr ng-repeat="item in acceptancelists">
-                <!-- <td class="table-id">{{item.id}}</td> -->
-                <td class="table-id">{{item.name}}</td>
-                <td>{{item.type||'A级4S店'}}</td>
-                <td>{{item.address||""}}</td>
-                <td>{{status[item.user.status.length||0]}}</td>
-                <td><a href="" ng-click="xq(item)" >详情</a></td>
-              </tr>
+                <tr ng-repeat="item in acceptancelists">
+                  <!-- <td class="table-id">{{item.id}}</td> -->
+                  <td class="table-id">{{item.name}}</td>
+                  <td>{{item.type||'A级4S店'}}</td>
+                  <td>{{item.address||""}}</td>
+                  <td>{{status[item.user.status.length||0]}}</td>
+                  <td><a href="" ng-click="xq(item)" >详情</a></td>
+                </tr>
               </tbody>
               <tfoot>
-              <tr>
-                <td colspan="5" class="text-center">
-                  <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
-                </td>
-              </tr>
+                <tr>
+                  <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                  </td>
+                </tr>
               </tfoot>
             </table>
           </div>
@@ -75,41 +75,41 @@
             </div>
             <table class="table" st-table="$scope.acceptancelist1s">
               <thead>
-              <tr class="sortable ">
-                <!-- <th class="table-id" st-sort="id" st-sort-default="true">编号</th> -->
-                <th class="table-id" st-sort="agent">代理商</th>
-                <th st-sort="type">代理商类型</th>
-                <th st-sort="area">所在地区</th>
-                <th st-sort="state">状态</th>
-                <th st-sort="detail">详情</th>
-              </tr>
-              <tr>
-                <th><input st-search="agent" placeholder="Search agent" class="input-sm form-control search-input widthFix table-id"
-                           type="search"/></th>
-                <th><input st-search="type" placeholder="Search type" class="input-sm form-control search-input widthFix"
-                           type="search"/></th>
-                <th><input st-search="area" placeholder="Search area" class="input-sm form-control search-input widthFix"
-                           type="search"/></th>
-                <th><input st-search="state" placeholder="Search state" class="input-sm form-control search-input widthFix" type="search"/></th>
-                <th></th>
-              </tr>
+                <tr class="sortable ">
+                  <!-- <th class="table-id" st-sort="id" st-sort-default="true">编号</th> -->
+                  <th class="table-id" st-sort="name">代理商</th>
+                  <th st-sort="type">代理商类型</th>
+                  <th st-sort="address">所在地区</th>
+                  <th st-sort="status">状态</th>
+                  <th st-sort="detail">详情</th>
+                </tr>
+                <tr>
+                  <th><input st-search="name" placeholder="Search name" class="input-sm form-control search-input widthFix table-id"
+                             type="search"/></th>
+                  <th><input st-search="type" placeholder="Search type" class="input-sm form-control search-input widthFix"
+                             type="search"/></th>
+                  <th><input st-search="address" placeholder="Search address" class="input-sm form-control search-input widthFix"
+                             type="search"/></th>
+                  <th><input st-search="status" placeholder="Search status" class="input-sm form-control search-input widthFix" type="search"/></th>
+                  <th></th>
+                </tr>
               </thead>
               <tbody>
-              <tr ng-repeat="item in acceptancelist1s">
-                <!-- <td class="table-id">{{item.id}}</td> -->
-                      <td class="table-id">{{item.name}}</td>
-                <td>{{item.type||'A级4S店'}}</td>
-                <td>{{item.address||""}}</td>
-                <td>{{status[4]}}</td>
-                <td><a href="" ng-click="xq(item)" >详情</a></td>
-              </tr>
+                <tr ng-repeat="item in acceptancelist1s">
+                  <!-- <td class="table-id">{{item.id}}</td> -->
+                  <td class="table-id">{{item.name}}</td>
+                  <td>{{item.type||'A级4S店'}}</td>
+                  <td>{{item.address||""}}</td>
+                  <td>{{status[4]}}</td>
+                  <td><a href="" ng-click="xq(item)" >详情</a></td>
+                </tr>
               </tbody>
               <tfoot>
-              <tr>
-                <td colspan="5" class="text-center">
-                  <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
-                </td>
-              </tr>
+                <tr>
+                  <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+                  </td>
+                </tr>
               </tfoot>
             </table>
           </div>

@@ -1,27 +1,30 @@
 /**
- * @author v.lugovksy
- * created on 16.12.2015
+ * @author sunxuanxuan
+ * created on 12.11.2016
  */
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.dailishang.rectificationsq')
-      .controller('rectificationsqCtrl', rectificationsqCtrl);
+  angular.module('BlurAdmin.pages.dailishang.jiandiangl')
+      .controller('acceptancesqCtrl', acceptancesqCtrl);
 
   /** @ngInject */
-  function rectificationsqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop, $filter, $http,filesUrl) {
+  function acceptancesqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop, $filter, $http,filesUrl) {
     $rootScope.sidebartopfalg = false;
     $rootScope.loginflag = true ;
 
+    // 获取当前的用户信息   即当前登录的代理商的信息
     $scope.currentUser = Auth.getCurrentUser();
-    console.log($scope.currentUser);
+    console.log('当前登录的代理商的信息'+JSON.stringify($scope.currentUser,null,'\t'));
 
     Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
         console.log(data);
         $scope._dbid = data._id;
         $scope.yanshouFile = data.yanshouFile;
 
-    });// 文件上传   开始 file upload
+    });
+
+    // 文件上传   开始 file upload
     $scope.fileList = [];
     var fileArray = [];
     $scope.$watch('files',function(f){
@@ -94,11 +97,6 @@
 
 
 
-    $scope.partners='杭州吉利4S店';
-    $scope.information='杭州吉利4S店';
-    $scope.submit=function () {
-      $state.go('ba.submitreport');
-      // body...
-    }
+
   }
 })();

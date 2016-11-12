@@ -10,14 +10,16 @@
 
   /** @ngInject */
   function acceptanceglCtrl($scope,$state,RoleUser) {
-    $scope.smartTablePageSize = 5;
-// 不完善
-   $scope.status=["待提交申请","待安排验收","待提交整改申请","整改申请待安排验收","已完成验收"];
-   $scope.acceptancelists = [] ;
-   $scope.acceptancelist1s = [] ;
 
-   var entries =RoleUser.daiUser.query(function() {
-        console.log("++++>>>"+entries.length);
+    $scope.smartTablePageSize = 5;
+    // 不完善
+    $scope.status=["待提交申请","待安排验收","待提交整改申请","整改申请待安排验收","已完成验收"];
+    $scope.acceptancelists = [] ;
+    $scope.acceptancelist1s = [] ;
+
+    var entries =RoleUser.daiUser.query(function() {
+    console.log("++++>>>"+entries.length);
+    console.log(entries);
 
     var flag = false;
     for(var i=0;i<entries.length;i++){

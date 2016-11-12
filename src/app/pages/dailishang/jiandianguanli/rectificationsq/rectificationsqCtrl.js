@@ -1,42 +1,28 @@
 /**
- * @author v.lugovksy
- * created on 16.12.2015
+ * @author sunxuanxuan
+ * created on 12.11.2016
  */
 (function () {
   'use strict';
 
-  angular.module('BlurAdmin.pages.dailishang')
-      .controller('acceptancesqCtrl', acceptancesqCtrl);
+  angular.module('BlurAdmin.pages.dailishang.jiandiangl')
+      .controller('rectificationsqCtrl', rectificationsqCtrl);
 
   /** @ngInject */
-  function acceptancesqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop, $filter, $http,filesUrl) {
+  function rectificationsqCtrl($scope,$state,$stateParams, $rootScope, $upload, $timeout, Auth, Shop, $filter, $http,filesUrl) {
+    $rootScope.sidebartopfalg = false;
+    $rootScope.loginflag = true ;
 
-
-
+    // 获取当前的用户信息   即当前登录的代理商的信息
     $scope.currentUser = Auth.getCurrentUser();
-
-    console.log($scope.currentUser)
+    console.log('当前登录的代理商的信息'+JSON.stringify($scope.currentUser,null,'\t'));
 
     Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
         console.log(data);
         $scope._dbid = data._id;
         $scope.yanshouFile = data.yanshouFile;
 
-    })
-
-    $rootScope.sidebartopfalg = false;
-    $rootScope.loginflag = true ;
-
-    $scope.submit=function (){
-      // $state.go('components.acceptanceCheck');
-      var acceptance={
-          agent:$scope.agent,
-          file:$scope.file,
-      }
-      console.log(acceptance);
-
-    }
-    // 文件上传   开始 file upload
+    });// 文件上传   开始 file upload
     $scope.fileList = [];
     var fileArray = [];
     $scope.$watch('files',function(f){
@@ -108,7 +94,11 @@
     // 文件上传结束
 
 
+    // 上一次验收资料  假数据
+    $scope.information='杭州吉利4S店';
 
+
+  
 
   }
 })();
