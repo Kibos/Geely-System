@@ -22,8 +22,8 @@
     // $scope.applicants=[];
     // var entries =RoleUser.myContract.query({_id:Auth.getCurrentUser()._id},function() {
     //
-    //     $scope.applicants=entries;
-    //       console.log("++++>>>"+JSON.stringify(entries)+"   ......>>>"+Auth.getCurrentUser()._id);
+    //    $scope.applicants=entries;
+    //    console.log("++++>>>"+JSON.stringify(entries)+"   ......>>>"+Auth.getCurrentUser()._id);
     // });
 
         $scope.applicants = [

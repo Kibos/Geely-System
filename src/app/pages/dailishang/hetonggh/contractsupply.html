@@ -95,7 +95,7 @@
                         ng-model="suppliers[sid].message"
                         disabled="true">{{ supplier.message || 'empty' }}
               </textarea>
-          </div>
+            </div>
 
       </div>
     </div>
@@ -165,13 +165,13 @@
                    min="2015-12-12"
                    max="2016-12-22"
                    ng-required="true"
-                   ng-change="change()" ng-disabled="Flag">
+                   ng-change="change()"
+                   ng-disabled="Flag">
           </div>
           <!-- <div class="sj" style="margin-bottom:20px;">
             <label>电子版合同：</label>
             <input type="file" id="inputfile" ng-model="formData.agreementFile">
           </div> -->
-
         </div>
         <div class="col-md-6">
           <div ba-panel ba-panel-title="供应商概览">
@@ -269,7 +269,7 @@
                 <button class="btn btn-info"  ng-show="item.bool" disabled>
                   <span>已提交</span>
                 </button>
-                <button class="btn btn-info" ng-show="!item.bool">
+                <button class="btn btn-info" ng-show="!item.bool" ng-click="submitClick()">
                   <span>提&nbsp;交</span>
                 </button>
               </label>
@@ -293,13 +293,13 @@
                 <button class="btn btn-info"  ng-show="last.bool" disabled>
                   <span>已提交</span>
                 </button>
-                <button class="btn btn-info" ng-show="!last.bool">
+                <button class="btn btn-info" ng-show="!last.bool" ng-click="submitClick()">
                   <span>提&nbsp;交</span>
                 </button>
               </label>
             </div>
 
-            <center><button class="btn btn-info btn-lg" ng-click="" style="margin-top:10px;" >确认</button></center>
+            <center><button class="btn btn-info btn-lg" ng-click="confirmClick()" style="margin-top:10px;" >确认</button></center>
 
           </div>
 

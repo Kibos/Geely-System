@@ -16,7 +16,7 @@
 
    $scope.formData={};
    var entries =RoleUser.gongUser.query(function() {
-      console.log(entries);
+      console.log('sxx'+entries);
        $scope.suppliers=entries;
    });
   //  var vm= this;
@@ -111,6 +111,15 @@
   //最后一个步骤
     $scope.last = {
       num:'5',steps:'供货商安装完成确认',states:'供应商已完成安装确认',bool:false
+    };
+
+    //上传文件
+    $scope.submitClick = function(){
+      console.log("提交成功！")
+    };
+    //确认
+    $scope.confirmClick = function(){
+      console.log("确认成功！")
     };
 
 

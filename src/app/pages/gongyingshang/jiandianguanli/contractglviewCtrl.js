@@ -31,6 +31,7 @@
   //打印状态
   $scope.applicant.status = information.status;
   console.log("++++>>>000"+$scope.applicant.status);
+
   //根据传过来的代理商的状态，判断流程的步骤
   if ($scope.applicant.status==='待上传合同') {
       // $scope.process[0].bool=true;
@@ -61,12 +62,20 @@
 
   };
 
-
   //获取当前供应商的信息  并在供应商概览中显示
   var info=Auth.getCurrentUser();
   console.log("sxx"+info);
   console.log("++++>>>111"+JSON.stringify(info,null, "\t"));
   $scope.supplier = info;
+
+  //上传文件
+  $scope.submitClick = function(){
+    console.log("提交成功！")
+  };
+  //确认
+  $scope.confirmClick = function(){
+    console.log("确认成功！")
+  }
 
 
   }
