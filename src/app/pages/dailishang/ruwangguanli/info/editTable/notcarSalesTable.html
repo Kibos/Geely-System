@@ -12,8 +12,8 @@
   </tr>
   <tr ng-repeat="user in notcarShareholder" class="editable-row">
     <td>
-        <span editable-text="user.firmName" e-name="firmName" e-form="userform" e-required onbeforesave="checkNull($data)">
-          {{ user.firmName || '请输入信息'}}
+        <span editable-text="user.firmname" e-name="firmname" e-form="userform" e-required onbeforesave="checkNull($data)">
+          {{ user.firmname || '请输入信息'}}
         </span>
     </td>
     <td>
@@ -22,8 +22,8 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.mainBusiness" e-name="mainBusiness" e-form="userform" e-required onbeforesave="checkNull($data)">
-          {{ user.mainBusiness || '请输入信息'}}
+        <span editable-text="user.mainbusiness" e-name="mainbusiness" e-form="userform" e-required onbeforesave="checkNull($data)">
+          {{ user.mainbusiness || '请输入信息'}}
         </span>
     </td>
     <td>
@@ -38,7 +38,7 @@
     </td>
     <td>
       <form editable-form name="userform" ng-show="userform.$visible" class="form-buttons form-inline"
-            shown="insertedfourgdfqcxs.firmName == user.firmName" onaftersave="saveTableDb()">
+            shown="insertedfourgdfqcxs.firmname == user.firmname" onaftersave="saveTableDb()">
         <button type="submit" ng-disabled="userform.$waiting" class="btn btn-primary editable-table-button btn-xs">
           保存
         </button>
@@ -48,7 +48,7 @@
       </form>
       <div class="buttons" ng-show="!userform.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delnotShareholder($index)" ng-disabled="formstate()">删除</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delnotShareholder($index,user)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>

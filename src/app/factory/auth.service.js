@@ -1,29 +1,33 @@
 'use strict';
 
 angular.module('BlurAdmin')
-
-  .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q, redirectToUrlAfterLogin,PermRoleStore,PermPermissionStore,serverUrl) {
+  .factory('Auth', function Auth($location, $rootScope, $http, User, $cookieStore, $q, redirectToUrlAfterLogin,PermRoleStore,PermPermissionStore,serverUrl,javaServerUrl) {
     console.log('auth---init');
     var currentUser = {};
-    if($cookieStore.get('token')) {
-      currentUser = User.get();
+    if($cookieStore.get('id')) {
+      var userid = $cookieStore.get('id');
+      console.log('($cookieStore.get()~~~~~~~~~~~~~~')
+       User.getUserInfo(userid,function(res){
+         currentUser =res;
+       });
+      console.log(currentUser)
 
-      console.log('cookies-----set-role');
+      console.log('cookies-----set-role '+$cookieStore.get('role'));
       PermPermissionStore
             .definePermission('wangfa', function () {
-              return $cookieStore.get('role')==="admin";
+              return $cookieStore.get('role')==="1";
             });
       PermPermissionStore
             .definePermission('dailishang', function () {
-              return $cookieStore.get('role')==="user";
+              return $cookieStore.get('role')==="2";
             });
       PermPermissionStore
             .definePermission('gongyingshang', function () {
-              return $cookieStore.get('role')==="gonguser";
+              return $cookieStore.get('role')==="3";
             });
       PermPermissionStore
             .definePermission('shejichangshang', function () {
-              return $cookieStore.get('role')==="deuser";
+              return $cookieStore.get('role')==="4";
             });
       PermPermissionStore
             .definePermission('canlist',function(){
@@ -49,7 +53,7 @@ angular.module('BlurAdmin')
         var deferred = $q.defer();
 
 
-        $http.post(serverUrl.url+'/auth/local', {
+        $http.post(javaServerUrl.url+'login', {
           email: user.email,
           password: user.password
         }).
@@ -60,29 +64,31 @@ angular.module('BlurAdmin')
         // $cookieStore.remove('token');
         // $cookieStore.remove('role');
         // PermPermissionStore.clearStore();
+          console.log(data);
+          $cookieStore.put('role', data.data.roles);
+          $cookieStore.put('token', data.data.token);
+          $cookieStore.put('id', data.data.id);
+          // $cookieStore.put('role', data.role);
 
-          $cookieStore.put('token', data.token);
-          $cookieStore.put('role', data.role);
-
-          console.log('~~~~~~~~~~~~permissionRun~~~~~~~~~~~~~~');
+          console.log('login~~~~~~~~~~~~permissionRun~~~~~~~~~~~~~~');
           console.log($cookieStore.get('role'));
 
 
                 PermPermissionStore
                       .definePermission('wangfa', function () {
-                        return data.role==="admin";
+                        return data.data.roles==="1";
                       });
                 PermPermissionStore
                       .definePermission('dailishang', function () {
-                        return data.role==="user";
+                        return data.data.roles==="2";
                       });
                 PermPermissionStore
                       .definePermission('gongyingshang', function () {
-                        return data.role==="gonguser";
+                        return data.data.roles==="3";
                       });
                 PermPermissionStore
                       .definePermission('shejichangshang', function () {
-                        return data.role==="deuser";
+                        return data.data.roles==="4";
                       });
                 PermPermissionStore
                       .definePermission('canlist',function(){
@@ -92,7 +98,9 @@ angular.module('BlurAdmin')
 
 
 
-          currentUser = User.get();
+          currentUser = data.data;
+          console.log('login-user')
+          console.log(currentUser);
           deferred.resolve(data);
           return cb();
         }).
@@ -139,11 +147,14 @@ angular.module('BlurAdmin')
 
         return User.save(user,
           function(data) {
-            $cookieStore.put('token', data.token);
-            currentUser = User.get();
-            return cb(user);
+            console.log('success-creat');
+            console.log(data);
+            // $cookieStore.put('token', data.token);
+            // currentUser = User.get();
+            // return cb(user);
           },
           function(err) {
+            console.log('errrr');
             this.logout();
             return cb(err);
           }.bind(this)).$promise;

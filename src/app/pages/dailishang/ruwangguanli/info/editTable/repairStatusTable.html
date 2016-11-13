@@ -38,7 +38,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
+        <span editable-number="user.fourteen.marketShare" e-name="fourteeMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.fourteen.marketShare || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
@@ -53,7 +53,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
+        <span editable-number="user.fifteen.marketShare" e-name="fifteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.fifteen.marketShare || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
@@ -68,7 +68,7 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
+        <span editable-number="user.sixteen.marketShare" e-name="sixteenMarketShare" e-form="userform" e-required e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" onbeforesave="checkPercent($data)">
           {{ user.sixteen.marketShare || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
@@ -89,7 +89,7 @@
       </form>
       <div class="buttons" ng-show="!userform.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delmaintenance($index)" ng-disabled="formstate()">删除</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delmaintenance($index,user)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>

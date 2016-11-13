@@ -28,6 +28,7 @@ angular.module('BlurAdmin', [
 .value('filesUrl',{url:'http://127.0.0.1:8080'}) //上线环境 ''   开发环境：'http://127.0.0.1:8080'
 .value('redirectToUrlAfterLogin', { url: '/' }) //不变
 .value('serverUrl',{url:'http://127.0.0.1:8080'})   //上线环境 ''   开发环境：'http://127.0.0.1:8080'
+.value('javaServerUrl',{url:'http://101.201.81.214:8080/'})
 
 .config(function ($httpProvider, $locationProvider, localStorageServiceProvider) {
   localStorageServiceProvider
@@ -48,13 +49,14 @@ angular.module('BlurAdmin', [
     request: function (config) {
       config.headers = config.headers || {};
       if ($cookieStore.get('token')) {
-        config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
+        config.headers.Authorization =  $cookieStore.get('token');
       }
       return config;
     },
 
     // Intercept 401s and redirect you to login
     responseError: function(response) {
+      console.log('404');
       if(response.status === 401) {
         $location.path('/login');
         // remove any stale tokens
@@ -72,22 +74,22 @@ angular.module('BlurAdmin', [
 
 
    function permissionRun($rootScope,  $cookieStore, $state, PermRoleStore, PermPermissionStore, Auth) {
-
+        // console.log('a');
         PermPermissionStore
               .definePermission('wangfa', function () {
-                return $cookieStore.get('role')==="admin";
+                return $cookieStore.get('role')==="1";
               });
         PermPermissionStore
               .definePermission('dailishang', function () {
-                return $cookieStore.get('role')==="user";
+                return $cookieStore.get('role')==="2";
               });
         PermPermissionStore
               .definePermission('gongyingshang', function () {
-                return $cookieStore.get('role')==="gonguser";
+                return $cookieStore.get('role')==="3";
               });
         PermPermissionStore
               .definePermission('shejichangshang', function () {
-                return $cookieStore.get('role')==="deuser";
+                return $cookieStore.get('role')==="4";
               });
         PermPermissionStore
               .definePermission('canlist',function(){
