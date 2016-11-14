@@ -1,13 +1,14 @@
 .dropzone {
+    margin-top:10px;
     border: 2px dashed #bbb;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
     font: 20pt bold;
     color: #bbb;
-    margin-bottom: 20px;
-  
-}
+    margin-bottom:10px;
+    cursor:pointer;
+  }
 .vertical-center{
   position: absolute;
   top: 50%;

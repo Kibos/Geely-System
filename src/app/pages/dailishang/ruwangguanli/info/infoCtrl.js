@@ -25,14 +25,14 @@
           console.log(data);
           $scope.shop = data;
 
-                // console.log(data);
+          // console.log(data);
           $scope._dbid = data._id;
           $scope.verifyDataSubmitting = data.verifyDataSubmitting;
           $scope._data = data;
           if($scope._data.verifyDataSubmitting && $scope._data.shenheshibaiFlag!==true) {
             $scope.show="check1";
           }
-          if($scope._data.isVerify) {
+          if($scope._data.isVerify){
             $scope.show="check2";
           }
           if($scope._data.shenheshibaiFlag) {
@@ -917,7 +917,7 @@
 
       file.upload.then(function(response) {
         $timeout(function() {
-          file.result = response.data;
+          // file.result = response.data;
           var key=$scope.indexFlag;
           fileArray[key]=(response.data)
           console.log('fileArray------');

@@ -3,24 +3,26 @@
     <i class="ion-information-circled modal-icon"></i><span>周报管理-->周报查看</span>
   </div>
   <div class="modal-body">
-    <div class="mt" ng-model="week.stage">
+    <div class="mt">
       <label>所属阶段：</label><span>{{ week.stage || 'empty' }}</span>
     </div>
-    <div class="mt" ng-model="week.time">
+    <div class="mt">
       <label>周期：</label><span>{{ week.time || 'empty' }}</span>
     </div>
     <div class="mt">
-      <label>本周概述：
-      </label>
-      <textarea placeholder="Default Input" class="form-control" disabled></textarea>
+      <label>本周概述</label>
+      <textarea class="form-control" readonly='readonly'></textarea>
     </div>
     <div class="mt">
-      <label>施工现场：
-        <input type="file" id="inputfile" ng-model="file">
-        <!-- <button type="button" class="btn btn-info btn-md">选择文件</button> -->
-      </label>
+      <label>施工现场：</label>
+      <!-- <input type="file" id="inputfile" ng-model="file"> -->
+      <div class="sgt-inner">
+          <img ng-if="inputfile.inputfile" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{inputfile.inputfile}}"alt="文件加载中" /><br>
+          <label class="sgzb-lab">
+              <a href="{{vm.fileUrl}}/public/files/{{inputfile.inputfile}}" class="sgzb-a">{{inputfile.inputfile}}</a>
+          </label>
+      </div>
     </div>
-
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-info" ng-click="$dismiss()">关闭</button>

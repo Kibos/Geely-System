@@ -1,8 +1,9 @@
 .sgzb{
 	margin: -15px;
 	width: 800px;
-	height: 600px;
+	min-height: 600px;
 	background-color:	#E0EEEE;
+	padding:10px;
 }
 .prompt{
 	width:480px;
@@ -20,7 +21,7 @@
 .judge{
 	display: inline-block;
 	margin-left: 60px;
-
+	vertical-align:top;
 }
 .judge label{
    display: inline-block;
@@ -29,7 +30,7 @@
 .upload{
 	display: inline-block;
 	margin-left: 120px;
-	margin-top: 100px;
+	margin-top:20px;
 }
 .upload  span{
 
@@ -54,9 +55,11 @@
 	height: 50px;
 	background-color:#D3D3D3;
 }
-.bt .col-md-2,.bt .col-md-3,.bt .col-md-5{
-	margin-top: 20px;
-	font-size: 16px;
+.bt label{
+	font-size:16px;
+	height:50px;
+	line-height:50px;
+	text-align:center;
 }
 .nr{
 	font-size: 16px;
@@ -74,9 +77,62 @@
   border-radius: 5px;
   background-color: $input-background;
   box-shadow: none;
-  &:focus {
+  	&:focus{
     box-shadow: none;
     border-color: $primary-bg;
     background: $input-background;
+	}
 }
+.sgzb-lab{
+	margin-top:10px;
+	& a.sgzb-a{
+	color:#666;
+	font-size:16px;
+	}
 }
+img.sgzb-img{
+	width:200px;
+}
+.upload-sgt{
+	margin-top:35px;
+}
+.help-sgzb{
+	color:red!important;
+	margin-left:60px;
+}
+#sgt-message{
+	padding:20px 40px;
+	border-radius:10px;
+	box-shadow:0px 1px 8px 0 rgba(0, 0, 0, 0.25);
+	& .group-form{
+		margin-bottom:15px;
+		border-bottom:1px dashed #ddd;
+		padding:10px 0px;
+
+	}
+	& label{
+		min-width:100px;
+		text-align:right;
+		margin-right:15px;
+	}
+	& input{
+		border:1px solid rgba(0,0,0,0);
+		outline:none;
+	}
+
+}
+.final-box{
+	display: inline-block;
+    width: 50% !important;
+}
+.sgt-inner{
+	display:inline-block;
+	vertical-align:top;
+}
+.table-box td{
+	text-align:center;
+}
+.final-box-Weekly{
+    width:100% !important;
+}
+

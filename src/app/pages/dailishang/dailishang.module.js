@@ -50,14 +50,14 @@
         .state('ba.constructionmanagement', {
           url: '/constructionmanagement',
           controller: 'constructionmanagementCtrl',
+          controllerAs:'vm',
           templateUrl: 'app/pages/dailishang/constructionmanagement/constructionmanagement.html',
-
           title: '施工管理',
-          sidebarMeta: {
+          sidebarMeta:{
             icon: 'ion-gear-a',
             order: 11,
           },
-           data:{
+          data:{
              permissions: {
               only:'dailishang'
            }}

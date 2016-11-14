@@ -4,203 +4,234 @@
       <div class="prompt">
         <p>请按下面的要求依次完成，方可进入施工管理阶段</p>
       </div>
-
-      <div class="judge">
-        <label class="">是否报规</label>
-        <label class="radio">
-          <input type="radio" ng-model="options.type1" value="yes"/><span>是</span>
-        </label>
-        <label class="radio">
-          <input type="radio" ng-model="options.type1" value="no"/><span>否</span>
-        </label>
-      </div>
-      <div class="judge">
-        <label class="">是否完成环评</label>
-        <label class="radio">
-          <input type="radio" ng-model="options.type2" value="yes"/><span>是</span>
-        </label>
-        <label class="radio">
-          <input type="radio" ng-model="options.type2" value="no"/><span>否</span>
-        </label>
-      </div>
-      <div class="upload" style="float:left;margin-bottom:20px">
-        <label>土建招标</label>
-        <input type="file" id="inputfile" ng-model="tjfile">
-      </div>
-      <div class="upload" style="margin-bottom:20px">
-        <label>装饰招标</label>
-        <input type="file" id="inputfile" ng-model="zsfile">
-      </div>
-      <div class="upload" style="float:left;margin-bottom:20px">
-        <label>报&nbsp;&nbsp;&nbsp;建</label>
-        <input type="file" id="inputfile" ng-model="bjfile">
-      </div>
-      <div class="upload" style="margin-bottom:20px">
-        <label>消&nbsp;&nbsp;&nbsp;防</label>
-        <input type="file" id="inputfile" ng-model="xffile">
-      </div>
-      <div class="button-wrapper"><button type="button" class="btn btn-primary btn-lg" ng-click="saveClick()">保存</button></div>
+      <form ng-submit="constructPlanform(sgPlanform)" name="sgPlanform" novalidate>
+        <div class="judge">
+          <label>是否报规</label>
+          <label class="radio">
+            <input type="radio" required name="TheGauge" ng-model="sgSetout.TheGauge" value="yes"/><span>是</span>
+          </label>
+          <label class="radio">
+            <input type="radio" required name="TheGauge" ng-model="sgSetout.TheGauge" value="no"/><span>否</span>
+          </label>
+          <p class="help-sgzb" ng-show="sgPlanform.TheGauge.$error.required && sgPlansubmit">
+              是否报规请选择
+          </p>
+        </div>
+        <div class="judge">
+          <label class="">是否完成环评</label>
+          <label class="radio">
+            <input type="radio" name="EIA" required ng-model="sgSetout.EIA" value="yes"/><span>是</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="EIA" required ng-model="sgSetout.EIA" value="no"/><span>否</span>
+          </label>
+          <p class="help-sgzb" ng-show="sgPlanform.EIA.$error.required && sgPlansubmit">
+              是否完成环评请选择
+          </p>
+        </div>
+        <div class="upload" style="float:left">
+          <label>土建招标</label>
+          <!-- <input type="file" id="inputfile" ng-model="tjfile"> -->
+          <!-- 上传开始 -->
+          <div ng-file-select ng-model="vm.files" ng-click="fileIndex('CivilTender')" class="dropzone" drag-over-class="dragover" required>点击上传文件</div>
+          <img ng-if="CivilTender.CivilTender" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{CivilTender.CivilTender}}"alt="文件加载中" /><br>
+          <label class="sgzb-lab">
+            <a href="{{vm.fileUrl}}/public/files/{{CivilTender.CivilTender}}" class="sgzb-a">{{CivilTender.CivilTender}}</a>
+          </label>
+          <!-- 上传结束 -->
+        </div>
+        <div class="upload">
+          <label>装饰招标</label>
+          <!-- <input type="file" id="inputfile" ng-model="zsfile"> -->
+          <!-- 上传开始 -->
+          <div ng-file-select ng-model="vm.files" ng-click="fileIndex('decorateTender')" class="dropzone" drag-over-class="dragover">点击上传文件</div>
+          <img ng-if="decorateTender.decorateTender" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{decorateTender.decorateTender}}"alt="文件加载中" /><br>
+          <label class="sgzb-lab">
+            <a href="{{vm.fileUrl}}/public/files/{{decorateTender.decorateTender}}" class="sgzb-a">{{decorateTender.decorateTender}}</a>
+          </label>
+          <!-- 上传结束 -->
+        </div>
+        <div class="upload" style="float:left">
+          <label>报&nbsp;&nbsp;&nbsp;建</label>
+          <!-- <input type="file" id="inputfile" ng-model="bjfile"> -->
+          <!-- 上传开始 -->
+          <div ng-file-select ng-model="vm.files" ng-click="fileIndex('application')" class="dropzone" drag-over-class="dragover">点击上传文件</div>
+          <img ng-if="application.application" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{application.application}}"alt="文件加载中" /><br>
+          <label class="sgzb-lab">
+            <a href="{{vm.fileUrl}}/public/files/{{application.application}}" class="sgzb-a">{{application.application}}</a>
+          </label>
+          <!-- 上传结束 -->
+        </div>
+        <div class="upload">
+          <label>消&nbsp;&nbsp;&nbsp;防</label>
+          <!-- <input type="file" id="inputfile" ng-model="xffile"> -->
+          <!-- 上传开始 -->
+          <div ng-file-select ng-model="vm.files" ng-click="fileIndex('firefighting')" class="dropzone" drag-over-class="dragover">点击上传文件</div>
+          <img ng-if="firefighting.firefighting" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{firefighting.firefighting}}"alt="文件加载中" /><br>
+          <label class="sgzb-lab">
+            <a href="{{vm.fileUrl}}/public/files/{{firefighting.firefighting}}" class="sgzb-a">{{firefighting.firefighting}}</a>
+          </label>
+          <!-- 上传结束 -->
+        </div>
+        <div class="upload">
+            <p class="help-sgzb" ng-class="{true:'maskshow',false:'maskhide'}[filelist]">请把文件上传完整</p>
+        </div>
+        <div class="button-wrapper">
+          <button type="submit" class="btn btn-primary btn-lg">保存</button>
+        </div>
+      </form>
     </div>
   </uib-tab>
   <uib-tab heading="施工图">
-    <div class="col-md-3">
-    </div>
-    <div class="col-md-6">
+    <div class="col-md-6 col-md-offset-3 upload-sgt" ng-class="{true:'maskshow',false:'maskhide'}[masksggl]">
       <div ba-panel ba-panel-title="代理商概览">
-        <form>
+        <form name="stateform" ng-submit="finalfame(stateform)">
           <div class="form-group">
-            <label>代理商:</label>
-            <label type="text"
-                   name="name"
-                   class="form-control individual-iput"
-                   ng-model="agent.name"
-                   disabled="true">
-                   {{agent.name}}
-            </label>
+            <label class="individual-label">代理商:</label>
+            <input type="text" name="agent" class="form-control individual-iput" id="agent" ng-model="final.agent" readonly='readonly'>
           </div>
           <div class="form-group">
-            <label>新建店:</label>
-            <label type="text"
-                   name="store"
-                   class="form-control individual-iput"
-                   ng-model="agent.store"
-                   disabled="true">
-                   {{agent.store}}
-            </label>
+            <label class="individual-label">新建店:</label>
+            <input type="text" name="newshop" class="form-control individual-iput" id="newshop" ng-model="final.newshop" readonly='readonly'>
           </div>
           <div class="form-group">
-            <label>设计厂商:</label>
-            <label type="text"
-                   name="design"
-                   class="form-control individual-iput"
-                   ng-model="agent.design"
-                   disabled="true">
-                   {{agent.design}}
-            </label>
+            <label class="individual-label">设计厂商:</label>
+            <input type="text" name="designer" class="form-control individual-iput" id="designer" ng-model="final.designer" readonly='readonly'>
           </div>
           <div class="form-group">
-            <label>提交人:</label>
-            <label type="text"
-                   name="person"
-                   class="form-control individual-iput"
-                   ng-model="agent.person"
-                   disabled="true">
-                   {{agent.person}}
-             </label>
+            <label class="individual-label">施工图</label>
+            <!-- <input type="file" id="inputfile" ng-model="final.finalFile"  ng-file-select multiple class="form-control individual-iput"> -->
+            <!-- 上传开始 -->
+            <div class="final-box">
+                <div ng-file-select ng-model="vm.files" ng-click="fileIndex('inputfile')" class="dropzone" drag-over-class="dragover">点击上传文件</div>
+                <img ng-if="inputfile.inputfile" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{inputfile.inputfile}}"alt="文件加载中" /><br>
+                <label class="sgzb-lab">
+                  <a href="{{vm.fileUrl}}/public/files/{{inputfile.inputfile}}" class="sgzb-a">{{inputfile.inputfile}}</a>
+                </label>
+            </div>
+            
+          <!-- 上传结束 -->
           </div>
-          <div class="form-group">
-            <label>提交时间:</label>
-            <input type="date"
-                   ng-model="agent.date"
-                   min="2015-12-12"
-                   max="2016-12-22"
-                   rquired
-                   disabled="true"/>
-          </div>
-          <div class="form-group">
-            <label>状态:</label>
-            <label type="text"
-                   name="person"
-                   class="form-control individual-iput"
-                   ng-model="agent.state"
-                   disabled="true">
-                   {{agent.state}}
-            </label>
-          </div>
-          <div class="form-group">
-            <label>技术交底书:</label>
-            <input type="file"
-                   id="inputfile"
-                   ng-model="agent.file"
-                   disabled="true">
-          </div>
-          <div class="form-group">
-            <label>施工图:</label>
-            <input type="file" id="inputfile" ng-model="agent.page">
-          </div>
-          <div class="form-group" ng-show="!flag" style="text-align:center">
-            <button type="submit"
-                    class="btn btn-primary"
-                    ng-click="submitClick()">提交
+          <div class="form-group" style="text-align:center">
+            <button type="submit" class="btn btn-primary" ng-if="inputfile.inputfile">提交
             </button>
-            <button type="button"
-                    class="btn btn-default"
-                    ng-click="cancelClick()">取消
-            </button>
+            <button type="button" ng-if="inputfile.inputfile" class="btn btn-primary" ng-click="vm.removeFile()" class="btn btn-default">取消</button>
           </div>
 
         </form>
-
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-12" id="sgt-message" ng-class="{true:'maskhide',false:'maskshow'}[masksggl]">
+        <form name="stateformzs" ng-submit="finalfame(stateform)">
+           <div class="group-form">
+              <label for="agent">代理商:</label>
+              <input type="text" name="agent" id="agent" ng-model="final.agent" readonly='readonly'>
+           </div>
+           <div class="group-form">
+              <label for="newshop">新建店:</label>
+              <input type="text" name="newshop" id="newshop" ng-model="final.newshop" readonly='readonly'>
+           </div>
+           <div class="group-form">
+              <label for="designer">设计厂商:</label>
+              <input type="text" name="designer" id="designer" ng-model="final.designer" readonly='readonly'>
+           </div>
+           <div class="group-form">
+              <label for="submitter">提交人:</label>
+              <input type="text" name="submitter" id="submitter" ng-model="final.submitter" readonly='readonly'>
+           </div>
+           <div class="group-form">
+              <label for="submitTime">提交时间:</label>
+              <input type="text" name="submitTime" id="submitTime" ng-model="final.submitTime" readonly='readonly'>
+           </div>
+           <div class="group-form">
+              <label for="status">状态:</label>
+              <input type="text" name="status" id="status" ng-model="final.status" readonly='readonly'>
+           </div>
+           <div class="group-form">
+              <label for="jsjqbook">技术交底书:</label>
+              <!-- <input type="text" name="jsjqbook" id="jsjqbook" ng-model="final.jsjqbook" readonly='readonly'> -->
+              <div class="sgt-inner">
+                <img ng-if="final.jsjqbook" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{final.jsjqbook}}"alt="文件加载中" /><br>
+                <label class="sgzb-lab">
+                  <a href="{{vm.fileUrl}}/public/files/{{final.jsjqbook}}" class="sgzb-a">{{final.jsjqbook}}</a>
+                </label>
+              </div>
+           </div>
+           <div class="group-form">
+              <label for="finalFile">施工图:</label>
+              <div class="sgt-inner">
+                <img ng-if="inputfile.inputfile" class="sgzb-img" ng-src="{{vm.fileUrl}}/public/files/{{inputfile.inputfile}}"alt="文件加载中" /><br>
+                <label class="sgzb-lab">
+                  <a href="{{vm.fileUrl}}/public/files/{{inputfile.inputfile}}" class="sgzb-a">{{inputfile.inputfile}}</a>
+                </label>
+              </div>
+           </div>
+        </form>
     </div>
-
   </uib-tab>
   <uib-tab heading="施工周报">
     <div class="sgzb1">
       <div class="sgzq" style="font-size:16px;font-weight:bolder">
-        施工周期：2016.1.1至2016.8.1
+        施工周期:2016.1.1至2016.8.1
       </div>
       <hr style="width:100%;display:inline-block;transform:translateY(5px)"/>
       <div class="bt">
-        <label class="col-md-2">阶&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;段</label>
-        <label class="col-md-2">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间</label>
-        <label class="col-md-3">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</label>
-        <label class="col-md-5">周&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报</label>
+        <label class="col-xs-3 col-sm-3 col-md-2 col-lg-2">阶&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;段</label>
+        <label class="col-xs-3 col-sm-3 col-md-2 col-lg-2">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间</label>
+        <label class="col-xs-3 col-sm-3 col-md-2 col-lg-2">工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</label>
+        <label class="col-xs-7 col-sm-6 col-md-6 col-lg-6">周&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;报</label>
       </div>
-      <div class="nr" ng-repeat="week in weeks">
-        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" ng-model="week.stage">
-          {{ week.stage || 'empty' }}
-        </div>
-        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2" ng-model="week.time">
-          {{ week.time || 'empty' }}
-        </div>
-        <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3" ng-model="week.work">
-          {{ week.work || 'empty' }}
-        </div>
-        <div class="col-xs-7 col-sm-6 col-md-5 col-lg-5" ng-model="week.weekly">
-          <table class="table table-bordered table-hover table-condensed" style="margin-top:20px">
-            <tr>
-              <td>第一周(1.1~1.7)</td>
-              <td>第二周(1.1~1.7)</td>
-              <td>第三周(1.1~1.7)</td>
-            </tr>
-            <tr>
-              <td>
-                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
-              </td>
-              <td>
-                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
-              </td>
-              <td>
-                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
-              </td>
-            </tr>
-          </table>
-          <table class="table table-bordered table-hover table-condensed">
-            <tr>
-              <td>第四周(1.1~1.7)</td>
-              <td>第五周(1.1~1.7)</td>
-              <td>第六周(1.1~1.7)</td>
-            </tr>
-            <tr>
-              <td>
-                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')">查看</button>
-              </td>
-              <td>
-                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')">点击填写</button>
-              </td>
-              <td>
-                <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')">点击填写</button>
-              </td>
-            </tr>
-          </table>
-
-        </div>
-
+      <div class="table-box">
+        <table ng-repeat="week in weeks">
+          <tr>
+            <td class="col-xs-3 col-sm-3 col-md-2 col-lg-2">{{ week.stage || '暂无数据' }}</td>
+            <td class="col-xs-3 col-sm-3 col-md-2 col-lg-2">{{ week.time || '暂无数据' }}</td>
+            <td class="col-xs-3 col-sm-3 col-md-2 col-lg-2">{{ week.work || '暂无数据' }}</td>
+            <td class="col-xs-7 col-sm-6 col-md-6 col-lg-6">
+                <table class="table table-bordered table-hover table-condensed" style="margin-top:20px">
+                  <tr>
+                    <td>第一周</td>
+                    <td>第二周</td>
+                    <td>第三周</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')" ng-show="{{week.weeklys[0]}}">查看</button>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')" ng-hide="week.weeklys[0]">点击填写</button>
+                    </td>
+                    <td>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')" ng-show="{{week.weeklys[1]}}">查看</button>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')" ng-hide="week.weeklys[1]">点击填写</button>
+                    </td>
+                    <td>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')" ng-show="{{week.weeklys[2]}}">查看</button>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')" ng-hide="week.weeklys[2]">点击填写</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>第四周</td>
+                    <td>第五周</td>
+                    <td>第六周</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')" ng-show="{{week.weeklys[3]}}">查看</button>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')" ng-hide="week.weeklys[3]">点击填写</button>
+                    </td>
+                    <td>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')" ng-show="{{week.weeklys[4]}}">查看</button>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')" ng-hide="week.weeklys[4]">点击填写</button>
+                    </td>
+                    <td>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/modal.html','lg')" ng-show="{{week.weeklys[5]}}">查看</button>
+                      <button class="btn btn-primary" ng-click="open('app/pages/dailishang/constructionmanagement/writemodal.html','lg')" ng-hide="week.weeklys[5]">点击填写</button>
+                    </td>
+                  </tr>
+                </table>
+            </td>
+          </tr>
+        </table>
       </div>
-
     </div>
 
   </uib-tab>

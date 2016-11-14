@@ -2,34 +2,36 @@
   <div class="modal-header bg-info">
     <i class="ion-information-circled modal-icon"></i><span>周报管理-->周报提交</span>
   </div>
-  <div class="modal-body">
-    <div class="mt" ng-model="week.stage">
-      <label>所属阶段：</label><span>{{ week.stage || 'empty' }}</span>
-    </div>
-    <div class="mt" ng-model="week.time">
-      <label>周期：</label><span>{{ week.time || 'empty' }}</span>
-    </div>
-    <div class="mt">
-      <label>本周概述：
-        <!-- <div class="" ng-model="week.work">
-          <input type="text" name="name" value="" ng-model="week.work">
-          <span>aaaaaaaaaaaaaaaaaaaa{{ week.work || 'empty' }}</span>
-        </div> -->
-        <!-- <div class="wbk">
-          <textarea placeholder="Default Input" class="form-control"></textarea>
-        </div> -->
-      </label>
-      <textarea placeholder="Default Input" class="form-control"></textarea>
-    </div>
-    <div class="mt">
-      <label>施工现场：
-        <!-- <button type="button" class="btn btn-info btn-md">选择文件</button> -->
-        <input type="file" id="inputfile" ng-model="file">
-      </label>
-    </div>
-
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-info" ng-click="$dismiss()">提交审核</button>
-  </div>
+  <form name="Weekly" ng-submit="Weeklyform(Weekly)">
+      <div class="modal-body">
+        <div class="mt">
+          <label>所属阶段:</label>
+          <span>{{ items.stage || 'empty' }}</span>
+        </div>
+        <div class="mt">
+          <label>周期:</label>
+          <span>{{ items.time || 'empty' }}</span>
+        </div>
+        <div class="mt">
+          <label>本周概述:</label>
+          <textarea placeholder="请输入……" class="form-control" ng-model="summarize" autofocus="autofocus"></textarea>
+        </div>
+        <div class="mt">
+          <label>施工现场</label>
+          <!-- 文件上传开始 -->
+          <div class="final-box-Weekly">
+              <div ng-file-select ng-model="vm.files" class="dropzone" drag-over-class="dragover">点击上传文件</div>
+              <img ng-if="jobSite" class="sgzb-img" ng-src="{{fileUrl}}/public/files/{{jobSite}}"alt="文件加载中" /><br>
+              <label class="sgzb-lab">
+                  <a href="{{fileUrl}}/public/files/{{jobSite}}" class="sgzb-a">{{jobSite}}</a>
+              </label>
+          </div>
+          <!-- 文件上传结束 -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-info">提交审核</button>
+        <button type="button" class="btn btn-info" ng-click="$close()">取消</button>
+      </div>
+  </form>
 </div>
