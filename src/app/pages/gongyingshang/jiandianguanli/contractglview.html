@@ -3,33 +3,60 @@
 
   		  <div class="form-group">
           <label class="individual-label">代理商代码:</label>
-          <input type="text" name="id" class="form-control individual-iput" ng-model="partners.id" disabled="true"/>
+          <input type="text"
+                 name="id"
+                 class="form-control individual-iput"
+                 ng-model="applicant.id"
+                 disabled="true"/>
         </div>
         <div class="form-group">
           <label class="individual-label">申请公司:</label>
-          <input type="text" name="compony" class="form-control individual-iput" ng-model="partners.compony" disabled="true"/>
+          <input type="text"
+                 name="company"
+                 class="form-control individual-iput"
+                 ng-model="applicant.company"
+                 disabled="true"/>
         </div>
         <div class="form-group">
           <label class="individual-label">拟建店公司名称:</label>
-          <input type="text" name="name" class="form-control individual-iput" ng-model="partners.name" disabled="true"/>
+          <input type="text"
+                 name="name"
+                 class="form-control individual-iput"
+                 ng-model="applicant.name"
+                 disabled="true"/>
         </div>
         <div class="form-group">
           <label class="individual-label">建店地点:</label>
-          <input type="text" name="place" class="form-control individual-iput" ng-model="partners.place" disabled="true"/>
+          <input type="text"
+                 name="place"
+                 class="form-control individual-iput"
+                 ng-model="applicant.place"
+                 disabled="true"/>
         </div>
   			<div class="form-group">
   	        <label class="individual-label">建店类型:</label>
-  	        <input type="text" name="type" value="旗舰店" class="form-control individual-iput" disabled="true" />
+  	        <input type="text"
+                   name="type"
+                   value="旗舰店"
+                   class="form-control individual-iput"
+                   disabled="true" />
   	    </div>
         <div class="form-group">
           <label class="individual-label">联系人:</label>
-          <input type="text" name="person" class="form-control individual-iput" ng-model="partners.name" disabled="true"/>
+          <input type="text"
+                 name="person"
+                 class="form-control individual-iput"
+                 ng-model="applicant.person"
+                 disabled="true"/>
         </div>
   			<div class="form-group">
           <label class="individual-label">联系电话:</label>
-          <input type="text" name="phone" class="form-control individual-iput" ng-model="partners.cellphone" disabled="true"/>
+          <input type="text"
+                 name="cellphone"
+                 class="form-control individual-iput"
+                 ng-model="applicant.cellphone"
+                 disabled="true"/>
         </div>
-
   </div>
 
 </div>
@@ -38,102 +65,111 @@
 
   		  <div class="form-group">
           <label class="individual-label">供应商代码:</label>
-          <input type="text" name="id" class="form-control individual-iput" ng-model="supplier.gonguser.code" disabled="true"/>
+          <input type="text"
+                 name="id"
+                 class="form-control individual-iput"
+                 ng-model="supplier.gonguser.code"
+                 disabled="true"/>
         </div>
         <div class="form-group">
           <label class="individual-label">公司名称:</label>
-          <input type="text" name="name" class="form-control individual-iput" ng-model="supplier.name" disabled="true"/>
+          <input type="text"
+                 name="name"
+                 class="form-control individual-iput"
+                 ng-model="supplier.name"
+                 disabled="true"/>
         </div>
         <div class="form-group">
           <label class="individual-label">联系人:</label>
-          <input type="text" name="person" class="form-control individual-iput" ng-model="supplier.gonguser.ownName" disabled="true"/>
+          <input type="text"
+                 name="person"
+                 class="form-control individual-iput"
+                 ng-model="supplier.gonguser.ownName"
+                 disabled="true"/>
         </div>
   			<div class="form-group">
           <label class="individual-label">联系电话:</label>
-          <input type="text" name="phone" class="form-control individual-iput" ng-model="supplier.cellphone" disabled="true"/>
+          <input type="text"
+                 name="cellphone"
+                 class="form-control individual-iput"
+                 ng-model="supplier.cellphone"
+                 disabled="true"/>
         </div>
         <div class="form-group">
-          <label>简介：</label>
-          <textarea class="form-control" placeholder="简介" ng-model="supplier.gonguser.info">{{ supplier.gonguser.info || 'empty' }}</textarea>
+          <label class="individual-label">简介：</label>
+          <textarea type="text"
+                    name="info"
+                    class="form-control individual-iput"
+                    placeholder="简介"
+                    ng-model="supplier.gonguser.info"
+                    id="jianjie"
+                    disabled="true">{{ supplier.gonguser.info || 'empty' }}
+          </textarea>
         </div>
-
-
   </div>
 </div>
 
 <div class="col-md-12">
   <div class="" style="margin-top:100px;">
-    <div class="" style="line-height:100px;">
-      <label class="col-md-2"></label>
-      <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
-      <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</label>
-      <label class="col-md-2">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</label>
-      <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</label>
+    <div class="hetong">
+      <label class="col-md-1"></label>
+      <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
+      <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</label>
+      <label class="col-md-2">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</label>
+      <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</label>
     </div>
-    <div class="">
-      <label class="col-md-1" style="float:none;margin-left:120px;">
-        <div style=" width:50px; height:50px; background-color:#00BFFF; border-radius:25px;margin-top:0px;">
-         <span style="height:50px; line-height:50px; display:block; color:#FFF; text-align:center;font-size:16px;">{{nums[0]}}</span>
+    <div class="hetong" ng-repeat="item in process">
+      <label class="col-md-1">
+        <div ng-class="{true:'processed',false:'process'}[item.bool]">
+          <span ng-model="item.nums">{{item.nums}}</span>
         </div>
-        <hr style="width:2px;height:40px;display:inline-block;transform:translateX(25px);margin-top:3px;margin-bottom:-10px;"></hr>
+        <hr class="processhr"></hr>
       </label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);">{{steps[0]}}</label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">{{states[0]}}</button></label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);font-weight:normal"><input type="file" id="inputfile" ng-model="file"></label>
-      <label class="col-md-3"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">提交</button></label>
+      <label class="col-md-2">{{item.steps}}</label>
+      <label class="col-md-2">
+        <button class="btn"
+                ng-class="{true:'btn-info',false:'btn-waring'}[item.bool]">
+                {{item.states}}
+        </button>
+      </label>
+      <label class="col-md-2" style="font-weight:normal">
+        <input type="file" id="inputfile" ng-model="file" ng-disabled="item.bool">
+      </label>
+      <label class="col-md-3">
+        <button class="btn btn-info"  ng-show="item.bool" disabled>
+          <span>已提交</span>
+        </button>
+        <button class="btn btn-info" ng-show="!item.bool" ng-click="submitClick()">
+          <span>提&nbsp;交</span>
+        </button>
+      </label>
 
     </div>
-    <div class="">
-      <label class="col-md-1" style="float:none;margin-left:120px;">
-        <div style=" width:50px; height:50px; background-color:#00BFFF; border-radius:25px;margin-top:0px;">
-         <span style="height:50px; line-height:50px; display:block; color:#FFF; text-align:center;font-size:16px;">{{nums[1]}}</span>
-        </div>
-        <hr style="width:2px;height:40px;display:inline-block;transform:translateX(25px);margin-top:3px;margin-bottom:-10px;"></hr>
+    <div class="hetonglast">
+      <label class="col-md-1">
+        <div ng-class="{true:'processed',false:'process'}[last.bool]"><span>{{last.num}}</span></div>
       </label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);">{{steps[1]}}</label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">{{states[1]}}</button></label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);font-weight:normal"><input type="file" id="inputfile" ng-model="file"></label>
-      <label class="col-md-3"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">提交</button></label>
+      <label class="col-md-2">{{last.steps}}</label>
+      <label class="col-md-2">
+        <button class="btn"
+                ng-class="{true:'btn-info',false:'btn-waring'}[last.bool]">
+                {{last.states}}
+        </button>
+      </label>
+      <label class="col-md-2" style="font-weight:normal">
+        <input type="file" id="inputfile" ng-model="file" ng-disabled="last.bool">
+      </label>
+      <label class="col-md-3">
+        <button class="btn btn-info"  ng-show="last.bool" disabled>
+          <span>已提交</span>
+        </button>
+        <button class="btn btn-info" ng-show="!last.bool" ng-click="submitClick()">
+          <span>提&nbsp;交</span>
+        </button>
+      </label>
+    </div>
 
-    </div>
-    <div class="">
-      <label class="col-md-1" style="float:none;margin-left:120px;">
-        <div style=" width:50px; height:50px; background-color:#00BFFF; border-radius:25px;margin-top:0px;">
-         <span style="height:50px; line-height:50px; display:block; color:#FFF; text-align:center;font-size:16px;">{{nums[2]}}</span>
-        </div>
-        <hr style="width:2px;height:40px;display:inline-block;transform:translateX(25px);margin-top:3px;margin-bottom:-10px;"></hr>
-      </label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);">{{steps[2]}}</label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">{{states[2]}}</button></label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);font-weight:normal"><input type="file" id="inputfile" ng-model="file"></label>
-      <label class="col-md-3"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">提交</button></label>
-    </div>
-    <div class="">
-      <label class="col-md-1" style="float:none;margin-left:120px;">
-        <div style=" width:50px; height:50px; background-color:#00BFFF; border-radius:25px;margin-top:0px;">
-         <span style="height:50px; line-height:50px; display:block; color:#FFF; text-align:center;font-size:16px;">{{nums[3]}}</span>
-        </div>
-        <hr style="width:2px;height:40px;display:inline-block;transform:translateX(25px);margin-top:3px;margin-bottom:-10px;"></hr>
-      </label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);">{{steps[3]}}</label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">{{states[3]}}</button></label>
-      <label class="col-md-2"style="float:none;display:inline-block;transform:translateY(-50px);font-weight:normal"><input type="file" id="inputfile" ng-model="file"></label>
-      <label class="col-md-3"style="float:none;display:inline-block;transform:translateY(-50px);"><button class="btn btn-info">提交</button></label>
-
-    </div>
-    <div class="">
-      <label class="col-md-1" style="float:none;margin-left:120px;">
-        <div style=" width:50px; height:50px; background-color:#00BFFF; border-radius:25px;margin-top:0px;">
-         <span style="height:50px; line-height:50px; display:block; color:#FFF; text-align:center;font-size:16px;">{{nums[4]}}</span>
-        </div>
-        <!-- <hr style="width:0px;height:0px;display:inline-block;transform:translateX(25px);margin-top:3px;margin-bottom:-10px;"></hr> -->
-      </label>
-      <label class="col-md-2"style="float:none">{{steps[4]}}</label>
-      <label class="col-md-2"style="float:none"><button class="btn btn-info">{{states[4]}}</button></label>
-      <label class="col-md-2"style="float:none;font-weight:normal"><input type="file" id="inputfile" ng-model="file"></label>
-      <label class="col-md-3"style="float:none"><button class="btn btn-info">提交</button></label>
-    </div>
-    <center><button class="btn btn-info btn-lg" ng-click="" style="margin-top:10px;" >确认</button></center>
+    <center><button class="btn btn-info btn-lg" ng-click="confirmClick()" style="margin-top:10px;" >确认</button></center>
 
   </div>
 

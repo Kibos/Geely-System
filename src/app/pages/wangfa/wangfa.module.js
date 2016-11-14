@@ -14,7 +14,8 @@
     'BlurAdmin.pages.wangfa.acceptancegl',
     'BlurAdmin.pages.wangfa.bzjgl',
     'BlurAdmin.pages.wangfa.zuzhijigou',
-    'BlurAdmin.pages.wangfa.buildstorebt'
+    'BlurAdmin.pages.wangfa.buildstorebt',
+    'BlurAdmin.pages.wangfa.gonghuogl'
 
 
   ])

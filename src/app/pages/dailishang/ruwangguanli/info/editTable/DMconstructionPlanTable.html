@@ -24,18 +24,28 @@
         </span>
     </td>
     <td>
-        <span editable-date="user.submitTime" e-name="submitTime" e-form="userform" e-required>
-           {{ (user.submitTime | date:"yyyy/MM/dd") || '请选择时间' }}
+        <!-- <span editable-date="user.submittime" e-name="submittime" e-form="userform" e-required>
+           {{ (user.submittime | date:"yyyy/MM/dd") || '请选择时间' }}
+        </span> -->
+        <span editable-text="user.submittime" e-name="submittime" e-form="userform" e-required e-pattern="^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$" onbeforesave="checkdata($data)">
+          {{ (user.submittime | date: "yyyy/MM/dd") || '格式错误,请选择时间格式' }}
         </span>
     </td>
     <td>
-        <span editable-date="user.startingTime" e-name="startingTime" e-form="userform" e-required>
-          {{ (user.startingTime | date:"yyyy/MM/dd") || '请选择时间'}}
+        <!-- <span editable-date="user.startingtime" e-name="startingtime" e-form="userform" e-required>
+          {{ (user.startingtime | date:"yyyy/MM/dd") || '请选择时间'}}
+        </span> -->
+
+        <span editable-text="user.startingtime" e-name="startingtime" e-form="userform" e-required e-pattern="^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$" onbeforesave="checkdata($data)">
+          {{ (user.startingtime | date: "yyyy/MM/dd") || '格式错误,请选择时间格式' }}
         </span>
     </td>
     <td>
-        <span editable-date="user.completeTime" e-name="completeTime" e-form="userform" e-required>
-          {{ (user.completeTime | date:"yyyy/MM/dd") || '请选择时间'}}
+        <!-- <span editable-date="user.completetime" e-name="completetime" e-form="userform" e-required>
+          {{ (user.completetime | date:"yyyy/MM/dd") || '请选择时间'}}
+        </span> -->
+        <span editable-text="user.completetime" e-name="completetime" e-form="userform" e-required e-pattern="^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$" onbeforesave="checkdata($data)">
+          {{ (user.completetime | date: "yyyy/MM/dd") || '格式错误,请选择时间格式' }}
         </span>
     </td>
     <td>
@@ -50,7 +60,7 @@
       </form>
       <div class="buttons" ng-show="!userform.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delStoreConstructionPlan($index)" ng-disabled="formstate()">删除</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delStoreConstructionPlan($index,user)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>

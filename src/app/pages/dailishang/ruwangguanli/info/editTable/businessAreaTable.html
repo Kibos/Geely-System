@@ -27,13 +27,13 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.limousineBrand" e-name="limousineBrand" e-form="userform" e-required onbeforesave="checkNull($data)">
-          {{ user.limousineBrand || '请输入信息'}}
+        <span editable-text="user.limousinebrand" e-name="limousinebrand" e-form="userform" e-required onbeforesave="checkNull($data)">
+          {{ user.limousinebrand || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-text="user.otherBrand" e-name="otherBrand" e-form="userform" e-required onbeforesave="checkNull($data)">
-          {{ user.otherBrand || '请输入信息'}}
+        <span editable-text="user.otherbrand" e-name="otherbrand" e-form="userform" e-required onbeforesave="checkNull($data)">
+          {{ user.otherbrand || '请输入信息'}}
         </span>
     </td>
     <td>
@@ -48,7 +48,7 @@
       </form>
       <div class="buttons" ng-show="!userform.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delBSbusinessArea($index)" ng-disabled="formstate()">删除</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delBSbusinessArea($index,user)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>

@@ -12,7 +12,7 @@
       'BlurAdmin.pages.dailishang.constructionmanagement',
       'BlurAdmin.pages.dailishang.shejishangguanli',
       'BlurAdmin.pages.dailishang.gongyingshangguanli',
-      'BlurAdmin.pages.dailishang.rectificationsq'
+      'BlurAdmin.pages.dailishang.jiandiangl'
 
   ])
   .config(routeConfig);
@@ -106,23 +106,23 @@
               only:'dailishang'
            }}
         })
-        .state('ba.yanshoushenqing', {
-          url: '/yanshoushenqing',
-          controller: 'acceptancesqCtrl',
-          templateUrl: 'app/pages/dailishang/acceptancesq/acceptancesq.html',
-          params:{
-            obj:null
-          },
-          title: '验收申请',
-          sidebarMeta: {
-            icon: 'ion-gear-a',
-            order: 20,
-          },
-          data:{
-             permissions: {
-              only:'dailishang'
-           }}
-        })
+        // .state('ba.yanshoushenqing', {
+        //   url: '/yanshoushenqing',
+        //   controller: 'acceptancesqCtrl',
+        //   templateUrl: 'app/pages/dailishang/acceptancesq/acceptancesq.html',
+        //   params:{
+        //     obj:null
+        //   },
+        //   title: '验收申请',
+        //   sidebarMeta: {
+        //     icon: 'ion-gear-a',
+        //     order: 20,
+        //   },
+        //   data:{
+        //      permissions: {
+        //       only:'dailishang'
+        //    }}
+        // })
         // .state('ba.zhenggaishenqing', {
         //   url: '/zhenggaishenqing',
         //   controller: 'rectificationsqCtrl',
@@ -165,6 +165,20 @@
               only:'dailishang'
            }}
         })
+        .state('ba.jiandiangl', {
+         url: '/jiandiangl',
+         template : '<ui-view></ui-view>',
+         abstract: true,
+         title: '建店管理',
+         sidebarMeta: {
+           icon: 'ion-gear-a',
+           order: 11,
+         },
+         data:{
+            permissions: {
+             only:'dailishang'
+          }}
+       })
         .state('ba.hetonggh', {
           url: '/hetonggh',
           controller: 'contractsupplyCtrl',

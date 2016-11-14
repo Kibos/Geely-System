@@ -16,18 +16,18 @@
         </span>
     </td>
     <td>
-        <span editable-number="userone.fundingSum" e-name="fundingSum" e-form="usernameone" e-pattern="[1-9]\d*(\.\d+)?" e-placeholder="请输入大于0的数字" e-required onbeforesave="checkExceedzero($data)">
-          {{ userone.fundingSum || '格式错误,请输入大于0的数字'}}
+        <span editable-number="userone.fundingsum" e-name="fundingsum" e-form="usernameone" e-pattern="[1-9]\d*(\.\d+)?" e-placeholder="请输入大于0的数字" e-required onbeforesave="checkExceedzero($data)">
+          {{ userone.fundingsum || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
-        <span editable-text="userone.fundingRatio" e-name="fundingRatio" e-form="usernameone" e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" e-placeholder="请输入百分比(%)" e-required onbeforesave="checkPercent($data)">
-          {{ userone.fundingRatio || '格式错误,请输入百分比(%)'}}
+        <span editable-text="userone.fundingratio" e-name="fundingratio" e-form="usernameone" e-pattern="^([1-9]\d?(\.\d{1,2})?|0.\d{1,2}|100)$" e-placeholder="请输入百分比(%)" e-required onbeforesave="checkPercent($data)">
+          {{ userone.fundingratio || '格式错误,请输入百分比(%)'}}
         </span>
     </td>
     <td>
-        <span editable-text="userone.stockholderQuale" e-name="stockholderQuale" e-form="usernameone" e-placeholder="请输入信息" e-required onbeforesave="checkNull($data)">
-          {{ userone.stockholderQuale || '请输入信息'}}
+        <span editable-text="userone.stockholderquale" e-name="stockholderquale" e-form="usernameone" e-placeholder="请输入信息" e-required onbeforesave="checkNull($data)">
+          {{ userone.stockholderquale || '请输入信息'}}
         </span>
     </td>
     <td>
@@ -42,7 +42,7 @@
       </form>
       <div class="buttons" ng-show="!usernameone.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="usernameone.$show()" ng-disabled="formstate()">编辑</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeSharesConstitute($index)" ng-disabled="formstate()">删除</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeSharesConstitute($index,userone)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>

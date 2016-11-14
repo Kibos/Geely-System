@@ -1,20 +1,20 @@
 <form ng-submit="creditStatus(CSMessageForm)" novalidate name="CSMessageForm">
               <div class="form-group">
                 <label class="info-lab-a">信用等级</label>
-                <p class="help-block" ng-show="CSMessageForm.qualityRating.$error.required && submitcreditStatus" style="color:red;">
+                <p class="help-block" ng-show="CSMessageForm.qualityrating.$error.required && submitcreditStatus" style="color:red;">
                   请选择信用等级
                 </p>
                 <div class="inner-box">
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="qualityRating" id="grade1" ng-model="agent.qualityRating" value="AAA级" ng-disabled="formstate()"><label for="grade1">AAA级</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="qualityRating" id="grade2" ng-model="agent.qualityRating" value="AA级" ng-disabled="formstate()"><label for="grade2">AA级</label></div></div>
-                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="qualityRating" id="grade3" ng-model="agent.qualityRating" value="A级" ng-disabled="formstate()"><label for="grade3">A级</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="qualityrating" id="grade1" ng-model="agent.qualityrating" value="AAA级" ng-disabled="formstate()"><label for="grade1">AAA级</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="qualityrating" id="grade2" ng-model="agent.qualityrating" value="AA级" ng-disabled="formstate()"><label for="grade2">AA级</label></div></div>
+                  <div class="inner-box-child"><div class="inner-box-child"><input type="radio" required name="qualityrating" id="grade3" ng-model="agent.qualityrating" value="A级" ng-disabled="formstate()"><label for="grade3">A级</label></div></div>
                 </div>
 
               </div>
               <div class="form-group">
                 <label class="info-lab">信用等级评级银行</label>
-                <input type="text" name="XYDJPJbank" ng-model="agent.XYDJPJbank" required ng-disabled="formstate()">
-                <p class="help-block" ng-show="CSMessageForm.XYDJPJbank.$error.required && submitcreditStatus" style="color:red;display:inline-block;margin-left:8px;">
+                <input type="text" name="xydjpjbank" ng-model="agent.xydjpjbank" required ng-disabled="formstate()">
+                <p class="help-block" ng-show="CSMessageForm.xydjpjbank.$error.required && submitcreditStatus" style="color:red;display:inline-block;margin-left:8px;">
                   请输入信用等级评级银行
                 </p>
               </div>
@@ -64,7 +64,7 @@
 							      </form>
 							      <div class="buttons" ng-show="!userform.$visible">
 							        <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
-							        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delnowBankDeposit($index)" ng-disabled="formstate()">删除</button>
+							        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delnowBankDeposit($index,user)" ng-disabled="formstate()">删除</button>
 							      </div>
 							</td>
 						</tr>

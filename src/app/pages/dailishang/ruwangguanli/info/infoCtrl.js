@@ -12,13 +12,15 @@
   function InfoCtrl($scope, Shop, Auth, Audit, $upload, $timeout, filesUrl)
   {
     // 二级联动开始/////////////////////////////////////////////////////
-      
+
     // 二级联动结束
     $scope.agent={};
     // console.log('info-start');
     $scope.currentUser = Auth.getCurrentUser();
+    console.log('$scope.currentUser');
 
     console.log($scope.currentUser);
+// <<<<<<< HEAD
     // 保存提示
     function getShop() {
       Shop.getShopsByuserId.get({id:$scope.currentUser._id},function(data){
@@ -202,8 +204,13 @@
 
     getShop()
 
+// =======
+//   $scope.NewShopId = $scope.currentUser.shop.id
+// >>>>>>> d2b9570892c8a358ce62c9f62eff0218a295d875
 
+    $scope.shop = {}
 
+    var shop = {}
     // 审核确认提示
     $scope.masklayer=false;
     // 审核确认信息按钮
@@ -299,10 +306,34 @@
       return "请输入正整数";
     }
   }
+  //
+  $scope.checkdata=function(data){
+    if (!/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/.test(data)){
+      return "请输入正确的日期格式:yyyy/mm/dd"
+    }
+  }
 
-    
+
 // ----------------------代理商简述------------------------------
     // 基本信息
+    Shop.getBasic($scope.NewShopId,function (res) {
+      console.log('基本信息')
+      console.log(res);
+      $scope.agent = res.data;
+          // if (data.basic){
+          //     $scope.agent.companyName=data.basic.companyName?data.basic.companyName:'';
+          //     $scope.saveSuccess = false;
+          //
+          //     $scope.agent.carBrand= data.basic.carBrand?data.basic.carBrand:'';
+          //     $scope.agent.nature= data.basic.nature?data.basic.nature:'';
+          //     $scope.agent.establishDate= data.basic.establishDate?data.basic.establishDate:'';
+          //     $scope.agent.registerCapital= data.basic.registerCapital?data.basic.registerCapital:'';
+          //     $scope.agent.shopNumber= data.basic.shopNumber?data.basic.shopNumber:'';
+          //     $scope.agent.sellSuffer= data.basic.sellSuffer?data.basic.sellSuffer:'';
+          //     $scope.agent.afterSale= data.basic.afterSale?data.basic.afterSale:'';
+          //     $scope.agent.legalRepresentative=data.basic.legalRepresentative?data.basic.legalRepresentative:'';
+          // };
+    })
     $scope.basicInformation=function(BasicForm)
     {
     	$scope.submitbasic = true;
@@ -319,42 +350,91 @@
         legalRepresentative:$scope.agent.legalRepresentative
       };
 
-      var a = {
-        basic:$scope.basic
-      };
-      saveInfoFixFuntion(a);
+      // var a = {
+      //   basic:$scope.basic
+      // };
+      // saveInfoFixFuntion(a);
+
+      $scope.basic.shopid = $scope.NewShopId
+      Shop.saveBasic.save($scope.basic,function (response) {
+        console.log(response);
+        $scope.saveSuccess = false;
+
+      })
     }
     console.log("代理商简述基本信息");
     console.log($scope.basic);
 
 
     }
+
     // 股份构成
-    $scope.removeSharesConstitute = function(index){
+
+
+    Shop.getSharesconstituteByShopId($scope.NewShopId,function (res) {
+      $scope.SharesConstitute = res.data;
+    })
+    $scope.removeSharesConstitute = function(index,item){
       $scope.SharesConstitute.splice(index, 1);
+      console.log(item)
+      Shop.deleteSharesconstitute(item.id,function(res){
+        console.log(res)
+      })
     };
     $scope.addSharesConstitute = function() {
       $scope.insertedgfgc = {
         stockholder:"",
-        fundingSum:"",
-        fundingRatio:"",
-        stockholderQuale:""
+        fundingsum:"",
+        fundingratio:"",
+        stockholderquale:""
       };
       var test = JSON.parse(JSON.stringify($scope.insertedgfgc));
       $scope.SharesConstitute.push(test);
     };
     $scope.saveTableA=function(){
-      var b={
-        SharesConstitute:$scope.SharesConstitute
+      // var b={
+      //   SharesConstitute:$scope.SharesConstitute
+      // }
+      // saveInfoFixFuntion(b);
+      console.log($scope.SharesConstitute)
+
+
+        // $scope.SharesConstitute[0].shopid = $scope.NewShopId;
+
+        // Shop.saveSharesconstitute.save($scope.SharesConstitute[0],function(res){
+        //   console.log('res')
+        //   console.log(res)
+
+        // })
+      for(var i = 0; i<$scope.SharesConstitute.length;i++ ){
+        console.log($scope.SharesConstitute[i])
+        $scope.SharesConstitute[i].shopid = $scope.NewShopId;
+
+        Shop.saveSharesconstitute.save($scope.SharesConstitute[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
       }
-      saveInfoFixFuntion(b);
+
     }
     $scope.tableVerify=false;
 
     // 关键人员背景
     // $scope.users=[];
-    $scope.removeUser = function(index) {
+    //1
+    Shop.getPeopleinfoByShopId($scope.NewShopId,function (res) {
+      $scope.users = res.data;
+      console.log($scope.users)
+    })
+    //
+    $scope.removeUser = function(index,item) {
       $scope.users.splice(index, 1);
+      //2
+      Shop.deletePeopleinfo(item.id,function(res){
+        console.log(res)
+      })
+      //
     };
     $scope.addUser = function() {
       $scope.insertedgjrybj = {
@@ -363,29 +443,51 @@
         city:'',
         duty:'',
         cellphone:null,
-        Email:'',
+        email:'',
         shark:''
       };
       var testTwo = JSON.parse(JSON.stringify($scope.insertedgjrybj));
       $scope.users.push(testTwo);
     };
     $scope.saveTableC=function(){
-      var c={
-        users:$scope.users
-      };
-      saveInfoFixFuntion(c);
+      // var c={
+      //   users:$scope.users
+      // };
+      // saveInfoFixFuntion(c);
+      // Shop.savePeopleinfo()
+
+      //3
+    for(var i = 0; i<$scope.users.length;i++ ){
+        $scope.users[i].shopid = $scope.NewShopId;
+
+        Shop.savePeopleinfo.save($scope.users[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
     }
     // 股份股东投资情况
     /*$scope.investment=function(InvestForm){
 
     }*/
     // 汽车销售领域
-    $scope.delShareholder = function(index) {
+    //1
+    Shop.getCarshareholderByShopId($scope.NewShopId,function (res) {
+      console.log('汽车销售领域');
+      console.log(res.data);
+      $scope.carShareholder = res.data;
+    })
+    $scope.delShareholder = function(index,item) {
       $scope.carShareholder.splice(index, 1);
+      //2
+      Shop.deleteCarshareholder(item.id,function(res){
+        console.log(res)
+      })
     };
     $scope.addcarShareholder= function(){
       $scope.insertedgdqcxslythree= {
-        firmName:'',
+        firmname:'',
         shark:'',
         dates:'',
         brand:'',
@@ -397,23 +499,46 @@
       $scope.carShareholder.push(testthree);
     }
     $scope.saveTableDa=function(){
-      var da={
-        carShareholder:$scope.carShareholder
+      // var da={
+      //   carShareholder:$scope.carShareholder
+      // }
+      // saveInfoFixFuntion(da);
+
+      //3
+      console.log($scope.carShareholder);
+    for(var i = 0; i<$scope.carShareholder.length;i++ ){
+        $scope.carShareholder[i].shopid = $scope.NewShopId;
+
+        Shop.saveCarshareholder.save($scope.carShareholder[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
       }
-      saveInfoFixFuntion(da);
     }
+
     // 非汽车销售领域
     // $scope.notcarShareholder=[
 
     // ]
-    $scope.delnotShareholder = function(index) {
+    Shop.getNotcarshareholderByShopId($scope.NewShopId,function (res) {
+      console.log('非汽车销售领域');
+      console.log(res);
+      $scope.notcarShareholder = res.data;
+    })
+
+    $scope.delnotShareholder = function(index,item) {
       $scope.notcarShareholder.splice(index, 1);
-    };
+    //2
+    Shop.deleteNotcarshareholder(item.id,function(res){
+      console.log(res)
+    })
+  };
     $scope.addnotcarShareholder= function() {
       $scope.insertedfourgdfqcxs= {
-        firmName: '',
+        firmname: '',
         shark:'',
-        mainBusiness:'',
+        mainbusiness:'',
         income:null,
         profit:''
       };
@@ -421,15 +546,34 @@
       $scope.notcarShareholder.push(testfour);
     }
     $scope.saveTableDb=function(){
-      var db={
-        notcarShareholder:$scope.notcarShareholder
-      };
-      saveInfoFixFuntion(db);
+      // var db={
+      //   notcarShareholder:$scope.notcarShareholder
+      // };
+      // saveInfoFixFuntion(db);
+      console.log('非汽车销售领域')
+      console.log($scope.notcarShareholder);
+    for(var i = 0; i<$scope.notcarShareholder.length;i++ ){
+        $scope.notcarShareholder[i].shopid = $scope.NewShopId;
+
+        Shop.saveNotcarshareholder.save($scope.notcarShareholder[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
     }
-    // 销售维修状况
-    $scope.delmaintenance = function(index) {
+// 销售维修状况
+    Shop.getMaintenanceByShopId($scope.NewShopId,function (res) {
+      $scope.maintenance = res.data;
+      console.log($scope.users)
+    })
+    $scope.delmaintenance = function(index,item) {
       $scope.maintenance.splice(index, 1);
-    };
+    //2
+    Shop.deleteMaintenance(item.id,function(res){
+      console.log(res)
+    })
+  };
     $scope.addmaintenance= function() {
       $scope.insertedxswxqkthree= {
             COHR:'',
@@ -454,32 +598,117 @@
       $scope.maintenance.push(testfive);
     }
     $scope.saveTableE=function(){
-      var e={
-        maintenance:$scope.maintenance
-      };
-      saveInfoFixFuntion(e);
+      // var da={
+      //   carShareholder:$scope.carShareholder
+      // }
+      // saveInfoFixFuntion(da);
+
+      //3
+      console.log('销售维修状况')
+      console.log($scope.maintenance);
+    for(var i = 0; i<$scope.maintenance.length;i++ ){
+        $scope.maintenance[i].shopid = $scope.NewShopId;
+
+        Shop.saveMaintenance.save($scope.maintenance[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
     }
-    // 资信状况
+
+    // 财务报表
+    //1
+    Shop.getFinancestatustableByShopId($scope.NewShopId,function (res) {
+      $scope.financeStatusTable = res.data;
+      console.log($scope.financeStatusTable)
+    })
+    $scope.delfinanceStatusTable = function(index,item) {
+      $scope.financeStatusTable.splice(index, 1);
+    //2
+    Shop.deleteFinancestatustable(item.id,function(res){
+      console.log(res)
+    })
+  };
+    $scope.addfinanceStatusTable= function() {
+      $scope.insertedcwbb= {
+            year:'',
+            asset:'',
+            debt:'',
+            netmargin:'',
+            netprofit:''
+      };
+      var testsix = JSON.parse(JSON.stringify($scope.insertedcwbb));
+      $scope.financeStatusTable.push(testsix);
+    }
+    $scope.saveTableFa=function(){
+      // var da={
+      //   carShareholder:$scope.carShareholder
+      // }
+      // saveInfoFixFuntion(da);
+
+      //3
+      console.log('财务报表')
+    for(var i = 0; i<$scope.financeStatusTable.length;i++ ){
+        $scope.financeStatusTable[i].shopid = $scope.NewShopId;
+
+        Shop.saveFinancestatustable.save($scope.financeStatusTable[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
+    }
+
+
+ // 资信状况
+    Shop.getCsmessageByShopId( $scope.NewShopId, function(res){
+      console.log('资信状况');
+      console.log(res)
+      $scope.agent.qualityrating = res.data.qualityrating;
+      $scope.agent.xydjpjbank = res.data.xydjpjbank;
+
+    })
     $scope.creditStatus=function(CSMessageForm)
     {
+      console.log('资信状况')
         $scope.submitcreditStatus = true;
         if (CSMessageForm.$valid)
         {
           $scope.CSmessage={
-           qualityRating: $scope.agent.qualityRating,
-           XYDJPJbank: $scope.agent.XYDJPJbank
+           qualityrating: $scope.agent.qualityrating,
+           xydjpjbank: $scope.agent.xydjpjbank
           };
-          var fc={
-            CSmessage:$scope.CSmessage
-          };
-          saveInfoFixFuntion(fc);
+        //   var fc={
+        //     CSmessage:$scope.CSmessage
+        //   };
+        //   saveInfoFixFuntion(fc);
+        // }
+  //       {
+  //   "qualityrating": "2",
+  //   "xydjpjbank": "1",
+  //   "shopid": 1
+  // }
+        $scope.CSmessage.shopid= $scope.NewShopId;
+        console.log($scope.CSmessage)
+        Shop.saveCsmessage.save($scope.CSmessage,function (params) {
+          console.log(params)
+        })
         }
 
-        console.log($scope.CSmessage);
     }
     // $scope.nowBankDeposit=[];
-    $scope.delnowBankDeposit = function(index) {
+
+    //yin hang cun kuan
+    Shop.getNowbankdepositidByShopId($scope.NewShopId,function (res) {
+      console.log('inhang cun kuan ~~~');
+      $scope.nowBankDeposit = res.data;
+    })
+    $scope.delnowBankDeposit = function(index,item) {
       $scope.nowBankDeposit.splice(index,1);
+      Shop.deleteNowbankdepositid(item.id,function(res){
+        console.log(res)
+      })
     };
     $scope.addnowBankDeposit= function() {
       $scope.insertedzxqk={
@@ -491,33 +720,23 @@
       $scope.nowBankDeposit.push(testseven);
     }
     $scope.saveTableFb=function(){
-      var fb={
-        nowBankDeposit:$scope.nowBankDeposit
-      };
-      saveInfoFixFuntion(fb);
+      // var fb={
+      //   nowBankDeposit:$scope.nowBankDeposit
+      // };
+      // saveInfoFixFuntion(fb);
+      for(var i = 0; i<$scope.nowBankDeposit.length;i++ ){
+          $scope.nowBankDeposit[i].shopid = $scope.NewShopId;
+
+          Shop.saveNowbankdepositid.save($scope.nowBankDeposit[i],function(res){
+            console.log('res')
+            console.log(res)
+
+          })
+        }
     }
 
-    // 财务报表
-    $scope.delfinanceStatusTable = function(index) {
-      $scope.financeStatusTable.splice(index, 1);
-    };
-    $scope.addfinanceStatusTable= function() {
-      $scope.insertedcwbb= {
-            year:'',
-            ASSET:'',
-            debt:'',
-            netMargin:'',
-            netProfit:''
-      };
-      var testsix = JSON.parse(JSON.stringify($scope.insertedcwbb));
-      $scope.financeStatusTable.push(testsix);
-    }
-    $scope.saveTableFa=function(){
-      var fa={
-        financeStatusTable:$scope.financeStatusTable
-      };
-      saveInfoFixFuntion(fa);
-    }
+
+
     // ---------------------拟建店简述------------------------
     $scope.btn2="btn21";
     $scope.locations=[
@@ -526,7 +745,7 @@
         {id:"主干道","text":"主干道"},
         {id:"其他","text":"其他"}
     ];
-    $scope.landSources=[
+    $scope.landsources=[
         {id:"已购买","text":"已购买"},
         {id:"已租赁","text":"已租赁"},
         {id:"意向购买","text":"意向购买"},
@@ -535,79 +754,118 @@
     ]
     // 建店场地情况
     $scope.item = {
-    city: [ '北京' ]
+    city: ["北京", "北京市", "西城区"]
     };
+    Shop.getBss($scope.NewShopId,function(res){
+      console.log('建店场地情况')
+      console.log(res)
+      // res = {"code":"OK","message":null,"url":null,"data":
+
+      $scope.buildForm = res.data;
+      console.log($scope.item);
+      console.log(res.data.tradeareas);
+
+      $scope.item.city =res.data.tradeareas;
+
+    })
 
     $scope.buildStoreSite=function(bssForm)
     {
         $scope.submitbss = true;
         console.log("省市联动");
-        console.log($scope.item.city.cn);
+        console.log($scope.item);
+        console.log($scope.item.city);
+        console.log($scope.item.city.join());
+        // ['beijing','beijing','beijij']
         if (bssForm.$valid){
             $scope.bss = {
-            tradeArea: $scope.item.city.cn,
-            address: $scope.agent.address,
-            locations: $scope.agent.locations,
-            businessName: $scope.agent.businessName,
-            formationTime: $scope.agent.formationTime,
-            scaleRanked: $scope.agent.scaleRanked,
-            brandNum: $scope.agent.brandNum,
-            brandDetail: $scope.agent.brandDetail,
-            landSources: $scope.agent.landSources,
-            landStatus: $scope.agent.landStatus,
-            leaseStart: $scope.agent.leaseStart,
-            leaseEnd: $scope.agent.leaseEnd,
-            firstshopone: $scope.agent.firstshopone,
-            firstshoptwo: $scope.agent.firstshoptwo,
-            firstshopthree: $scope.agent.firstshopthree,
-            firstshopfour: $scope.agent.firstshopfour,
-            notfirstShopone:$scope.agent.notfirstShopone,
-            notfirstShoptwo:$scope.agent.notfirstShoptwo,
-            notfirstShopthree:$scope.agent.notfirstShopthree,
-            notfirstShopfour:$scope.agent.notfirstShopfour,
-            notfirstShopfive:$scope.agent.notfirstShopfive,
-            jsMode: $scope.agent.jsMode,
-            sqGrade: $scope.agent.sqGrade,
-            constructionStart: $scope.agent.constructionStart,
-            constructionEnd: $scope.agent.constructionEnd,
-            soilArea: $scope.agent.soilArea,
-            soilWidth: $scope.agent.soilWidth,
-            soilDepth: $scope.agent.soilDepth,
-            buildArea: $scope.agent.buildArea,
-            buildWidth: $scope.agent.buildWidth,
-            buildDepth: $scope.agent.buildDepth,
-            overallHeight: $scope.agent.overallHeight,
-            showcaseHeight: $scope.agent.showcaseHeight,
-            afterSaleBuildArea: $scope.agent.afterSaleBuildArea
+            tradearea: $scope.item.city.join(),
+            address: $scope.buildForm.address,
+            locations: $scope.buildForm.locations,
+            businessname: $scope.buildForm.businessname,
+            formationtime: $scope.buildForm.formationtime,
+            scaleranked: $scope.buildForm.scaleranked,
+            brandnum: $scope.buildForm.brandnum,
+            branddetail: $scope.buildForm.branddetail,
+            landsources: $scope.buildForm.landsources,
+            landstatus: $scope.buildForm.landstatus,
+            leasestart: $scope.buildForm.leasestart,
+            leaseend: $scope.buildForm.leaseend,
+            firstshopone: $scope.buildForm.firstshopone,
+            firstshoptwo: $scope.buildForm.firstshoptwo,
+            firstshopthree: $scope.buildForm.firstshopthree,
+            firstshopfour: $scope.buildForm.firstshopfour,
+            notfirstshopone:$scope.buildForm.notfirstshopone,
+            notfirstshoptwo:$scope.buildForm.notfirstshoptwo,
+            notfirstshopthree:$scope.buildForm.notfirstshopthree,
+            notfirstshopfour:$scope.buildForm.notfirstshopfour,
+            notfirstshopfive:$scope.buildForm.notfirstshopfive,
+            jsmode: $scope.buildForm.jsmode,
+            sqgrade: $scope.buildForm.sqgrade,
+            constructionstart: $scope.buildForm.constructionstart,
+            constructionend: $scope.buildForm.constructionend,
+            soilarea: $scope.buildForm.soilarea,
+            soilwidth: $scope.buildForm.soilwidth,
+            soildepth: $scope.buildForm.soildepth,
+            buildarea: $scope.buildForm.buildarea,
+            buildwidth: $scope.buildForm.buildwidth,
+            builddepth: $scope.buildForm.builddepth,
+            overallheight: $scope.buildForm.overallheight,
+            showcaseheight: $scope.buildForm.showcaseheight,
+            aftersalebuildarea: $scope.buildForm.aftersalebuildarea
           }
-          var g={
-            bss:$scope.bss
-          };
-          saveInfoFixFuntion(g);
+          // var g={
+          //   bss:$scope.bss
+          // };
+          // saveInfoFixFuntion(g);
+          $scope.bss.shopid=$scope.NewShopId
+          console.log($scope.bss)
+          Shop.saveBss.save($scope.bss,function(res){
+            console.log(res);
+          })
         }
 
         console.log($scope.bss);
     }
     // 建店城市商圈
-    $scope.delBSbusinessArea = function(index) {
+    Shop.getbusinessarea($scope.NewShopId,function (res) {
+      console.log('建店城市商圈')
+
+      $scope.BSbusinessArea = res.data;
+      console.log($scope.BSbusinessArea)
+    })
+    $scope.delBSbusinessArea = function(index,item) {
       $scope.BSbusinessArea.splice(index, 1);
-    };
+    //2
+    Shop.deletebusinessarea(item.id,function(res){
+      console.log(res)
+    })
+  };
     $scope.addBSbusinessArea= function() {
       $scope.insertedjdcssq= {
         proposed:false,
         market:'',
         distance:'',
-        limousineBrand:"",
-        otherBrand:""
+        limousinebrand:"",
+        otherbrand:""
       };
       var testeight=JSON.parse(JSON.stringify($scope.insertedjdcssq));
       $scope.BSbusinessArea.push(testeight);
     };
     $scope.saveTableH=function(){
-      var h={
-        BSbusinessArea:$scope.BSbusinessArea
-      };
-      saveInfoFixFuntion(h);
+      // var h={
+      //   BSbusinessArea:$scope.BSbusinessArea
+      // };
+      // saveInfoFixFuntion(h);
+          for(var i = 0; i<$scope.BSbusinessArea.length;i++ ){
+        $scope.BSbusinessArea[i].shopid = $scope.NewShopId;
+
+        Shop.addbusinessarea.save($scope.BSbusinessArea[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
     }
     // 建店场地相关资料
     $scope.btn23="btn231";
@@ -632,115 +890,194 @@
         {id:"国有","text":"国有"},
         {id:"集体","text":"集体"}
     ];
+    $scope.xingongsi= {}
+    Shop.getprepareCompany($scope.NewShopId,function (res) {
+      console.log('新公司筹备');
+      console.log(res);
+
+      $scope.xingongsi = res.data;
+      console.log($scope.newCP);
+      console.log('~~~~');
+    })
     $scope.newCompanyPrepare=function(newCPForm)
     {
         $scope.submitnewCP = true;
+        console.log($scope.xingongsi);
         if (newCPForm.$valid){
           $scope.newCP={
-            LPstatus: $scope.agent.LPstatus,
-            companyName: $scope.agent.companyName,
-            registeredAddress: $scope.agent.registeredAddress,
-            corporateProperty: $scope.agent.corporateProperty,
-            MaintenanceQualification: $scope.agent.MaintenanceQualification,
-            registrationTime: $scope.agent.registrationTime,
-            rirmRegisteredAddress: $scope.agent.rirmRegisteredAddress
+            lpstatus: $scope.xingongsi.lpstatus,
+            companyname: $scope.xingongsi.companyname,
+            registeredaddress: $scope.xingongsi.registeredaddress,
+            corporateproperty: $scope.xingongsi.corporateproperty,
+            maintenancequalification: $scope.xingongsi.maintenancequalification,
+            registrationtime: $scope.xingongsi.registrationtime,
+            rirmregisteredaddress: $scope.xingongsi.rirmregisteredaddress
           }
-          var i={
-            newCP:$scope.newCP
-          };
-          saveInfoFixFuntion(i);
+          // var i={
+          //   newCP:$scope.newCP
+          // };
+          // saveInfoFixFuntion(i);
+          console.log('新公司筹备')
+          console.log($scope.newCP);
+          $scope.newCP.shopid = $scope.NewShopId;
+          Shop.addPrepareCompany.save($scope.newCP,function(res){
+            console.log(res)
+          })
         }
 
         console.log($scope.newCP);
     }
     // 新公司股权结构
-    $scope.delnewEquityStructure = function(index) {
+  Shop.getprepareConstruct($scope.NewShopId,function (res) {
+    console.log('新公司股权结构')
+    console.log(res);
+    $scope.newEquityStructure = res.data;
+    console.log(res)
+  })
+    $scope.delnewEquityStructure = function(index,item) {
       $scope.newEquityStructure.splice(index, 1);
+      Shop.deprepareConstruct(item.id,function(res){
+        console.log(res)
+      })
     };
     $scope.addnewEquityStructure = function() {
       $scope.insertedxgsgqjg= {
         shareholder:"",
         affiliation:"",
-        FundingSum:'',
-        Fundingscale:'',
+        fundingsum:'',
+        fundingscale:'',
         nature:""
       };
       var testnice = JSON.parse(JSON.stringify($scope.insertedxgsgqjg));
       $scope.newEquityStructure.push(testnice);
     }
     $scope.saveTableJ=function(){
-      var j={
-        newEquityStructure:$scope.newEquityStructure
-      };
-      saveInfoFixFuntion(j);
+      // var j={
+      //   newEquityStructure:$scope.newEquityStructure
+      // };
+      // saveInfoFixFuntion(j);
+
+      for(var i = 0; i<$scope.newEquityStructure.length;i++ ){
+        $scope.newEquityStructure[i].shopid = $scope.NewShopId;
+
+        Shop.addprepareConstruct.save($scope.newEquityStructure[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
     }
     // 资金筹备
+    Shop.getprepareFinance($scope.NewShopId,function(res){
+      console.log('资金筹备');
+      $scope.zijinchoubei = res.data;
+      console.log(res)
+
+    })
     $scope.funding=function(fundingForm){
         $scope.submitfunding=true;
         if (fundingForm.$valid)
         {
           $scope.fundings={
 
-                fixationOwnSum:$scope.agent.fixationOwnSum,
-                fixationOwnArriveTime:$scope.agent.fixationOwnArriveTime,
-                fixationOwnRemark:$scope.agent.fixationOwnRemark,
-                fixationloanSum:$scope.agent.fixationloanSum,
-                fixationloanArriveTime:$scope.agent.fixationloanArriveTime,
-                fixationloanRemark:$scope.agent.fixationloanRemark,
-                fixationrestSum:$scope.agent.fixationrestSum,
-                fixationrestArriveTime:$scope.agent.fixationrestArriveTime,
-                fixationrestRemark:$scope.agent.fixationrestRemark,
+                fixationownsum:$scope.zijinchoubei.fixationownsum,
+                fixationownarrivetime:$scope.zijinchoubei.fixationownarrivetime,
+                fixationownremark:$scope.zijinchoubei.fixationownremark,
+                fixationloansum:$scope.zijinchoubei.fixationloansum,
+                fixationloanarrivetime:$scope.zijinchoubei.fixationloanarrivetime,
+                fixationloanremark:$scope.zijinchoubei.fixationloanremark,
+                fixationrestsum:$scope.zijinchoubei.fixationrestsum,
+                fixationrestarrivetime:$scope.zijinchoubei.fixationrestarrivetime,
+                fixationrestremark:$scope.zijinchoubei.fixationrestremark,
 
-                streamownSum:$scope.agent.streamownSum,
-                streamownArriveTime:$scope.agent.streamownArriveTime,
-                streamownRemark:$scope.agent.streamownRemark,
-                streamloanSum:$scope.agent.streamloanSum,
-                streamloanArriveTime:$scope.agent.streamloanArriveTime,
-                streamloanRemark:$scope.agent.streamloanRemark,
-                streamrestSum:$scope.agent.streamrestSum,
-                streamrestArriveTime:$scope.agent.streamrestArriveTime,
-                streamrestRemark:$scope.agent.streamrestRemark,
+                streamownsum:$scope.zijinchoubei.streamownsum,
+                streamownarrivetime:$scope.zijinchoubei.streamownarrivetime,
+                streamownremark:$scope.zijinchoubei.streamownremark,
+                streamloansum:$scope.zijinchoubei.streamloansum,
+                streamloanarrivetime:$scope.zijinchoubei.streamloanarrivetime,
+                streamloanremark:$scope.zijinchoubei.streamloanremark,
+                streamrestsum:$scope.zijinchoubei.streamrestsum,
+                streamrestarrivetime:$scope.zijinchoubei.streamrestarrivetime,
+                streamrestremark:$scope.zijinchoubei.streamrestremark,
 
-                cashDepositSum:$scope.agent.cashDepositSum,
-                cashDepositArriveTime:$scope.agent.cashDepositArriveTime,
-                cashDepositRemark:$scope.agent.cashDepositRemark,
+                cashdepositsum:$scope.zijinchoubei.cashdepositsum,
+                cashdepositarrivetime:$scope.zijinchoubei.cashdepositarrivetime,
+                cashdepositremark:$scope.zijinchoubei.cashdepositremark,
 
 
-                mentionModelsSum:$scope.agent.mentionModelsSum,
-                mentionModelsArriveTime:$scope.agent.mentionModelsArriveTime,
-                mentionModelsRemark:$scope.agent.mentionModelsRemark
+                mentionmodelssum:$scope.zijinchoubei.mentionmodelssum,
+                mentionmodelsarrivetime:$scope.zijinchoubei.mentionmodelsarrivetime,
+                mentionmodelsremark:$scope.zijinchoubei.mentionmodelsremark
             }
-            var k={
-              fundings:$scope.fundings
-            };
-            saveInfoFixFuntion(k);
+            // var k={
+            //   fundings:$scope.fundings
+            // };
+            // saveInfoFixFuntion(k);
+            $scope.fundings.shopid=$scope.NewShopId;
+            console.log($scope.fundings);
+            Shop.addprepareFinance.save($scope.fundings,function(res){
+              console.log(res);
+            })
         }
         console.log($scope.fundings);
     }
     // 店面建设计划
-    $scope.delStoreConstructionPlan = function(index) {
+    Shop.getprepareBuildPlan($scope.NewShopId,function(res){
+      console.log('店面建设计划');
+      var data = res.data;
+      $scope.StoreConstructionPlan = data;
+      console.log(data)
+
+    })
+    $scope.delStoreConstructionPlan = function(index,item) {
       $scope.StoreConstructionPlan.splice(index, 1);
+      // deprepareBuildPla
+      Shop.deprepareBuildPlan(item.id,function (res) {
+        console.log(res);
+      })
     };
     $scope.addStoreConstructionPlan = function() {
       $scope.inserteddmjsjh= {
         city:"",
         branch:'',
-        submitTime:'',
-        startingTime:"",
-        completeTime:""
+        submittime:'',
+        startingtime:"",
+        completetime:""
       };
       var testten = JSON.parse(JSON.stringify($scope.inserteddmjsjh));
       $scope.StoreConstructionPlan.push(testten);
     }
     $scope.saveTableL=function(){
-      var l={
-        StoreConstructionPlan:$scope.StoreConstructionPlan
-      };
-      saveInfoFixFuntion(l);
+      // var l={
+      //   StoreConstructionPlan:$scope.StoreConstructionPlan
+      // };
+      // saveInfoFixFuntion(l);
+      console.log($scope.StoreConstructionPlan);
+
+      for(var i = 0; i<$scope.StoreConstructionPlan.length;i++ ){
+        $scope.StoreConstructionPlan[i].shopid = $scope.NewShopId;
+
+        Shop.addprepareBuildPlan.save($scope.StoreConstructionPlan[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
     }
     // 关键岗位组建筹备
-    $scope.delkeyJob = function(index) {
+    // 101.201.81.214:8080/prepareKeyJob/shopId/1
+    Shop.getprepareKeyJob($scope.NewShopId,function(res){
+      console.log('关键岗位组建筹备');
+      var data = res.data;
+      $scope.keyJob = data;
+      console.log(data)
+
+    })
+    $scope.delkeyJob = function(index,item) {
       $scope.keyJob.splice(index, 1);
+      Shop.deprepareKeyJob(item.id,function (res) {
+        console.log(res);
+      })
     };
     $scope.addkeyJob = function() {
       $scope.insertedgjgwzjcb= {
@@ -754,10 +1091,20 @@
       $scope.keyJob.push(testele);
     }
     $scope.saveTableM=function(){
-      var m={
-        keyJob:$scope.keyJob
-      };
-      saveInfoFixFuntion(m);
+      // var m={
+      //   keyJob:$scope.keyJob
+      // };
+      // saveInfoFixFuntion(m);
+
+      for(var i = 0; i<$scope.keyJob.length;i++ ){
+        $scope.keyJob[i].shopid = $scope.NewShopId;
+
+        Shop.addprepareKeyJob.save($scope.keyJob[i],function(res){
+          console.log('res')
+          console.log(res)
+
+        })
+      }
     }
     // 组建架构筹备
     $scope.frameworkaRrange=function(organizeSchemaForm){
@@ -768,23 +1115,34 @@
         console.log($scope.SchemaArrange);
     }
     // -------------------营销预测分析------------------------
+    $scope.MFAform={}
+    Shop.getMfaformByShopId($scope.NewShopId,function(res){
+      console.log('营销预测分析');
+      var data = res.data;
+      $scope.MFAform = data;
+      console.log(data)
+    })
     $scope.MarkeMarketDog=function(marketAnalyzeForm)
     {
         $scope.submitMFA=true;
         if (marketAnalyzeForm.$valid){
-          $scope.MFAform={
-            salesTarget:$scope.agent.salesTarget,
-            forecastOne:$scope.agent.forecastOne,
-            forecastTwo:$scope.agent.forecastTwo,
-            marketingAnalysis:$scope.agent.marketingAnalysis
-          }
-          var n={
-            MFAform:$scope.MFAform
-          };
-          saveInfoFixFuntion(n);
+          // $scope.MFAform={
+          //   salestarget:$scope.agent.salesTarget,
+          //   forecastone:$scope.agent.forecastOne,
+          //   forecasttwo:$scope.agent.forecastTwo,
+          //   marketinganalysis:$scope.agent.marketingAnalysis
+          // }
+          // var n={
+          //   MFAform:$scope.MFAform
+          // };
+          // saveInfoFixFuntion(n);
+          $scope.MFAform.shopid = $scope.NewShopId;
+          Shop.saveMfaform.save($scope.MFAform,function(res){
+          console.log(res);
+          });
         }
 
-        console.log($scope.MFAform);
+        console.log($scope.MFAform)
     }
     //提交保存弹框
     $scope.masksave=false;

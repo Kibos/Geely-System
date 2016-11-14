@@ -15,7 +15,7 @@
     var information = $stateParams.obj;
     console.log(information);
     $scope.ysgl={
-        agent:information.agent
+        name:information.name
     };
 
     $rootScope.sidebartopfalg = false;

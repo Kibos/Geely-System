@@ -1,12 +1,12 @@
 <form ng-submit="funding(fundingForm)" novalidate name="fundingForm">
 	<h3 class="funding-title">固定投资(含建店/装修/设备采购等)</h3>
-	<p class="help-block zjchb" ng-show="(fundingForm.fixationOwnArriveTime.$error.required || fundingForm.fixationOwnSum.$error.required || fundingForm.fixationOwnRemark.$error.required || fundingForm.fixationloanSum.$error.required || fundingForm.fixationloanArriveTime.$error.required || fundingForm.fixationloanRemark.$error.required || fundingForm.fixationrestSum.$error.required || fundingForm.fixationrestArriveTime.$error.required || fundingForm.fixationrestRemark.$error.required) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.fixationownarrivetime.$error.required || fundingForm.fixationownsum.$error.required || fundingForm.fixationownremark.$error.required || fundingForm.fixationloansum.$error.required || fundingForm.fixationloanarrivetime.$error.required || fundingForm.fixationloanremark.$error.required || fundingForm.fixationrestsum.$error.required || fundingForm.fixationrestarrivetime.$error.required || fundingForm.fixationrestremark.$error.required) && submitfunding">
     	请把信息补充完整
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.fixationOwnArriveTime.$error.pattern || fundingForm.fixationloanArriveTime.$error.pattern || fundingForm.fixationrestArriveTime.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.fixationownarrivetime.$error.pattern || fundingForm.fixationloanarrivetime.$error.pattern || fundingForm.fixationrestarrivetime.$error.pattern) && submitfunding">
     	到位时间请输入正确的时间格式 如右所示:YYYY/MM/DD
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.fixationOwnSum.$error.pattern || fundingForm.fixationloanSum.$error.pattern || fundingForm.fixationrestSum.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.fixationownsum.$error.pattern || fundingForm.fixationloansum.$error.pattern || fundingForm.fixationrestsum.$error.pattern) && submitfunding">
     	金额请输入大于0的数
 	</p>
 	<table class="fund-table table-bordered">
@@ -28,45 +28,45 @@
 	  </tr>
 	  <tr>
 	    <td>
-	       <input type="text" name="fixationOwnSum" ng-model="agent.fixationOwnSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="fixationownsum" ng-model="zijinchoubei.fixationownsum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="fixationOwnArriveTime" ng-model="agent.fixationOwnArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
+	       <input type="text" name="fixationownarrivetime" ng-model="zijinchoubei.fixationownarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 
 	    </td>
 	    <td>
-	    	<textarea name="fixationOwnRemark" cols="20" rows="1" ng-model="agent.fixationOwnRemark" required ng-disabled="formstate()"  onscroll="this.rows++;"></textarea>
+	    	<textarea name="fixationownremark" cols="20" rows="1" ng-model="zijinchoubei.fixationownremark" required ng-disabled="formstate()"  onscroll="this.rows++;"></textarea>
 	    </td>
 	    <!-- ********************************** -->
 	    <td>
-	       <input type="text" name="fixationloanSum" ng-model="agent.fixationloanSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="fixationloansum" ng-model="zijinchoubei.fixationloansum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="fixationloanArriveTime" ng-model="agent.fixationloanArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"> 
+	       <input type="text" name="fixationloanarrivetime" ng-model="zijinchoubei.fixationloanarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 	    </td>
 	    <td>
-	       <input type="text" name="fixationloanRemark" ng-model="agent.fixationloanRemark" ng-disabled="formstate()"> 
+	       <input type="text" name="fixationloanremark" ng-model="zijinchoubei.fixationloanremark" ng-disabled="formstate()">
 	    </td>
 	    <!-- ********************************** -->
 	    <td>
-	       <input type="text" name="fixationrestSum" ng-model="agent.fixationrestSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="fixationrestsum" ng-model="zijinchoubei.fixationrestsum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="fixationrestArriveTime" ng-model="agent.fixationrestArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"> 
+	       <input type="text" name="fixationrestarrivetime" ng-model="zijinchoubei.fixationrestarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 	    </td>
 	    <td>
-	       <input type="text" name="fixationrestRemark" ng-model="agent.fixationrestRemark" ng-disabled="formstate()"> 
+	       <input type="text" name="fixationrestremark" ng-model="zijinchoubei.fixationrestremark" ng-disabled="formstate()">
 	    </td>
 	  </tr>
 	</table>
 	<h3 class="funding-title">流动资金(含建店保证金/加盟保证金/运营资金等)</h3>
-	<p class="help-block zjchb" ng-show="(fundingForm.streamOwnSum.$error.required || fundingForm.streamOwnArriveTime.$error.required || fundingForm.streamOwnRemark.$error.required || fundingForm.streamloanSum.$error.required || fundingForm.streamloanArriveTime.$error.required || fundingForm.streamloanRemark.$error.required || fundingForm.streamrestSum.$error.required || fundingForm.streamrestArriveTime.$error.required || fundingForm.streamrestRemark.$error.required) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.streamownsum.$error.required || fundingForm.streamownarrivetime.$error.required || fundingForm.streamownremark.$error.required || fundingForm.streamloansum.$error.required || fundingForm.streamloanarrivetime.$error.required || fundingForm.streamloanremark.$error.required || fundingForm.streamrestsum.$error.required || fundingForm.streamrestarrivetime.$error.required || fundingForm.streamrestremark.$error.required) && submitfunding">
     	请把信息补充完整
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.streamOwnArriveTime.$error.pattern || fundingForm.streamloanArriveTime.$error.pattern || fundingForm.streamrestArriveTime.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.streamownarrivetime.$error.pattern || fundingForm.streamloanarrivetime.$error.pattern || fundingForm.streamrestarrivetime.$error.pattern) && submitfunding">
     	到位时间请输入正确的时间格式 如右所示:YYYY/MM/DD
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.streamOwnSum.$error.pattern || fundingForm.streamloanSum.$error.pattern || fundingForm.streamrestSum.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.streamownsum.$error.pattern || fundingForm.streamloansum.$error.pattern || fundingForm.streamrestsum.$error.pattern) && submitfunding">
     	金额请输入大于0的数
 	</p>
 	<table class="fund-table table-bordered">
@@ -89,44 +89,44 @@
 	  <tr>
 	  <!-- 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、 -->
 	    <td>
-	       <input type="text" name="streamOwnSum" ng-model="agent.streamownSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="streamownsum" ng-model="zijinchoubei.streamownsum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="streamOwnArriveTime" ng-model="agent.streamownArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"> 
+	       <input type="text" name="streamownarrivetime" ng-model="zijinchoubei.streamownarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 	    </td>
 	    <td>
-	       <input type="text" name="streamOwnRemark" ng-model="agent.streamownRemark" ng-disabled="formstate()"> 
+	       <input type="text" name="streamownremark" ng-model="zijinchoubei.streamownremark" ng-disabled="formstate()">
 	    </td>
 		<!-- 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、 -->
 	    <td>
-	       <input type="text" name="streamloanSum" ng-model="agent.streamloanSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="streamloansum" ng-model="zijinchoubei.streamloansum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="streamloanArriveTime" ng-model="agent.streamloanArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"> 
+	       <input type="text" name="streamloanarrivetime" ng-model="zijinchoubei.streamloanarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 	    </td>
 	    <td>
-	       <input type="text" name="streamloanRemark" ng-model="agent.streamloanRemark" ng-disabled="formstate()"> 
+	       <input type="text" name="streamloanremark" ng-model="zijinchoubei.streamloanremark" ng-disabled="formstate()">
 	    </td>
 		<!-- 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、 -->
 	    <td>
-	       <input type="text" name="streamrestSum" ng-model="agent.streamrestSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="streamrestsum" ng-model="zijinchoubei.streamrestsum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="streamrestArriveTime" ng-model="agent.streamrestArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"> 
+	       <input type="text" name="streamrestarrivetime" ng-model="zijinchoubei.streamrestarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 	    </td>
 	    <td>
-	       <input type="text" name="streamrestRemark" ng-model="agent.streamrestRemark" ng-disabled="formstate()"> 
+	       <input type="text" name="streamrestremark" ng-model="zijinchoubei.streamrestremark" ng-disabled="formstate()">
 	    </td>
 	  </tr>
 	</table>
 	<h3 class="funding-title">建店保证金</h3>
-	<p class="help-block zjchb" ng-show="(fundingForm.cashDepositSum.$error.required || fundingForm.cashDepositArriveTime.$error.required || fundingForm.cashDepositRemark.$error.required) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.cashdepositsum.$error.required || fundingForm.cashdepositarrivetime.$error.required || fundingForm.cashdepositremark.$error.required) && submitfunding">
     	请把信息补充完整
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.cashDepositArriveTime.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.cashdepositarrivetime.$error.pattern) && submitfunding">
     	到位时间请输入正确的时间格式 如右所示:YYYY/MM/DD
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.cashDepositSum.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.cashdepositsum.$error.pattern) && submitfunding">
     	金额请输入大于0的数
 	</p>
 	<table class="fund-table table-bordered">
@@ -137,24 +137,24 @@
 	  </tr>
 	  <tr>
 	    <td>
-	       <input type="text" name="cashDepositSum" ng-model="agent.cashDepositSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="cashdepositsum" ng-model="zijinchoubei.cashdepositsum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="cashDepositArriveTime" ng-model="agent.cashDepositArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"> 
+	       <input type="text" name="cashdepositarrivetime" ng-model="zijinchoubei.cashdepositarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 	    </td>
 	    <td>
-	       <input type="text" name="cashDepositRemark" ng-model="agent.cashDepositRemark" ng-disabled="formstate()"> 
+	       <input type="text" name="cashdepositremark" ng-model="zijinchoubei.cashdepositremark" ng-disabled="formstate()">
 	    </td>
 	  </tr>
 	</table>
 	<h3 class="funding-title">首批提车款</h3>
-	<p class="help-block zjchb" ng-show="(fundingForm.mentionModelsSum.$error.required || fundingForm.mentionModelsArriveTime.$error.required || fundingForm.mentionModelsRemark.$error.required) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.mentionmodelssum.$error.required || fundingForm.mentionmodelsarrivetime.$error.required || fundingForm.mentionmodelsremark.$error.required) && submitfunding">
     	请把信息补充完整
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.mentionModelsArriveTime.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.mentionmodelsarrivetime.$error.pattern) && submitfunding">
     	到位时间请输入正确的时间格式 如右所示:YYYY/MM/DD
 	</p>
-	<p class="help-block zjchb" ng-show="(fundingForm.mentionModelsSum.$error.pattern) && submitfunding">
+	<p class="help-block zjchb" ng-show="(fundingForm.mentionmodelssum.$error.pattern) && submitfunding">
     	金额请输入大于0的数
 	</p>
 	<table class="fund-table table-bordered">
@@ -165,13 +165,13 @@
 	  </tr>
 	  <tr>
 	    <td>
-	       <input type="text" name="mentionModelsSum" ng-model="agent.mentionModelsSum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/"> 
+	       <input type="text" name="mentionmodelssum" ng-model="zijinchoubei.mentionmodelssum" required ng-disabled="formstate()" ng-pattern="/^\+?[1-9]\d*$/">
 	    </td>
 	    <td>
-	       <input type="text" name="mentionModelsArriveTime" ng-model="agent.mentionModelsArriveTime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/"> 
+	       <input type="text" name="mentionmodelsarrivetime" ng-model="zijinchoubei.mentionmodelsarrivetime" required ng-disabled="formstate()" ng-pattern="/^\d{4}(\-|\/|\.)\d{1,2}\1\d{1,2}$/">
 	    </td>
 	    <td>
-	       <input type="text" name="mentionModelsRemark" ng-model="agent.mentionModelsRemark" ng-disabled="formstate()"> 
+	       <input type="text" name="mentionmodelsremark" ng-model="zijinchoubei.mentionmodelsremark" ng-disabled="formstate()">
 	    </td>
 	  </tr>
 	</table>

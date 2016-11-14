@@ -7,8 +7,7 @@
   <uib-tab heading="设计协议">
     <div class="col-md-6">
       <div class="sj  animate-show"
-           style="margin-bottom:20px;"
-           ng-show="isOptional.show" >
+           style="margin-bottom:20px;">
         <label>设计厂商：</label>
         <div class=""
              style="width:210px;margin-bottom:20px;">
@@ -39,7 +38,6 @@
                min="2015-12-12"
                max="2016-12-22"
                ng-required="true"
-               ng-change="change()"
                ng-disabled="Flag">
       </div>
       <!-- {{date}} -->
@@ -97,7 +95,7 @@
                         ng-model="suppliers[sid].message"
                         disabled="true">{{ supplier.message || 'empty' }}
               </textarea>
-          </div>
+            </div>
 
       </div>
     </div>
@@ -142,7 +140,11 @@
           <div class="sj  animate-show" style="margin-bottom:20px;"  ng-show="isOptional.show" >
             <label>L品牌合作供应商：</label>
             <div class="" style="width:210px;margin-bottom:20px;">
-              <select  ng-model="suppmodel"  ng-change="getSuppID()"  style="width:180px;" style="margin-bottom:20px;" ng-disabled="Flag" ng-required="reSelect">
+              <select  ng-model="suppmodel"
+                       ng-change="getSuppID()"
+                       style="width:180px;"
+                       ng-disabled="Flag"
+                       ng-required="reSelect">
                 <option value="" style="font-size:12px;color:#999999">请选择</option>
                 <option style="font-size:12px;color:#666666" ng-repeat=" x in suppliers" >{{x.name}}</option>
               </select>
@@ -159,50 +161,75 @@
           <div class="sj" style="margin-bottom:20px;">
             <label>签订时间：</label>
             <input type="date"
-               ng-model="formData.signingTime"
-               min="2015-12-12"
-               max="2016-12-22"
-               ng-required="true"
-               ng-change="change()" ng-disabled="Flag">
+                   ng-model="formData.signingTime"
+                   min="2015-12-12"
+                   max="2016-12-22"
+                   ng-required="true"
+                   ng-change="change()"
+                   ng-disabled="Flag">
           </div>
           <!-- <div class="sj" style="margin-bottom:20px;">
             <label>电子版合同：</label>
             <input type="file" id="inputfile" ng-model="formData.agreementFile">
           </div> -->
-
         </div>
         <div class="col-md-6">
           <div ba-panel ba-panel-title="供应商概览">
 
           		  <div class="form-group">
                   <label>供应商代码:</label>
-                  <label type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid].id" ng-value="{{suppliers[sid].id}}" disabled="true">{{suppliers[sid].id}}</label>
-                  <!-- <input type="text" name="id" class="form-control individual-iput" ng-model="suppliers[sid].id" ng-value="{{suppliers[sid].id}}" disabled="true"/> -->
+                  <label type="text"
+                         name="id"
+                         class="form-control individual-iput"
+                         ng-model="suppliers[sid].id"
+                         ng-value="{{suppliers[sid].id}}"
+                         disabled="true">{{suppliers[sid].id}}
+                  </label>
                 </div>
                 <div class="form-group">
                   <label>公司名称:</label>
-                  <label type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid].name" disabled="true">{{suppliers[sid].name}}</label>
-                  <!-- <input type="text" name="name" class="form-control individual-iput" ng-model="suppliers[sid].name" disabled="true"/> -->
+                  <label type="text"
+                         name="name"
+                         class="form-control individual-iput"
+                         ng-model="suppliers[sid].name"
+                         disabled="true">{{suppliers[sid].name}}
+                  </label>
                 </div>
                 <div class="form-group">
                   <label>联系人:</label>
-                  <label type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid].gonguser.ownName" disabled="true">{{suppliers[sid].gonguser.ownName}}</label>
-                  <!-- <input type="text" name="person" class="form-control individual-iput" ng-model="suppliers[sid].gonguser.ownName" disabled="true"/> -->
+                  <label type="text"
+                         name="person"
+                         class="form-control individual-iput"
+                         ng-model="suppliers[sid].gonguser.ownName"
+                         disabled="true">{{suppliers[sid].gonguser.ownName}}
+                  </label>
                 </div>
           			<div class="form-group">
                   <label>联系电话:</label>
-                  <label type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid].phone" disabled="true">{{suppliers[sid].phone}}</label>
-                  <!-- <input type="text" name="phone" class="form-control individual-iput" ng-model="suppliers[sid].phone" disabled="true"/> -->
+                  <label type="text"
+                         name="phone"
+                         class="form-control individual-iput"
+                         ng-model="suppliers[sid].phone"
+                         disabled="true">{{suppliers[sid].phone}}
+                  </label>
                 </div>
                 <div class="form-group">
                   <label>简介：</label>
-                  <textarea class="form-control" placeholder="简介" ng-model="suppliers[sid].message" disabled="true">{{ supplier.message || 'empty' }}</textarea>
+                  <textarea class="form-control"
+                            placeholder="简介"
+                            ng-model="suppliers[sid].message"
+                            disabled="true">{{ supplier.message || 'empty' }}
+                  </textarea>
                 </div>
-
-
           </div>
         </div>
-        <button class="btn btn-primary" ng-click="saveClick()" ng-disabled="Flag || gysForm.$invalid">保存</button>
+        <div class="button-wrapper">
+          <button type="button"
+                  class="btn btn-primary btn-lg"
+                  ng-click="saveClick()"
+                  ng-disabled="Flag || gysForm.$invalid">保存</button>
+        </div>
+
     </form>
 
   </uib-tab>
@@ -214,39 +241,44 @@
       <div class="">
         <div class="col-md-12">
           <div class="" style="margin-top:100px;">
-            <div class="" style="line-height:100px;">
-              <label class="col-md-2"></label>
-              <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
-              <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;态</label>
-              <label class="col-md-3">附&nbsp;&nbsp;&nbsp;&nbsp;件</label>
-              <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;作</label>
+            <div class="hetong">
+              <label class="col-md-1"></label>
+              <label class="col-md-2">步&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;骤</label>
+              <label class="col-md-2">状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态</label>
+              <label class="col-md-2">附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</label>
+              <label class="col-md-3">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作</label>
             </div>
             <div class="hetong" ng-repeat="item in process">
               <label class="col-md-1">
-                <div ng-class="{true:'processed',false:'process'}[item.bool]"><span ng-model="item.nums">{{item.nums}}</span></div>
+                <div ng-class="{true:'processed',false:'process'}[item.bool]">
+                  <span ng-model="item.nums">{{item.nums}}</span>
+                </div>
                 <hr class="processhr"></hr>
               </label>
               <label class="col-md-2">{{item.steps}}</label>
-
               <label class="col-md-2">
                 <button class="btn"
                         ng-class="{true:'btn-info',false:'btn-waring'}[item.bool]">
                         {{item.states}}
                 </button>
               </label>
-              <label class="col-md-2" style="font-weight:normal"><input type="file" id="inputfile" ng-model="file" ng-disabled="item.bool"></label>
+              <label class="col-md-2" style="font-weight:normal">
+                <input type="file" id="inputfile" ng-model="file" ng-disabled="item.bool">
+              </label>
               <label class="col-md-3">
                 <button class="btn btn-info"  ng-show="item.bool" disabled>
                   <span>已提交</span>
                 </button>
-                <button class="btn btn-info" ng-show="!item.bool">
+                <button class="btn btn-info" ng-show="!item.bool" ng-click="submitClick()">
                   <span>提&nbsp;交</span>
                 </button>
               </label>
 
             </div>
             <div class="hetonglast">
-              <label class="col-md-1"><div ng-class="{true:'processed',false:'process'}[last.bool]"><span>{{last.num}}</span></div></label>
+              <label class="col-md-1">
+                <div ng-class="{true:'processed',false:'process'}[last.bool]"><span>{{last.num}}</span></div>
+              </label>
               <label class="col-md-2">{{last.steps}}</label>
               <label class="col-md-2">
                 <button class="btn"
@@ -254,18 +286,20 @@
                         {{last.states}}
                 </button>
               </label>
-              <label class="col-md-2" style="font-weight:normal"><input type="file" id="inputfile" ng-model="file" ng-disabled="last.bool"></label>
+              <label class="col-md-2" style="font-weight:normal">
+                <input type="file" id="inputfile" ng-model="file" ng-disabled="last.bool">
+              </label>
               <label class="col-md-3">
                 <button class="btn btn-info"  ng-show="last.bool" disabled>
                   <span>已提交</span>
                 </button>
-                <button class="btn btn-info" ng-show="!last.bool">
+                <button class="btn btn-info" ng-show="!last.bool" ng-click="submitClick()">
                   <span>提&nbsp;交</span>
                 </button>
               </label>
             </div>
 
-            <center><button class="btn btn-info btn-lg" ng-click="" style="margin-top:10px;" >确认</button></center>
+            <center><button class="btn btn-info btn-lg" ng-click="confirmClick()" style="margin-top:10px;" >确认</button></center>
 
           </div>
 

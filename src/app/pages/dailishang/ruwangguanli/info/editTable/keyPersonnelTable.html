@@ -28,13 +28,13 @@
         </span>
     </td>
     <td>
-        <span editable-number="user.cellphone" e-name="cellphone" e-form="userform" e-required e-pattern="1[3,5,8]\d{9}" onbeforesave="checkphone($data)">
+        <span editable-text="user.cellphone" e-name="cellphone" e-form="userform" e-required e-pattern="1[3,5,8]\d{9}" onbeforesave="checkphone($data)">
           {{ user.cellphone || "格式错误,输入有效号码"}}
         </span>
     </td>
     <td>
-        <span editable-email="user.Email" e-name="Email" e-form="userform" e-required onbeforesave="checkEmail($data)">
-          {{ user.Email || '格式错误,请输入邮箱格式'}}
+        <span editable-email="user.email" e-name="email" e-form="userform" e-required onbeforesave="checkEmail($data)">
+          {{ user.email || '格式错误,请输入邮箱格式'}}
         </span>
     </td>
     <td>
@@ -54,7 +54,7 @@
       </form>
       <div class="buttons" ng-show="!userform.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index)" ng-disabled="formstate()">删除</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="removeUser($index,user)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>

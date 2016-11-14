@@ -27,13 +27,13 @@
         </span>
     </td>
     <td>
-        <span editable-text="user.educationalStatus" e-name="educationalStatus" e-form="userform" e-required onbeforesave="checkNull($data)">
-          {{ user.educationalStatus || '请输入信息'}}
+        <span editable-text="user.educationalstatus" e-name="educationalstatus" e-form="userform" e-required onbeforesave="checkNull($data)">
+          {{ user.educationalstatus || '请输入信息'}}
         </span>
     </td>
     <td>
-        <span editable-number="user.Experience" e-name="Experience" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
-          {{ user.Experience || '格式错误,请输入大于0的数字'}}
+        <span editable-number="user.experience" e-name="experience" e-form="userform" e-required e-pattern="[1-9]\d*(\.\d+)?" onbeforesave="checkExceedzero($data)">
+          {{ user.experience || '格式错误,请输入大于0的数字'}}
         </span>
     </td>
     <td>
@@ -48,7 +48,7 @@
       </form>
       <div class="buttons" ng-show="!userform.$visible">
         <button class="btn btn-primary editable-table-button btn-xs" ng-click="userform.$show()" ng-disabled="formstate()">编辑</button>
-        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delkeyJob($index)" ng-disabled="formstate()">删除</button>
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="delkeyJob($index,user)" ng-disabled="formstate()">删除</button>
       </div>
     </td>
   </tr>
