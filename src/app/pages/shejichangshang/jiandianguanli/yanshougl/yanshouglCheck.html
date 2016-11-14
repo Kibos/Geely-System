@@ -1,0 +1,55 @@
+<div ba-panel ba-panel-title="网络发展/代理商运营/申请审核" ba-panel-class="with-scroll">
+
+	<div class="col-md-6" >
+		<form name="checkForm">
+
+			<div class="form-group">
+				<label class="" id="partners1" style="font-size:14px;font-weight:bolder">申请代理商：
+					<span class="individual-iput" id="agent">{{ysgl.name}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<label class="" id="infor1" style="font-size:14px;font-weight:bolder">验收资料：
+					<span class="individual-iput" id="file">{{ysgl.file}}</span>
+				</label>
+			</div>
+			<div class="form-group">
+				<label id="result" class="" style="font-size:14px;font-weight:bolder">审核结果：
+				</label>
+				<label class="radio-inline custom-radio nowrap ">
+					<input type="radio" name="result" class="form-control" id="disagree" value="disagree" ng-model="check.result" ng-click="nopass()" required="">
+					<span>不同意</span>
+				</label>
+				<label class="radio-inline custom-radio nowrap" id="agreeradio">
+					<input type="radio" name="result" class="form-control " id="agree" value="agree" ng-model="check.result" ng-click="pass()" required="">
+					<span>同意</span>
+				</label>
+			</div>
+			<div class="form-group" ng-show="flag">
+				<div class="form-group">
+				    <label class="individual-label" style="font-size:14px;font-weight:bolder"> 验收时间:</label>
+
+				    <input type="date"
+			           class="form-control individual-iput" ng-model="check.receptionTime"
+			           min="2015-12-12"
+			           max="2016-12-22"
+			           rquired
+			           ng-required
+			           />
+				    <p class="help-block individual-p" ng-show="checkForm.check.receptionTime.$error.required && checkForm.receptionTime.$touched">请输入验收时间</p>
+				</div>
+				<div class="form-group">
+				    <label class="individual-label" style="font-size:14px;font-weight:bolder">参加人员:</label>
+				    <input type="text"  class="form-control individual-iput" placeholder="请输入参加人员" ng-model="check.participant">
+				    <p class="help-block individual-p" ng-show="checkForm.check.participant.$error.required && checkForm.participant.$touched">请输入参加人员</p>
+				</div>
+
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary" ng-disabled="checkForm.$invalid" ng-click="submit(check.result)"style="margin-left:-250px;">提交</button>
+			</div>
+		</form>
+
+	</div>
+
+</div>

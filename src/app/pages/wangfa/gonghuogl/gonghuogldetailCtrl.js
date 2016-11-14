@@ -12,12 +12,13 @@
   function gonghuogldetailCtrl($scope,RoleUser,Auth,toastr,filesUrl,$stateParams) {
     // 从上个页面传过来的代理商的信息
     var information = $stateParams.obj;
-    console.log(information);
+    console.log('代理商的信息'+JSON.stringify(information,null,'\t'));
     // 获取下拉框中的所有供应商信息
     var entries =RoleUser.gongUser.query(function() {
-       console.log('sxx'+JSON.stringify(entries,null,'\t'));
+       console.log('所有供应商的信息'+JSON.stringify(entries,null,'\t'));
         $scope.suppliers=entries;
     });
+
 
     $scope.formData={};
     $scope.isOptional={show: true};
@@ -72,7 +73,7 @@
          }
 
       }
-
+      // 当前用户的信息，即网发的信息
       console.log(obj);
 
     };

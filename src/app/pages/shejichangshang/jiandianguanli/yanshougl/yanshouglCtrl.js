@@ -14,57 +14,64 @@
     $rootScope.loginflag = true ;
     $scope.smartTablePageSize = 5;
 
-
-    $scope.acceptancelists = [
+    $scope.acceptancelists=[
       {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
+        name:'杭州远景',
+        type:'城市展厅',
+        address:'东区-浙江省杭州市',
         status:'待提交申请'
       },
       {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
+        name:'杭州远景',
+        type:'城市展厅',
+        address:'东区-上海市嘉定区',
         status:'待提交申请'
       },
       {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
-        status:'待提交申请'
+        name:'上海华庭',
+        type:'A级4S店',
+        address:'东区-江苏省苏州市',
+        status:'待审核'
       },
       {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
-        status:'待提交申请'
+        name:'上海别墅华泰',
+        type:'A级4S店',
+        address:'东区-上海市嘉定区',
+        status:'待审核'
       },
       {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
-        status:'待提交申请'
+        name:'苏州汽工贸',
+        type:'A级4S店',
+        address:'东区-浙江省杭州市',
+        status:'已审核'
       },
       {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
-        status:'待提交申请'
+        name:'苏州汽工贸',
+        type:'A级4S店',
+        address:'江苏省苏州市',
+        status:'已审核'
       },
       {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
-        status:'待提交申请'
-      },
-      {
-        name:'杭州吉利4S店',
-        type:'旗舰店',
-        address:'杭州市上城区',
+        name:'苏州汽工贸',
+        type:'A级4S店',
+        address:'东区-浙江省杭州市',
         status:'待提交申请'
       }
+
     ];
+
+    $scope.xq = function(item){
+       if(item.status==='待提交申请'){
+        console.log("待提交验收申请");
+         // $state.go('ba.jiandianguanli.buildstorebtdetail',{obj:item});
+       }else if(item.status==='待审核')
+       {
+         $state.go('ba.jdgli.yanshouglCheck',{obj:item});
+        console.log("待审核");
+      }else if(item.status==='已审核'){
+        console.log("已审核");
+      }
+ };
 
 
   }

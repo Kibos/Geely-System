@@ -76,6 +76,15 @@
             order: 40,
           },
       })
+      .state('ba.jdgli.yanshouglCheck', {
+        url: '/yanshouglCheck',
+        controller: 'yanshouglCheckCtrl',
+        templateUrl: 'app/pages/shejichangshang/jiandianguanli/yanshougl/yanshouglCheck.html',
+        params:{
+          obj:null
+        },
+
+      })
       ;
 
 
