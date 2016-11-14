@@ -8,23 +8,23 @@
     <div ba-panel ba-panel-title="网络发展/供应商列表" ba-panel-class="with-scroll">
       <div class="horizontal-scroll">
         <div class="form-group select-page-size-wrap widthFix">
-          <!-- <label>每页显示条数
+          <label>每页显示条数
             <select class="widthFix form-control selectpicker show-tick" title="Rows on page" selectpicker
                     ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
             </select>
-          </label> -->
+          </label>
           <button class="btn btn-default" ng-click="add()"><i class="ion-plus"></i>添加</button>
         </div>
-        <table class="table" st-table="$scope.suppliers">
+        <table class="table" st-table="suppliers" st-safe-src="suppliers_data">
           <thead>
             <tr class="sortable">
               <th class="table-id" st-sort="id" st-sort-default="true">#</th>
               <th st-sort="name">供应商名</th>
 				      <th st-sort="address">公司地址</th>
-				      <th st-sort="ownName">联系人</th>
-				      <th st-sort="phone">联系电话</th>
+				      <th st-sort="contacts">联系人</th>
+				      <th st-sort="cellphone">联系电话</th>
 				      <th st-sort="createAt">加入时间</th>
-				      <th st-sort="number">案例数</th>
+				      <th st-sort="casenum">案例数</th>
 				      <th st-sort="caozuo">操&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;作&nbsp;</th>
             </tr>
           </thead>
@@ -32,19 +32,19 @@
             <tr ng-repeat="item in suppliers">
               <td class="table-id">{{$index+1}}</td>
               <td>{{item.name}}</td>
-				      <td>{{item.gonguser.address}}</td>
-				      <td>{{item.gonguser.ownName}}</td>
+				      <td>{{item.address}}</td>
+				      <td>{{item.contacts}}</td>
 
-				      <td>{{item.phone}}</td>
+				      <td>{{item.cellphone}}</td>
 				      <td>{{item.createAt| date:"MM/dd/yyyy"}}</td>
-				      <td>{{item.gonguser.number||0}}</td>
+				      <td>{{item.casenum||0}}</td>
 
 				      <td>
                 <div class="buttons">
                   <button class="btn btn-primary btn-sm" ng-click="see(item)">
                     <i class=""></i>查看
                   </button>
-                  <button class="btn btn-danger btn-sm" ng-click="remove($index)">
+                  <button class="btn btn-danger btn-sm" ng-click="del(item.id,$index)">
                     <i class="ion-delete"></i>删除
                   </button>
                 </div>

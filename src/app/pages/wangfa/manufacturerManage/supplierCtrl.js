@@ -14,38 +14,35 @@
     $rootScope.loginflag = true ;
     $scope.smartTablePageSize = 5;
 
-     // 添加
-    	$scope.add=function(){
-    		$state.go('ba.hezuohuoban.add',{obj:1});
-    	};
-      // 删除
-      $scope.remove=function(index){
-        RoleUser.gongUser.delete($scope.suppliers[index]);
-        $scope.suppliers.splice(index, 1);
-        toastr.success('删除成功!');
-    	};
-      // 查看
-      $scope.see=function(item){
-    		$state.go('ba.hezuohuoban.gysxx',{obj:item});
-    	};
 
-     // 从数据库中取值
-     $scope.suppliers = [];
-     var entries =RoleUser.gongUser.query(function() {
-        console.log("++++>>>"+entries);
-        console.log("++++>>>111"+JSON.stringify(entries,null, "\t"));
-        
-        console.log("++++>>>111"+JSON.stringify(entries,["name", "gonguser.address", "gonguser.ownName", "phone", "createAt", "gonguser.number"], "\t"));
-        console.log("++++>>>222"+JSON.stringify(entries[0]));
-        for (var i = 0; i < entries.length; i++) {
-          $scope.suppliers[i] = entries[i]
-        };
-        // $scope.suppliers=entries;
-        // vm.suppliers=entries;
-      //   console.log("si=="+suppliers.length);
-    });
+    // 从数据库中取值
+    $scope.suppliers = [];
+    $scope.suppliers_data = [];
+    function getList() {
+         Supplier.get({},function(entries) {
+             $scope.suppliers_data = entries.data;
+         });
+       };
+       getList();
 
+    // 添加
+  	$scope.add=function(){
+  		$state.go('ba.hezuohuoban.add',{obj:1});
+  	};
 
+    // 删除
+    $scope.del= function(id) {
+      Supplier.delete.remove({id:parseInt(id)},function(res){
+         console.log(res)
+         getList();
+
+      })
+    };
+
+    // 查看
+    $scope.see=function(item){
+  		$state.go('ba.hezuohuoban.gysxx',{obj:item});
+  	};
 
 
   }

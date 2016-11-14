@@ -9,15 +9,23 @@
       .controller('gonghuogldetailCtrl', gonghuogldetailCtrl);
 
   /** @ngInject */
-  function gonghuogldetailCtrl($scope,RoleUser,Auth,toastr,filesUrl,$stateParams) {
+  function gonghuogldetailCtrl($scope,RoleUser,Auth,toastr,filesUrl,$stateParams,Supplier) {
     // 从上个页面传过来的代理商的信息
     var information = $stateParams.obj;
     console.log('代理商的信息'+JSON.stringify(information,null,'\t'));
     // 获取下拉框中的所有供应商信息
-    var entries =RoleUser.gongUser.query(function() {
-       console.log('所有供应商的信息'+JSON.stringify(entries,null,'\t'));
-        $scope.suppliers=entries;
-    });
+    // var entries =RoleUser.gongUser.query(function() {
+    //    console.log('所有供应商的信息'+JSON.stringify(entries,null,'\t'));
+    //     $scope.suppliers=entries;
+    // });
+    // 从数据库中取值
+    $scope.suppliers_data = [];
+    function getList() {
+         Supplier.get({},function(entries) {
+             $scope.suppliers_data = entries.data;
+         });
+       };
+       getList();
 
 
     $scope.formData={};
@@ -80,8 +88,8 @@
 
     $scope.getSuppID=function(){
       var i=0;
-      while(i<this.suppliers.length){
-       if(this.suppliers[i].name===this.suppmodel){
+      while(i<this.suppliers_data.length){
+       if(this.suppliers_data[i].name===this.suppmodel){
           $scope.sid =  i;
         }
         i++;

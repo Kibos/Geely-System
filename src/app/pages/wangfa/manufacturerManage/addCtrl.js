@@ -14,68 +14,34 @@
     $rootScope.loginflag = true ;
 
     var vm = this;
-    // vm.return=function(){
-    // 		$state.go('ba.hezuohuoban.gongyingshang');
-    // };
-    vm.add={};
+    vm.adds={};
+    // var information = $stateParams.obj;
+    //  console.log('-------------'+information);
+    vm.submit = function(){
 
-
-    // vm.submit=function(){
-
-
-   var information = $stateParams.obj;
-
-
-     console.log(information);
-    //   var vm = this;
-    //
-      //返回管理页面
-    	vm.return=function(){
-        if(information===1){
+       var newadd={
+           name:vm.adds.companyName,
+           password:vm.adds.password||"123456",
+           email:vm.adds.companyEmail,
+           address:vm.adds.companyAddress,
+           cellphone:vm.adds.companyPhone,
+           contacts:vm.adds.companyPerson,
+           casenum:vm.adds.casenum
+       };
+       Supplier.add.save(newadd,function(res){
+          console.log('-------------'+res);
+          toastr.success('添加成功!');
           $state.go('ba.hezuohuoban.gongyingshang');
+         }
+       );
 
-          console.log(1);
-        }else{
-           $state.go('ba.hezuohuoban.shejichang');
-           console.log(2);
-        };
-
-    	}
-    //   //提交
-    //   vm.add={}
-
-      vm.submit=function(){
-
-      var newadd={
-          name:vm.add.companyName,
-
-          password:vm.add.password||"123456",
-          phone:vm.add.companyPhone,
-          email:vm.add.companyEmail,
-          role:"gonguser",
-          gonguser:{ownName:vm.add.companyPerson, address:vm.add.companyAddress}
-      }
+     };
 
 
-      if(isUndefinedOrNull(newadd.name)||isUndefinedOrNull(newadd.gonguser.address)||isUndefinedOrNull(newadd.phone)||
-        isUndefinedOrNull(newadd.email)||isUndefinedOrNull(newadd.gonguser.ownName)){
-        toastr.warning('请填写完整!', '提示');
-      }else{
-          // Supplier.save(newadd,function(){
-          //  toastr.success('添加成功!');
-          // });
-
-          RoleUser.gongUser.save(newadd,function(){
-           toastr.success('添加成功!');
-          });
-      	$state.go('ba.hezuohuoban.gongyingshang');
-          //  vm.add={};
-      }
-    }
-
-    function isUndefinedOrNull(value){
-       return angular.isUndefined(value) || value === null
-    };
+      //返回管理页面
+      vm.return=function(){
+      		$state.go('ba.hezuohuoban.gongyingshang');
+      };
 
   }
 

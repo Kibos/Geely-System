@@ -39,7 +39,7 @@
                        ng-disabled="flag"
                        ng-required="reSelect">
                 <option value="" style="font-size:12px;color:#999999">请选择</option>
-                <option style="font-size:12px;color:#666666" ng-repeat=" x in suppliers" >{{x.name}}</option>
+                <option style="font-size:12px;color:#666666" ng-repeat=" x in suppliers_data" >{{x.name}}</option>
               </select>
             </div>
           </div>
@@ -74,9 +74,9 @@
                   <label type="text"
                          name="id"
                          class="form-control individual-iput"
-                         ng-model="suppliers[sid].id"
-                         ng-value="{{suppliers[sid].id}}"
-                         disabled="true">{{suppliers[sid].id}}
+                         ng-model="suppliers_data[sid].id"
+                         ng-value="{{suppliers_data[sid].id}}"
+                         disabled="true">{{suppliers_data[sid].id}}
                   </label>
                 </div>
                 <div class="form-group">
@@ -84,34 +84,34 @@
                   <label type="text"
                          name="name"
                          class="form-control individual-iput"
-                         ng-model="suppliers[sid].name"
-                         disabled="true">{{suppliers[sid].name}}
+                         ng-model="suppliers_data[sid].name"
+                         disabled="true">{{suppliers_data[sid].name}}
                   </label>
                 </div>
                 <div class="form-group">
                   <label>联系人:</label>
                   <label type="text"
-                         name="person"
+                         name="contacts"
                          class="form-control individual-iput"
-                         ng-model="suppliers[sid].gonguser.ownName"
-                         disabled="true">{{suppliers[sid].gonguser.ownName}}
+                         ng-model="suppliers_data[sid].contacts"
+                         disabled="true">{{suppliers_data[sid].contacts}}
                   </label>
                 </div>
           			<div class="form-group">
                   <label>联系电话:</label>
                   <label type="text"
-                         name="phone"
+                         name="cellphone"
                          class="form-control individual-iput"
-                         ng-model="suppliers[sid].phone"
-                         disabled="true">{{suppliers[sid].phone}}
+                         ng-model="suppliers_data[sid].cellphone"
+                         disabled="true">{{suppliers_data[sid].cellphone}}
                   </label>
                 </div>
                 <div class="form-group">
                   <label>简介：</label>
                   <textarea class="form-control"
                             placeholder="简介"
-                            ng-model="suppliers[sid].message"
-                            disabled="true">{{ supplier.message || 'empty' }}
+                            ng-model="suppliers_data[sid].userinfo"
+                            disabled="true">{{ supplier.userinfo || 'empty' }}
                   </textarea>
                 </div>
           </div>

@@ -370,11 +370,29 @@ angular.module('BlurAdmin')
     return obj;
   }])
     //供应商  /api/supplier
-  .factory('Supplier', ['$resource','serverUrl',function($resource,serverUrl){
+  .factory('Supplier', ['$resource','serverUrl','javaServerUrl',function($resource,serverUrl,javaServerUrl){
     var obj = {};
-    obj = $resource(serverUrl.url+'/api/supplier/:id', null, {'update': { method:'PUT' } });
+    obj = $resource(javaServerUrl.url+'user/getUsers/getRoles/3', null, {'update': { method:'GET' } });
+    obj.add = $resource(javaServerUrl.url+'user/addGongUser/add', null, {'update': { method:'PUT' } });
+    obj.update = $resource(javaServerUrl.url+'user/saveUser', null, {'update': { method:'PUT' } });
+    // obj.delete = $resource(javaServerUrl.url+'user/deleteUser/:id', null, {'update': { method:'DELETE' } });
+    obj.delete = $resource(javaServerUrl.url+'user/deleteUser/:id', {
+     delete: {
+        method:'DELETE',
+        params:{
+          id:'@id'
+        }
+       }
+     });
     return obj;
   }])
+  //代理商
+  .factory('Agent', ['$resource','serverUrl','javaServerUrl',function($resource,serverUrl,javaServerUrl){
+    var obj = {};
+    obj = $resource(javaServerUrl.url+'shop/getAgent', null, {'update': { method:'GET' } });
+    return obj;
+  }])
+
   .factory('RoleUser', ['$resource','serverUrl',function($resource,serverUrl){
     var obj = {};
     obj.gongUser = $resource(serverUrl.url+'/api/users/gong/:_id', null, {'update': { method:'PUT' } });
